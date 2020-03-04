@@ -1,0 +1,55 @@
+
+schema {
+    query: Query
+}
+
+type Query {
+    getAuthor(id: ID!): Author!
+    getBook(id: ID!): Book!
+    listBooks(cursor: Cursor, filter: BookFilter): [Book!]!
+}
+
+input Cursor {
+    start: Int!
+    limit: Int!
+}
+
+type Book {
+    id: ID!
+    author: Author!
+    title: String!
+    description: String!
+    categories: [Category!]!
+}
+
+input BookFilter {
+    title: String
+    author: AuthorFilter
+    categories: [Category!]
+}
+
+type Author {
+    id: ID!
+    name: String!
+    books: [Book!]!
+    favoriteBook: Book!
+}
+
+input AuthorFilter {
+    name: String
+}
+
+enum Category {
+    Horror
+    SciFi
+    Fiction
+    Fantasy
+    NonFiction
+    Romance
+    Historical
+    Mystery
+    Childrens
+    Dystopian
+    Utopian
+    Religous
+}
