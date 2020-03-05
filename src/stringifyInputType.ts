@@ -1,6 +1,5 @@
 
 import unwrapType from "./unwrapType";
-import { Context } from ".";
 import { InputValueDefinitionNode } from "graphql";
 
 export default (name: string, fields: InputValueDefinitionNode[]) =>
