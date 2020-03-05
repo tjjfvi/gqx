@@ -6,6 +6,7 @@ import stringifyIds from "./stringifyIds"
 import stringifyInputTypes from "./stringifyInputTypes";
 import stringifyFragTypes from "./stringifyFragTypes";
 import stringifyOutputTypes from "./stringifyOutputTypes";
+import stringifyVariables from "./stringifyVariables";
 
 
 interface Id {
@@ -58,13 +59,12 @@ export default (ctx: Context) => {
         return obj;
       })
 
-  ctx.exports.push("$$Input", "$$Output", "$$Frag");
-
   return [
     stringifyIds(ids),
     stringifyInputTypes(objs),
     stringifyFragTypes(objs, ctx),
     stringifyOutputTypes(objs, ctx),
+    stringifyVariables(objs, ctx),
   ].join("\n\n");
 }
 

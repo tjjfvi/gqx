@@ -1,3 +1,7 @@
+/* eslint-disable */
+
+const _gqx = <I>(id: I) => <T extends $$Frag.$<I>[]>(input: $$Input.$<I>, frag: T): $$Output.$<I, T> => (null as any);
+
  /* eslint-disable */
 
 type Int = number;
@@ -8,9 +12,6 @@ type Boolean = boolean;
 
 interface $<F, L> { f: F, l: L }
 const $$ = <F, L>(f: F, l: L) => ({ f, l });
-
-type $$FilterProp<F extends $_, K, T> = F extends K ? T : never;
-type $$FilterSub<F extends $_, K, _$> = Extract<F, $<K, _$>>["l"];
 
 const __wrap__ = Symbol();
 
@@ -154,9 +155,9 @@ export namespace $$Input {
     }
   }
   export type $<T> =
-    T extends Query$getAuthor ? Query.getAuthor :
-    T extends Query$getBook ? Query.getBook :
-    T extends Query$listBooks ? Query.listBooks :
+    T extends typeof Query$getAuthor ? Query.getAuthor :
+    T extends typeof Query$getBook ? Query.getBook :
+    T extends typeof Query$listBooks ? Query.listBooks :
     never
 }
 
@@ -167,23 +168,31 @@ export namespace $$Frag {
     export type listBooks = Book$;
   }
   export type $<T> =
-    T extends Query$getAuthor ? Query.getAuthor :
-    T extends Query$getBook ? Query.getBook :
-    T extends Query$listBooks ? Query.listBooks :
+    T extends typeof Query$getAuthor ? Query.getAuthor :
+    T extends typeof Query$getBook ? Query.getBook :
+    T extends typeof Query$listBooks ? Query.listBooks :
     never
 }
 
 export namespace $$Output {
   export namespace Query {
-    export type getAuthor<F extends $$Frag.$<Query$getAuthor>[]> = $Author<F>
-    export type getBook<F extends $$Frag.$<Query$getBook>[]> = $Book<F>
-    export type listBooks<F extends $$Frag.$<Query$listBooks>[]> = $Book<F>[]
+    export type getAuthor<F extends $$Frag.$<typeof Query$getAuthor>[]> = $Author<F>
+    export type getBook<F extends $$Frag.$<typeof Query$getBook>[]> = $Book<F>
+    export type listBooks<F extends $$Frag.$<typeof Query$listBooks>[]> = $Book<F>[]
   }
   export type $<T, F extends $$Frag.$<T>[]> =
-    F extends $$Frag.$<Query$getAuthor>[] ? Query.getAuthor<F> :
-    F extends $$Frag.$<Query$getBook>[] ? Query.getBook<F> :
-    F extends $$Frag.$<Query$listBooks>[] ? Query.listBooks<F> :
+    F extends $$Frag.$<typeof Query$getAuthor>[] ? Query.getAuthor<F> :
+    F extends $$Frag.$<typeof Query$getBook>[] ? Query.getBook<F> :
+    F extends $$Frag.$<typeof Query$listBooks>[] ? Query.listBooks<F> :
     never
+}
+
+const gqx = {
+  query: {
+    getAuthor: _gqx<typeof Query$getAuthor>(Query$getAuthor),
+    getBook: _gqx<typeof Query$getBook>(Query$getBook),
+    listBooks: _gqx<typeof Query$listBooks>(Query$listBooks),
+  },
 }
 
 export {
@@ -197,4 +206,5 @@ export {
   Book,
   $Author,
   $Book,
+  gqx,
 }

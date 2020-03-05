@@ -8,7 +8,7 @@ export default (
   f: (obj: Obj, prop: Prop) => string,
   x = "",
   y = (o: Obj, p: Prop) =>
-    `    T extends ${stringifyId(p.id)} ? ${o.type}.${p.id.prop} :\n`
+    `    T extends typeof ${stringifyId(p.id)} ? ${o.type}.${p.id.prop} :\n`
 ) =>
   `export namespace ${name} {\n${objs.map(o =>
     `  export namespace ${o.type} {\n${o.props.map(p =>

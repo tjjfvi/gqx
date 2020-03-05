@@ -10,9 +10,6 @@ type Boolean = boolean;
 interface $<F, L> { f: F, l: L }
 const $$ = <F, L>(f: F, l: L) => ({ f, l });
 
-type $$FilterProp<F extends $_, K, T> = F extends K ? T : never;
-type $$FilterSub<F extends $_, K, _$> = Extract<F, $<K, _$>>["l"];
-
 const __wrap__ = Symbol();
 
 type $$Wrap<X, Y> = X extends $<infer F, infer L> ? $<F, $$Wrap<L, Y>> : never;

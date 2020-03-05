@@ -1,5 +1,5 @@
 
-import { Book, $Book, Author } from "./output";
+import { gqx, Book, Author } from "./output";
 
 const frag = [
   Book.id,
@@ -7,8 +7,7 @@ const frag = [
   Book.author.name,
   ...Book.author.$([Author.id, Author.books.title])
 ];
-type Result = $Book<typeof frag>;
-declare const result: Result;
+const result = gqx.query.getBook({ id: "id" }, frag);
 
 result.id
 result.categories

@@ -20,6 +20,8 @@ interface Context {
   objectTypes: { [k: string]: FieldDefinitionNode[] };
   operations: [string, string][];
   baseTypes: string[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  config: any;
 }
 
 export default ({ schema, template }: { schema: string; template: string }) => {
@@ -37,6 +39,7 @@ export default ({ schema, template }: { schema: string; template: string }) => {
     inputTypes: {},
     objectTypes: {},
     exports: [],
+    config,
   };
 
   ast.definitions.map(def => {
@@ -57,7 +60,7 @@ export default ({ schema, template }: { schema: string; template: string }) => {
     stringifyExports(ctx),
   ].join("\n\n").replace(/\n\n\n+/g, "\n\n");
 
-  return code;
+  return template.replace(/\/\/ @gqx .+/, () => code);
 
 }
 
