@@ -1,5 +1,6 @@
 
-import { Id, stringifyId } from ".";
+import { Id } from ".";
+import stringifyId from "./stringifyId";
 
 export default (ids: Id[]) =>
-  ids.map(id => `const ${stringifyId(id)} = Symbol("${stringifyId(id)}");\n`).join("")
+  ids.map(id => `class ${stringifyId(id)} { declare private __nominal__: any; }\n`).join("")

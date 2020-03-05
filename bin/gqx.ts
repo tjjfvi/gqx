@@ -13,10 +13,10 @@ program.parse(process.argv);
 
 (() => {
 
-  if (!program.schema || !program.template)
+  if(!program.schema || !program.template)
     return console.log("Must provide --schema and --template");
 
-  if (program.output) {
+  if(program.output) {
     console.log(`Using schema: ${program.schema}`);
     console.log(`Using template: ${program.template}`);
   }
@@ -33,7 +33,7 @@ program.parse(process.argv);
 
   let out = gqx({ schema, template });
 
-  if (program.output) {
+  if(program.output) {
     console.log(`Writing output to: ${program.output}`);
     fs.writeFileSync(program.output, out)
     console.log(`Done`);

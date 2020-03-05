@@ -1,6 +1,6 @@
 
-import { unwrapType } from ".";
-import { Context } from "./main";
+import unwrapType from "./unwrapType";
+import { Context } from ".";
 
 export default (ctx: Context) =>
   Object.entries(ctx.inputTypes).map(([name, fields]) => {
@@ -11,8 +11,8 @@ export default (ctx: Context) =>
           let [type, wrap, maybe] = unwrapType(field.type);
           let typeStr = wrap(type.name.value);
           let colon = maybe ? "?: " : ": ";
-          return `  ${field.name.value}${colon}${typeStr},`;
-        }).join("\n")}\n};` :
+          return `  ${field.name.value}${colon}${typeStr};`;
+        }).join("\n")}\n}` :
         "{}"
     );
   }).join("\n\n")

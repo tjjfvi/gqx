@@ -1,19 +1,62 @@
 
-import _default from "./main";
-export default _default;
+import {
+  parse,
+  SchemaDefinitionNode,
+  EnumTypeDefinitionNode,
+  InputValueDefinitionNode,
+  FieldDefinitionNode
+} from "graphql";
+import stringifyEnumTypes from "./stringifyEnumTypes";
+import stringifyInputTypes from "./stringifyInputTypes";
+import stringifyObjectTypes from "./stringifyObjectTypes";
+import stringifyExports from "./stringifyExports";
+import boilerplate from "./boilerplate";
 
-// @create-index
+interface Context {
+  exports: string[];
+  inputTypes: { [k: string]: InputValueDefinitionNode[] };
+  enumTypes: { [k: string]: EnumTypeDefinitionNode };
+  objectTypes: { [k: string]: FieldDefinitionNode[] };
+  operations: [string, string][];
+  baseTypes: string[];
+}
 
-export { default as main } from './main';
-export { default as stringifyEnumTypes } from './stringifyEnumTypes';
-export { default as stringifyExports } from './stringifyExports';
-export { default as stringifyInputTypes } from './stringifyInputTypes';
-export { default as stringifyObjectTypes } from './stringifyObjectTypes';
-export { default as unwrapType } from './unwrapType';
-export * from './main';
-export * from './stringifyEnumTypes';
-export * from './stringifyExports';
-export * from './stringifyInputTypes';
-export * from './stringifyObjectTypes';
-export * from './unwrapType';
+export default ({ schema, template }: { schema: string; template: string }) => {
 
+  const ast = parse(schema);
+  const config = JSON.parse(template.match(/\/\/ @gqx (.+)/)[1]);
+
+  // @ts-ignore
+  const schemaDef: SchemaDefinitionNode = ast.definitions.find(d => d.kind === "SchemaDefinition");
+  const operations: [string, string][] = schemaDef.operationTypes.map(o => [o.operation, o.type.name.value]);
+  const ctx: Context = {
+    operations,
+    baseTypes: operations.map(o => o[1]),
+    enumTypes: {},
+    inputTypes: {},
+    objectTypes: {},
+    exports: [],
+  };
+
+  ast.definitions.map(def => {
+    if(def.kind === "InputObjectTypeDefinition" || def.kind === "InputObjectTypeExtension")
+      ctx.inputTypes[def.name.value] = (ctx.inputTypes[def.name.value] || []).concat(def.fields);
+    else if(def.kind === "EnumTypeDefinition")
+      ctx.enumTypes[def.name.value] = def;
+    else if(def.kind === "ObjectTypeDefinition" || def.kind === "ObjectTypeExtension")
+      ctx.objectTypes[def.name.value] = (ctx.objectTypes[def.name.value] || []).concat(def.fields);
+  });
+
+  const code = [
+    boilerplate,
+    stringifyEnumTypes(ctx),
+    stringifyInputTypes(ctx),
+    stringifyObjectTypes(ctx),
+    stringifyExports(ctx),
+  ].join("\n\n");
+
+  return code;
+
+}
+
+export { Context };

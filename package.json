@@ -5,20 +5,20 @@
   "main": "index.js",
   "dependencies": {
     "commander": "^4.1.1",
-    "graphql": "^14.6.0"
+    "graphql": "^14.6.0",
+    "tslib": "^1.11.1"
   },
   "devDependencies": {
     "@types/node": "^13.7.7",
     "@typescript-eslint/eslint-plugin": "^2.22.0",
     "@typescript-eslint/parser": "^2.22.0",
-    "create-index-better": "file:../create-index",
     "eslint": "^6.8.0",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.3"
   },
   "scripts": {
     "index": "create-index -u src/ -x ts -X ts -S",
-    "start": "ts-node ./bin/gqx.ts -s sample.gql -t template.ts -o output.ts",
+    "sample": "ts-node ./bin/gqx.ts -s sample.gql -t template.ts -o output.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {

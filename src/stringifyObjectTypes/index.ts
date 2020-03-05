@@ -1,18 +1,71 @@
 
-export * from "..";
-import _default from "./main";
-export default _default;
+import { Context } from "..";
+import unwrapType from "../unwrapType";
+import stringifyFragEnums from "./stringifyFragEnums";
+import stringifyFragResult from "./stringifyFragResult";
+import stringifyIds from "./stringifyIds";
+import stringifyFragObject from "./stringifyFragObject";
 
-// @create-index
+interface Id {
+  type: string;
+  prop: string;
+}
 
-export { default as main } from './main';
-export { default as stringifyFragEnums } from './stringifyFragEnums';
-export { default as stringifyFragResult } from './stringifyFragResult';
-export { default as stringifyId } from './stringifyId';
-export { default as stringifyIds } from './stringifyIds';
-export * from './main';
-export * from './stringifyFragEnums';
-export * from './stringifyFragResult';
-export * from './stringifyId';
-export * from './stringifyIds';
+interface Prop {
+  id: Id;
+  type: string;
+  shallow: boolean;
+  wrap: (x: string) => string;
+}
+
+interface Obj {
+  type: string;
+  shallowProps: Prop[];
+  deepProps: Prop[];
+}
+
+export { Id, Prop, Obj, Context };
+
+export default (ctx: Context) => {
+  const ids: Id[] = [];
+
+  const objs: Obj[] =
+    Object.keys(ctx.objectTypes)
+      .filter(k => !ctx.baseTypes.includes(k))
+      .sort()
+      .map(name => {
+        const fields = ctx.objectTypes[name];
+        const props = fields.map(field => {
+          const id: Id = {
+            type: name,
+            prop: field.name.value,
+          };
+          ids.push(id);
+          const [{ name: { value: typeName } }, wrap] = unwrapType(field.type);
+          const shallow = !(typeName in ctx.objectTypes);
+          let prop: Prop = {
+            id,
+            type: typeName,
+            shallow,
+            wrap,
+          };
+          return prop;
+        }).sort((p, q) => p.id.prop > q.id.prop ? 1 : -1);
+        const shallowProps = props.filter(p => p.shallow);
+        const deepProps = props.filter(p => !p.shallow);
+        const obj: Obj = {
+          type: name,
+          shallowProps,
+          deepProps,
+        };
+        return obj;
+      })
+
+  return [
+    stringifyIds(ids),
+    stringifyFragEnums(objs, ctx),
+    ...objs.map(o => stringifyFragObject(o, ctx)),
+    ...objs.map(o => stringifyFragResult(o, ctx))
+  ].join("\n\n");
+}
 
