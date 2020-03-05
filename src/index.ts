@@ -60,7 +60,7 @@ export default ({ schema, template }: { schema: string; template: string }) => {
     stringifyExports(ctx),
   ].join("\n\n").replace(/\n\n\n+/g, "\n\n");
 
-  return template.replace(/\/\/ @gqx .+/, () => code);
+  return template.replace(/\/\/ @gqx .+/, () => code).replace(/^\/\/ @ts-nocheck/, "");
 
 }
 
