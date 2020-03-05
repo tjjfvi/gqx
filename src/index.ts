@@ -11,6 +11,7 @@ import stringifyInputTypes from "./stringifyInputTypes";
 import stringifyObjectTypes from "./stringifyObjectTypes";
 import stringifyExports from "./stringifyExports";
 import boilerplate from "./boilerplate";
+import stringifyOperations from "./stringifyOperations";
 
 interface Context {
   exports: string[];
@@ -52,8 +53,9 @@ export default ({ schema, template }: { schema: string; template: string }) => {
     stringifyEnumTypes(ctx),
     stringifyInputTypes(ctx),
     stringifyObjectTypes(ctx),
+    stringifyOperations(ctx),
     stringifyExports(ctx),
-  ].join("\n\n");
+  ].join("\n\n").replace(/\n\n\n+/g, "\n\n");
 
   return code;
 

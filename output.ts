@@ -37,7 +37,6 @@ const $$mapWrap = <O, F>(o: () => O, f: F): $$MapWrap<O, F> =>
     ),
   })
 
-
 type Category =
   | "Horror"
   | "SciFi"
@@ -58,13 +57,13 @@ interface Cursor {
 }
 
 interface BookFilter {
-  title?: (String | null);
-  author?: (AuthorFilter | null);
-  categories?: (Category[] | null);
+  title?: (String | null | void);
+  author?: (AuthorFilter | null | void);
+  categories?: (Category[] | null | void);
 }
 
 interface AuthorFilter {
-  name?: (String | null);
+  name?: (String | null | void);
 }
 
 class Author$id { declare private __nominal__: any; }
@@ -76,7 +75,6 @@ class Book$author { declare private __nominal__: any; }
 class Book$title { declare private __nominal__: any; }
 class Book$description { declare private __nominal__: any; }
 class Book$categories { declare private __nominal__: any; }
-
 
 type Author$ =
   | typeof Author$id
@@ -123,20 +121,70 @@ const Book: typeof _Book & {
   author: $$mapWrap(() => Author, Book$author),
 }
 
-type $$Author<F extends Author$> =
+type _$Author<F extends Author$> =
   & (typeof Author$id extends F ? { id: ID } : {})
   & (typeof Author$name extends F ? { name: String } : {})
-  & ($<typeof Author$books, any> extends F ? { books: $$Book<Extract<F, $<typeof Author$books, Book$>>["l"]>[] } : {})
-  & ($<typeof Author$favoriteBook, any> extends F ? { favoriteBook: $$Book<Extract<F, $<typeof Author$favoriteBook, Book$>>["l"]> } : {})
-type $Author<F extends Author$[]> = $$Author<F[number]>;
+  & ($<typeof Author$books, any> extends F ? { books: _$Book<Extract<F, $<typeof Author$books, Book$>>["l"]>[] } : {})
+  & ($<typeof Author$favoriteBook, any> extends F ? { favoriteBook: _$Book<Extract<F, $<typeof Author$favoriteBook, Book$>>["l"]> } : {})
+type $Author<F extends Author$[]> = _$Author<F[number]>;
 
-type $$Book<F extends Book$> =
+type _$Book<F extends Book$> =
   & (typeof Book$categories extends F ? { categories: Category[] } : {})
   & (typeof Book$description extends F ? { description: String } : {})
   & (typeof Book$id extends F ? { id: ID } : {})
   & (typeof Book$title extends F ? { title: String } : {})
-  & ($<typeof Book$author, any> extends F ? { author: $$Author<Extract<F, $<typeof Book$author, Author$>>["l"]> } : {})
-type $Book<F extends Book$[]> = $$Book<F[number]>;
+  & ($<typeof Book$author, any> extends F ? { author: _$Author<Extract<F, $<typeof Book$author, Author$>>["l"]> } : {})
+type $Book<F extends Book$[]> = _$Book<F[number]>;
+
+class Query$getAuthor { declare private __nominal__: any; }
+class Query$getBook { declare private __nominal__: any; }
+class Query$listBooks { declare private __nominal__: any; }
+
+export namespace $$Input {
+  export namespace Query {
+    export interface getAuthor {
+      id: ID;
+    }
+    export interface getBook {
+      id: ID;
+    }
+    export interface listBooks {
+      cursor?: (Cursor | null | void);
+      filter?: (BookFilter | null | void);
+    }
+  }
+  export type $<T> =
+    T extends Query$getAuthor ? Query.getAuthor :
+    T extends Query$getBook ? Query.getBook :
+    T extends Query$listBooks ? Query.listBooks :
+    never
+}
+
+export namespace $$Frag {
+  export namespace Query {
+    export type getAuthor = Author$;
+    export type getBook = Book$;
+    export type listBooks = Book$;
+  }
+  export type $<T> =
+    T extends Query$getAuthor ? Query.getAuthor :
+    T extends Query$getBook ? Query.getBook :
+    T extends Query$listBooks ? Query.listBooks :
+    never
+}
+
+export namespace $$Output {
+  export namespace Query {
+    export type getAuthor<F extends $$Frag.$<Query$getAuthor>[]> = $Author<F>
+    export type getBook<F extends $$Frag.$<Query$getBook>[]> = $Book<F>
+    export type listBooks<F extends $$Frag.$<Query$listBooks>[]> = $Book<F>[]
+  }
+  export type $<T, F extends $$Frag.$<T>[]> =
+    F extends $$Frag.$<Query$getAuthor>[] ? Query.getAuthor<F> :
+    F extends $$Frag.$<Query$getBook>[] ? Query.getBook<F> :
+    F extends $$Frag.$<Query$listBooks>[] ? Query.listBooks<F> :
+    never
+}
 
 export {
   Category,
