@@ -123,21 +123,19 @@ const Book: typeof _Book & {
   author: $$mapWrap(() => Author, Book$author),
 }
 
-type $$Author<F extends Author$> = {
-  id: $$FilterProp<F, typeof Author$id, ID>;
-  name: $$FilterProp<F, typeof Author$name, String>;
-  books: $$Book<$$FilterSub<F, typeof Author$books, Book$>>[];
-  favoriteBook: $$Book<$$FilterSub<F, typeof Author$favoriteBook, Book$>>;
-}
+type $$Author<F extends Author$> =
+  & (typeof Author$id extends F ? { id: ID } : {})
+  & (typeof Author$name extends F ? { name: String } : {})
+  & { books: $$Book<$$FilterSub<F, typeof Author$books, Book$>>[] }
+  & { favoriteBook: $$Book<$$FilterSub<F, typeof Author$favoriteBook, Book$>> }
 type $Author<F extends Author$[]> = $$Author<F[number]>;
 
-type $$Book<F extends Book$> = {
-  categories: $$FilterProp<F, typeof Book$categories, Category[]>;
-  description: $$FilterProp<F, typeof Book$description, String>;
-  id: $$FilterProp<F, typeof Book$id, ID>;
-  title: $$FilterProp<F, typeof Book$title, String>;
-  author: $$Author<$$FilterSub<F, typeof Book$author, Author$>>;
-}
+type $$Book<F extends Book$> =
+  & (typeof Book$categories extends F ? { categories: Category[] } : {})
+  & (typeof Book$description extends F ? { description: String } : {})
+  & (typeof Book$id extends F ? { id: ID } : {})
+  & (typeof Book$title extends F ? { title: String } : {})
+  & { author: $$Author<$$FilterSub<F, typeof Book$author, Author$>> }
 type $Book<F extends Book$[]> = $$Book<F[number]>;
 
 export {
