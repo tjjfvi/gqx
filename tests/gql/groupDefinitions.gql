@@ -1,0 +1,76 @@
+
+input ManyInput {
+  a: String
+  b: Int
+  c: Float
+  d: Boolean
+}
+
+input UnextendedInput {
+  only: String
+}
+
+input ExtendedInput {
+  firstPost: String
+}
+
+extend input ExtendedInput {
+  secondPost: Int
+}
+
+extend input PreextendedInput {
+  secondPre: Int
+}
+
+input PreextendedInput {
+  firstPre: String
+}
+
+type ManyObject {
+  a: String
+  b: Int
+  c: Float
+  d: Boolean
+}
+
+type UnextendedObject {
+  only: String
+}
+
+type ExtendedObject {
+  firstPost: String
+}
+
+extend type ExtendedObject {
+  secondPost: Int
+}
+
+extend type PreextendedObject {
+  secondPre: Int
+}
+
+type PreextendedObject {
+  firstPre: String
+}
+
+enum UnextendedEnum {
+  Only
+}
+
+enum ExtendedEnum {
+  FirstPost
+}
+
+extend enum ExtendedEnum {
+  SecondPost
+}
+
+extend enum PreextendedEnum {
+  SecondPre
+}
+
+enum PreextendedEnum {
+  FirstPre
+}
+
+enum ManyEnum { A B C D E F G H I J K L M N O P Q R S T U V W X Y Z }

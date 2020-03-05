@@ -4,7 +4,8 @@ import {
   SchemaDefinitionNode,
   EnumTypeDefinitionNode,
   InputValueDefinitionNode,
-  FieldDefinitionNode
+  FieldDefinitionNode,
+  EnumValueDefinitionNode
 } from "graphql";
 import stringifyEnumTypes from "./stringifyEnumTypes";
 import stringifyInputTypes from "./stringifyInputTypes";
@@ -16,7 +17,7 @@ import stringifyBoilerplate from "./stringifyBoilerplate";
 interface Context {
   exports: string[];
   inputTypes: { [k: string]: InputValueDefinitionNode[] };
-  enumTypes: { [k: string]: EnumTypeDefinitionNode };
+  enumTypes: { [k: string]: EnumValueDefinitionNode[] };
   objectTypes: { [k: string]: FieldDefinitionNode[] };
   operations: [string, string][];
   baseTypes: string[];
@@ -41,15 +42,6 @@ export default ({ schema, template }: { schema: string; template: string }) => {
     exports: [],
     config,
   };
-
-  ast.definitions.map(def => {
-    if(def.kind === "InputObjectTypeDefinition" || def.kind === "InputObjectTypeExtension")
-      ctx.inputTypes[def.name.value] = (ctx.inputTypes[def.name.value] || []).concat(def.fields);
-    else if(def.kind === "EnumTypeDefinition")
-      ctx.enumTypes[def.name.value] = def;
-    else if(def.kind === "ObjectTypeDefinition" || def.kind === "ObjectTypeExtension")
-      ctx.objectTypes[def.name.value] = (ctx.objectTypes[def.name.value] || []).concat(def.fields);
-  });
 
   const code = [
     stringifyBoilerplate(),

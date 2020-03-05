@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stringifyInputTypes.gql Fraction 1`] = `
+"interface Fraction {
+  numerator: Int;
+  denominator: Int;
+}"
+`;
+
+exports[`stringifyInputTypes.gql List2D 1`] = `
+"interface List2D {
+  a: String[][];
+  b: Int[][];
+  c: Fraction[][];
+}"
+`;
+
+exports[`stringifyInputTypes.gql Mandatory 1`] = `
+"interface Mandatory {
+  a: String;
+  b: Int;
+  c: Fraction;
+}"
+`;
+
+exports[`stringifyInputTypes.gql MandatoryList 1`] = `
+"interface MandatoryList {
+  a: String[];
+  b: Int[];
+  c: Fraction[];
+}"
+`;
+
+exports[`stringifyInputTypes.gql MandatoryListOfNullable 1`] = `
+"interface MandatoryListOfNullable {
+  a: (String | null | void)[];
+  b: (Int | null | void)[];
+  c: (Fraction | null | void)[];
+}"
+`;
+
+exports[`stringifyInputTypes.gql Nullable 1`] = `
+"interface Nullable {
+  a?: (String | null | void);
+  b?: (Int | null | void);
+  c?: (Fraction | null | void);
+}"
+`;
+
+exports[`stringifyInputTypes.gql NullableList 1`] = `
+"interface NullableList {
+  a?: ((String | null | void)[] | null | void);
+  b?: ((Int | null | void)[] | null | void);
+  c?: ((Fraction | null | void)[] | null | void);
+}"
+`;
+
+exports[`stringifyInputTypes.gql NullableListOfMandatory 1`] = `
+"interface NullableListOfMandatory {
+  a?: (String[] | null | void);
+  b?: (Int[] | null | void);
+  c?: (Fraction[] | null | void);
+}"
+`;
+
+exports[`stringifyInputTypes.gql all 1`] = `
+"interface Mandatory {
+  a: String;
+  b: Int;
+  c: Fraction;
+}
+
+interface MandatoryList {
+  a: String[];
+  b: Int[];
+  c: Fraction[];
+}
+
+interface Nullable {
+  a?: (String | null | void);
+  b?: (Int | null | void);
+  c?: (Fraction | null | void);
+}
+
+interface NullableListOfMandatory {
+  a?: (String[] | null | void);
+  b?: (Int[] | null | void);
+  c?: (Fraction[] | null | void);
+}
+
+interface MandatoryListOfNullable {
+  a: (String | null | void)[];
+  b: (Int | null | void)[];
+  c: (Fraction | null | void)[];
+}
+
+interface NullableList {
+  a?: ((String | null | void)[] | null | void);
+  b?: ((Int | null | void)[] | null | void);
+  c?: ((Fraction | null | void)[] | null | void);
+}
+
+interface List2D {
+  a: String[][];
+  b: Int[][];
+  c: Fraction[][];
+}
+
+interface Fraction {
+  numerator: Int;
+  denominator: Int;
+}"
+`;

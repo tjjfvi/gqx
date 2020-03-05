@@ -1,0 +1,1150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it works 1`] = `
+Object {
+  "enumTypes": Array [
+    1,
+    1,
+    1,
+    26,
+  ],
+  "inputTypes": Array [
+    4,
+    1,
+    2,
+    2,
+  ],
+  "objectTypes": Array [
+    4,
+    1,
+    2,
+    2,
+  ],
+}
+`;
+
+exports[`it works 2`] = `
+Object {
+  "baseTypes": Array [],
+  "config": Object {},
+  "enumTypes": Object {
+    "ExtendedEnum": Array [
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 668,
+          "start": 659,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 668,
+            "start": 659,
+          },
+          "value": "FirstPost",
+        },
+      },
+    ],
+    "ManyEnum": Array [
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 814,
+          "start": 813,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 814,
+            "start": 813,
+          },
+          "value": "A",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 816,
+          "start": 815,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 816,
+            "start": 815,
+          },
+          "value": "B",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 818,
+          "start": 817,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 818,
+            "start": 817,
+          },
+          "value": "C",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 820,
+          "start": 819,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 820,
+            "start": 819,
+          },
+          "value": "D",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 822,
+          "start": 821,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 822,
+            "start": 821,
+          },
+          "value": "E",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 824,
+          "start": 823,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 824,
+            "start": 823,
+          },
+          "value": "F",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 826,
+          "start": 825,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 826,
+            "start": 825,
+          },
+          "value": "G",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 828,
+          "start": 827,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 828,
+            "start": 827,
+          },
+          "value": "H",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 830,
+          "start": 829,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 830,
+            "start": 829,
+          },
+          "value": "I",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 832,
+          "start": 831,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 832,
+            "start": 831,
+          },
+          "value": "J",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 834,
+          "start": 833,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 834,
+            "start": 833,
+          },
+          "value": "K",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 836,
+          "start": 835,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 836,
+            "start": 835,
+          },
+          "value": "L",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 838,
+          "start": 837,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 838,
+            "start": 837,
+          },
+          "value": "M",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 840,
+          "start": 839,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 840,
+            "start": 839,
+          },
+          "value": "N",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 842,
+          "start": 841,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 842,
+            "start": 841,
+          },
+          "value": "O",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 844,
+          "start": 843,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 844,
+            "start": 843,
+          },
+          "value": "P",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 846,
+          "start": 845,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 846,
+            "start": 845,
+          },
+          "value": "Q",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 848,
+          "start": 847,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 848,
+            "start": 847,
+          },
+          "value": "R",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 850,
+          "start": 849,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 850,
+            "start": 849,
+          },
+          "value": "S",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 852,
+          "start": 851,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 852,
+            "start": 851,
+          },
+          "value": "T",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 854,
+          "start": 853,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 854,
+            "start": 853,
+          },
+          "value": "U",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 856,
+          "start": 855,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 856,
+            "start": 855,
+          },
+          "value": "V",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 858,
+          "start": 857,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 858,
+            "start": 857,
+          },
+          "value": "W",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 860,
+          "start": 859,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 860,
+            "start": 859,
+          },
+          "value": "X",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 862,
+          "start": 861,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 862,
+            "start": 861,
+          },
+          "value": "Y",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 864,
+          "start": 863,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 864,
+            "start": 863,
+          },
+          "value": "Z",
+        },
+      },
+    ],
+    "PreextendedEnum": Array [
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 793,
+          "start": 785,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 793,
+            "start": 785,
+          },
+          "value": "FirstPre",
+        },
+      },
+    ],
+    "UnextendedEnum": Array [
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 633,
+          "start": 629,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 633,
+            "start": 629,
+          },
+          "value": "Only",
+        },
+      },
+    ],
+  },
+  "exports": Array [],
+  "inputTypes": Object {
+    "ExtendedInput": Array [
+      Object {
+        "defaultValue": undefined,
+        "description": undefined,
+        "directives": Array [],
+        "kind": "InputValueDefinition",
+        "loc": Object {
+          "end": 150,
+          "start": 133,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 142,
+            "start": 133,
+          },
+          "value": "firstPost",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 150,
+            "start": 144,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 150,
+              "start": 144,
+            },
+            "value": "String",
+          },
+        },
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": undefined,
+        "directives": Array [],
+        "kind": "InputValueDefinition",
+        "loc": Object {
+          "end": 200,
+          "start": 185,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 195,
+            "start": 185,
+          },
+          "value": "secondPost",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 200,
+            "start": 197,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 200,
+              "start": 197,
+            },
+            "value": "Int",
+          },
+        },
+      },
+    ],
+    "ManyInput": Array [
+      Object {
+        "defaultValue": undefined,
+        "description": undefined,
+        "directives": Array [],
+        "kind": "InputValueDefinition",
+        "loc": Object {
+          "end": 30,
+          "start": 21,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 22,
+            "start": 21,
+          },
+          "value": "a",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 30,
+            "start": 24,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 30,
+              "start": 24,
+            },
+            "value": "String",
+          },
+        },
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": undefined,
+        "directives": Array [],
+        "kind": "InputValueDefinition",
+        "loc": Object {
+          "end": 39,
+          "start": 33,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 34,
+            "start": 33,
+          },
+          "value": "b",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 39,
+            "start": 36,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 39,
+              "start": 36,
+            },
+            "value": "Int",
+          },
+        },
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": undefined,
+        "directives": Array [],
+        "kind": "InputValueDefinition",
+        "loc": Object {
+          "end": 50,
+          "start": 42,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 43,
+            "start": 42,
+          },
+          "value": "c",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 50,
+            "start": 45,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 50,
+              "start": 45,
+            },
+            "value": "Float",
+          },
+        },
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": undefined,
+        "directives": Array [],
+        "kind": "InputValueDefinition",
+        "loc": Object {
+          "end": 63,
+          "start": 53,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 54,
+            "start": 53,
+          },
+          "value": "d",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 63,
+            "start": 56,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 63,
+              "start": 56,
+            },
+            "value": "Boolean",
+          },
+        },
+      },
+    ],
+    "PreextendedInput": Array [
+      Object {
+        "defaultValue": undefined,
+        "description": undefined,
+        "directives": Array [],
+        "kind": "InputValueDefinition",
+        "loc": Object {
+          "end": 252,
+          "start": 238,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 247,
+            "start": 238,
+          },
+          "value": "secondPre",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 252,
+            "start": 249,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 252,
+              "start": 249,
+            },
+            "value": "Int",
+          },
+        },
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": undefined,
+        "directives": Array [],
+        "kind": "InputValueDefinition",
+        "loc": Object {
+          "end": 299,
+          "start": 283,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 291,
+            "start": 283,
+          },
+          "value": "firstPre",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 299,
+            "start": 293,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 299,
+              "start": 293,
+            },
+            "value": "String",
+          },
+        },
+      },
+    ],
+    "UnextendedInput": Array [
+      Object {
+        "defaultValue": undefined,
+        "description": undefined,
+        "directives": Array [],
+        "kind": "InputValueDefinition",
+        "loc": Object {
+          "end": 105,
+          "start": 93,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 97,
+            "start": 93,
+          },
+          "value": "only",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 105,
+            "start": 99,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 105,
+              "start": 99,
+            },
+            "value": "String",
+          },
+        },
+      },
+    ],
+  },
+  "objectTypes": Object {
+    "ExtendedObject": Array [
+      Object {
+        "arguments": Array [],
+        "description": undefined,
+        "directives": Array [],
+        "kind": "FieldDefinition",
+        "loc": Object {
+          "end": 452,
+          "start": 435,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 444,
+            "start": 435,
+          },
+          "value": "firstPost",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 452,
+            "start": 446,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 452,
+              "start": 446,
+            },
+            "value": "String",
+          },
+        },
+      },
+      Object {
+        "arguments": Array [],
+        "description": undefined,
+        "directives": Array [],
+        "kind": "FieldDefinition",
+        "loc": Object {
+          "end": 502,
+          "start": 487,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 497,
+            "start": 487,
+          },
+          "value": "secondPost",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 502,
+            "start": 499,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 502,
+              "start": 499,
+            },
+            "value": "Int",
+          },
+        },
+      },
+    ],
+    "ManyObject": Array [
+      Object {
+        "arguments": Array [],
+        "description": undefined,
+        "directives": Array [],
+        "kind": "FieldDefinition",
+        "loc": Object {
+          "end": 332,
+          "start": 323,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 324,
+            "start": 323,
+          },
+          "value": "a",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 332,
+            "start": 326,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 332,
+              "start": 326,
+            },
+            "value": "String",
+          },
+        },
+      },
+      Object {
+        "arguments": Array [],
+        "description": undefined,
+        "directives": Array [],
+        "kind": "FieldDefinition",
+        "loc": Object {
+          "end": 341,
+          "start": 335,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 336,
+            "start": 335,
+          },
+          "value": "b",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 341,
+            "start": 338,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 341,
+              "start": 338,
+            },
+            "value": "Int",
+          },
+        },
+      },
+      Object {
+        "arguments": Array [],
+        "description": undefined,
+        "directives": Array [],
+        "kind": "FieldDefinition",
+        "loc": Object {
+          "end": 352,
+          "start": 344,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 345,
+            "start": 344,
+          },
+          "value": "c",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 352,
+            "start": 347,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 352,
+              "start": 347,
+            },
+            "value": "Float",
+          },
+        },
+      },
+      Object {
+        "arguments": Array [],
+        "description": undefined,
+        "directives": Array [],
+        "kind": "FieldDefinition",
+        "loc": Object {
+          "end": 365,
+          "start": 355,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 356,
+            "start": 355,
+          },
+          "value": "d",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 365,
+            "start": 358,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 365,
+              "start": 358,
+            },
+            "value": "Boolean",
+          },
+        },
+      },
+    ],
+    "PreextendedObject": Array [
+      Object {
+        "arguments": Array [],
+        "description": undefined,
+        "directives": Array [],
+        "kind": "FieldDefinition",
+        "loc": Object {
+          "end": 554,
+          "start": 540,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 549,
+            "start": 540,
+          },
+          "value": "secondPre",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 554,
+            "start": 551,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 554,
+              "start": 551,
+            },
+            "value": "Int",
+          },
+        },
+      },
+      Object {
+        "arguments": Array [],
+        "description": undefined,
+        "directives": Array [],
+        "kind": "FieldDefinition",
+        "loc": Object {
+          "end": 601,
+          "start": 585,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 593,
+            "start": 585,
+          },
+          "value": "firstPre",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 601,
+            "start": 595,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 601,
+              "start": 595,
+            },
+            "value": "String",
+          },
+        },
+      },
+    ],
+    "UnextendedObject": Array [
+      Object {
+        "arguments": Array [],
+        "description": undefined,
+        "directives": Array [],
+        "kind": "FieldDefinition",
+        "loc": Object {
+          "end": 407,
+          "start": 395,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 399,
+            "start": 395,
+          },
+          "value": "only",
+        },
+        "type": Object {
+          "kind": "NamedType",
+          "loc": Object {
+            "end": 407,
+            "start": 401,
+          },
+          "name": Object {
+            "kind": "Name",
+            "loc": Object {
+              "end": 407,
+              "start": 401,
+            },
+            "value": "String",
+          },
+        },
+      },
+    ],
+  },
+  "operations": Array [],
+}
+`;

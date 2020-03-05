@@ -1,0 +1,51 @@
+
+input Mandatory {
+  a: String!
+  b: Int!
+  c: Fraction!
+}
+
+input MandatoryList {
+  a: [String!]!
+  b: [Int!]!
+  c: [Fraction!]!
+}
+
+input Nullable {
+  a: String
+  b: Int
+  c: Fraction
+}
+
+input NullableListOfMandatory {
+  a: [String!]
+  b: [Int!]
+  c: [Fraction!]
+}
+
+input MandatoryListOfNullable {
+  a: [String]!
+  b: [Int]!
+  c: [Fraction]!
+}
+
+input NullableList {
+  a: [String]
+  b: [Int]
+  c: [Fraction]
+}
+
+input List2D {
+  a: [[String!]!]!
+  b: [[Int!]!]!
+  c: [[Fraction!]!]!
+}
+
+extend type Mandatory {
+  extra: Boolean!
+}
+
+input Fraction {
+  numerator: Int!
+  denominator: Int!
+}

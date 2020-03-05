@@ -1,0 +1,8 @@
+
+enum ABC { A B C }
+enum OnlyOneOption { JustThis }
+enum Letter { A B C D E F G H I J K L M N O P Q R S T U V W X Y Z }
+enum AlphaNum { C1 P2 P3 C4 P5 C6 P7 C8 C9 C10 }
+enum Underscores { _ __ ___ ____ _____ }
+
+extend enum OnlyOneOption { OopsThisToo }
