@@ -1,8 +1,8 @@
 {
-  "name": "gqx",
+  "name": "@gqx/core",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "dependencies": {
     "commander": "^4.1.1",
     "graphql": "^14.6.0",
@@ -25,12 +25,16 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean; tsc",
+    "prepack": "npm run build",
+    "postpack": "npm run clean",
     "index": "create-index -u src/ -x ts -X ts -S",
     "sample": "ts-node ./bin/gqx.ts -s sample.gql -t template.ts -o output.ts",
     "test": "jest"
   },
   "bin": {
-    "gqx": "./bin/gqx.sh"
+    "gqx": "./dist/bin/gqx.js"
   },
   "author": "",
   "license": "ISC"
