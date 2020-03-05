@@ -39,8 +39,8 @@ type $$MapWrap<O, F> = {
 
 const $$mapWrap = <O, F>(o: () => O, f: F): $$MapWrap<O, F> =>
   // @ts-ignore
-  new Proxy(() => {}, {
-    get: (t, k: string) => t["$" + k] || (t["$" + k] =
+  new Proxy(Object.create(null), {
+    get: (t, k: string) => t[k] || (t[k] =
       k !== "$" ?
         o()[k].$ ?
           $$mapWrap(() => o()[k], f) :
