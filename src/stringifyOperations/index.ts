@@ -2,7 +2,7 @@
 import { Context } from "..";
 import unwrapType from "../unwrapType";
 import { InputValueDefinitionNode } from "graphql";
-import stringifyIds from "./stringifyIds"
+import stringifyProps from "./stringifyProps"
 import stringifyInputTypes from "./stringifyInputTypes";
 import stringifyFragTypes from "./stringifyFragTypes";
 import stringifyOutputTypes from "./stringifyOutputTypes";
@@ -60,7 +60,7 @@ export default (ctx: Context) => {
       })
 
   return [
-    stringifyIds(ids),
+    stringifyProps(objs),
     stringifyInputTypes(objs),
     stringifyFragTypes(objs, ctx),
     stringifyOutputTypes(objs, ctx),

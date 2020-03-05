@@ -10,8 +10,8 @@ import stringifyEnumTypes from "./stringifyEnumTypes";
 import stringifyInputTypes from "./stringifyInputTypes";
 import stringifyObjectTypes from "./stringifyObjectTypes";
 import stringifyExports from "./stringifyExports";
-import boilerplate from "./boilerplate";
 import stringifyOperations from "./stringifyOperations";
+import stringifyBoilerplate from "./stringifyBoilerplate";
 
 interface Context {
   exports: string[];
@@ -52,7 +52,7 @@ export default ({ schema, template }: { schema: string; template: string }) => {
   });
 
   const code = [
-    boilerplate,
+    stringifyBoilerplate(),
     stringifyEnumTypes(ctx),
     stringifyInputTypes(ctx),
     stringifyObjectTypes(ctx),

@@ -3,16 +3,21 @@
 
 const _gqx = <I>(id: I) => <T extends $$Frag.$<I>[]>(input: $$Input.$<I>, frag: T): $$Output.$<I, T> => (null as any);
 
- /* eslint-disable */
-
 type Int = number;
 type Float = number;
 type String = string;
 type ID = string;
 type Boolean = boolean;
 
-interface $<F, L> { f: F, l: L }
+interface $<F, L> { f: F; l: L }
 const $$ = <F, L>(f: F, l: L) => ({ f, l });
+
+interface $$OperationId {
+  typeProp: string;
+  type: string;
+  prop: string;
+  inputTypes: { [x: string]: string };
+}
 
 const __wrap__ = Symbol();
 
@@ -31,13 +36,44 @@ type $$MapWrap<O, F> = {
 const $$mapWrap = <O, F>(o: () => O, f: F): $$MapWrap<O, F> =>
   // @ts-ignore
   new Proxy(() => {}, {
-    get: (t, k) => t[k] || (t[k] =
+    get: (t, k: string) => t["$" + k] || (t["$" + k] =
       k !== "$" ?
-        $$(f, o()[k]) :
+        o()[k].$ ?
+          $$mapWrap(() => o()[k], f) :
+          $$(f, o()[k]) :
         // @ts-ignore
         (...a: any) => ("$" in o() ? o().$(a) : a).map((a: any) => $$(f, a))
     ),
   })
+
+const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, props: $$Frag.$<I>[]) => {
+  interface Subs { [k: string]: true | Subs }
+  const subs: Subs = {};
+  props.map(prop => populateSubs(prop, subs));
+  const frag = genFrag(subs);
+  const inputKeys = Object.keys(input);
+  const inputDef = inputKeys.length ? `(${inputKeys.map(k =>
+    `$${k}: ${id.inputTypes[k]}`
+  ).join(", ")})` : "";
+  const inputPass = inputKeys.length ? `(${inputKeys.map(k =>
+    `${k}: $${k}`
+  )})` : "";
+  const request = `${id.typeProp}${inputDef} { ${id.prop}${inputPass}${frag} }`;
+  return request;
+
+  function genFrag(subs: Subs){
+    return `{ ${Object.entries(subs).map(([k, v]) => v === true ? k : k + " " + genFrag(v)).join(" ")} }`;
+  }
+
+  function populateSubs(prop: $_, subs: Subs | true){
+    if(subs === true)
+      return;
+    if("prop" in prop)
+      subs[prop.prop] = true;
+    else
+      populateSubs(prop.l, subs[prop.f.prop] = (subs[prop.f.prop] || {}));
+  }
+}
 
 type Category =
   | "Horror"
@@ -68,15 +104,15 @@ interface AuthorFilter {
   name?: (String | null | void);
 }
 
-class Author$id { declare private __nominal__: any; }
-class Author$name { declare private __nominal__: any; }
-class Author$books { declare private __nominal__: any; }
-class Author$favoriteBook { declare private __nominal__: any; }
-class Book$id { declare private __nominal__: any; }
-class Book$author { declare private __nominal__: any; }
-class Book$title { declare private __nominal__: any; }
-class Book$description { declare private __nominal__: any; }
-class Book$categories { declare private __nominal__: any; }
+class Author$id { private static _: any; static type = "Author"; static prop = "id"; }
+class Author$name { private static _: any; static type = "Author"; static prop = "name"; }
+class Author$books { private static _: any; static type = "Author"; static prop = "books"; }
+class Author$favoriteBook { private static _: any; static type = "Author"; static prop = "favoriteBook"; }
+class Book$id { private static _: any; static type = "Book"; static prop = "id"; }
+class Book$author { private static _: any; static type = "Book"; static prop = "author"; }
+class Book$title { private static _: any; static type = "Book"; static prop = "title"; }
+class Book$description { private static _: any; static type = "Book"; static prop = "description"; }
+class Book$categories { private static _: any; static type = "Book"; static prop = "categories"; }
 
 type Author$ =
   | typeof Author$id
@@ -138,9 +174,36 @@ type _$Book<F extends Book$> =
   & ($<typeof Book$author, any> extends F ? { author: _$Author<Extract<F, $<typeof Book$author, Author$>>["l"]> } : {})
 type $Book<F extends Book$[]> = _$Book<F[number]>;
 
-class Query$getAuthor { declare private __nominal__: any; }
-class Query$getBook { declare private __nominal__: any; }
-class Query$listBooks { declare private __nominal__: any; }
+class Query$getAuthor {
+  private static _: any;
+  static typeProp = "query";
+  static type = "Query";
+  static prop = "getAuthor";
+  static inputTypes = {
+    id: "ID!",
+  };
+}
+
+class Query$getBook {
+  private static _: any;
+  static typeProp = "query";
+  static type = "Query";
+  static prop = "getBook";
+  static inputTypes = {
+    id: "ID!",
+  };
+}
+
+class Query$listBooks {
+  private static _: any;
+  static typeProp = "query";
+  static type = "Query";
+  static prop = "listBooks";
+  static inputTypes = {
+    cursor: "Cursor",
+    filter: "BookFilter",
+  };
+}
 
 export namespace $$Input {
   export namespace Query {
