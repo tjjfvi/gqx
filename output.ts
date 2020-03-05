@@ -126,8 +126,8 @@ const Book: typeof _Book & {
 type $$Author<F extends Author$> =
   & (typeof Author$id extends F ? { id: ID } : {})
   & (typeof Author$name extends F ? { name: String } : {})
-  & { books: $$Book<$$FilterSub<F, typeof Author$books, Book$>>[] }
-  & { favoriteBook: $$Book<$$FilterSub<F, typeof Author$favoriteBook, Book$>> }
+  & ($<typeof Author$books, any> extends F ? { books: $$Book<Extract<F, $<typeof Author$books, Book$>>["l"]>[] } : {})
+  & ($<typeof Author$favoriteBook, any> extends F ? { favoriteBook: $$Book<Extract<F, $<typeof Author$favoriteBook, Book$>>["l"]> } : {})
 type $Author<F extends Author$[]> = $$Author<F[number]>;
 
 type $$Book<F extends Book$> =
@@ -135,7 +135,7 @@ type $$Book<F extends Book$> =
   & (typeof Book$description extends F ? { description: String } : {})
   & (typeof Book$id extends F ? { id: ID } : {})
   & (typeof Book$title extends F ? { title: String } : {})
-  & { author: $$Author<$$FilterSub<F, typeof Book$author, Author$>> }
+  & ($<typeof Book$author, any> extends F ? { author: $$Author<Extract<F, $<typeof Book$author, Author$>>["l"]> } : {})
 type $Book<F extends Book$[]> = $$Book<F[number]>;
 
 export {
