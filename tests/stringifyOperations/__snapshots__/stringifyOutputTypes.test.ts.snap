@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+"export namespace $$Output {
+  export namespace Query {
+    export type getAuthor<F extends $$Frag.$<typeof Query$getAuthor>[]> = $Author<F>
+    export type getBook<F extends $$Frag.$<typeof Query$getBook>[]> = $Book<F>
+    export type listBooks<F extends $$Frag.$<typeof Query$listBooks>[]> = $Book<F>[]
+  }
+  export namespace Mutation {
+    export type addReview<F extends $$Frag.$<typeof Mutation$addReview>[]> = $Review<F>
+  }
+  export type $<T, F extends $$Frag.$<T>[]> =
+    F extends $$Frag.$<typeof Query$getAuthor>[] ? Query.getAuthor<F> :
+    F extends $$Frag.$<typeof Query$getBook>[] ? Query.getBook<F> :
+    F extends $$Frag.$<typeof Query$listBooks>[] ? Query.listBooks<F> :
+    F extends $$Frag.$<typeof Mutation$addReview>[] ? Mutation.addReview<F> :
+    never
+}"
+`;

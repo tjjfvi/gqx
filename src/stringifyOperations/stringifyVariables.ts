@@ -3,7 +3,7 @@ import { Context, Obj } from "."
 import stringifyId from "./stringifyId";
 
 export default (objs: Obj[], ctx: Context) =>
-  Object.entries(ctx.config.vars).map(([k, v]) => {
+  Object.entries(ctx.config.vars || {}).map(([k, v]) => {
     if(!(v instanceof Array))
       throw new Error("config.vars[string] must be an array");
     let [f, e = true] = v;

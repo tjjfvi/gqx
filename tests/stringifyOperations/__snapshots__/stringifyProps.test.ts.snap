@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+"class Query$getAuthor {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"getAuthor\\";
+  static inputTypes = {
+    id: \\"ID!\\",
+  };
+}
+
+class Query$getBook {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"getBook\\";
+  static inputTypes = {
+    id: \\"ID!\\",
+  };
+}
+
+class Query$listBooks {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"listBooks\\";
+  static inputTypes = {
+    cursor: \\"Cursor\\",
+    filter: \\"BookFilter\\",
+  };
+}
+
+class Mutation$addReview {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"addReview\\";
+  static inputTypes = {
+    input: \\"ReviewInput!\\",
+  };
+}
+
+"
+`;

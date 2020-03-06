@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+Array [
+  Object {
+    "n": "Query",
+    "p": 3,
+  },
+  Object {
+    "n": "Mutation",
+    "p": 1,
+  },
+]
+`;
+
+exports[` 2`] = `
+Array [
+  Object {
+    "prop": "query",
+    "props": Array [
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 82,
+              "start": 75,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 77,
+                "start": 75,
+              },
+              "value": "id",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 82,
+                "start": 79,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 81,
+                  "start": 79,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 81,
+                    "start": 79,
+                  },
+                  "value": "ID",
+                },
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "getAuthor",
+          "type": "Query",
+        },
+        "type": "Author",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 110,
+              "start": 103,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 105,
+                "start": 103,
+              },
+              "value": "id",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 110,
+                "start": 107,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 109,
+                  "start": 107,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 109,
+                    "start": 107,
+                  },
+                  "value": "ID",
+                },
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "getBook",
+          "type": "Query",
+        },
+        "type": "Book",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 145,
+              "start": 131,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 137,
+                "start": 131,
+              },
+              "value": "cursor",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 145,
+                "start": 139,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 145,
+                  "start": 139,
+                },
+                "value": "Cursor",
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 165,
+              "start": 147,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 153,
+                "start": 147,
+              },
+              "value": "filter",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 165,
+                "start": 155,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 165,
+                  "start": 155,
+                },
+                "value": "BookFilter",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "listBooks",
+          "type": "Query",
+        },
+        "type": "Book",
+        "wrap": [Function],
+      },
+    ],
+    "type": "Query",
+  },
+  Object {
+    "prop": "mutation",
+    "props": Array [
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 227,
+              "start": 208,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 213,
+                "start": 208,
+              },
+              "value": "input",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 227,
+                "start": 215,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 226,
+                  "start": 215,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 226,
+                    "start": 215,
+                  },
+                  "value": "ReviewInput",
+                },
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "addReview",
+          "type": "Mutation",
+        },
+        "type": "Review",
+        "wrap": [Function],
+      },
+    ],
+    "type": "Mutation",
+  },
+]
+`;

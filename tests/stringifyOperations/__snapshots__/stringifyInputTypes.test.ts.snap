@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+"export namespace $$Input {
+  export namespace Query {
+    export interface getAuthor {
+      id: ID;
+    }
+    export interface getBook {
+      id: ID;
+    }
+    export interface listBooks {
+      cursor?: (Cursor | null | void);
+      filter?: (BookFilter | null | void);
+    }
+  }
+  export namespace Mutation {
+    export interface addReview {
+      input: ReviewInput;
+    }
+  }
+  export type $<T> =
+    T extends typeof Query$getAuthor ? Query.getAuthor :
+    T extends typeof Query$getBook ? Query.getBook :
+    T extends typeof Query$listBooks ? Query.listBooks :
+    T extends typeof Mutation$addReview ? Mutation.addReview :
+    never
+}"
+`;

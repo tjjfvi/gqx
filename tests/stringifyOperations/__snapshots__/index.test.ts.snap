@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+"class Query$getAuthor {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"getAuthor\\";
+  static inputTypes = {
+    id: \\"ID!\\",
+  };
+}
+
+class Query$getBook {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"getBook\\";
+  static inputTypes = {
+    id: \\"ID!\\",
+  };
+}
+
+class Query$listBooks {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"listBooks\\";
+  static inputTypes = {
+    cursor: \\"Cursor\\",
+    filter: \\"BookFilter\\",
+  };
+}
+
+class Mutation$addReview {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"addReview\\";
+  static inputTypes = {
+    input: \\"ReviewInput!\\",
+  };
+}
+
+
+
+export namespace $$Input {
+  export namespace Query {
+    export interface getAuthor {
+      id: ID;
+    }
+    export interface getBook {
+      id: ID;
+    }
+    export interface listBooks {
+      cursor?: (Cursor | null | void);
+      filter?: (BookFilter | null | void);
+    }
+  }
+  export namespace Mutation {
+    export interface addReview {
+      input: ReviewInput;
+    }
+  }
+  export type $<T> =
+    T extends typeof Query$getAuthor ? Query.getAuthor :
+    T extends typeof Query$getBook ? Query.getBook :
+    T extends typeof Query$listBooks ? Query.listBooks :
+    T extends typeof Mutation$addReview ? Mutation.addReview :
+    never
+}
+
+export namespace $$Frag {
+  export namespace Query {
+    export type getAuthor = Author$;
+    export type getBook = Book$;
+    export type listBooks = Book$;
+  }
+  export namespace Mutation {
+    export type addReview = Review$;
+  }
+  export type $<T> =
+    T extends typeof Query$getAuthor ? Query.getAuthor :
+    T extends typeof Query$getBook ? Query.getBook :
+    T extends typeof Query$listBooks ? Query.listBooks :
+    T extends typeof Mutation$addReview ? Mutation.addReview :
+    never
+}
+
+export namespace $$Output {
+  export namespace Query {
+    export type getAuthor<F extends $$Frag.$<typeof Query$getAuthor>[]> = $Author<F>
+    export type getBook<F extends $$Frag.$<typeof Query$getBook>[]> = $Book<F>
+    export type listBooks<F extends $$Frag.$<typeof Query$listBooks>[]> = $Book<F>[]
+  }
+  export namespace Mutation {
+    export type addReview<F extends $$Frag.$<typeof Mutation$addReview>[]> = $Review<F>
+  }
+  export type $<T, F extends $$Frag.$<T>[]> =
+    F extends $$Frag.$<typeof Query$getAuthor>[] ? Query.getAuthor<F> :
+    F extends $$Frag.$<typeof Query$getBook>[] ? Query.getBook<F> :
+    F extends $$Frag.$<typeof Query$listBooks>[] ? Query.listBooks<F> :
+    F extends $$Frag.$<typeof Mutation$addReview>[] ? Mutation.addReview<F> :
+    never
+}
+
+"
+`;

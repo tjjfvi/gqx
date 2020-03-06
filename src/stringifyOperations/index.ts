@@ -1,12 +1,12 @@
 
 import { Context } from "..";
-import unwrapType from "../unwrapType";
 import { InputValueDefinitionNode } from "graphql";
 import stringifyProps from "./stringifyProps"
 import stringifyInputTypes from "./stringifyInputTypes";
 import stringifyFragTypes from "./stringifyFragTypes";
 import stringifyOutputTypes from "./stringifyOutputTypes";
 import stringifyVariables from "./stringifyVariables";
+import generateObjs from "./generateObjs";
 
 
 interface Id {
@@ -30,34 +30,7 @@ interface Obj {
 export { Id, Prop, Obj, Context };
 
 export default (ctx: Context) => {
-  const ids: Id[] = [];
-
-  const objs: Obj[] =
-    ctx.operations
-      .map(([prop, name]) => {
-        const fields = ctx.objectTypes[name];
-        const props = fields.map(field => {
-          const id: Id = {
-            type: name,
-            prop: field.name.value,
-          };
-          ids.push(id);
-          const [{ name: { value: typeName } }, wrap] = unwrapType(field.type);
-          let prop: Prop = {
-            id,
-            type: typeName,
-            wrap,
-            args: field.arguments.slice(),
-          };
-          return prop;
-        }).sort((p, q) => p.id.prop > q.id.prop ? 1 : -1);
-        const obj: Obj = {
-          type: name,
-          prop,
-          props,
-        };
-        return obj;
-      })
+  const [objs] = generateObjs(ctx);
 
   return [
     stringifyProps(objs),

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`empty 1`] = `""`;
+
+exports[`one 1`] = `
+"const gqx = {
+  query: {
+    getAuthor: _gqx<typeof Query$getAuthor>(Query$getAuthor),
+    getBook: _gqx<typeof Query$getBook>(Query$getBook),
+    listBooks: _gqx<typeof Query$listBooks>(Query$listBooks),
+  },
+  mutation: {
+    addReview: _gqx<typeof Mutation$addReview>(Mutation$addReview),
+  },
+}"
+`;
+
+exports[`two 1`] = `
+"const gqx1 = {
+  query: {
+    getAuthor: _gqx1<typeof Query$getAuthor>(Query$getAuthor),
+    getBook: _gqx1<typeof Query$getBook>(Query$getBook),
+    listBooks: _gqx1<typeof Query$listBooks>(Query$listBooks),
+  },
+  mutation: {
+    addReview: _gqx1<typeof Mutation$addReview>(Mutation$addReview),
+  },
+}
+
+const gqx2 = {
+  query: {
+    getAuthor: _gqx2<typeof Query$getAuthor>(Query$getAuthor),
+    getBook: _gqx2<typeof Query$getBook>(Query$getBook),
+    listBooks: _gqx2<typeof Query$listBooks>(Query$listBooks),
+  },
+  mutation: {
+    addReview: _gqx2<typeof Mutation$addReview>(Mutation$addReview),
+  },
+}"
+`;
+
+exports[`undefined 1`] = `""`;

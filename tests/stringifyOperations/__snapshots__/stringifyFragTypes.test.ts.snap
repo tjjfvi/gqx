@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+"export namespace $$Frag {
+  export namespace Query {
+    export type getAuthor = Author$;
+    export type getBook = Book$;
+    export type listBooks = Book$;
+  }
+  export namespace Mutation {
+    export type addReview = Review$;
+  }
+  export type $<T> =
+    T extends typeof Query$getAuthor ? Query.getAuthor :
+    T extends typeof Query$getBook ? Query.getBook :
+    T extends typeof Query$listBooks ? Query.listBooks :
+    T extends typeof Mutation$addReview ? Mutation.addReview :
+    never
+}"
+`;
