@@ -1,7 +1,14 @@
 import { Context } from ".";
-import { DefinitionNode } from "graphql";
+import { DefinitionNode, SchemaDefinitionNode } from "graphql";
 
 export default (ctx: Context, definitions: readonly DefinitionNode[]) => {
+  // @ts-ignore
+  const schemaDef: void | SchemaDefinitionNode = definitions.find(d => d.kind === "SchemaDefinition");
+  const operations: [string, string][] = schemaDef ?
+    schemaDef.operationTypes.map(o => [o.operation, o.type.name.value]) :
+    [];
+  ctx.operations = operations;
+  ctx.baseTypes = operations.map(o => o[1]);
   definitions.map(def => {
     if(def.kind === "InputObjectTypeDefinition" || def.kind === "InputObjectTypeExtension")
       ctx.inputTypes[def.name.value] = (ctx.inputTypes[def.name.value] || []).concat(def.fields);

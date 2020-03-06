@@ -1,7 +1,6 @@
 
 import {
   parse,
-  SchemaDefinitionNode,
   InputValueDefinitionNode,
   FieldDefinitionNode,
   EnumValueDefinitionNode
@@ -12,6 +11,7 @@ import stringifyObjectTypes from "./stringifyObjectTypes";
 import stringifyExports from "./stringifyExports";
 import stringifyOperations from "./stringifyOperations";
 import stringifyBoilerplate from "./stringifyBoilerplate";
+import groupDefinitions from "./groupDefinitions";
 
 interface Context {
   exports: string[];
@@ -29,18 +29,17 @@ export default ({ schema, template }: { schema: string; template: string }) => {
   const ast = parse(schema);
   const config = JSON.parse(template.match(/\/\/ @gqx (.+)/)[1]);
 
-  // @ts-ignore
-  const schemaDef: SchemaDefinitionNode = ast.definitions.find(d => d.kind === "SchemaDefinition");
-  const operations: [string, string][] = schemaDef.operationTypes.map(o => [o.operation, o.type.name.value]);
   const ctx: Context = {
-    operations,
-    baseTypes: operations.map(o => o[1]),
+    operations: [],
+    baseTypes: [],
     enumTypes: {},
     inputTypes: {},
     objectTypes: {},
     exports: [],
     config,
   };
+
+  groupDefinitions(ctx, ast.definitions);
 
   const code = [
     stringifyBoilerplate(),

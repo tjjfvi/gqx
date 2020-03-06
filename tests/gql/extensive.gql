@@ -1,0 +1,107 @@
+
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  getAuthor(id: ID!): Author!
+  getBook(id: ID!): Book!
+  listBooks(cursor: Cursor, filter: BookFilter): [Book!]!
+}
+
+type Mutation {
+  addReview(input: ReviewInput!): Review!
+}
+
+input Cursor {
+  start: Int!
+  limit: Int!
+}
+
+type Book {
+  id: ID!
+  author: Author!
+  title: String!
+  description: String!
+  categories: [Category!]!
+  reviews: [Review!]!
+}
+
+input BookFilter {
+  title: String
+  author: AuthorFilter
+  categories: [Category!]
+}
+
+type Author {
+  id: ID!
+  name: String!
+  books: [Book!]!
+  favoriteBook: Book!
+}
+
+input AuthorFilter {
+  name: String
+}
+
+enum Category {
+  Horror
+  SciFi
+  Fiction
+  Fantasy
+  NonFiction
+  Romance
+  Historical
+  Mystery
+  Childrens
+  Dystopian
+  Utopian
+  Religous
+}
+
+type Review {
+  id: ID!
+  rating: StarRating!
+  book: Book!
+  user: User!
+  title: String
+  details: String
+}
+
+type User {
+  id: ID!
+  author: Author
+  name: String!
+  reviews: [Review!]!
+}
+
+input ReviewInput {
+  rating: StarRating!
+  book: ID!
+  title: String
+  details: String
+}
+
+extend input AuthorFilter {
+  rating: StarRating
+}
+
+extend type Author {
+  rating: StarRating!
+}
+
+extend type Book {
+  rating: StarRating!
+}
+
+extend input BookFilter {
+  rating: StarRating!
+}
+
+extend enum Category {
+  BestSeller
+}
+
+scalar StarRating

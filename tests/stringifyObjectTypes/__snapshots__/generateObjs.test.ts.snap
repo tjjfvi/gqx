@@ -1,0 +1,350 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+Array [
+  Object {
+    "prop": "id",
+    "type": "Author",
+  },
+  Object {
+    "prop": "name",
+    "type": "Author",
+  },
+  Object {
+    "prop": "books",
+    "type": "Author",
+  },
+  Object {
+    "prop": "favoriteBook",
+    "type": "Author",
+  },
+  Object {
+    "prop": "rating",
+    "type": "Author",
+  },
+  Object {
+    "prop": "id",
+    "type": "Book",
+  },
+  Object {
+    "prop": "author",
+    "type": "Book",
+  },
+  Object {
+    "prop": "title",
+    "type": "Book",
+  },
+  Object {
+    "prop": "description",
+    "type": "Book",
+  },
+  Object {
+    "prop": "categories",
+    "type": "Book",
+  },
+  Object {
+    "prop": "reviews",
+    "type": "Book",
+  },
+  Object {
+    "prop": "rating",
+    "type": "Book",
+  },
+  Object {
+    "prop": "id",
+    "type": "Review",
+  },
+  Object {
+    "prop": "rating",
+    "type": "Review",
+  },
+  Object {
+    "prop": "book",
+    "type": "Review",
+  },
+  Object {
+    "prop": "user",
+    "type": "Review",
+  },
+  Object {
+    "prop": "title",
+    "type": "Review",
+  },
+  Object {
+    "prop": "details",
+    "type": "Review",
+  },
+  Object {
+    "prop": "id",
+    "type": "User",
+  },
+  Object {
+    "prop": "author",
+    "type": "User",
+  },
+  Object {
+    "prop": "name",
+    "type": "User",
+  },
+  Object {
+    "prop": "reviews",
+    "type": "User",
+  },
+]
+`;
+
+exports[` 2`] = `
+Array [
+  Object {
+    "d": 2,
+    "n": "Author",
+    "s": 3,
+  },
+  Object {
+    "d": 2,
+    "n": "Book",
+    "s": 5,
+  },
+  Object {
+    "d": 2,
+    "n": "Review",
+    "s": 4,
+  },
+  Object {
+    "d": 2,
+    "n": "User",
+    "s": 2,
+  },
+]
+`;
+
+exports[` 3`] = `
+Array [
+  Object {
+    "deepProps": Array [
+      Object {
+        "id": Object {
+          "prop": "books",
+          "type": "Author",
+        },
+        "shallow": false,
+        "type": "Book",
+        "wrap": [Function],
+      },
+      Object {
+        "id": Object {
+          "prop": "favoriteBook",
+          "type": "Author",
+        },
+        "shallow": false,
+        "type": "Book",
+        "wrap": [Function],
+      },
+    ],
+    "shallowProps": Array [
+      Object {
+        "id": Object {
+          "prop": "id",
+          "type": "Author",
+        },
+        "shallow": true,
+        "type": "ID",
+        "wrap": [Function],
+      },
+      Object {
+        "id": Object {
+          "prop": "name",
+          "type": "Author",
+        },
+        "shallow": true,
+        "type": "String",
+        "wrap": [Function],
+      },
+      Object {
+        "id": Object {
+          "prop": "rating",
+          "type": "Author",
+        },
+        "shallow": true,
+        "type": "StarRating",
+        "wrap": [Function],
+      },
+    ],
+    "type": "Author",
+  },
+  Object {
+    "deepProps": Array [
+      Object {
+        "id": Object {
+          "prop": "author",
+          "type": "Book",
+        },
+        "shallow": false,
+        "type": "Author",
+        "wrap": [Function],
+      },
+      Object {
+        "id": Object {
+          "prop": "reviews",
+          "type": "Book",
+        },
+        "shallow": false,
+        "type": "Review",
+        "wrap": [Function],
+      },
+    ],
+    "shallowProps": Array [
+      Object {
+        "id": Object {
+          "prop": "categories",
+          "type": "Book",
+        },
+        "shallow": true,
+        "type": "Category",
+        "wrap": [Function],
+      },
+      Object {
+        "id": Object {
+          "prop": "description",
+          "type": "Book",
+        },
+        "shallow": true,
+        "type": "String",
+        "wrap": [Function],
+      },
+      Object {
+        "id": Object {
+          "prop": "id",
+          "type": "Book",
+        },
+        "shallow": true,
+        "type": "ID",
+        "wrap": [Function],
+      },
+      Object {
+        "id": Object {
+          "prop": "rating",
+          "type": "Book",
+        },
+        "shallow": true,
+        "type": "StarRating",
+        "wrap": [Function],
+      },
+      Object {
+        "id": Object {
+          "prop": "title",
+          "type": "Book",
+        },
+        "shallow": true,
+        "type": "String",
+        "wrap": [Function],
+      },
+    ],
+    "type": "Book",
+  },
+  Object {
+    "deepProps": Array [
+      Object {
+        "id": Object {
+          "prop": "book",
+          "type": "Review",
+        },
+        "shallow": false,
+        "type": "Book",
+        "wrap": [Function],
+      },
+      Object {
+        "id": Object {
+          "prop": "user",
+          "type": "Review",
+        },
+        "shallow": false,
+        "type": "User",
+        "wrap": [Function],
+      },
+    ],
+    "shallowProps": Array [
+      Object {
+        "id": Object {
+          "prop": "details",
+          "type": "Review",
+        },
+        "shallow": true,
+        "type": "String",
+        "wrap": [Function],
+      },
+      Object {
+        "id": Object {
+          "prop": "id",
+          "type": "Review",
+        },
+        "shallow": true,
+        "type": "ID",
+        "wrap": [Function],
+      },
+      Object {
+        "id": Object {
+          "prop": "rating",
+          "type": "Review",
+        },
+        "shallow": true,
+        "type": "StarRating",
+        "wrap": [Function],
+      },
+      Object {
+        "id": Object {
+          "prop": "title",
+          "type": "Review",
+        },
+        "shallow": true,
+        "type": "String",
+        "wrap": [Function],
+      },
+    ],
+    "type": "Review",
+  },
+  Object {
+    "deepProps": Array [
+      Object {
+        "id": Object {
+          "prop": "author",
+          "type": "User",
+        },
+        "shallow": false,
+        "type": "Author",
+        "wrap": [Function],
+      },
+      Object {
+        "id": Object {
+          "prop": "reviews",
+          "type": "User",
+        },
+        "shallow": false,
+        "type": "Review",
+        "wrap": [Function],
+      },
+    ],
+    "shallowProps": Array [
+      Object {
+        "id": Object {
+          "prop": "id",
+          "type": "User",
+        },
+        "shallow": true,
+        "type": "ID",
+        "wrap": [Function],
+      },
+      Object {
+        "id": Object {
+          "prop": "name",
+          "type": "User",
+        },
+        "shallow": true,
+        "type": "String",
+        "wrap": [Function],
+      },
+    ],
+    "type": "User",
+  },
+]
+`;
