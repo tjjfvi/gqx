@@ -17,7 +17,7 @@ const emptyCtx = (): Context => ({
   inputTypes: {},
   objectTypes: {},
   operations: [],
-  config: {},
+  config: { vars: {}, types: {} },
 });
 
 const getOperations = (names: string[], ctx = emptyCtx()) => {

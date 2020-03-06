@@ -26,7 +26,10 @@ Object {
 exports[` 2`] = `
 Object {
   "baseTypes": Array [],
-  "config": Object {},
+  "config": Object {
+    "types": Object {},
+    "vars": Object {},
+  },
   "enumTypes": Object {
     "ExtendedEnum": Array [
       Object {

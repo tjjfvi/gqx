@@ -12,6 +12,7 @@ import stringifyExports from "./stringifyExports";
 import stringifyOperations from "./stringifyOperations";
 import stringifyBoilerplate from "./stringifyBoilerplate";
 import groupDefinitions from "./groupDefinitions";
+import loadConfig, { Config } from "./loadConfig";
 
 interface Context {
   exports: string[];
@@ -20,14 +21,13 @@ interface Context {
   objectTypes: { [k: string]: FieldDefinitionNode[] };
   operations: [string, string][];
   baseTypes: string[];
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  config: any;
+  config: Config;
 }
 
 export default ({ schema, template }: { schema: string; template: string }) => {
 
   const ast = parse(schema);
-  const config = JSON.parse(template.match(/\/\/ @gqx (.+)/)[1]);
+  const [config, wrapper] = loadConfig(template);
 
   const ctx: Context = {
     operations: [],
@@ -50,7 +50,7 @@ export default ({ schema, template }: { schema: string; template: string }) => {
     stringifyExports(ctx),
   ].join("\n\n").replace(/\n\n\n+/g, "\n\n");
 
-  return template.replace(/\/\/ @gqx .+/, () => code).replace(/^\/\/ @ts-nocheck/, "");
+  return wrapper(code);
 
 }
 
