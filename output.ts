@@ -2,6 +2,7 @@
 /* eslint-disable */
 
 const _gqx = <I>(id: I) => <T extends $$Frag.$<I>[]>(input: $$Input.$<I>, frag: T): $$Output.$<I, T> => (null as any);
+type _Gqx<I> = $$Frag.$<I>[];
 
 type Int = number;
 type Float = number;
@@ -259,11 +260,25 @@ const gqx = {
   },
 }
 
+export namespace Gqx {
+  export namespace Query {
+    export type getAuthor = _Gqx<Query$getAuthor>;
+    export type getBook = _Gqx<Query$getBook>;
+    export type listBooks = _Gqx<Query$listBooks>;
+  }
+  export type $<T> =
+    T extends typeof Query$getAuthor ? Query.getAuthor :
+    T extends typeof Query$getBook ? Query.getBook :
+    T extends typeof Query$listBooks ? Query.listBooks :
+    never
+}
+
 export {
   Category,
   Cursor,
   BookFilter,
   AuthorFilter,
+  $_,
   Author$,
   Book$,
   Author,

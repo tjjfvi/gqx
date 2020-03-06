@@ -7,6 +7,7 @@ import stringifyFragTypes from "./stringifyFragTypes";
 import stringifyOutputTypes from "./stringifyOutputTypes";
 import stringifyVariables from "./stringifyVariables";
 import generateObjs from "./generateObjs";
+import stringifyTypeVars from "./stringifyTypeVars";
 
 
 interface Id {
@@ -38,6 +39,7 @@ export default (ctx: Context) => {
     stringifyFragTypes(objs, ctx),
     stringifyOutputTypes(objs, ctx),
     stringifyVariables(objs, ctx),
+    stringifyTypeVars(objs, ctx),
   ].join("\n\n");
 }
 

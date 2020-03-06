@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`empty 1`] = `""`;
+
+exports[`exported 1`] = `""`;
+
+exports[`two 1`] = `""`;
+
+exports[`undefined 1`] = `""`;
+
+exports[`unexported 1`] = `""`;
