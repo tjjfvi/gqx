@@ -1,43 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`extensive.gql Author 1`] = `
-"type _$Author<F extends Author$> =
-  & (typeof Author$id extends F ? { id: ID } : {})
-  & (typeof Author$name extends F ? { name: String } : {})
-  & (typeof Author$rating extends F ? { rating: StarRating } : {})
-  & ($<typeof Author$books, any> extends F ? { books: _$Book<Extract<F, $<typeof Author$books, Book$>>[\\"l\\"]>[] } : {})
-  & ($<typeof Author$favoriteBook, any> extends F ? { favoriteBook: _$Book<Extract<F, $<typeof Author$favoriteBook, Book$>>[\\"l\\"]> } : {})
-type $Author<F extends Author$[]> = _$Author<F[number]>;"
+exports[`stringifyObjectTypes.gql BinaryTree 1`] = `
+"type _$BinaryTree<F extends BinaryTree$> =
+  & (typeof BinaryTree$node extends F ? { node: String } : {})
+  & ($<typeof BinaryTree$left, any> extends F ? { left: (_$BinaryTree<Extract<F, $<typeof BinaryTree$left, BinaryTree$>>[\\"l\\"]> | null) } : {})
+  & ($<typeof BinaryTree$right, any> extends F ? { right: (_$BinaryTree<Extract<F, $<typeof BinaryTree$right, BinaryTree$>>[\\"l\\"]> | null) } : {})
+type $BinaryTree<F extends BinaryTree$[]> = _$BinaryTree<F[number]>;"
 `;
 
-exports[`extensive.gql Book 1`] = `
-"type _$Book<F extends Book$> =
-  & (typeof Book$categories extends F ? { categories: Category[] } : {})
-  & (typeof Book$description extends F ? { description: String } : {})
-  & (typeof Book$id extends F ? { id: ID } : {})
-  & (typeof Book$rating extends F ? { rating: StarRating } : {})
-  & (typeof Book$title extends F ? { title: String } : {})
-  & ($<typeof Book$author, any> extends F ? { author: _$Author<Extract<F, $<typeof Book$author, Author$>>[\\"l\\"]> } : {})
-  & ($<typeof Book$reviews, any> extends F ? { reviews: _$Review<Extract<F, $<typeof Book$reviews, Review$>>[\\"l\\"]>[] } : {})
-type $Book<F extends Book$[]> = _$Book<F[number]>;"
+exports[`stringifyObjectTypes.gql DeepOnly 1`] = `
+"type _$DeepOnly<F extends DeepOnly$> =
+  & ($<typeof DeepOnly$a, any> extends F ? { a: _$ShallowOnly<Extract<F, $<typeof DeepOnly$a, ShallowOnly$>>[\\"l\\"]> } : {})
+  & ($<typeof DeepOnly$b, any> extends F ? { b: (_$ShallowOnly<Extract<F, $<typeof DeepOnly$b, ShallowOnly$>>[\\"l\\"]> | null)[] } : {})
+type $DeepOnly<F extends DeepOnly$[]> = _$DeepOnly<F[number]>;"
 `;
 
-exports[`extensive.gql Review 1`] = `
-"type _$Review<F extends Review$> =
-  & (typeof Review$details extends F ? { details: (String | null) } : {})
-  & (typeof Review$id extends F ? { id: ID } : {})
-  & (typeof Review$rating extends F ? { rating: StarRating } : {})
-  & (typeof Review$title extends F ? { title: (String | null) } : {})
-  & ($<typeof Review$book, any> extends F ? { book: _$Book<Extract<F, $<typeof Review$book, Book$>>[\\"l\\"]> } : {})
-  & ($<typeof Review$user, any> extends F ? { user: _$User<Extract<F, $<typeof Review$user, User$>>[\\"l\\"]> } : {})
-type $Review<F extends Review$[]> = _$Review<F[number]>;"
+exports[`stringifyObjectTypes.gql Recursive 1`] = `
+"type _$Recursive<F extends Recursive$> =
+  & (typeof Recursive$id extends F ? { id: ID } : {})
+  & ($<typeof Recursive$next, any> extends F ? { next: _$Recursive<Extract<F, $<typeof Recursive$next, Recursive$>>[\\"l\\"]> } : {})
+type $Recursive<F extends Recursive$[]> = _$Recursive<F[number]>;"
 `;
 
-exports[`extensive.gql User 1`] = `
-"type _$User<F extends User$> =
-  & (typeof User$id extends F ? { id: ID } : {})
-  & (typeof User$name extends F ? { name: String } : {})
-  & ($<typeof User$author, any> extends F ? { author: (_$Author<Extract<F, $<typeof User$author, Author$>>[\\"l\\"]> | null) } : {})
-  & ($<typeof User$reviews, any> extends F ? { reviews: _$Review<Extract<F, $<typeof User$reviews, Review$>>[\\"l\\"]>[] } : {})
-type $User<F extends User$[]> = _$User<F[number]>;"
+exports[`stringifyObjectTypes.gql ShallowOnly 1`] = `
+"type _$ShallowOnly<F extends ShallowOnly$> =
+  & (typeof ShallowOnly$a extends F ? { a: String } : {})
+  & (typeof ShallowOnly$b extends F ? { b: Number } : {})
+type $ShallowOnly<F extends ShallowOnly$[]> = _$ShallowOnly<F[number]>;"
 `;

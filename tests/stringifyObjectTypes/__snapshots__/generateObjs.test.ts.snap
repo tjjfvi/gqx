@@ -3,92 +3,40 @@
 exports[` 1`] = `
 Array [
   Object {
-    "prop": "id",
-    "type": "Author",
+    "prop": "node",
+    "type": "BinaryTree",
   },
   Object {
-    "prop": "name",
-    "type": "Author",
+    "prop": "left",
+    "type": "BinaryTree",
   },
   Object {
-    "prop": "books",
-    "type": "Author",
+    "prop": "right",
+    "type": "BinaryTree",
   },
   Object {
-    "prop": "favoriteBook",
-    "type": "Author",
+    "prop": "a",
+    "type": "DeepOnly",
   },
   Object {
-    "prop": "rating",
-    "type": "Author",
-  },
-  Object {
-    "prop": "id",
-    "type": "Book",
-  },
-  Object {
-    "prop": "author",
-    "type": "Book",
-  },
-  Object {
-    "prop": "title",
-    "type": "Book",
-  },
-  Object {
-    "prop": "description",
-    "type": "Book",
-  },
-  Object {
-    "prop": "categories",
-    "type": "Book",
-  },
-  Object {
-    "prop": "reviews",
-    "type": "Book",
-  },
-  Object {
-    "prop": "rating",
-    "type": "Book",
+    "prop": "b",
+    "type": "DeepOnly",
   },
   Object {
     "prop": "id",
-    "type": "Review",
+    "type": "Recursive",
   },
   Object {
-    "prop": "rating",
-    "type": "Review",
+    "prop": "next",
+    "type": "Recursive",
   },
   Object {
-    "prop": "book",
-    "type": "Review",
+    "prop": "a",
+    "type": "ShallowOnly",
   },
   Object {
-    "prop": "user",
-    "type": "Review",
-  },
-  Object {
-    "prop": "title",
-    "type": "Review",
-  },
-  Object {
-    "prop": "details",
-    "type": "Review",
-  },
-  Object {
-    "prop": "id",
-    "type": "User",
-  },
-  Object {
-    "prop": "author",
-    "type": "User",
-  },
-  Object {
-    "prop": "name",
-    "type": "User",
-  },
-  Object {
-    "prop": "reviews",
-    "type": "User",
+    "prop": "b",
+    "type": "ShallowOnly",
   },
 ]
 `;
@@ -97,22 +45,22 @@ exports[` 2`] = `
 Array [
   Object {
     "d": 2,
-    "n": "Author",
-    "s": 3,
+    "n": "BinaryTree",
+    "s": 1,
   },
   Object {
     "d": 2,
-    "n": "Book",
-    "s": 5,
+    "n": "DeepOnly",
+    "s": 0,
   },
   Object {
-    "d": 2,
-    "n": "Review",
-    "s": 4,
+    "d": 1,
+    "n": "Recursive",
+    "s": 1,
   },
   Object {
-    "d": 2,
-    "n": "User",
+    "d": 0,
+    "n": "ShallowOnly",
     "s": 2,
   },
 ]
@@ -124,227 +72,108 @@ Array [
     "deepProps": Array [
       Object {
         "id": Object {
-          "prop": "books",
-          "type": "Author",
+          "prop": "left",
+          "type": "BinaryTree",
         },
         "shallow": false,
-        "type": "Book",
+        "type": "BinaryTree",
         "wrap": [Function],
       },
       Object {
         "id": Object {
-          "prop": "favoriteBook",
-          "type": "Author",
+          "prop": "right",
+          "type": "BinaryTree",
         },
         "shallow": false,
-        "type": "Book",
+        "type": "BinaryTree",
         "wrap": [Function],
       },
     ],
     "shallowProps": Array [
       Object {
         "id": Object {
-          "prop": "id",
-          "type": "Author",
-        },
-        "shallow": true,
-        "type": "ID",
-        "wrap": [Function],
-      },
-      Object {
-        "id": Object {
-          "prop": "name",
-          "type": "Author",
+          "prop": "node",
+          "type": "BinaryTree",
         },
         "shallow": true,
         "type": "String",
         "wrap": [Function],
       },
-      Object {
-        "id": Object {
-          "prop": "rating",
-          "type": "Author",
-        },
-        "shallow": true,
-        "type": "StarRating",
-        "wrap": [Function],
-      },
     ],
-    "type": "Author",
+    "type": "BinaryTree",
   },
   Object {
     "deepProps": Array [
       Object {
         "id": Object {
-          "prop": "author",
-          "type": "Book",
+          "prop": "a",
+          "type": "DeepOnly",
         },
         "shallow": false,
-        "type": "Author",
+        "type": "ShallowOnly",
         "wrap": [Function],
       },
       Object {
         "id": Object {
-          "prop": "reviews",
-          "type": "Book",
+          "prop": "b",
+          "type": "DeepOnly",
         },
         "shallow": false,
-        "type": "Review",
+        "type": "ShallowOnly",
         "wrap": [Function],
       },
     ],
-    "shallowProps": Array [
-      Object {
-        "id": Object {
-          "prop": "categories",
-          "type": "Book",
-        },
-        "shallow": true,
-        "type": "Category",
-        "wrap": [Function],
-      },
-      Object {
-        "id": Object {
-          "prop": "description",
-          "type": "Book",
-        },
-        "shallow": true,
-        "type": "String",
-        "wrap": [Function],
-      },
-      Object {
-        "id": Object {
-          "prop": "id",
-          "type": "Book",
-        },
-        "shallow": true,
-        "type": "ID",
-        "wrap": [Function],
-      },
-      Object {
-        "id": Object {
-          "prop": "rating",
-          "type": "Book",
-        },
-        "shallow": true,
-        "type": "StarRating",
-        "wrap": [Function],
-      },
-      Object {
-        "id": Object {
-          "prop": "title",
-          "type": "Book",
-        },
-        "shallow": true,
-        "type": "String",
-        "wrap": [Function],
-      },
-    ],
-    "type": "Book",
+    "shallowProps": Array [],
+    "type": "DeepOnly",
   },
   Object {
     "deepProps": Array [
       Object {
         "id": Object {
-          "prop": "book",
-          "type": "Review",
+          "prop": "next",
+          "type": "Recursive",
         },
         "shallow": false,
-        "type": "Book",
-        "wrap": [Function],
-      },
-      Object {
-        "id": Object {
-          "prop": "user",
-          "type": "Review",
-        },
-        "shallow": false,
-        "type": "User",
+        "type": "Recursive",
         "wrap": [Function],
       },
     ],
     "shallowProps": Array [
       Object {
         "id": Object {
-          "prop": "details",
-          "type": "Review",
-        },
-        "shallow": true,
-        "type": "String",
-        "wrap": [Function],
-      },
-      Object {
-        "id": Object {
           "prop": "id",
-          "type": "Review",
+          "type": "Recursive",
         },
         "shallow": true,
         "type": "ID",
         "wrap": [Function],
       },
-      Object {
-        "id": Object {
-          "prop": "rating",
-          "type": "Review",
-        },
-        "shallow": true,
-        "type": "StarRating",
-        "wrap": [Function],
-      },
-      Object {
-        "id": Object {
-          "prop": "title",
-          "type": "Review",
-        },
-        "shallow": true,
-        "type": "String",
-        "wrap": [Function],
-      },
     ],
-    "type": "Review",
+    "type": "Recursive",
   },
   Object {
-    "deepProps": Array [
-      Object {
-        "id": Object {
-          "prop": "author",
-          "type": "User",
-        },
-        "shallow": false,
-        "type": "Author",
-        "wrap": [Function],
-      },
-      Object {
-        "id": Object {
-          "prop": "reviews",
-          "type": "User",
-        },
-        "shallow": false,
-        "type": "Review",
-        "wrap": [Function],
-      },
-    ],
+    "deepProps": Array [],
     "shallowProps": Array [
       Object {
         "id": Object {
-          "prop": "id",
-          "type": "User",
-        },
-        "shallow": true,
-        "type": "ID",
-        "wrap": [Function],
-      },
-      Object {
-        "id": Object {
-          "prop": "name",
-          "type": "User",
+          "prop": "a",
+          "type": "ShallowOnly",
         },
         "shallow": true,
         "type": "String",
         "wrap": [Function],
       },
+      Object {
+        "id": Object {
+          "prop": "b",
+          "type": "ShallowOnly",
+        },
+        "shallow": true,
+        "type": "Number",
+        "wrap": [Function],
+      },
     ],
-    "type": "User",
+    "type": "ShallowOnly",
   },
 ]
 `;

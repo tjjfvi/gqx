@@ -1,40 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` 1`] = `
-"type Author$ =
-  | typeof Author$id
-  | typeof Author$name
-  | typeof Author$rating
-  | $<typeof Author$books, Book$>
-  | $<typeof Author$favoriteBook, Book$>
+"type BinaryTree$ =
+  | typeof BinaryTree$node
+  | $<typeof BinaryTree$left, BinaryTree$>
+  | $<typeof BinaryTree$right, BinaryTree$>
 
-type Book$ =
-  | typeof Book$categories
-  | typeof Book$description
-  | typeof Book$id
-  | typeof Book$rating
-  | typeof Book$title
-  | $<typeof Book$author, Author$>
-  | $<typeof Book$reviews, Review$>
+type DeepOnly$ =
+  | $<typeof DeepOnly$a, ShallowOnly$>
+  | $<typeof DeepOnly$b, ShallowOnly$>
 
-type Review$ =
-  | typeof Review$details
-  | typeof Review$id
-  | typeof Review$rating
-  | typeof Review$title
-  | $<typeof Review$book, Book$>
-  | $<typeof Review$user, User$>
+type Recursive$ =
+  | typeof Recursive$id
+  | $<typeof Recursive$next, Recursive$>
 
-type User$ =
-  | typeof User$id
-  | typeof User$name
-  | $<typeof User$author, Author$>
-  | $<typeof User$reviews, Review$>
+type ShallowOnly$ =
+  | typeof ShallowOnly$a
+  | typeof ShallowOnly$b
 
 
 type $_ =
-  | Author$
-  | Book$
-  | Review$
-  | User$"
+  | BinaryTree$
+  | DeepOnly$
+  | Recursive$
+  | ShallowOnly$"
 `;

@@ -1,26 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` 1`] = `
-"class Author$id { private static _: any; static type = \\"Author\\"; static prop = \\"id\\"; }
-class Author$name { private static _: any; static type = \\"Author\\"; static prop = \\"name\\"; }
-class Author$books { private static _: any; static type = \\"Author\\"; static prop = \\"books\\"; }
-class Author$favoriteBook { private static _: any; static type = \\"Author\\"; static prop = \\"favoriteBook\\"; }
-class Author$rating { private static _: any; static type = \\"Author\\"; static prop = \\"rating\\"; }
-class Book$id { private static _: any; static type = \\"Book\\"; static prop = \\"id\\"; }
-class Book$author { private static _: any; static type = \\"Book\\"; static prop = \\"author\\"; }
-class Book$title { private static _: any; static type = \\"Book\\"; static prop = \\"title\\"; }
-class Book$description { private static _: any; static type = \\"Book\\"; static prop = \\"description\\"; }
-class Book$categories { private static _: any; static type = \\"Book\\"; static prop = \\"categories\\"; }
-class Book$reviews { private static _: any; static type = \\"Book\\"; static prop = \\"reviews\\"; }
-class Book$rating { private static _: any; static type = \\"Book\\"; static prop = \\"rating\\"; }
-class Review$id { private static _: any; static type = \\"Review\\"; static prop = \\"id\\"; }
-class Review$rating { private static _: any; static type = \\"Review\\"; static prop = \\"rating\\"; }
-class Review$book { private static _: any; static type = \\"Review\\"; static prop = \\"book\\"; }
-class Review$user { private static _: any; static type = \\"Review\\"; static prop = \\"user\\"; }
-class Review$title { private static _: any; static type = \\"Review\\"; static prop = \\"title\\"; }
-class Review$details { private static _: any; static type = \\"Review\\"; static prop = \\"details\\"; }
-class User$id { private static _: any; static type = \\"User\\"; static prop = \\"id\\"; }
-class User$author { private static _: any; static type = \\"User\\"; static prop = \\"author\\"; }
-class User$name { private static _: any; static type = \\"User\\"; static prop = \\"name\\"; }
-class User$reviews { private static _: any; static type = \\"User\\"; static prop = \\"reviews\\"; }"
+"class BinaryTree$node { private static _: any; static type = \\"BinaryTree\\"; static prop = \\"node\\"; }
+class BinaryTree$left { private static _: any; static type = \\"BinaryTree\\"; static prop = \\"left\\"; }
+class BinaryTree$right { private static _: any; static type = \\"BinaryTree\\"; static prop = \\"right\\"; }
+class DeepOnly$a { private static _: any; static type = \\"DeepOnly\\"; static prop = \\"a\\"; }
+class DeepOnly$b { private static _: any; static type = \\"DeepOnly\\"; static prop = \\"b\\"; }
+class Recursive$id { private static _: any; static type = \\"Recursive\\"; static prop = \\"id\\"; }
+class Recursive$next { private static _: any; static type = \\"Recursive\\"; static prop = \\"next\\"; }
+class ShallowOnly$a { private static _: any; static type = \\"ShallowOnly\\"; static prop = \\"a\\"; }
+class ShallowOnly$b { private static _: any; static type = \\"ShallowOnly\\"; static prop = \\"b\\"; }"
 `;

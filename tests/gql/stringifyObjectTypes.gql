@@ -1,0 +1,21 @@
+
+type ShallowOnly {
+  a: String!
+  b: Number!
+}
+
+type DeepOnly {
+  a: ShallowOnly!
+  b: [ShallowOnly]!
+}
+
+type Recursive {
+  id: ID!
+  next: Recursive!
+}
+
+type BinaryTree {
+  node: String!
+  left: BinaryTree
+  right: BinaryTree
+}

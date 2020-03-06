@@ -1,71 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`extensive.gql Author 1`] = `
-"const _Author = {
-  id: Author$id,
-  name: Author$name,
-  rating: Author$rating,
+exports[`stringifyObjectTypes.gql BinaryTree 1`] = `
+"const _BinaryTree = {
+  node: BinaryTree$node,
 };
 
-const Author: typeof _Author & {
-  books: $$MapWrap<typeof Book, typeof Author$books>,
-  favoriteBook: $$MapWrap<typeof Book, typeof Author$favoriteBook>,
+const BinaryTree: typeof _BinaryTree & {
+  left: $$MapWrap<typeof BinaryTree, typeof BinaryTree$left>,
+  right: $$MapWrap<typeof BinaryTree, typeof BinaryTree$right>,
 } = {
-  ..._Author,
-  books: $$mapWrap(() => Book, Author$books),
-  favoriteBook: $$mapWrap(() => Book, Author$favoriteBook),
+  ..._BinaryTree,
+  left: $$mapWrap(() => BinaryTree, BinaryTree$left),
+  right: $$mapWrap(() => BinaryTree, BinaryTree$right),
 };"
 `;
 
-exports[`extensive.gql Book 1`] = `
-"const _Book = {
-  categories: Book$categories,
-  description: Book$description,
-  id: Book$id,
-  rating: Book$rating,
-  title: Book$title,
-};
-
-const Book: typeof _Book & {
-  author: $$MapWrap<typeof Author, typeof Book$author>,
-  reviews: $$MapWrap<typeof Review, typeof Book$reviews>,
+exports[`stringifyObjectTypes.gql DeepOnly 1`] = `
+"const DeepOnly: {
+  a: $$MapWrap<typeof ShallowOnly, typeof DeepOnly$a>,
+  b: $$MapWrap<typeof ShallowOnly, typeof DeepOnly$b>,
 } = {
-  ..._Book,
-  author: $$mapWrap(() => Author, Book$author),
-  reviews: $$mapWrap(() => Review, Book$reviews),
+  a: $$mapWrap(() => ShallowOnly, DeepOnly$a),
+  b: $$mapWrap(() => ShallowOnly, DeepOnly$b),
 };"
 `;
 
-exports[`extensive.gql Review 1`] = `
-"const _Review = {
-  details: Review$details,
-  id: Review$id,
-  rating: Review$rating,
-  title: Review$title,
+exports[`stringifyObjectTypes.gql Recursive 1`] = `
+"const _Recursive = {
+  id: Recursive$id,
 };
 
-const Review: typeof _Review & {
-  book: $$MapWrap<typeof Book, typeof Review$book>,
-  user: $$MapWrap<typeof User, typeof Review$user>,
+const Recursive: typeof _Recursive & {
+  next: $$MapWrap<typeof Recursive, typeof Recursive$next>,
 } = {
-  ..._Review,
-  book: $$mapWrap(() => Book, Review$book),
-  user: $$mapWrap(() => User, Review$user),
+  ..._Recursive,
+  next: $$mapWrap(() => Recursive, Recursive$next),
 };"
 `;
 
-exports[`extensive.gql User 1`] = `
-"const _User = {
-  id: User$id,
-  name: User$name,
-};
-
-const User: typeof _User & {
-  author: $$MapWrap<typeof Author, typeof User$author>,
-  reviews: $$MapWrap<typeof Review, typeof User$reviews>,
-} = {
-  ..._User,
-  author: $$mapWrap(() => Author, User$author),
-  reviews: $$mapWrap(() => Review, User$reviews),
+exports[`stringifyObjectTypes.gql ShallowOnly 1`] = `
+"const ShallowOnly = {
+  a: ShallowOnly$a,
+  b: ShallowOnly$b,
 };"
 `;
