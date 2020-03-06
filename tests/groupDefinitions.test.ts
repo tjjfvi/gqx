@@ -1,7 +1,7 @@
 
 import groupDefinitions from "../src/groupDefinitions";
 
-test("it works", () => {
+test("", () => {
   const schema = utils.parseGql("groupDefinitions");
   const ctx = utils.emptyCtx();
   groupDefinitions(ctx, schema.definitions);

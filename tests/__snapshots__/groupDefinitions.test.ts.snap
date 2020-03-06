@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`it works 1`] = `
+exports[` 1`] = `
 Object {
   "enumTypes": Array [
     1,
@@ -23,7 +23,7 @@ Object {
 }
 `;
 
-exports[`it works 2`] = `
+exports[` 2`] = `
 Object {
   "baseTypes": Array [],
   "config": Object {},

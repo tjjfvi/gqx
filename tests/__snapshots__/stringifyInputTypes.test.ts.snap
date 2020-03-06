@@ -1,5 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`stringifyInputTypes.gql * 1`] = `
+"interface Mandatory {
+  a: String;
+  b: Int;
+  c: Fraction;
+}
+
+interface MandatoryList {
+  a: String[];
+  b: Int[];
+  c: Fraction[];
+}
+
+interface Nullable {
+  a?: (String | null | void);
+  b?: (Int | null | void);
+  c?: (Fraction | null | void);
+}
+
+interface NullableListOfMandatory {
+  a?: (String[] | null | void);
+  b?: (Int[] | null | void);
+  c?: (Fraction[] | null | void);
+}
+
+interface MandatoryListOfNullable {
+  a: (String | null | void)[];
+  b: (Int | null | void)[];
+  c: (Fraction | null | void)[];
+}
+
+interface NullableList {
+  a?: ((String | null | void)[] | null | void);
+  b?: ((Int | null | void)[] | null | void);
+  c?: ((Fraction | null | void)[] | null | void);
+}
+
+interface List2D {
+  a: String[][];
+  b: Int[][];
+  c: Fraction[][];
+}
+
+interface Fraction {
+  numerator: Int;
+  denominator: Int;
+}"
+`;
+
 exports[`stringifyInputTypes.gql Fraction 1`] = `
 "interface Fraction {
   numerator: Int;
@@ -60,54 +109,5 @@ exports[`stringifyInputTypes.gql NullableListOfMandatory 1`] = `
   a?: (String[] | null | void);
   b?: (Int[] | null | void);
   c?: (Fraction[] | null | void);
-}"
-`;
-
-exports[`stringifyInputTypes.gql all 1`] = `
-"interface Mandatory {
-  a: String;
-  b: Int;
-  c: Fraction;
-}
-
-interface MandatoryList {
-  a: String[];
-  b: Int[];
-  c: Fraction[];
-}
-
-interface Nullable {
-  a?: (String | null | void);
-  b?: (Int | null | void);
-  c?: (Fraction | null | void);
-}
-
-interface NullableListOfMandatory {
-  a?: (String[] | null | void);
-  b?: (Int[] | null | void);
-  c?: (Fraction[] | null | void);
-}
-
-interface MandatoryListOfNullable {
-  a: (String | null | void)[];
-  b: (Int | null | void)[];
-  c: (Fraction | null | void)[];
-}
-
-interface NullableList {
-  a?: ((String | null | void)[] | null | void);
-  b?: ((Int | null | void)[] | null | void);
-  c?: ((Fraction | null | void)[] | null | void);
-}
-
-interface List2D {
-  a: String[][];
-  b: Int[][];
-  c: Fraction[][];
-}
-
-interface Fraction {
-  numerator: Int;
-  denominator: Int;
 }"
 `;
