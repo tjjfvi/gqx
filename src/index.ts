@@ -2,7 +2,6 @@
 import {
   parse,
   SchemaDefinitionNode,
-  EnumTypeDefinitionNode,
   InputValueDefinitionNode,
   FieldDefinitionNode,
   EnumValueDefinitionNode
