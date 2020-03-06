@@ -10,6 +10,7 @@ exports[` 1`] = `
   export namespace Mutation {
     export type addReview<F extends $$Frag.$<typeof Mutation$addReview>[]> = $Review<F>
   }
+
   export type $<T, F extends $$Frag.$<T>[]> =
     F extends $$Frag.$<typeof Query$getAuthor>[] ? Query.getAuthor<F> :
     F extends $$Frag.$<typeof Query$getBook>[] ? Query.getBook<F> :

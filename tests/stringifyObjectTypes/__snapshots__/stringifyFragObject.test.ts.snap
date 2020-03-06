@@ -14,7 +14,7 @@ const Author: typeof _Author & {
   ..._Author,
   books: $$mapWrap(() => Book, Author$books),
   favoriteBook: $$mapWrap(() => Book, Author$favoriteBook),
-}"
+};"
 `;
 
 exports[`extensive.gql Book 1`] = `
@@ -33,7 +33,7 @@ const Book: typeof _Book & {
   ..._Book,
   author: $$mapWrap(() => Author, Book$author),
   reviews: $$mapWrap(() => Review, Book$reviews),
-}"
+};"
 `;
 
 exports[`extensive.gql Review 1`] = `
@@ -51,7 +51,7 @@ const Review: typeof _Review & {
   ..._Review,
   book: $$mapWrap(() => Book, Review$book),
   user: $$mapWrap(() => User, Review$user),
-}"
+};"
 `;
 
 exports[`extensive.gql User 1`] = `
@@ -67,5 +67,5 @@ const User: typeof _User & {
   ..._User,
   author: $$mapWrap(() => Author, User$author),
   reviews: $$mapWrap(() => Review, User$reviews),
-}"
+};"
 `;

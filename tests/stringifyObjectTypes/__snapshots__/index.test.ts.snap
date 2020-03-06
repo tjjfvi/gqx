@@ -54,6 +54,7 @@ type User$ =
   | $<typeof User$author, Author$>
   | $<typeof User$reviews, Review$>
 
+
 type $_ =
   | Author$
   | Book$
@@ -73,7 +74,7 @@ const Author: typeof _Author & {
   ..._Author,
   books: $$mapWrap(() => Book, Author$books),
   favoriteBook: $$mapWrap(() => Book, Author$favoriteBook),
-}
+};
 
 const _Book = {
   categories: Book$categories,
@@ -90,7 +91,7 @@ const Book: typeof _Book & {
   ..._Book,
   author: $$mapWrap(() => Author, Book$author),
   reviews: $$mapWrap(() => Review, Book$reviews),
-}
+};
 
 const _Review = {
   details: Review$details,
@@ -106,7 +107,7 @@ const Review: typeof _Review & {
   ..._Review,
   book: $$mapWrap(() => Book, Review$book),
   user: $$mapWrap(() => User, Review$user),
-}
+};
 
 const _User = {
   id: User$id,
@@ -120,7 +121,7 @@ const User: typeof _User & {
   ..._User,
   author: $$mapWrap(() => Author, User$author),
   reviews: $$mapWrap(() => Review, User$reviews),
-}
+};
 
 type _$Author<F extends Author$> =
   & (typeof Author$id extends F ? { id: ID } : {})

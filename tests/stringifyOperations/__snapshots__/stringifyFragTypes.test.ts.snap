@@ -10,6 +10,7 @@ exports[` 1`] = `
   export namespace Mutation {
     export type addReview = Review$;
   }
+
   export type $<T> =
     T extends typeof Query$getAuthor ? Query.getAuthor :
     T extends typeof Query$getBook ? Query.getBook :

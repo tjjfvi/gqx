@@ -62,6 +62,7 @@ export namespace $$Input {
       input: ReviewInput;
     }
   }
+
   export type $<T> =
     T extends typeof Query$getAuthor ? Query.getAuthor :
     T extends typeof Query$getBook ? Query.getBook :
@@ -79,6 +80,7 @@ export namespace $$Frag {
   export namespace Mutation {
     export type addReview = Review$;
   }
+
   export type $<T> =
     T extends typeof Query$getAuthor ? Query.getAuthor :
     T extends typeof Query$getBook ? Query.getBook :
@@ -96,6 +98,7 @@ export namespace $$Output {
   export namespace Mutation {
     export type addReview<F extends $$Frag.$<typeof Mutation$addReview>[]> = $Review<F>
   }
+
   export type $<T, F extends $$Frag.$<T>[]> =
     F extends $$Frag.$<typeof Query$getAuthor>[] ? Query.getAuthor<F> :
     F extends $$Frag.$<typeof Query$getBook>[] ? Query.getBook<F> :
