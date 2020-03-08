@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+"export namespace $$Directives {
+  export namespace Query {
+    export type noDirectives = {}
+    export type oneDirective = {
+      scalarArg: {
+        x: \\"string\\",
+      },
+    }
+    export type multDirectivesArgs = {
+      scalarArg: {
+        a: \\"test\\",
+        b: 12345,
+      },
+      inputArg: {
+        a: {
+          x: 5,
+          y: [
+            1,
+            2,
+            3,
+          ],
+          z: {
+            x: 5,
+          },
+        },
+      },
+      scalarArrArg: {
+        a: [
+          \\"a\\",
+          \\"b\\",
+          \\"c\\",
+          null,
+        ],
+      },
+      inputArrArg: {
+        a: [
+          {
+            x: 5,
+          },
+          {
+            x: 6,
+          },
+          {
+            y: [
+              1,
+              2,
+              3,
+            ],
+          },
+        ],
+      },
+    }
+    export type multDirectivesNullArgs = {
+      scalarArg: {
+        a: null,
+        b: null,
+      },
+      inputArg: {
+        a: null,
+      },
+      scalarArrArg: {
+        a: null,
+      },
+      inputArrArg: {
+        a: null,
+      },
+    }
+    export type multDirectivesNoArgs = {
+      noArgs: {},
+      scalarArg: {},
+      inputArg: {},
+      scalarArrArg: {},
+      inputArrArg: {},
+    }
+  }
+  export type $<T> =
+    T extends Query$noDirectives ? Query.noDirectives :
+    T extends Query$oneDirective ? Query.oneDirective :
+    T extends Query$multDirectivesArgs ? Query.multDirectivesArgs :
+    T extends Query$multDirectivesNullArgs ? Query.multDirectivesNullArgs :
+    T extends Query$multDirectivesNoArgs ? Query.multDirectivesNoArgs :
+    never
+}"
+`;

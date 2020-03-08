@@ -405,6 +405,85 @@ export namespace Gqx {
     never
 }
 
+export namespace $$Directives {
+  export namespace Query {
+    export type getAuthor = {}
+    export type getBook = {}
+    export type listBooks = {}
+  }
+  export namespace Mutation {
+    export type addReview = {
+      auth: {
+        test: {
+          title: \\"hi\\",
+        },
+        test2: [
+          \\"hi\\",
+          \\"hi2\\",
+        ],
+      },
+    }
+  }
+  export namespace Book {
+    export type id = {}
+    export type author = {}
+    export type title = {}
+    export type description = {}
+    export type categories = {}
+    export type reviews = {}
+    export type rating = {}
+  }
+  export namespace Author {
+    export type id = {}
+    export type name = {}
+    export type books = {}
+    export type favoriteBook = {}
+    export type rating = {}
+  }
+  export namespace Review {
+    export type id = {}
+    export type rating = {}
+    export type book = {}
+    export type user = {}
+    export type title = {}
+    export type details = {}
+  }
+  export namespace User {
+    export type id = {}
+    export type author = {}
+    export type name = {}
+    export type reviews = {}
+  }
+  export type $<T> =
+    T extends Query$getAuthor ? Query.getAuthor :
+    T extends Query$getBook ? Query.getBook :
+    T extends Query$listBooks ? Query.listBooks :
+    T extends Mutation$addReview ? Mutation.addReview :
+    T extends Book$id ? Book.id :
+    T extends Book$author ? Book.author :
+    T extends Book$title ? Book.title :
+    T extends Book$description ? Book.description :
+    T extends Book$categories ? Book.categories :
+    T extends Book$reviews ? Book.reviews :
+    T extends Book$rating ? Book.rating :
+    T extends Author$id ? Author.id :
+    T extends Author$name ? Author.name :
+    T extends Author$books ? Author.books :
+    T extends Author$favoriteBook ? Author.favoriteBook :
+    T extends Author$rating ? Author.rating :
+    T extends Review$id ? Review.id :
+    T extends Review$rating ? Review.rating :
+    T extends Review$book ? Review.book :
+    T extends Review$user ? Review.user :
+    T extends Review$title ? Review.title :
+    T extends Review$details ? Review.details :
+    T extends User$id ? User.id :
+    T extends User$author ? User.author :
+    T extends User$name ? User.name :
+    T extends User$reviews ? User.reviews :
+    never
+}
+
 export {
   Category,
   Cursor,

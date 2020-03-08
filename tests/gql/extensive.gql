@@ -1,4 +1,5 @@
 
+directive @auth(test: BookFilter, test2: [String!]!) on FIELD_DEFINITION
 
 schema {
   query: Query
@@ -12,7 +13,7 @@ type Query {
 }
 
 type Mutation {
-  addReview(input: ReviewInput!): Review!
+  addReview(input: ReviewInput!): Review! @auth(test: {title:"hi"},test2:["hi","hi2"])
 }
 
 input Cursor {

@@ -13,6 +13,7 @@ import stringifyOperations from "./stringifyOperations";
 import stringifyBoilerplate from "./stringifyBoilerplate";
 import groupDefinitions from "./groupDefinitions";
 import loadConfig, { Config } from "./loadConfig";
+import stringifyDirectives, { Prop as DirProp } from "./stringifyDirectives";
 
 interface Context {
   exports: string[];
@@ -47,6 +48,7 @@ export default ({ schema, template }: { schema: string; template: string }) => {
     stringifyInputTypes(ctx),
     stringifyObjectTypes(ctx),
     stringifyOperations(ctx),
+    stringifyDirectives(ctx),
     stringifyExports(ctx),
   ].join("\n\n").replace(/\n\n\n+/g, "\n\n");
 
