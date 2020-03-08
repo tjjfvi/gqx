@@ -2,10 +2,498 @@
 
 exports[`empty 1`] = `""`;
 
-exports[`exported 1`] = `""`;
+exports[`exported 1`] = `
+"export namespace gqx {
+  export namespace Query {
+    export type argsObjectArr2D = _gqx<Query$argsObjectArr2D>;
+    export type argsObjectArrMM = _gqx<Query$argsObjectArrMM>;
+    export type argsObjectArrMN = _gqx<Query$argsObjectArrMN>;
+    export type argsObjectArrNM = _gqx<Query$argsObjectArrNM>;
+    export type argsObjectArrNN = _gqx<Query$argsObjectArrNN>;
+    export type argsObjectMand = _gqx<Query$argsObjectMand>;
+    export type argsObjectNull = _gqx<Query$argsObjectNull>;
+    export type argsScalarArr2D = _gqx<Query$argsScalarArr2D>;
+    export type argsScalarArrMM = _gqx<Query$argsScalarArrMM>;
+    export type argsScalarArrMN = _gqx<Query$argsScalarArrMN>;
+    export type argsScalarArrNM = _gqx<Query$argsScalarArrNM>;
+    export type argsScalarArrNN = _gqx<Query$argsScalarArrNN>;
+    export type argsScalarMand = _gqx<Query$argsScalarMand>;
+    export type argsScalarNull = _gqx<Query$argsScalarNull>;
+    export type noArgsObjectArr2D = _gqx<Query$noArgsObjectArr2D>;
+    export type noArgsObjectArrMM = _gqx<Query$noArgsObjectArrMM>;
+    export type noArgsObjectArrMN = _gqx<Query$noArgsObjectArrMN>;
+    export type noArgsObjectArrNM = _gqx<Query$noArgsObjectArrNM>;
+    export type noArgsObjectArrNN = _gqx<Query$noArgsObjectArrNN>;
+    export type noArgsObjectMand = _gqx<Query$noArgsObjectMand>;
+    export type noArgsObjectNull = _gqx<Query$noArgsObjectNull>;
+    export type noArgsScalarArr2D = _gqx<Query$noArgsScalarArr2D>;
+    export type noArgsScalarArrMM = _gqx<Query$noArgsScalarArrMM>;
+    export type noArgsScalarArrMN = _gqx<Query$noArgsScalarArrMN>;
+    export type noArgsScalarArrNM = _gqx<Query$noArgsScalarArrNM>;
+    export type noArgsScalarArrNN = _gqx<Query$noArgsScalarArrNN>;
+    export type noArgsScalarMand = _gqx<Query$noArgsScalarMand>;
+    export type noArgsScalarNull = _gqx<Query$noArgsScalarNull>;
+  }
+  export namespace Mutation {
+    export type argsObjectArr2D = _gqx<Mutation$argsObjectArr2D>;
+    export type argsObjectArrMM = _gqx<Mutation$argsObjectArrMM>;
+    export type argsObjectArrMN = _gqx<Mutation$argsObjectArrMN>;
+    export type argsObjectArrNM = _gqx<Mutation$argsObjectArrNM>;
+    export type argsObjectArrNN = _gqx<Mutation$argsObjectArrNN>;
+    export type argsObjectMand = _gqx<Mutation$argsObjectMand>;
+    export type argsObjectNull = _gqx<Mutation$argsObjectNull>;
+    export type argsScalarArr2D = _gqx<Mutation$argsScalarArr2D>;
+    export type argsScalarArrMM = _gqx<Mutation$argsScalarArrMM>;
+    export type argsScalarArrMN = _gqx<Mutation$argsScalarArrMN>;
+    export type argsScalarArrNM = _gqx<Mutation$argsScalarArrNM>;
+    export type argsScalarArrNN = _gqx<Mutation$argsScalarArrNN>;
+    export type argsScalarMand = _gqx<Mutation$argsScalarMand>;
+    export type argsScalarNull = _gqx<Mutation$argsScalarNull>;
+    export type noArgsObjectArr2D = _gqx<Mutation$noArgsObjectArr2D>;
+    export type noArgsObjectArrMM = _gqx<Mutation$noArgsObjectArrMM>;
+    export type noArgsObjectArrMN = _gqx<Mutation$noArgsObjectArrMN>;
+    export type noArgsObjectArrNM = _gqx<Mutation$noArgsObjectArrNM>;
+    export type noArgsObjectArrNN = _gqx<Mutation$noArgsObjectArrNN>;
+    export type noArgsObjectMand = _gqx<Mutation$noArgsObjectMand>;
+    export type noArgsObjectNull = _gqx<Mutation$noArgsObjectNull>;
+    export type noArgsScalarArr2D = _gqx<Mutation$noArgsScalarArr2D>;
+    export type noArgsScalarArrMM = _gqx<Mutation$noArgsScalarArrMM>;
+    export type noArgsScalarArrMN = _gqx<Mutation$noArgsScalarArrMN>;
+    export type noArgsScalarArrNM = _gqx<Mutation$noArgsScalarArrNM>;
+    export type noArgsScalarArrNN = _gqx<Mutation$noArgsScalarArrNN>;
+    export type noArgsScalarMand = _gqx<Mutation$noArgsScalarMand>;
+    export type noArgsScalarNull = _gqx<Mutation$noArgsScalarNull>;
+  }
 
-exports[`two 1`] = `""`;
+  export type $<T> =
+    T extends typeof Query$argsObjectArr2D ? Query.argsObjectArr2D :
+    T extends typeof Query$argsObjectArrMM ? Query.argsObjectArrMM :
+    T extends typeof Query$argsObjectArrMN ? Query.argsObjectArrMN :
+    T extends typeof Query$argsObjectArrNM ? Query.argsObjectArrNM :
+    T extends typeof Query$argsObjectArrNN ? Query.argsObjectArrNN :
+    T extends typeof Query$argsObjectMand ? Query.argsObjectMand :
+    T extends typeof Query$argsObjectNull ? Query.argsObjectNull :
+    T extends typeof Query$argsScalarArr2D ? Query.argsScalarArr2D :
+    T extends typeof Query$argsScalarArrMM ? Query.argsScalarArrMM :
+    T extends typeof Query$argsScalarArrMN ? Query.argsScalarArrMN :
+    T extends typeof Query$argsScalarArrNM ? Query.argsScalarArrNM :
+    T extends typeof Query$argsScalarArrNN ? Query.argsScalarArrNN :
+    T extends typeof Query$argsScalarMand ? Query.argsScalarMand :
+    T extends typeof Query$argsScalarNull ? Query.argsScalarNull :
+    T extends typeof Query$noArgsObjectArr2D ? Query.noArgsObjectArr2D :
+    T extends typeof Query$noArgsObjectArrMM ? Query.noArgsObjectArrMM :
+    T extends typeof Query$noArgsObjectArrMN ? Query.noArgsObjectArrMN :
+    T extends typeof Query$noArgsObjectArrNM ? Query.noArgsObjectArrNM :
+    T extends typeof Query$noArgsObjectArrNN ? Query.noArgsObjectArrNN :
+    T extends typeof Query$noArgsObjectMand ? Query.noArgsObjectMand :
+    T extends typeof Query$noArgsObjectNull ? Query.noArgsObjectNull :
+    T extends typeof Query$noArgsScalarArr2D ? Query.noArgsScalarArr2D :
+    T extends typeof Query$noArgsScalarArrMM ? Query.noArgsScalarArrMM :
+    T extends typeof Query$noArgsScalarArrMN ? Query.noArgsScalarArrMN :
+    T extends typeof Query$noArgsScalarArrNM ? Query.noArgsScalarArrNM :
+    T extends typeof Query$noArgsScalarArrNN ? Query.noArgsScalarArrNN :
+    T extends typeof Query$noArgsScalarMand ? Query.noArgsScalarMand :
+    T extends typeof Query$noArgsScalarNull ? Query.noArgsScalarNull :
+    T extends typeof Mutation$argsObjectArr2D ? Mutation.argsObjectArr2D :
+    T extends typeof Mutation$argsObjectArrMM ? Mutation.argsObjectArrMM :
+    T extends typeof Mutation$argsObjectArrMN ? Mutation.argsObjectArrMN :
+    T extends typeof Mutation$argsObjectArrNM ? Mutation.argsObjectArrNM :
+    T extends typeof Mutation$argsObjectArrNN ? Mutation.argsObjectArrNN :
+    T extends typeof Mutation$argsObjectMand ? Mutation.argsObjectMand :
+    T extends typeof Mutation$argsObjectNull ? Mutation.argsObjectNull :
+    T extends typeof Mutation$argsScalarArr2D ? Mutation.argsScalarArr2D :
+    T extends typeof Mutation$argsScalarArrMM ? Mutation.argsScalarArrMM :
+    T extends typeof Mutation$argsScalarArrMN ? Mutation.argsScalarArrMN :
+    T extends typeof Mutation$argsScalarArrNM ? Mutation.argsScalarArrNM :
+    T extends typeof Mutation$argsScalarArrNN ? Mutation.argsScalarArrNN :
+    T extends typeof Mutation$argsScalarMand ? Mutation.argsScalarMand :
+    T extends typeof Mutation$argsScalarNull ? Mutation.argsScalarNull :
+    T extends typeof Mutation$noArgsObjectArr2D ? Mutation.noArgsObjectArr2D :
+    T extends typeof Mutation$noArgsObjectArrMM ? Mutation.noArgsObjectArrMM :
+    T extends typeof Mutation$noArgsObjectArrMN ? Mutation.noArgsObjectArrMN :
+    T extends typeof Mutation$noArgsObjectArrNM ? Mutation.noArgsObjectArrNM :
+    T extends typeof Mutation$noArgsObjectArrNN ? Mutation.noArgsObjectArrNN :
+    T extends typeof Mutation$noArgsObjectMand ? Mutation.noArgsObjectMand :
+    T extends typeof Mutation$noArgsObjectNull ? Mutation.noArgsObjectNull :
+    T extends typeof Mutation$noArgsScalarArr2D ? Mutation.noArgsScalarArr2D :
+    T extends typeof Mutation$noArgsScalarArrMM ? Mutation.noArgsScalarArrMM :
+    T extends typeof Mutation$noArgsScalarArrMN ? Mutation.noArgsScalarArrMN :
+    T extends typeof Mutation$noArgsScalarArrNM ? Mutation.noArgsScalarArrNM :
+    T extends typeof Mutation$noArgsScalarArrNN ? Mutation.noArgsScalarArrNN :
+    T extends typeof Mutation$noArgsScalarMand ? Mutation.noArgsScalarMand :
+    T extends typeof Mutation$noArgsScalarNull ? Mutation.noArgsScalarNull :
+    never
+}"
+`;
+
+exports[`two 1`] = `
+"export namespace gqx1 {
+  export namespace Query {
+    export type argsObjectArr2D = _gqx1<Query$argsObjectArr2D>;
+    export type argsObjectArrMM = _gqx1<Query$argsObjectArrMM>;
+    export type argsObjectArrMN = _gqx1<Query$argsObjectArrMN>;
+    export type argsObjectArrNM = _gqx1<Query$argsObjectArrNM>;
+    export type argsObjectArrNN = _gqx1<Query$argsObjectArrNN>;
+    export type argsObjectMand = _gqx1<Query$argsObjectMand>;
+    export type argsObjectNull = _gqx1<Query$argsObjectNull>;
+    export type argsScalarArr2D = _gqx1<Query$argsScalarArr2D>;
+    export type argsScalarArrMM = _gqx1<Query$argsScalarArrMM>;
+    export type argsScalarArrMN = _gqx1<Query$argsScalarArrMN>;
+    export type argsScalarArrNM = _gqx1<Query$argsScalarArrNM>;
+    export type argsScalarArrNN = _gqx1<Query$argsScalarArrNN>;
+    export type argsScalarMand = _gqx1<Query$argsScalarMand>;
+    export type argsScalarNull = _gqx1<Query$argsScalarNull>;
+    export type noArgsObjectArr2D = _gqx1<Query$noArgsObjectArr2D>;
+    export type noArgsObjectArrMM = _gqx1<Query$noArgsObjectArrMM>;
+    export type noArgsObjectArrMN = _gqx1<Query$noArgsObjectArrMN>;
+    export type noArgsObjectArrNM = _gqx1<Query$noArgsObjectArrNM>;
+    export type noArgsObjectArrNN = _gqx1<Query$noArgsObjectArrNN>;
+    export type noArgsObjectMand = _gqx1<Query$noArgsObjectMand>;
+    export type noArgsObjectNull = _gqx1<Query$noArgsObjectNull>;
+    export type noArgsScalarArr2D = _gqx1<Query$noArgsScalarArr2D>;
+    export type noArgsScalarArrMM = _gqx1<Query$noArgsScalarArrMM>;
+    export type noArgsScalarArrMN = _gqx1<Query$noArgsScalarArrMN>;
+    export type noArgsScalarArrNM = _gqx1<Query$noArgsScalarArrNM>;
+    export type noArgsScalarArrNN = _gqx1<Query$noArgsScalarArrNN>;
+    export type noArgsScalarMand = _gqx1<Query$noArgsScalarMand>;
+    export type noArgsScalarNull = _gqx1<Query$noArgsScalarNull>;
+  }
+  export namespace Mutation {
+    export type argsObjectArr2D = _gqx1<Mutation$argsObjectArr2D>;
+    export type argsObjectArrMM = _gqx1<Mutation$argsObjectArrMM>;
+    export type argsObjectArrMN = _gqx1<Mutation$argsObjectArrMN>;
+    export type argsObjectArrNM = _gqx1<Mutation$argsObjectArrNM>;
+    export type argsObjectArrNN = _gqx1<Mutation$argsObjectArrNN>;
+    export type argsObjectMand = _gqx1<Mutation$argsObjectMand>;
+    export type argsObjectNull = _gqx1<Mutation$argsObjectNull>;
+    export type argsScalarArr2D = _gqx1<Mutation$argsScalarArr2D>;
+    export type argsScalarArrMM = _gqx1<Mutation$argsScalarArrMM>;
+    export type argsScalarArrMN = _gqx1<Mutation$argsScalarArrMN>;
+    export type argsScalarArrNM = _gqx1<Mutation$argsScalarArrNM>;
+    export type argsScalarArrNN = _gqx1<Mutation$argsScalarArrNN>;
+    export type argsScalarMand = _gqx1<Mutation$argsScalarMand>;
+    export type argsScalarNull = _gqx1<Mutation$argsScalarNull>;
+    export type noArgsObjectArr2D = _gqx1<Mutation$noArgsObjectArr2D>;
+    export type noArgsObjectArrMM = _gqx1<Mutation$noArgsObjectArrMM>;
+    export type noArgsObjectArrMN = _gqx1<Mutation$noArgsObjectArrMN>;
+    export type noArgsObjectArrNM = _gqx1<Mutation$noArgsObjectArrNM>;
+    export type noArgsObjectArrNN = _gqx1<Mutation$noArgsObjectArrNN>;
+    export type noArgsObjectMand = _gqx1<Mutation$noArgsObjectMand>;
+    export type noArgsObjectNull = _gqx1<Mutation$noArgsObjectNull>;
+    export type noArgsScalarArr2D = _gqx1<Mutation$noArgsScalarArr2D>;
+    export type noArgsScalarArrMM = _gqx1<Mutation$noArgsScalarArrMM>;
+    export type noArgsScalarArrMN = _gqx1<Mutation$noArgsScalarArrMN>;
+    export type noArgsScalarArrNM = _gqx1<Mutation$noArgsScalarArrNM>;
+    export type noArgsScalarArrNN = _gqx1<Mutation$noArgsScalarArrNN>;
+    export type noArgsScalarMand = _gqx1<Mutation$noArgsScalarMand>;
+    export type noArgsScalarNull = _gqx1<Mutation$noArgsScalarNull>;
+  }
+
+  export type $<T> =
+    T extends typeof Query$argsObjectArr2D ? Query.argsObjectArr2D :
+    T extends typeof Query$argsObjectArrMM ? Query.argsObjectArrMM :
+    T extends typeof Query$argsObjectArrMN ? Query.argsObjectArrMN :
+    T extends typeof Query$argsObjectArrNM ? Query.argsObjectArrNM :
+    T extends typeof Query$argsObjectArrNN ? Query.argsObjectArrNN :
+    T extends typeof Query$argsObjectMand ? Query.argsObjectMand :
+    T extends typeof Query$argsObjectNull ? Query.argsObjectNull :
+    T extends typeof Query$argsScalarArr2D ? Query.argsScalarArr2D :
+    T extends typeof Query$argsScalarArrMM ? Query.argsScalarArrMM :
+    T extends typeof Query$argsScalarArrMN ? Query.argsScalarArrMN :
+    T extends typeof Query$argsScalarArrNM ? Query.argsScalarArrNM :
+    T extends typeof Query$argsScalarArrNN ? Query.argsScalarArrNN :
+    T extends typeof Query$argsScalarMand ? Query.argsScalarMand :
+    T extends typeof Query$argsScalarNull ? Query.argsScalarNull :
+    T extends typeof Query$noArgsObjectArr2D ? Query.noArgsObjectArr2D :
+    T extends typeof Query$noArgsObjectArrMM ? Query.noArgsObjectArrMM :
+    T extends typeof Query$noArgsObjectArrMN ? Query.noArgsObjectArrMN :
+    T extends typeof Query$noArgsObjectArrNM ? Query.noArgsObjectArrNM :
+    T extends typeof Query$noArgsObjectArrNN ? Query.noArgsObjectArrNN :
+    T extends typeof Query$noArgsObjectMand ? Query.noArgsObjectMand :
+    T extends typeof Query$noArgsObjectNull ? Query.noArgsObjectNull :
+    T extends typeof Query$noArgsScalarArr2D ? Query.noArgsScalarArr2D :
+    T extends typeof Query$noArgsScalarArrMM ? Query.noArgsScalarArrMM :
+    T extends typeof Query$noArgsScalarArrMN ? Query.noArgsScalarArrMN :
+    T extends typeof Query$noArgsScalarArrNM ? Query.noArgsScalarArrNM :
+    T extends typeof Query$noArgsScalarArrNN ? Query.noArgsScalarArrNN :
+    T extends typeof Query$noArgsScalarMand ? Query.noArgsScalarMand :
+    T extends typeof Query$noArgsScalarNull ? Query.noArgsScalarNull :
+    T extends typeof Mutation$argsObjectArr2D ? Mutation.argsObjectArr2D :
+    T extends typeof Mutation$argsObjectArrMM ? Mutation.argsObjectArrMM :
+    T extends typeof Mutation$argsObjectArrMN ? Mutation.argsObjectArrMN :
+    T extends typeof Mutation$argsObjectArrNM ? Mutation.argsObjectArrNM :
+    T extends typeof Mutation$argsObjectArrNN ? Mutation.argsObjectArrNN :
+    T extends typeof Mutation$argsObjectMand ? Mutation.argsObjectMand :
+    T extends typeof Mutation$argsObjectNull ? Mutation.argsObjectNull :
+    T extends typeof Mutation$argsScalarArr2D ? Mutation.argsScalarArr2D :
+    T extends typeof Mutation$argsScalarArrMM ? Mutation.argsScalarArrMM :
+    T extends typeof Mutation$argsScalarArrMN ? Mutation.argsScalarArrMN :
+    T extends typeof Mutation$argsScalarArrNM ? Mutation.argsScalarArrNM :
+    T extends typeof Mutation$argsScalarArrNN ? Mutation.argsScalarArrNN :
+    T extends typeof Mutation$argsScalarMand ? Mutation.argsScalarMand :
+    T extends typeof Mutation$argsScalarNull ? Mutation.argsScalarNull :
+    T extends typeof Mutation$noArgsObjectArr2D ? Mutation.noArgsObjectArr2D :
+    T extends typeof Mutation$noArgsObjectArrMM ? Mutation.noArgsObjectArrMM :
+    T extends typeof Mutation$noArgsObjectArrMN ? Mutation.noArgsObjectArrMN :
+    T extends typeof Mutation$noArgsObjectArrNM ? Mutation.noArgsObjectArrNM :
+    T extends typeof Mutation$noArgsObjectArrNN ? Mutation.noArgsObjectArrNN :
+    T extends typeof Mutation$noArgsObjectMand ? Mutation.noArgsObjectMand :
+    T extends typeof Mutation$noArgsObjectNull ? Mutation.noArgsObjectNull :
+    T extends typeof Mutation$noArgsScalarArr2D ? Mutation.noArgsScalarArr2D :
+    T extends typeof Mutation$noArgsScalarArrMM ? Mutation.noArgsScalarArrMM :
+    T extends typeof Mutation$noArgsScalarArrMN ? Mutation.noArgsScalarArrMN :
+    T extends typeof Mutation$noArgsScalarArrNM ? Mutation.noArgsScalarArrNM :
+    T extends typeof Mutation$noArgsScalarArrNN ? Mutation.noArgsScalarArrNN :
+    T extends typeof Mutation$noArgsScalarMand ? Mutation.noArgsScalarMand :
+    T extends typeof Mutation$noArgsScalarNull ? Mutation.noArgsScalarNull :
+    never
+}
+
+export namespace gqx2 {
+  export namespace Query {
+    export type argsObjectArr2D = _gqx2<Query$argsObjectArr2D>;
+    export type argsObjectArrMM = _gqx2<Query$argsObjectArrMM>;
+    export type argsObjectArrMN = _gqx2<Query$argsObjectArrMN>;
+    export type argsObjectArrNM = _gqx2<Query$argsObjectArrNM>;
+    export type argsObjectArrNN = _gqx2<Query$argsObjectArrNN>;
+    export type argsObjectMand = _gqx2<Query$argsObjectMand>;
+    export type argsObjectNull = _gqx2<Query$argsObjectNull>;
+    export type argsScalarArr2D = _gqx2<Query$argsScalarArr2D>;
+    export type argsScalarArrMM = _gqx2<Query$argsScalarArrMM>;
+    export type argsScalarArrMN = _gqx2<Query$argsScalarArrMN>;
+    export type argsScalarArrNM = _gqx2<Query$argsScalarArrNM>;
+    export type argsScalarArrNN = _gqx2<Query$argsScalarArrNN>;
+    export type argsScalarMand = _gqx2<Query$argsScalarMand>;
+    export type argsScalarNull = _gqx2<Query$argsScalarNull>;
+    export type noArgsObjectArr2D = _gqx2<Query$noArgsObjectArr2D>;
+    export type noArgsObjectArrMM = _gqx2<Query$noArgsObjectArrMM>;
+    export type noArgsObjectArrMN = _gqx2<Query$noArgsObjectArrMN>;
+    export type noArgsObjectArrNM = _gqx2<Query$noArgsObjectArrNM>;
+    export type noArgsObjectArrNN = _gqx2<Query$noArgsObjectArrNN>;
+    export type noArgsObjectMand = _gqx2<Query$noArgsObjectMand>;
+    export type noArgsObjectNull = _gqx2<Query$noArgsObjectNull>;
+    export type noArgsScalarArr2D = _gqx2<Query$noArgsScalarArr2D>;
+    export type noArgsScalarArrMM = _gqx2<Query$noArgsScalarArrMM>;
+    export type noArgsScalarArrMN = _gqx2<Query$noArgsScalarArrMN>;
+    export type noArgsScalarArrNM = _gqx2<Query$noArgsScalarArrNM>;
+    export type noArgsScalarArrNN = _gqx2<Query$noArgsScalarArrNN>;
+    export type noArgsScalarMand = _gqx2<Query$noArgsScalarMand>;
+    export type noArgsScalarNull = _gqx2<Query$noArgsScalarNull>;
+  }
+  export namespace Mutation {
+    export type argsObjectArr2D = _gqx2<Mutation$argsObjectArr2D>;
+    export type argsObjectArrMM = _gqx2<Mutation$argsObjectArrMM>;
+    export type argsObjectArrMN = _gqx2<Mutation$argsObjectArrMN>;
+    export type argsObjectArrNM = _gqx2<Mutation$argsObjectArrNM>;
+    export type argsObjectArrNN = _gqx2<Mutation$argsObjectArrNN>;
+    export type argsObjectMand = _gqx2<Mutation$argsObjectMand>;
+    export type argsObjectNull = _gqx2<Mutation$argsObjectNull>;
+    export type argsScalarArr2D = _gqx2<Mutation$argsScalarArr2D>;
+    export type argsScalarArrMM = _gqx2<Mutation$argsScalarArrMM>;
+    export type argsScalarArrMN = _gqx2<Mutation$argsScalarArrMN>;
+    export type argsScalarArrNM = _gqx2<Mutation$argsScalarArrNM>;
+    export type argsScalarArrNN = _gqx2<Mutation$argsScalarArrNN>;
+    export type argsScalarMand = _gqx2<Mutation$argsScalarMand>;
+    export type argsScalarNull = _gqx2<Mutation$argsScalarNull>;
+    export type noArgsObjectArr2D = _gqx2<Mutation$noArgsObjectArr2D>;
+    export type noArgsObjectArrMM = _gqx2<Mutation$noArgsObjectArrMM>;
+    export type noArgsObjectArrMN = _gqx2<Mutation$noArgsObjectArrMN>;
+    export type noArgsObjectArrNM = _gqx2<Mutation$noArgsObjectArrNM>;
+    export type noArgsObjectArrNN = _gqx2<Mutation$noArgsObjectArrNN>;
+    export type noArgsObjectMand = _gqx2<Mutation$noArgsObjectMand>;
+    export type noArgsObjectNull = _gqx2<Mutation$noArgsObjectNull>;
+    export type noArgsScalarArr2D = _gqx2<Mutation$noArgsScalarArr2D>;
+    export type noArgsScalarArrMM = _gqx2<Mutation$noArgsScalarArrMM>;
+    export type noArgsScalarArrMN = _gqx2<Mutation$noArgsScalarArrMN>;
+    export type noArgsScalarArrNM = _gqx2<Mutation$noArgsScalarArrNM>;
+    export type noArgsScalarArrNN = _gqx2<Mutation$noArgsScalarArrNN>;
+    export type noArgsScalarMand = _gqx2<Mutation$noArgsScalarMand>;
+    export type noArgsScalarNull = _gqx2<Mutation$noArgsScalarNull>;
+  }
+
+  export type $<T> =
+    T extends typeof Query$argsObjectArr2D ? Query.argsObjectArr2D :
+    T extends typeof Query$argsObjectArrMM ? Query.argsObjectArrMM :
+    T extends typeof Query$argsObjectArrMN ? Query.argsObjectArrMN :
+    T extends typeof Query$argsObjectArrNM ? Query.argsObjectArrNM :
+    T extends typeof Query$argsObjectArrNN ? Query.argsObjectArrNN :
+    T extends typeof Query$argsObjectMand ? Query.argsObjectMand :
+    T extends typeof Query$argsObjectNull ? Query.argsObjectNull :
+    T extends typeof Query$argsScalarArr2D ? Query.argsScalarArr2D :
+    T extends typeof Query$argsScalarArrMM ? Query.argsScalarArrMM :
+    T extends typeof Query$argsScalarArrMN ? Query.argsScalarArrMN :
+    T extends typeof Query$argsScalarArrNM ? Query.argsScalarArrNM :
+    T extends typeof Query$argsScalarArrNN ? Query.argsScalarArrNN :
+    T extends typeof Query$argsScalarMand ? Query.argsScalarMand :
+    T extends typeof Query$argsScalarNull ? Query.argsScalarNull :
+    T extends typeof Query$noArgsObjectArr2D ? Query.noArgsObjectArr2D :
+    T extends typeof Query$noArgsObjectArrMM ? Query.noArgsObjectArrMM :
+    T extends typeof Query$noArgsObjectArrMN ? Query.noArgsObjectArrMN :
+    T extends typeof Query$noArgsObjectArrNM ? Query.noArgsObjectArrNM :
+    T extends typeof Query$noArgsObjectArrNN ? Query.noArgsObjectArrNN :
+    T extends typeof Query$noArgsObjectMand ? Query.noArgsObjectMand :
+    T extends typeof Query$noArgsObjectNull ? Query.noArgsObjectNull :
+    T extends typeof Query$noArgsScalarArr2D ? Query.noArgsScalarArr2D :
+    T extends typeof Query$noArgsScalarArrMM ? Query.noArgsScalarArrMM :
+    T extends typeof Query$noArgsScalarArrMN ? Query.noArgsScalarArrMN :
+    T extends typeof Query$noArgsScalarArrNM ? Query.noArgsScalarArrNM :
+    T extends typeof Query$noArgsScalarArrNN ? Query.noArgsScalarArrNN :
+    T extends typeof Query$noArgsScalarMand ? Query.noArgsScalarMand :
+    T extends typeof Query$noArgsScalarNull ? Query.noArgsScalarNull :
+    T extends typeof Mutation$argsObjectArr2D ? Mutation.argsObjectArr2D :
+    T extends typeof Mutation$argsObjectArrMM ? Mutation.argsObjectArrMM :
+    T extends typeof Mutation$argsObjectArrMN ? Mutation.argsObjectArrMN :
+    T extends typeof Mutation$argsObjectArrNM ? Mutation.argsObjectArrNM :
+    T extends typeof Mutation$argsObjectArrNN ? Mutation.argsObjectArrNN :
+    T extends typeof Mutation$argsObjectMand ? Mutation.argsObjectMand :
+    T extends typeof Mutation$argsObjectNull ? Mutation.argsObjectNull :
+    T extends typeof Mutation$argsScalarArr2D ? Mutation.argsScalarArr2D :
+    T extends typeof Mutation$argsScalarArrMM ? Mutation.argsScalarArrMM :
+    T extends typeof Mutation$argsScalarArrMN ? Mutation.argsScalarArrMN :
+    T extends typeof Mutation$argsScalarArrNM ? Mutation.argsScalarArrNM :
+    T extends typeof Mutation$argsScalarArrNN ? Mutation.argsScalarArrNN :
+    T extends typeof Mutation$argsScalarMand ? Mutation.argsScalarMand :
+    T extends typeof Mutation$argsScalarNull ? Mutation.argsScalarNull :
+    T extends typeof Mutation$noArgsObjectArr2D ? Mutation.noArgsObjectArr2D :
+    T extends typeof Mutation$noArgsObjectArrMM ? Mutation.noArgsObjectArrMM :
+    T extends typeof Mutation$noArgsObjectArrMN ? Mutation.noArgsObjectArrMN :
+    T extends typeof Mutation$noArgsObjectArrNM ? Mutation.noArgsObjectArrNM :
+    T extends typeof Mutation$noArgsObjectArrNN ? Mutation.noArgsObjectArrNN :
+    T extends typeof Mutation$noArgsObjectMand ? Mutation.noArgsObjectMand :
+    T extends typeof Mutation$noArgsObjectNull ? Mutation.noArgsObjectNull :
+    T extends typeof Mutation$noArgsScalarArr2D ? Mutation.noArgsScalarArr2D :
+    T extends typeof Mutation$noArgsScalarArrMM ? Mutation.noArgsScalarArrMM :
+    T extends typeof Mutation$noArgsScalarArrMN ? Mutation.noArgsScalarArrMN :
+    T extends typeof Mutation$noArgsScalarArrNM ? Mutation.noArgsScalarArrNM :
+    T extends typeof Mutation$noArgsScalarArrNN ? Mutation.noArgsScalarArrNN :
+    T extends typeof Mutation$noArgsScalarMand ? Mutation.noArgsScalarMand :
+    T extends typeof Mutation$noArgsScalarNull ? Mutation.noArgsScalarNull :
+    never
+}"
+`;
 
 exports[`undefined 1`] = `""`;
 
-exports[`unexported 1`] = `""`;
+exports[`unexported 1`] = `
+"namespace gqx {
+  export namespace Query {
+    export type argsObjectArr2D = _gqx<Query$argsObjectArr2D>;
+    export type argsObjectArrMM = _gqx<Query$argsObjectArrMM>;
+    export type argsObjectArrMN = _gqx<Query$argsObjectArrMN>;
+    export type argsObjectArrNM = _gqx<Query$argsObjectArrNM>;
+    export type argsObjectArrNN = _gqx<Query$argsObjectArrNN>;
+    export type argsObjectMand = _gqx<Query$argsObjectMand>;
+    export type argsObjectNull = _gqx<Query$argsObjectNull>;
+    export type argsScalarArr2D = _gqx<Query$argsScalarArr2D>;
+    export type argsScalarArrMM = _gqx<Query$argsScalarArrMM>;
+    export type argsScalarArrMN = _gqx<Query$argsScalarArrMN>;
+    export type argsScalarArrNM = _gqx<Query$argsScalarArrNM>;
+    export type argsScalarArrNN = _gqx<Query$argsScalarArrNN>;
+    export type argsScalarMand = _gqx<Query$argsScalarMand>;
+    export type argsScalarNull = _gqx<Query$argsScalarNull>;
+    export type noArgsObjectArr2D = _gqx<Query$noArgsObjectArr2D>;
+    export type noArgsObjectArrMM = _gqx<Query$noArgsObjectArrMM>;
+    export type noArgsObjectArrMN = _gqx<Query$noArgsObjectArrMN>;
+    export type noArgsObjectArrNM = _gqx<Query$noArgsObjectArrNM>;
+    export type noArgsObjectArrNN = _gqx<Query$noArgsObjectArrNN>;
+    export type noArgsObjectMand = _gqx<Query$noArgsObjectMand>;
+    export type noArgsObjectNull = _gqx<Query$noArgsObjectNull>;
+    export type noArgsScalarArr2D = _gqx<Query$noArgsScalarArr2D>;
+    export type noArgsScalarArrMM = _gqx<Query$noArgsScalarArrMM>;
+    export type noArgsScalarArrMN = _gqx<Query$noArgsScalarArrMN>;
+    export type noArgsScalarArrNM = _gqx<Query$noArgsScalarArrNM>;
+    export type noArgsScalarArrNN = _gqx<Query$noArgsScalarArrNN>;
+    export type noArgsScalarMand = _gqx<Query$noArgsScalarMand>;
+    export type noArgsScalarNull = _gqx<Query$noArgsScalarNull>;
+  }
+  export namespace Mutation {
+    export type argsObjectArr2D = _gqx<Mutation$argsObjectArr2D>;
+    export type argsObjectArrMM = _gqx<Mutation$argsObjectArrMM>;
+    export type argsObjectArrMN = _gqx<Mutation$argsObjectArrMN>;
+    export type argsObjectArrNM = _gqx<Mutation$argsObjectArrNM>;
+    export type argsObjectArrNN = _gqx<Mutation$argsObjectArrNN>;
+    export type argsObjectMand = _gqx<Mutation$argsObjectMand>;
+    export type argsObjectNull = _gqx<Mutation$argsObjectNull>;
+    export type argsScalarArr2D = _gqx<Mutation$argsScalarArr2D>;
+    export type argsScalarArrMM = _gqx<Mutation$argsScalarArrMM>;
+    export type argsScalarArrMN = _gqx<Mutation$argsScalarArrMN>;
+    export type argsScalarArrNM = _gqx<Mutation$argsScalarArrNM>;
+    export type argsScalarArrNN = _gqx<Mutation$argsScalarArrNN>;
+    export type argsScalarMand = _gqx<Mutation$argsScalarMand>;
+    export type argsScalarNull = _gqx<Mutation$argsScalarNull>;
+    export type noArgsObjectArr2D = _gqx<Mutation$noArgsObjectArr2D>;
+    export type noArgsObjectArrMM = _gqx<Mutation$noArgsObjectArrMM>;
+    export type noArgsObjectArrMN = _gqx<Mutation$noArgsObjectArrMN>;
+    export type noArgsObjectArrNM = _gqx<Mutation$noArgsObjectArrNM>;
+    export type noArgsObjectArrNN = _gqx<Mutation$noArgsObjectArrNN>;
+    export type noArgsObjectMand = _gqx<Mutation$noArgsObjectMand>;
+    export type noArgsObjectNull = _gqx<Mutation$noArgsObjectNull>;
+    export type noArgsScalarArr2D = _gqx<Mutation$noArgsScalarArr2D>;
+    export type noArgsScalarArrMM = _gqx<Mutation$noArgsScalarArrMM>;
+    export type noArgsScalarArrMN = _gqx<Mutation$noArgsScalarArrMN>;
+    export type noArgsScalarArrNM = _gqx<Mutation$noArgsScalarArrNM>;
+    export type noArgsScalarArrNN = _gqx<Mutation$noArgsScalarArrNN>;
+    export type noArgsScalarMand = _gqx<Mutation$noArgsScalarMand>;
+    export type noArgsScalarNull = _gqx<Mutation$noArgsScalarNull>;
+  }
+
+  export type $<T> =
+    T extends typeof Query$argsObjectArr2D ? Query.argsObjectArr2D :
+    T extends typeof Query$argsObjectArrMM ? Query.argsObjectArrMM :
+    T extends typeof Query$argsObjectArrMN ? Query.argsObjectArrMN :
+    T extends typeof Query$argsObjectArrNM ? Query.argsObjectArrNM :
+    T extends typeof Query$argsObjectArrNN ? Query.argsObjectArrNN :
+    T extends typeof Query$argsObjectMand ? Query.argsObjectMand :
+    T extends typeof Query$argsObjectNull ? Query.argsObjectNull :
+    T extends typeof Query$argsScalarArr2D ? Query.argsScalarArr2D :
+    T extends typeof Query$argsScalarArrMM ? Query.argsScalarArrMM :
+    T extends typeof Query$argsScalarArrMN ? Query.argsScalarArrMN :
+    T extends typeof Query$argsScalarArrNM ? Query.argsScalarArrNM :
+    T extends typeof Query$argsScalarArrNN ? Query.argsScalarArrNN :
+    T extends typeof Query$argsScalarMand ? Query.argsScalarMand :
+    T extends typeof Query$argsScalarNull ? Query.argsScalarNull :
+    T extends typeof Query$noArgsObjectArr2D ? Query.noArgsObjectArr2D :
+    T extends typeof Query$noArgsObjectArrMM ? Query.noArgsObjectArrMM :
+    T extends typeof Query$noArgsObjectArrMN ? Query.noArgsObjectArrMN :
+    T extends typeof Query$noArgsObjectArrNM ? Query.noArgsObjectArrNM :
+    T extends typeof Query$noArgsObjectArrNN ? Query.noArgsObjectArrNN :
+    T extends typeof Query$noArgsObjectMand ? Query.noArgsObjectMand :
+    T extends typeof Query$noArgsObjectNull ? Query.noArgsObjectNull :
+    T extends typeof Query$noArgsScalarArr2D ? Query.noArgsScalarArr2D :
+    T extends typeof Query$noArgsScalarArrMM ? Query.noArgsScalarArrMM :
+    T extends typeof Query$noArgsScalarArrMN ? Query.noArgsScalarArrMN :
+    T extends typeof Query$noArgsScalarArrNM ? Query.noArgsScalarArrNM :
+    T extends typeof Query$noArgsScalarArrNN ? Query.noArgsScalarArrNN :
+    T extends typeof Query$noArgsScalarMand ? Query.noArgsScalarMand :
+    T extends typeof Query$noArgsScalarNull ? Query.noArgsScalarNull :
+    T extends typeof Mutation$argsObjectArr2D ? Mutation.argsObjectArr2D :
+    T extends typeof Mutation$argsObjectArrMM ? Mutation.argsObjectArrMM :
+    T extends typeof Mutation$argsObjectArrMN ? Mutation.argsObjectArrMN :
+    T extends typeof Mutation$argsObjectArrNM ? Mutation.argsObjectArrNM :
+    T extends typeof Mutation$argsObjectArrNN ? Mutation.argsObjectArrNN :
+    T extends typeof Mutation$argsObjectMand ? Mutation.argsObjectMand :
+    T extends typeof Mutation$argsObjectNull ? Mutation.argsObjectNull :
+    T extends typeof Mutation$argsScalarArr2D ? Mutation.argsScalarArr2D :
+    T extends typeof Mutation$argsScalarArrMM ? Mutation.argsScalarArrMM :
+    T extends typeof Mutation$argsScalarArrMN ? Mutation.argsScalarArrMN :
+    T extends typeof Mutation$argsScalarArrNM ? Mutation.argsScalarArrNM :
+    T extends typeof Mutation$argsScalarArrNN ? Mutation.argsScalarArrNN :
+    T extends typeof Mutation$argsScalarMand ? Mutation.argsScalarMand :
+    T extends typeof Mutation$argsScalarNull ? Mutation.argsScalarNull :
+    T extends typeof Mutation$noArgsObjectArr2D ? Mutation.noArgsObjectArr2D :
+    T extends typeof Mutation$noArgsObjectArrMM ? Mutation.noArgsObjectArrMM :
+    T extends typeof Mutation$noArgsObjectArrMN ? Mutation.noArgsObjectArrMN :
+    T extends typeof Mutation$noArgsObjectArrNM ? Mutation.noArgsObjectArrNM :
+    T extends typeof Mutation$noArgsObjectArrNN ? Mutation.noArgsObjectArrNN :
+    T extends typeof Mutation$noArgsObjectMand ? Mutation.noArgsObjectMand :
+    T extends typeof Mutation$noArgsObjectNull ? Mutation.noArgsObjectNull :
+    T extends typeof Mutation$noArgsScalarArr2D ? Mutation.noArgsScalarArr2D :
+    T extends typeof Mutation$noArgsScalarArrMM ? Mutation.noArgsScalarArrMM :
+    T extends typeof Mutation$noArgsScalarArrMN ? Mutation.noArgsScalarArrMN :
+    T extends typeof Mutation$noArgsScalarArrNM ? Mutation.noArgsScalarArrNM :
+    T extends typeof Mutation$noArgsScalarArrNN ? Mutation.noArgsScalarArrNN :
+    T extends typeof Mutation$noArgsScalarMand ? Mutation.noArgsScalarMand :
+    T extends typeof Mutation$noArgsScalarNull ? Mutation.noArgsScalarNull :
+    never
+}"
+`;

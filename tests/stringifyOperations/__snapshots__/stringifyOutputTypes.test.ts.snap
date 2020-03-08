@@ -3,19 +3,123 @@
 exports[` 1`] = `
 "export namespace $$Output {
   export namespace Query {
-    export type getAuthor<F extends $$Frag.$<typeof Query$getAuthor>[]> = $Author<F>
-    export type getBook<F extends $$Frag.$<typeof Query$getBook>[]> = $Book<F>
-    export type listBooks<F extends $$Frag.$<typeof Query$listBooks>[]> = $Book<F>[]
+    export type argsObjectArr2D<F extends $$Frag.$<typeof Query$argsObjectArr2D>[]> = $AnObjectType<F>[][]
+    export type argsObjectArrMM<F extends $$Frag.$<typeof Query$argsObjectArrMM>[]> = $AnObjectType<F>[]
+    export type argsObjectArrMN<F extends $$Frag.$<typeof Query$argsObjectArrMN>[]> = ($AnObjectType<F>[] | null)
+    export type argsObjectArrNM<F extends $$Frag.$<typeof Query$argsObjectArrNM>[]> = ($AnObjectType<F> | null)[]
+    export type argsObjectArrNN<F extends $$Frag.$<typeof Query$argsObjectArrNN>[]> = (($AnObjectType<F> | null)[] | null)
+    export type argsObjectMand<F extends $$Frag.$<typeof Query$argsObjectMand>[]> = $AnObjectType<F>
+    export type argsObjectNull<F extends $$Frag.$<typeof Query$argsObjectNull>[]> = ($AnObjectType<F> | null)
+    export type argsScalarArr2D<F extends $$Frag.$<typeof Query$argsScalarArr2D>[]> = String[][]
+    export type argsScalarArrMM<F extends $$Frag.$<typeof Query$argsScalarArrMM>[]> = String[]
+    export type argsScalarArrMN<F extends $$Frag.$<typeof Query$argsScalarArrMN>[]> = (String[] | null)
+    export type argsScalarArrNM<F extends $$Frag.$<typeof Query$argsScalarArrNM>[]> = (String | null)[]
+    export type argsScalarArrNN<F extends $$Frag.$<typeof Query$argsScalarArrNN>[]> = ((String | null)[] | null)
+    export type argsScalarMand<F extends $$Frag.$<typeof Query$argsScalarMand>[]> = String
+    export type argsScalarNull<F extends $$Frag.$<typeof Query$argsScalarNull>[]> = (String | null)
+    export type noArgsObjectArr2D<F extends $$Frag.$<typeof Query$noArgsObjectArr2D>[]> = $AnObjectType<F>[][]
+    export type noArgsObjectArrMM<F extends $$Frag.$<typeof Query$noArgsObjectArrMM>[]> = $AnObjectType<F>[]
+    export type noArgsObjectArrMN<F extends $$Frag.$<typeof Query$noArgsObjectArrMN>[]> = ($AnObjectType<F>[] | null)
+    export type noArgsObjectArrNM<F extends $$Frag.$<typeof Query$noArgsObjectArrNM>[]> = ($AnObjectType<F> | null)[]
+    export type noArgsObjectArrNN<F extends $$Frag.$<typeof Query$noArgsObjectArrNN>[]> = (($AnObjectType<F> | null)[] | null)
+    export type noArgsObjectMand<F extends $$Frag.$<typeof Query$noArgsObjectMand>[]> = $AnObjectType<F>
+    export type noArgsObjectNull<F extends $$Frag.$<typeof Query$noArgsObjectNull>[]> = ($AnObjectType<F> | null)
+    export type noArgsScalarArr2D<F extends $$Frag.$<typeof Query$noArgsScalarArr2D>[]> = String[][]
+    export type noArgsScalarArrMM<F extends $$Frag.$<typeof Query$noArgsScalarArrMM>[]> = String[]
+    export type noArgsScalarArrMN<F extends $$Frag.$<typeof Query$noArgsScalarArrMN>[]> = (String[] | null)
+    export type noArgsScalarArrNM<F extends $$Frag.$<typeof Query$noArgsScalarArrNM>[]> = (String | null)[]
+    export type noArgsScalarArrNN<F extends $$Frag.$<typeof Query$noArgsScalarArrNN>[]> = ((String | null)[] | null)
+    export type noArgsScalarMand<F extends $$Frag.$<typeof Query$noArgsScalarMand>[]> = String
+    export type noArgsScalarNull<F extends $$Frag.$<typeof Query$noArgsScalarNull>[]> = (String | null)
   }
   export namespace Mutation {
-    export type addReview<F extends $$Frag.$<typeof Mutation$addReview>[]> = $Review<F>
+    export type argsObjectArr2D<F extends $$Frag.$<typeof Mutation$argsObjectArr2D>[]> = $AnotherObjectType<F>[][]
+    export type argsObjectArrMM<F extends $$Frag.$<typeof Mutation$argsObjectArrMM>[]> = $AnotherObjectType<F>[]
+    export type argsObjectArrMN<F extends $$Frag.$<typeof Mutation$argsObjectArrMN>[]> = ($AnotherObjectType<F>[] | null)
+    export type argsObjectArrNM<F extends $$Frag.$<typeof Mutation$argsObjectArrNM>[]> = ($AnotherObjectType<F> | null)[]
+    export type argsObjectArrNN<F extends $$Frag.$<typeof Mutation$argsObjectArrNN>[]> = (($AnotherObjectType<F> | null)[] | null)
+    export type argsObjectMand<F extends $$Frag.$<typeof Mutation$argsObjectMand>[]> = $AnotherObjectType<F>
+    export type argsObjectNull<F extends $$Frag.$<typeof Mutation$argsObjectNull>[]> = ($AnotherObjectType<F> | null)
+    export type argsScalarArr2D<F extends $$Frag.$<typeof Mutation$argsScalarArr2D>[]> = Float[][]
+    export type argsScalarArrMM<F extends $$Frag.$<typeof Mutation$argsScalarArrMM>[]> = Float[]
+    export type argsScalarArrMN<F extends $$Frag.$<typeof Mutation$argsScalarArrMN>[]> = (Float[] | null)
+    export type argsScalarArrNM<F extends $$Frag.$<typeof Mutation$argsScalarArrNM>[]> = (Float | null)[]
+    export type argsScalarArrNN<F extends $$Frag.$<typeof Mutation$argsScalarArrNN>[]> = ((Float | null)[] | null)
+    export type argsScalarMand<F extends $$Frag.$<typeof Mutation$argsScalarMand>[]> = Float
+    export type argsScalarNull<F extends $$Frag.$<typeof Mutation$argsScalarNull>[]> = (Float | null)
+    export type noArgsObjectArr2D<F extends $$Frag.$<typeof Mutation$noArgsObjectArr2D>[]> = $AnotherObjectType<F>[][]
+    export type noArgsObjectArrMM<F extends $$Frag.$<typeof Mutation$noArgsObjectArrMM>[]> = $AnotherObjectType<F>[]
+    export type noArgsObjectArrMN<F extends $$Frag.$<typeof Mutation$noArgsObjectArrMN>[]> = ($AnotherObjectType<F>[] | null)
+    export type noArgsObjectArrNM<F extends $$Frag.$<typeof Mutation$noArgsObjectArrNM>[]> = ($AnotherObjectType<F> | null)[]
+    export type noArgsObjectArrNN<F extends $$Frag.$<typeof Mutation$noArgsObjectArrNN>[]> = (($AnotherObjectType<F> | null)[] | null)
+    export type noArgsObjectMand<F extends $$Frag.$<typeof Mutation$noArgsObjectMand>[]> = $AnotherObjectType<F>
+    export type noArgsObjectNull<F extends $$Frag.$<typeof Mutation$noArgsObjectNull>[]> = ($AnotherObjectType<F> | null)
+    export type noArgsScalarArr2D<F extends $$Frag.$<typeof Mutation$noArgsScalarArr2D>[]> = Float[][]
+    export type noArgsScalarArrMM<F extends $$Frag.$<typeof Mutation$noArgsScalarArrMM>[]> = Float[]
+    export type noArgsScalarArrMN<F extends $$Frag.$<typeof Mutation$noArgsScalarArrMN>[]> = (Float[] | null)
+    export type noArgsScalarArrNM<F extends $$Frag.$<typeof Mutation$noArgsScalarArrNM>[]> = (Float | null)[]
+    export type noArgsScalarArrNN<F extends $$Frag.$<typeof Mutation$noArgsScalarArrNN>[]> = ((Float | null)[] | null)
+    export type noArgsScalarMand<F extends $$Frag.$<typeof Mutation$noArgsScalarMand>[]> = Float
+    export type noArgsScalarNull<F extends $$Frag.$<typeof Mutation$noArgsScalarNull>[]> = (Float | null)
   }
 
   export type $<T, F extends $$Frag.$<T>[]> =
-    F extends $$Frag.$<typeof Query$getAuthor>[] ? Query.getAuthor<F> :
-    F extends $$Frag.$<typeof Query$getBook>[] ? Query.getBook<F> :
-    F extends $$Frag.$<typeof Query$listBooks>[] ? Query.listBooks<F> :
-    F extends $$Frag.$<typeof Mutation$addReview>[] ? Mutation.addReview<F> :
+    F extends $$Frag.$<typeof Query$argsObjectArr2D>[] ? Query.argsObjectArr2D<F> :
+    F extends $$Frag.$<typeof Query$argsObjectArrMM>[] ? Query.argsObjectArrMM<F> :
+    F extends $$Frag.$<typeof Query$argsObjectArrMN>[] ? Query.argsObjectArrMN<F> :
+    F extends $$Frag.$<typeof Query$argsObjectArrNM>[] ? Query.argsObjectArrNM<F> :
+    F extends $$Frag.$<typeof Query$argsObjectArrNN>[] ? Query.argsObjectArrNN<F> :
+    F extends $$Frag.$<typeof Query$argsObjectMand>[] ? Query.argsObjectMand<F> :
+    F extends $$Frag.$<typeof Query$argsObjectNull>[] ? Query.argsObjectNull<F> :
+    F extends $$Frag.$<typeof Query$argsScalarArr2D>[] ? Query.argsScalarArr2D<F> :
+    F extends $$Frag.$<typeof Query$argsScalarArrMM>[] ? Query.argsScalarArrMM<F> :
+    F extends $$Frag.$<typeof Query$argsScalarArrMN>[] ? Query.argsScalarArrMN<F> :
+    F extends $$Frag.$<typeof Query$argsScalarArrNM>[] ? Query.argsScalarArrNM<F> :
+    F extends $$Frag.$<typeof Query$argsScalarArrNN>[] ? Query.argsScalarArrNN<F> :
+    F extends $$Frag.$<typeof Query$argsScalarMand>[] ? Query.argsScalarMand<F> :
+    F extends $$Frag.$<typeof Query$argsScalarNull>[] ? Query.argsScalarNull<F> :
+    F extends $$Frag.$<typeof Query$noArgsObjectArr2D>[] ? Query.noArgsObjectArr2D<F> :
+    F extends $$Frag.$<typeof Query$noArgsObjectArrMM>[] ? Query.noArgsObjectArrMM<F> :
+    F extends $$Frag.$<typeof Query$noArgsObjectArrMN>[] ? Query.noArgsObjectArrMN<F> :
+    F extends $$Frag.$<typeof Query$noArgsObjectArrNM>[] ? Query.noArgsObjectArrNM<F> :
+    F extends $$Frag.$<typeof Query$noArgsObjectArrNN>[] ? Query.noArgsObjectArrNN<F> :
+    F extends $$Frag.$<typeof Query$noArgsObjectMand>[] ? Query.noArgsObjectMand<F> :
+    F extends $$Frag.$<typeof Query$noArgsObjectNull>[] ? Query.noArgsObjectNull<F> :
+    F extends $$Frag.$<typeof Query$noArgsScalarArr2D>[] ? Query.noArgsScalarArr2D<F> :
+    F extends $$Frag.$<typeof Query$noArgsScalarArrMM>[] ? Query.noArgsScalarArrMM<F> :
+    F extends $$Frag.$<typeof Query$noArgsScalarArrMN>[] ? Query.noArgsScalarArrMN<F> :
+    F extends $$Frag.$<typeof Query$noArgsScalarArrNM>[] ? Query.noArgsScalarArrNM<F> :
+    F extends $$Frag.$<typeof Query$noArgsScalarArrNN>[] ? Query.noArgsScalarArrNN<F> :
+    F extends $$Frag.$<typeof Query$noArgsScalarMand>[] ? Query.noArgsScalarMand<F> :
+    F extends $$Frag.$<typeof Query$noArgsScalarNull>[] ? Query.noArgsScalarNull<F> :
+    F extends $$Frag.$<typeof Mutation$argsObjectArr2D>[] ? Mutation.argsObjectArr2D<F> :
+    F extends $$Frag.$<typeof Mutation$argsObjectArrMM>[] ? Mutation.argsObjectArrMM<F> :
+    F extends $$Frag.$<typeof Mutation$argsObjectArrMN>[] ? Mutation.argsObjectArrMN<F> :
+    F extends $$Frag.$<typeof Mutation$argsObjectArrNM>[] ? Mutation.argsObjectArrNM<F> :
+    F extends $$Frag.$<typeof Mutation$argsObjectArrNN>[] ? Mutation.argsObjectArrNN<F> :
+    F extends $$Frag.$<typeof Mutation$argsObjectMand>[] ? Mutation.argsObjectMand<F> :
+    F extends $$Frag.$<typeof Mutation$argsObjectNull>[] ? Mutation.argsObjectNull<F> :
+    F extends $$Frag.$<typeof Mutation$argsScalarArr2D>[] ? Mutation.argsScalarArr2D<F> :
+    F extends $$Frag.$<typeof Mutation$argsScalarArrMM>[] ? Mutation.argsScalarArrMM<F> :
+    F extends $$Frag.$<typeof Mutation$argsScalarArrMN>[] ? Mutation.argsScalarArrMN<F> :
+    F extends $$Frag.$<typeof Mutation$argsScalarArrNM>[] ? Mutation.argsScalarArrNM<F> :
+    F extends $$Frag.$<typeof Mutation$argsScalarArrNN>[] ? Mutation.argsScalarArrNN<F> :
+    F extends $$Frag.$<typeof Mutation$argsScalarMand>[] ? Mutation.argsScalarMand<F> :
+    F extends $$Frag.$<typeof Mutation$argsScalarNull>[] ? Mutation.argsScalarNull<F> :
+    F extends $$Frag.$<typeof Mutation$noArgsObjectArr2D>[] ? Mutation.noArgsObjectArr2D<F> :
+    F extends $$Frag.$<typeof Mutation$noArgsObjectArrMM>[] ? Mutation.noArgsObjectArrMM<F> :
+    F extends $$Frag.$<typeof Mutation$noArgsObjectArrMN>[] ? Mutation.noArgsObjectArrMN<F> :
+    F extends $$Frag.$<typeof Mutation$noArgsObjectArrNM>[] ? Mutation.noArgsObjectArrNM<F> :
+    F extends $$Frag.$<typeof Mutation$noArgsObjectArrNN>[] ? Mutation.noArgsObjectArrNN<F> :
+    F extends $$Frag.$<typeof Mutation$noArgsObjectMand>[] ? Mutation.noArgsObjectMand<F> :
+    F extends $$Frag.$<typeof Mutation$noArgsObjectNull>[] ? Mutation.noArgsObjectNull<F> :
+    F extends $$Frag.$<typeof Mutation$noArgsScalarArr2D>[] ? Mutation.noArgsScalarArr2D<F> :
+    F extends $$Frag.$<typeof Mutation$noArgsScalarArrMM>[] ? Mutation.noArgsScalarArrMM<F> :
+    F extends $$Frag.$<typeof Mutation$noArgsScalarArrMN>[] ? Mutation.noArgsScalarArrMN<F> :
+    F extends $$Frag.$<typeof Mutation$noArgsScalarArrNM>[] ? Mutation.noArgsScalarArrNM<F> :
+    F extends $$Frag.$<typeof Mutation$noArgsScalarArrNN>[] ? Mutation.noArgsScalarArrNN<F> :
+    F extends $$Frag.$<typeof Mutation$noArgsScalarMand>[] ? Mutation.noArgsScalarMand<F> :
+    F extends $$Frag.$<typeof Mutation$noArgsScalarNull>[] ? Mutation.noArgsScalarNull<F> :
     never
 }"
 `;

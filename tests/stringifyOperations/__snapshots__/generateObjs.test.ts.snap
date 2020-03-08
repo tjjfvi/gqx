@@ -4,11 +4,11 @@ exports[` 1`] = `
 Array [
   Object {
     "n": "Query",
-    "p": 3,
+    "p": 28,
   },
   Object {
     "n": "Mutation",
-    "p": 1,
+    "p": 28,
   },
 ]
 `;
@@ -26,46 +26,79 @@ Array [
             "directives": Array [],
             "kind": "InputValueDefinition",
             "loc": Object {
-              "end": 82,
-              "start": 75,
+              "end": 681,
+              "start": 671,
             },
             "name": Object {
               "kind": "Name",
               "loc": Object {
-                "end": 77,
-                "start": 75,
+                "end": 672,
+                "start": 671,
               },
-              "value": "id",
+              "value": "a",
             },
             "type": Object {
               "kind": "NonNullType",
               "loc": Object {
-                "end": 82,
-                "start": 79,
+                "end": 681,
+                "start": 674,
               },
               "type": Object {
                 "kind": "NamedType",
                 "loc": Object {
-                  "end": 81,
-                  "start": 79,
+                  "end": 680,
+                  "start": 674,
                 },
                 "name": Object {
                   "kind": "Name",
                   "loc": Object {
-                    "end": 81,
-                    "start": 79,
+                    "end": 680,
+                    "start": 674,
                   },
-                  "value": "ID",
+                  "value": "String",
                 },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 691,
+              "start": 683,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 684,
+                "start": 683,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 691,
+                "start": 686,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 691,
+                  "start": 686,
+                },
+                "value": "Float",
               },
             },
           },
         ],
         "id": Object {
-          "prop": "getAuthor",
+          "prop": "argsObjectArr2D",
           "type": "Query",
         },
-        "type": "Author",
+        "type": "AnObjectType",
         "wrap": [Function],
       },
       Object {
@@ -76,46 +109,79 @@ Array [
             "directives": Array [],
             "kind": "InputValueDefinition",
             "loc": Object {
-              "end": 110,
-              "start": 103,
+              "end": 453,
+              "start": 443,
             },
             "name": Object {
               "kind": "Name",
               "loc": Object {
-                "end": 105,
-                "start": 103,
+                "end": 444,
+                "start": 443,
               },
-              "value": "id",
+              "value": "a",
             },
             "type": Object {
               "kind": "NonNullType",
               "loc": Object {
-                "end": 110,
-                "start": 107,
+                "end": 453,
+                "start": 446,
               },
               "type": Object {
                 "kind": "NamedType",
                 "loc": Object {
-                  "end": 109,
-                  "start": 107,
+                  "end": 452,
+                  "start": 446,
                 },
                 "name": Object {
                   "kind": "Name",
                   "loc": Object {
-                    "end": 109,
-                    "start": 107,
+                    "end": 452,
+                    "start": 446,
                   },
-                  "value": "ID",
+                  "value": "String",
                 },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 463,
+              "start": 455,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 456,
+                "start": 455,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 463,
+                "start": 458,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 463,
+                  "start": 458,
+                },
+                "value": "Float",
               },
             },
           },
         ],
         "id": Object {
-          "prop": "getBook",
+          "prop": "argsObjectArrMM",
           "type": "Query",
         },
-        "type": "Book",
+        "type": "AnObjectType",
         "wrap": [Function],
       },
       Object {
@@ -126,30 +192,37 @@ Array [
             "directives": Array [],
             "kind": "InputValueDefinition",
             "loc": Object {
-              "end": 145,
-              "start": 131,
+              "end": 568,
+              "start": 558,
             },
             "name": Object {
               "kind": "Name",
               "loc": Object {
-                "end": 137,
-                "start": 131,
+                "end": 559,
+                "start": 558,
               },
-              "value": "cursor",
+              "value": "a",
             },
             "type": Object {
-              "kind": "NamedType",
+              "kind": "NonNullType",
               "loc": Object {
-                "end": 145,
-                "start": 139,
+                "end": 568,
+                "start": 561,
               },
-              "name": Object {
-                "kind": "Name",
+              "type": Object {
+                "kind": "NamedType",
                 "loc": Object {
-                  "end": 145,
-                  "start": 139,
+                  "end": 567,
+                  "start": 561,
                 },
-                "value": "Cursor",
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 567,
+                    "start": 561,
+                  },
+                  "value": "String",
+                },
               },
             },
           },
@@ -159,39 +232,1078 @@ Array [
             "directives": Array [],
             "kind": "InputValueDefinition",
             "loc": Object {
-              "end": 165,
-              "start": 147,
+              "end": 578,
+              "start": 570,
             },
             "name": Object {
               "kind": "Name",
               "loc": Object {
-                "end": 153,
-                "start": 147,
+                "end": 571,
+                "start": 570,
               },
-              "value": "filter",
+              "value": "b",
             },
             "type": Object {
               "kind": "NamedType",
               "loc": Object {
-                "end": 165,
-                "start": 155,
+                "end": 578,
+                "start": 573,
               },
               "name": Object {
                 "kind": "Name",
                 "loc": Object {
-                  "end": 165,
-                  "start": 155,
+                  "end": 578,
+                  "start": 573,
                 },
-                "value": "BookFilter",
+                "value": "Float",
               },
             },
           },
         ],
         "id": Object {
-          "prop": "listBooks",
+          "prop": "argsObjectArrMN",
           "type": "Query",
         },
-        "type": "Book",
+        "type": "AnObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 511,
+              "start": 501,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 502,
+                "start": 501,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 511,
+                "start": 504,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 510,
+                  "start": 504,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 510,
+                    "start": 504,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 521,
+              "start": 513,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 514,
+                "start": 513,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 521,
+                "start": 516,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 521,
+                  "start": 516,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsObjectArrNM",
+          "type": "Query",
+        },
+        "type": "AnObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 625,
+              "start": 615,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 616,
+                "start": 615,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 625,
+                "start": 618,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 624,
+                  "start": 618,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 624,
+                    "start": 618,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 635,
+              "start": 627,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 628,
+                "start": 627,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 635,
+                "start": 630,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 635,
+                  "start": 630,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsObjectArrNN",
+          "type": "Query",
+        },
+        "type": "AnObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 398,
+              "start": 388,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 389,
+                "start": 388,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 398,
+                "start": 391,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 397,
+                  "start": 391,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 397,
+                    "start": 391,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 408,
+              "start": 400,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 401,
+                "start": 400,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 408,
+                "start": 403,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 408,
+                  "start": 403,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsObjectMand",
+          "type": "Query",
+        },
+        "type": "AnObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 345,
+              "start": 335,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 336,
+                "start": 335,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 345,
+                "start": 338,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 344,
+                  "start": 338,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 344,
+                    "start": 338,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 355,
+              "start": 347,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 348,
+                "start": 347,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 355,
+                "start": 350,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 355,
+                  "start": 350,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsObjectNull",
+          "type": "Query",
+        },
+        "type": "AnObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1255,
+              "start": 1245,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1246,
+                "start": 1245,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 1255,
+                "start": 1248,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 1254,
+                  "start": 1248,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 1254,
+                    "start": 1248,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1265,
+              "start": 1257,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1258,
+                "start": 1257,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 1265,
+                "start": 1260,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 1265,
+                  "start": 1260,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsScalarArr2D",
+          "type": "Query",
+        },
+        "type": "String",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1051,
+              "start": 1041,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1042,
+                "start": 1041,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 1051,
+                "start": 1044,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 1050,
+                  "start": 1044,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 1050,
+                    "start": 1044,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1061,
+              "start": 1053,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1054,
+                "start": 1053,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 1061,
+                "start": 1056,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 1061,
+                  "start": 1056,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsScalarArrMM",
+          "type": "Query",
+        },
+        "type": "String",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1154,
+              "start": 1144,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1145,
+                "start": 1144,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 1154,
+                "start": 1147,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 1153,
+                  "start": 1147,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 1153,
+                    "start": 1147,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1164,
+              "start": 1156,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1157,
+                "start": 1156,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 1164,
+                "start": 1159,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 1164,
+                  "start": 1159,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsScalarArrMN",
+          "type": "Query",
+        },
+        "type": "String",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1103,
+              "start": 1093,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1094,
+                "start": 1093,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 1103,
+                "start": 1096,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 1102,
+                  "start": 1096,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 1102,
+                    "start": 1096,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1113,
+              "start": 1105,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1106,
+                "start": 1105,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 1113,
+                "start": 1108,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 1113,
+                  "start": 1108,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsScalarArrNM",
+          "type": "Query",
+        },
+        "type": "String",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1205,
+              "start": 1195,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1196,
+                "start": 1195,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 1205,
+                "start": 1198,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 1204,
+                  "start": 1198,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 1204,
+                    "start": 1198,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1215,
+              "start": 1207,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1208,
+                "start": 1207,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 1215,
+                "start": 1210,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 1215,
+                  "start": 1210,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsScalarArrNN",
+          "type": "Query",
+        },
+        "type": "String",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1002,
+              "start": 992,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 993,
+                "start": 992,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 1002,
+                "start": 995,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 1001,
+                  "start": 995,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 1001,
+                    "start": 995,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1012,
+              "start": 1004,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1005,
+                "start": 1004,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 1012,
+                "start": 1007,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 1012,
+                  "start": 1007,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsScalarMand",
+          "type": "Query",
+        },
+        "type": "String",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 955,
+              "start": 945,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 946,
+                "start": 945,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 955,
+                "start": 948,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 954,
+                  "start": 948,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 954,
+                    "start": 948,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 965,
+              "start": 957,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 958,
+                "start": 957,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 965,
+                "start": 960,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 965,
+                  "start": 960,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsScalarNull",
+          "type": "Query",
+        },
+        "type": "String",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsObjectArr2D",
+          "type": "Query",
+        },
+        "type": "AnObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsObjectArrMM",
+          "type": "Query",
+        },
+        "type": "AnObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsObjectArrMN",
+          "type": "Query",
+        },
+        "type": "AnObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsObjectArrNM",
+          "type": "Query",
+        },
+        "type": "AnObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsObjectArrNN",
+          "type": "Query",
+        },
+        "type": "AnObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsObjectMand",
+          "type": "Query",
+        },
+        "type": "AnObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsObjectNull",
+          "type": "Query",
+        },
+        "type": "AnObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsScalarArr2D",
+          "type": "Query",
+        },
+        "type": "String",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsScalarArrMM",
+          "type": "Query",
+        },
+        "type": "String",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsScalarArrMN",
+          "type": "Query",
+        },
+        "type": "String",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsScalarArrNM",
+          "type": "Query",
+        },
+        "type": "String",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsScalarArrNN",
+          "type": "Query",
+        },
+        "type": "String",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsScalarMand",
+          "type": "Query",
+        },
+        "type": "String",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsScalarNull",
+          "type": "Query",
+        },
+        "type": "String",
         "wrap": [Function],
       },
     ],
@@ -208,46 +1320,1284 @@ Array [
             "directives": Array [],
             "kind": "InputValueDefinition",
             "loc": Object {
-              "end": 227,
-              "start": 208,
+              "end": 1985,
+              "start": 1975,
             },
             "name": Object {
               "kind": "Name",
               "loc": Object {
-                "end": 213,
-                "start": 208,
+                "end": 1976,
+                "start": 1975,
               },
-              "value": "input",
+              "value": "a",
             },
             "type": Object {
               "kind": "NonNullType",
               "loc": Object {
-                "end": 227,
-                "start": 215,
+                "end": 1985,
+                "start": 1978,
               },
               "type": Object {
                 "kind": "NamedType",
                 "loc": Object {
-                  "end": 226,
-                  "start": 215,
+                  "end": 1984,
+                  "start": 1978,
                 },
                 "name": Object {
                   "kind": "Name",
                   "loc": Object {
-                    "end": 226,
-                    "start": 215,
+                    "end": 1984,
+                    "start": 1978,
                   },
-                  "value": "ReviewInput",
+                  "value": "String",
                 },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1995,
+              "start": 1987,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1988,
+                "start": 1987,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 1995,
+                "start": 1990,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 1995,
+                  "start": 1990,
+                },
+                "value": "Float",
               },
             },
           },
         ],
         "id": Object {
-          "prop": "addReview",
+          "prop": "argsObjectArr2D",
           "type": "Mutation",
         },
-        "type": "Review",
+        "type": "AnotherObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1737,
+              "start": 1727,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1728,
+                "start": 1727,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 1737,
+                "start": 1730,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 1736,
+                  "start": 1730,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 1736,
+                    "start": 1730,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1747,
+              "start": 1739,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1740,
+                "start": 1739,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 1747,
+                "start": 1742,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 1747,
+                  "start": 1742,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsObjectArrMM",
+          "type": "Mutation",
+        },
+        "type": "AnotherObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1862,
+              "start": 1852,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1853,
+                "start": 1852,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 1862,
+                "start": 1855,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 1861,
+                  "start": 1855,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 1861,
+                    "start": 1855,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1872,
+              "start": 1864,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1865,
+                "start": 1864,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 1872,
+                "start": 1867,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 1872,
+                  "start": 1867,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsObjectArrMN",
+          "type": "Mutation",
+        },
+        "type": "AnotherObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1800,
+              "start": 1790,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1791,
+                "start": 1790,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 1800,
+                "start": 1793,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 1799,
+                  "start": 1793,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 1799,
+                    "start": 1793,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1810,
+              "start": 1802,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1803,
+                "start": 1802,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 1810,
+                "start": 1805,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 1810,
+                  "start": 1805,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsObjectArrNM",
+          "type": "Mutation",
+        },
+        "type": "AnotherObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1924,
+              "start": 1914,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1915,
+                "start": 1914,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 1924,
+                "start": 1917,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 1923,
+                  "start": 1917,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 1923,
+                    "start": 1917,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1934,
+              "start": 1926,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1927,
+                "start": 1926,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 1934,
+                "start": 1929,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 1934,
+                  "start": 1929,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsObjectArrNN",
+          "type": "Mutation",
+        },
+        "type": "AnotherObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1677,
+              "start": 1667,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1668,
+                "start": 1667,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 1677,
+                "start": 1670,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 1676,
+                  "start": 1670,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 1676,
+                    "start": 1670,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1687,
+              "start": 1679,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1680,
+                "start": 1679,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 1687,
+                "start": 1682,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 1687,
+                  "start": 1682,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsObjectMand",
+          "type": "Mutation",
+        },
+        "type": "AnotherObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1619,
+              "start": 1609,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1610,
+                "start": 1609,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 1619,
+                "start": 1612,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 1618,
+                  "start": 1612,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 1618,
+                    "start": 1612,
+                  },
+                  "value": "String",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 1629,
+              "start": 1621,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 1622,
+                "start": 1621,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 1629,
+                "start": 1624,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 1629,
+                  "start": 1624,
+                },
+                "value": "Float",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsObjectNull",
+          "type": "Mutation",
+        },
+        "type": "AnotherObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 2546,
+              "start": 2535,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 2536,
+                "start": 2535,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 2546,
+                "start": 2538,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 2545,
+                  "start": 2538,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 2545,
+                    "start": 2538,
+                  },
+                  "value": "Boolean",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 2554,
+              "start": 2548,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 2549,
+                "start": 2548,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 2554,
+                "start": 2551,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 2554,
+                  "start": 2551,
+                },
+                "value": "Int",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsScalarArr2D",
+          "type": "Mutation",
+        },
+        "type": "Float",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 2350,
+              "start": 2339,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 2340,
+                "start": 2339,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 2350,
+                "start": 2342,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 2349,
+                  "start": 2342,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 2349,
+                    "start": 2342,
+                  },
+                  "value": "Boolean",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 2358,
+              "start": 2352,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 2353,
+                "start": 2352,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 2358,
+                "start": 2355,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 2358,
+                  "start": 2355,
+                },
+                "value": "Int",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsScalarArrMM",
+          "type": "Mutation",
+        },
+        "type": "Float",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 2449,
+              "start": 2438,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 2439,
+                "start": 2438,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 2449,
+                "start": 2441,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 2448,
+                  "start": 2441,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 2448,
+                    "start": 2441,
+                  },
+                  "value": "Boolean",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 2457,
+              "start": 2451,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 2452,
+                "start": 2451,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 2457,
+                "start": 2454,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 2457,
+                  "start": 2454,
+                },
+                "value": "Int",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsScalarArrMN",
+          "type": "Mutation",
+        },
+        "type": "Float",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 2400,
+              "start": 2389,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 2390,
+                "start": 2389,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 2400,
+                "start": 2392,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 2399,
+                  "start": 2392,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 2399,
+                    "start": 2392,
+                  },
+                  "value": "Boolean",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 2408,
+              "start": 2402,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 2403,
+                "start": 2402,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 2408,
+                "start": 2405,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 2408,
+                  "start": 2405,
+                },
+                "value": "Int",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsScalarArrNM",
+          "type": "Mutation",
+        },
+        "type": "Float",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 2498,
+              "start": 2487,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 2488,
+                "start": 2487,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 2498,
+                "start": 2490,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 2497,
+                  "start": 2490,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 2497,
+                    "start": 2490,
+                  },
+                  "value": "Boolean",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 2506,
+              "start": 2500,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 2501,
+                "start": 2500,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 2506,
+                "start": 2503,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 2506,
+                  "start": 2503,
+                },
+                "value": "Int",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsScalarArrNN",
+          "type": "Mutation",
+        },
+        "type": "Float",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 2303,
+              "start": 2292,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 2293,
+                "start": 2292,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 2303,
+                "start": 2295,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 2302,
+                  "start": 2295,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 2302,
+                    "start": 2295,
+                  },
+                  "value": "Boolean",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 2311,
+              "start": 2305,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 2306,
+                "start": 2305,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 2311,
+                "start": 2308,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 2311,
+                  "start": 2308,
+                },
+                "value": "Int",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsScalarMand",
+          "type": "Mutation",
+        },
+        "type": "Float",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 2258,
+              "start": 2247,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 2248,
+                "start": 2247,
+              },
+              "value": "a",
+            },
+            "type": Object {
+              "kind": "NonNullType",
+              "loc": Object {
+                "end": 2258,
+                "start": 2250,
+              },
+              "type": Object {
+                "kind": "NamedType",
+                "loc": Object {
+                  "end": 2257,
+                  "start": 2250,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 2257,
+                    "start": 2250,
+                  },
+                  "value": "Boolean",
+                },
+              },
+            },
+          },
+          Object {
+            "defaultValue": undefined,
+            "description": undefined,
+            "directives": Array [],
+            "kind": "InputValueDefinition",
+            "loc": Object {
+              "end": 2266,
+              "start": 2260,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 2261,
+                "start": 2260,
+              },
+              "value": "b",
+            },
+            "type": Object {
+              "kind": "NamedType",
+              "loc": Object {
+                "end": 2266,
+                "start": 2263,
+              },
+              "name": Object {
+                "kind": "Name",
+                "loc": Object {
+                  "end": 2266,
+                  "start": 2263,
+                },
+                "value": "Int",
+              },
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "argsScalarNull",
+          "type": "Mutation",
+        },
+        "type": "Float",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsObjectArr2D",
+          "type": "Mutation",
+        },
+        "type": "AnotherObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsObjectArrMM",
+          "type": "Mutation",
+        },
+        "type": "AnotherObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsObjectArrMN",
+          "type": "Mutation",
+        },
+        "type": "AnotherObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsObjectArrNM",
+          "type": "Mutation",
+        },
+        "type": "AnotherObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsObjectArrNN",
+          "type": "Mutation",
+        },
+        "type": "AnotherObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsObjectMand",
+          "type": "Mutation",
+        },
+        "type": "AnotherObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsObjectNull",
+          "type": "Mutation",
+        },
+        "type": "AnotherObjectType",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsScalarArr2D",
+          "type": "Mutation",
+        },
+        "type": "Float",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsScalarArrMM",
+          "type": "Mutation",
+        },
+        "type": "Float",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsScalarArrMN",
+          "type": "Mutation",
+        },
+        "type": "Float",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsScalarArrNM",
+          "type": "Mutation",
+        },
+        "type": "Float",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsScalarArrNN",
+          "type": "Mutation",
+        },
+        "type": "Float",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsScalarMand",
+          "type": "Mutation",
+        },
+        "type": "Float",
+        "wrap": [Function],
+      },
+      Object {
+        "args": Array [],
+        "id": Object {
+          "prop": "noArgsScalarNull",
+          "type": "Mutation",
+        },
+        "type": "Float",
         "wrap": [Function],
       },
     ],

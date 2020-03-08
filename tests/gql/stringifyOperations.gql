@@ -1,0 +1,77 @@
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  noArgsObjectNull: AnObjectType
+  noArgsObjectMand: AnObjectType!
+  noArgsObjectArrMM: [AnObjectType!]!
+  noArgsObjectArrNM: [AnObjectType]!
+  noArgsObjectArrMN: [AnObjectType!]
+  noArgsObjectArrNN: [AnObjectType]
+  noArgsObjectArr2D: [[AnObjectType!]!]!
+  argsObjectNull(a: String!, b: Float): AnObjectType
+  argsObjectMand(a: String!, b: Float): AnObjectType!
+  argsObjectArrMM(a: String!, b: Float): [AnObjectType!]!
+  argsObjectArrNM(a: String!, b: Float): [AnObjectType]!
+  argsObjectArrMN(a: String!, b: Float): [AnObjectType!]
+  argsObjectArrNN(a: String!, b: Float): [AnObjectType]
+  argsObjectArr2D(a: String!, b: Float): [[AnObjectType!]!]!
+  noArgsScalarNull: String
+  noArgsScalarMand: String!
+  noArgsScalarArrMM: [String!]!
+  noArgsScalarArrNM: [String]!
+  noArgsScalarArrMN: [String!]
+  noArgsScalarArrNN: [String]
+  noArgsScalarArr2D: [[String!]!]!
+  argsScalarNull(a: String!, b: Float): String
+  argsScalarMand(a: String!, b: Float): String!
+  argsScalarArrMM(a: String!, b: Float): [String!]!
+  argsScalarArrNM(a: String!, b: Float): [String]!
+  argsScalarArrMN(a: String!, b: Float): [String!]
+  argsScalarArrNN(a: String!, b: Float): [String]
+  argsScalarArr2D(a: String!, b: Float): [[String!]!]!
+}
+
+type Mutation {
+  noArgsObjectNull: AnotherObjectType
+  noArgsObjectMand: AnotherObjectType!
+  noArgsObjectArrMM: [AnotherObjectType!]!
+  noArgsObjectArrNM: [AnotherObjectType]!
+  noArgsObjectArrMN: [AnotherObjectType!]
+  noArgsObjectArrNN: [AnotherObjectType]
+  noArgsObjectArr2D: [[AnotherObjectType!]!]!
+  argsObjectNull(a: String!, b: Float): AnotherObjectType
+  argsObjectMand(a: String!, b: Float): AnotherObjectType!
+  argsObjectArrMM(a: String!, b: Float): [AnotherObjectType!]!
+  argsObjectArrNM(a: String!, b: Float): [AnotherObjectType]!
+  argsObjectArrMN(a: String!, b: Float): [AnotherObjectType!]
+  argsObjectArrNN(a: String!, b: Float): [AnotherObjectType]
+  argsObjectArr2D(a: String!, b: Float): [[AnotherObjectType!]!]!
+  noArgsScalarNull: Float
+  noArgsScalarMand: Float!
+  noArgsScalarArrMM: [Float!]!
+  noArgsScalarArrNM: [Float]!
+  noArgsScalarArrMN: [Float!]
+  noArgsScalarArrNN: [Float]
+  noArgsScalarArr2D: [[Float!]!]!
+  argsScalarNull(a: Boolean!, b: Int): Float
+  argsScalarMand(a: Boolean!, b: Int): Float!
+  argsScalarArrMM(a: Boolean!, b: Int): [Float!]!
+  argsScalarArrNM(a: Boolean!, b: Int): [Float]!
+  argsScalarArrMN(a: Boolean!, b: Int): [Float!]
+  argsScalarArrNN(a: Boolean!, b: Int): [Float]
+  argsScalarArr2D(a: Boolean!, b: Int): [[Float!]!]!
+}
+
+type AnObjectType {
+  a: String!
+  b: Float!
+}
+
+type AnotherObjectType {
+  a: Boolean!
+  b: Int!
+}

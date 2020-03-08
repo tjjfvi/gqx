@@ -8,7 +8,7 @@ test.each([
   ["one", { vars: { gqx: ["_gqx"] } }],
   ["two", { vars: { gqx1: ["_gqx1"], gqx2: ["_gqx2"] } }],
 ])("%s", (_, config) => {
-  let [objs, ctx] = generateObjs(utils.getOperations(["extensive"]));
+  let [objs, ctx] = generateObjs(utils.getOperations(["stringifyOperations"]));
   ctx.config = validateConfig(config);
   let code = stringifyVariables(objs, ctx);
   expect(code).toParse().toMatchSnapshot();

@@ -1,45 +1,536 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` 1`] = `
-"class Query$getAuthor {
+"class Query$argsObjectArr2D {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
-  static prop = \\"getAuthor\\";
+  static prop = \\"argsObjectArr2D\\";
   static inputTypes = {
-    id: \\"ID!\\",
+    a: \\"String!\\",
+    b: \\"Float\\",
   };
 }
 
-class Query$getBook {
+class Query$argsObjectArrMM {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
-  static prop = \\"getBook\\";
+  static prop = \\"argsObjectArrMM\\";
   static inputTypes = {
-    id: \\"ID!\\",
+    a: \\"String!\\",
+    b: \\"Float\\",
   };
 }
 
-class Query$listBooks {
+class Query$argsObjectArrMN {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
-  static prop = \\"listBooks\\";
+  static prop = \\"argsObjectArrMN\\";
   static inputTypes = {
-    cursor: \\"Cursor\\",
-    filter: \\"BookFilter\\",
+    a: \\"String!\\",
+    b: \\"Float\\",
   };
 }
 
-class Mutation$addReview {
+class Query$argsObjectArrNM {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"argsObjectArrNM\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Query$argsObjectArrNN {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"argsObjectArrNN\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Query$argsObjectMand {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"argsObjectMand\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Query$argsObjectNull {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"argsObjectNull\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Query$argsScalarArr2D {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"argsScalarArr2D\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Query$argsScalarArrMM {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"argsScalarArrMM\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Query$argsScalarArrMN {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"argsScalarArrMN\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Query$argsScalarArrNM {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"argsScalarArrNM\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Query$argsScalarArrNN {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"argsScalarArrNN\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Query$argsScalarMand {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"argsScalarMand\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Query$argsScalarNull {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"argsScalarNull\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Query$noArgsObjectArr2D {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"noArgsObjectArr2D\\";
+  static inputTypes = {};
+}
+
+class Query$noArgsObjectArrMM {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"noArgsObjectArrMM\\";
+  static inputTypes = {};
+}
+
+class Query$noArgsObjectArrMN {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"noArgsObjectArrMN\\";
+  static inputTypes = {};
+}
+
+class Query$noArgsObjectArrNM {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"noArgsObjectArrNM\\";
+  static inputTypes = {};
+}
+
+class Query$noArgsObjectArrNN {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"noArgsObjectArrNN\\";
+  static inputTypes = {};
+}
+
+class Query$noArgsObjectMand {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"noArgsObjectMand\\";
+  static inputTypes = {};
+}
+
+class Query$noArgsObjectNull {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"noArgsObjectNull\\";
+  static inputTypes = {};
+}
+
+class Query$noArgsScalarArr2D {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"noArgsScalarArr2D\\";
+  static inputTypes = {};
+}
+
+class Query$noArgsScalarArrMM {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"noArgsScalarArrMM\\";
+  static inputTypes = {};
+}
+
+class Query$noArgsScalarArrMN {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"noArgsScalarArrMN\\";
+  static inputTypes = {};
+}
+
+class Query$noArgsScalarArrNM {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"noArgsScalarArrNM\\";
+  static inputTypes = {};
+}
+
+class Query$noArgsScalarArrNN {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"noArgsScalarArrNN\\";
+  static inputTypes = {};
+}
+
+class Query$noArgsScalarMand {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"noArgsScalarMand\\";
+  static inputTypes = {};
+}
+
+class Query$noArgsScalarNull {
+  private static _: any;
+  static typeProp = \\"query\\";
+  static type = \\"Query\\";
+  static prop = \\"noArgsScalarNull\\";
+  static inputTypes = {};
+}
+
+class Mutation$argsObjectArr2D {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
-  static prop = \\"addReview\\";
+  static prop = \\"argsObjectArr2D\\";
   static inputTypes = {
-    input: \\"ReviewInput!\\",
+    a: \\"String!\\",
+    b: \\"Float\\",
   };
+}
+
+class Mutation$argsObjectArrMM {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"argsObjectArrMM\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Mutation$argsObjectArrMN {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"argsObjectArrMN\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Mutation$argsObjectArrNM {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"argsObjectArrNM\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Mutation$argsObjectArrNN {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"argsObjectArrNN\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Mutation$argsObjectMand {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"argsObjectMand\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Mutation$argsObjectNull {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"argsObjectNull\\";
+  static inputTypes = {
+    a: \\"String!\\",
+    b: \\"Float\\",
+  };
+}
+
+class Mutation$argsScalarArr2D {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"argsScalarArr2D\\";
+  static inputTypes = {
+    a: \\"Boolean!\\",
+    b: \\"Int\\",
+  };
+}
+
+class Mutation$argsScalarArrMM {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"argsScalarArrMM\\";
+  static inputTypes = {
+    a: \\"Boolean!\\",
+    b: \\"Int\\",
+  };
+}
+
+class Mutation$argsScalarArrMN {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"argsScalarArrMN\\";
+  static inputTypes = {
+    a: \\"Boolean!\\",
+    b: \\"Int\\",
+  };
+}
+
+class Mutation$argsScalarArrNM {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"argsScalarArrNM\\";
+  static inputTypes = {
+    a: \\"Boolean!\\",
+    b: \\"Int\\",
+  };
+}
+
+class Mutation$argsScalarArrNN {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"argsScalarArrNN\\";
+  static inputTypes = {
+    a: \\"Boolean!\\",
+    b: \\"Int\\",
+  };
+}
+
+class Mutation$argsScalarMand {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"argsScalarMand\\";
+  static inputTypes = {
+    a: \\"Boolean!\\",
+    b: \\"Int\\",
+  };
+}
+
+class Mutation$argsScalarNull {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"argsScalarNull\\";
+  static inputTypes = {
+    a: \\"Boolean!\\",
+    b: \\"Int\\",
+  };
+}
+
+class Mutation$noArgsObjectArr2D {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"noArgsObjectArr2D\\";
+  static inputTypes = {};
+}
+
+class Mutation$noArgsObjectArrMM {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"noArgsObjectArrMM\\";
+  static inputTypes = {};
+}
+
+class Mutation$noArgsObjectArrMN {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"noArgsObjectArrMN\\";
+  static inputTypes = {};
+}
+
+class Mutation$noArgsObjectArrNM {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"noArgsObjectArrNM\\";
+  static inputTypes = {};
+}
+
+class Mutation$noArgsObjectArrNN {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"noArgsObjectArrNN\\";
+  static inputTypes = {};
+}
+
+class Mutation$noArgsObjectMand {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"noArgsObjectMand\\";
+  static inputTypes = {};
+}
+
+class Mutation$noArgsObjectNull {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"noArgsObjectNull\\";
+  static inputTypes = {};
+}
+
+class Mutation$noArgsScalarArr2D {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"noArgsScalarArr2D\\";
+  static inputTypes = {};
+}
+
+class Mutation$noArgsScalarArrMM {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"noArgsScalarArrMM\\";
+  static inputTypes = {};
+}
+
+class Mutation$noArgsScalarArrMN {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"noArgsScalarArrMN\\";
+  static inputTypes = {};
+}
+
+class Mutation$noArgsScalarArrNM {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"noArgsScalarArrNM\\";
+  static inputTypes = {};
+}
+
+class Mutation$noArgsScalarArrNN {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"noArgsScalarArrNN\\";
+  static inputTypes = {};
+}
+
+class Mutation$noArgsScalarMand {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"noArgsScalarMand\\";
+  static inputTypes = {};
+}
+
+class Mutation$noArgsScalarNull {
+  private static _: any;
+  static typeProp = \\"mutation\\";
+  static type = \\"Mutation\\";
+  static prop = \\"noArgsScalarNull\\";
+  static inputTypes = {};
 }
 
 "
