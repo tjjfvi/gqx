@@ -389,12 +389,12 @@ const gqx = {
 
 export namespace Gqx {
   export namespace Query {
-    export type getAuthor = _Gqx<Query$getAuthor>;
-    export type getBook = _Gqx<Query$getBook>;
-    export type listBooks = _Gqx<Query$listBooks>;
+    export type getAuthor = _Gqx<typeof Query$getAuthor>;
+    export type getBook = _Gqx<typeof Query$getBook>;
+    export type listBooks = _Gqx<typeof Query$listBooks>;
   }
   export namespace Mutation {
-    export type addReview = _Gqx<Mutation$addReview>;
+    export type addReview = _Gqx<typeof Mutation$addReview>;
   }
 
   export type $<T> =
