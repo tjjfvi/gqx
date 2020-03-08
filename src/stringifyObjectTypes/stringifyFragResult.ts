@@ -1,6 +1,7 @@
 
 import { Context, Obj, Prop } from ".";
 import stringifyId from "./stringifyId";
+import indent from "../indent";
 
 type P = [Prop, string, string];
 
@@ -19,7 +20,7 @@ export default (obj: Obj, ctx: Context) => {
 
   const core = `type _$${obj.type}<F extends ${obj.type}$> =\n${
     [...shallows, ...deeps].map(x =>
-      `  & (${x[1]} extends F ? { ${x[0].id.prop}: ${x[0].wrap(x[2])} } : {})\n`
+      indent`& (${x[1]} extends F ? { ${x[0].id.prop}: ${x[0].wrap(x[2])} } : {})\n`
     ).join("")
   }`;
 

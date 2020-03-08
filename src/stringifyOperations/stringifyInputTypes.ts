@@ -4,10 +4,4 @@ import stringifyInputType from "../stringifyInputType";
 import stringifyNamespace from "./stringifyNamespace";
 
 export default (objs: Obj[]) =>
-  stringifyNamespace("$$Input", objs, (o, p) =>
-    stringifyInputType(p.id.prop, p.args)
-      .split("\n")
-      .map(l => "    " + l)
-      .join("\n")
-      .trim()
-  )
+  stringifyNamespace("$$Input", objs, (o, p) => stringifyInputType(p.id.prop, p.args))

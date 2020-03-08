@@ -1,6 +1,7 @@
 
 import { Obj } from ".";
 import stringifyId from "./stringifyId";
+import indent from "../indent";
 
 const str = (x: string) => JSON.stringify(x);
 
@@ -11,6 +12,6 @@ export default (objs: Obj[]) =>
   static type = ${str(obj.type)};
   static prop = ${str(prop.id.prop)};
   static inputTypes = {${prop.args.length ? "\n" + prop.args.map(n =>
-    `    ${n.name.value}: ${str(n.type.loc.source.body.slice(n.type.loc.start, n.type.loc.end))},\n`
+    indent(indent`${n.name.value}: ${str(n.type.loc.source.body.slice(n.type.loc.start, n.type.loc.end))},\n`)
   ).join("") + "  " : ""}};
 }\n\n`).join("")).join("");

@@ -1,6 +1,7 @@
 
 import unwrapType from "./unwrapType";
 import { InputValueDefinitionNode } from "graphql";
+import indent from "./indent";
 
 export default (name: string, fields: InputValueDefinitionNode[]) =>
   `interface ${name} ` + (
@@ -9,7 +10,7 @@ export default (name: string, fields: InputValueDefinitionNode[]) =>
         let [type, wrap, maybe] = unwrapType(field.type, true);
         let typeStr = wrap(type.name.value);
         let colon = maybe ? "?: " : ": ";
-        return `  ${field.name.value}${colon}${typeStr};`;
+        return indent`${field.name.value}${colon}${typeStr};`;
       }).join("\n")}\n}` :
       "{}"
   )

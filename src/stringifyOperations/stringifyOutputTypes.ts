@@ -15,5 +15,5 @@ export default (objs: Obj[], ctx: Context) =>
       )}`,
     ", F extends $$Frag.$<T>[]",
     (o, p) =>
-      `    F extends $$Frag.$<typeof ${stringifyId(p.id)}>[] ? ${o.type}.${p.id.prop}<F> :`
+      `F extends $$Frag.$<typeof ${stringifyId(p.id)}>[] ? ${o.type}.${p.id.prop}<F> :`
   )

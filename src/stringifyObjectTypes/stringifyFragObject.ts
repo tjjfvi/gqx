@@ -1,6 +1,7 @@
 
 import { Context, Obj, Prop } from ".";
 import stringifyId from "./stringifyId";
+import indent from "../indent";
 
 export default (obj: Obj, ctx: Context) => {
   ctx.exports.push(obj.type);
@@ -13,7 +14,7 @@ export default (obj: Obj, ctx: Context) => {
 
   const deepObj = genObj(obj.deepProps, p =>
     `$$mapWrap(() => ${p.type}, ${stringifyId(p.id)})`,
-  obj.shallowProps.length ? `  ..._${obj.type},\n` : "");
+  obj.shallowProps.length ? indent`..._${obj.type},\n` : "");
 
   if(!obj.deepProps.length)
     return `const ${obj.type} = ${shallowObj};`;
@@ -33,7 +34,7 @@ function genObj(props: Prop[], f: (p: Prop) => string, str = ""){
     return "{}";
   return `{\n${str}${
     props.map(p =>
-      `  ${p.id.prop}: ${f(p)},`
+      indent`${p.id.prop}: ${f(p)},`
     ).join("\n")
   }\n}`;
 }
