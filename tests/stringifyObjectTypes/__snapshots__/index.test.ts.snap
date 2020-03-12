@@ -11,25 +11,25 @@ class Recursive$next { private static _: any; static type = \\"Recursive\\"; sta
 class ShallowOnly$a { private static _: any; static type = \\"ShallowOnly\\"; static prop = \\"a\\"; }
 class ShallowOnly$b { private static _: any; static type = \\"ShallowOnly\\"; static prop = \\"b\\"; }
 
-type BinaryTree$ =
+export type BinaryTree$ =
   | typeof BinaryTree$node
   | $<typeof BinaryTree$left, BinaryTree$>
   | $<typeof BinaryTree$right, BinaryTree$>
 
-type DeepOnly$ =
+export type DeepOnly$ =
   | $<typeof DeepOnly$a, ShallowOnly$>
   | $<typeof DeepOnly$b, ShallowOnly$>
 
-type Recursive$ =
+export type Recursive$ =
   | typeof Recursive$id
   | $<typeof Recursive$next, Recursive$>
 
-type ShallowOnly$ =
+export type ShallowOnly$ =
   | typeof ShallowOnly$a
   | typeof ShallowOnly$b
 
 
-type $_ =
+export type $_ =
   | BinaryTree$
   | DeepOnly$
   | Recursive$
@@ -39,7 +39,7 @@ const _BinaryTree = {
   node: BinaryTree$node,
 };
 
-const BinaryTree: typeof _BinaryTree & {
+export const BinaryTree: typeof _BinaryTree & {
   left: $$MapWrap<typeof BinaryTree, typeof BinaryTree$left>,
   right: $$MapWrap<typeof BinaryTree, typeof BinaryTree$right>,
 } = {
@@ -48,7 +48,7 @@ const BinaryTree: typeof _BinaryTree & {
   right: $$mapWrap(() => BinaryTree, BinaryTree$right),
 };
 
-const DeepOnly: {
+export const DeepOnly: {
   a: $$MapWrap<typeof ShallowOnly, typeof DeepOnly$a>,
   b: $$MapWrap<typeof ShallowOnly, typeof DeepOnly$b>,
 } = {
@@ -60,14 +60,14 @@ const _Recursive = {
   id: Recursive$id,
 };
 
-const Recursive: typeof _Recursive & {
+export const Recursive: typeof _Recursive & {
   next: $$MapWrap<typeof Recursive, typeof Recursive$next>,
 } = {
   ..._Recursive,
   next: $$mapWrap(() => Recursive, Recursive$next),
 };
 
-const ShallowOnly = {
+export const ShallowOnly = {
   a: ShallowOnly$a,
   b: ShallowOnly$b,
 };
@@ -76,20 +76,20 @@ type _$BinaryTree<F extends BinaryTree$> =
   & (typeof BinaryTree$node extends F ? { node: String } : {})
   & ($<typeof BinaryTree$left, any> extends F ? { left: (_$BinaryTree<Extract<F, $<typeof BinaryTree$left, BinaryTree$>>[\\"l\\"]> | null) } : {})
   & ($<typeof BinaryTree$right, any> extends F ? { right: (_$BinaryTree<Extract<F, $<typeof BinaryTree$right, BinaryTree$>>[\\"l\\"]> | null) } : {})
-type $BinaryTree<F extends BinaryTree$[]> = _$BinaryTree<F[number]>;
+export type $BinaryTree<F extends BinaryTree$[]> = _$BinaryTree<F[number]>;
 
 type _$DeepOnly<F extends DeepOnly$> =
   & ($<typeof DeepOnly$a, any> extends F ? { a: _$ShallowOnly<Extract<F, $<typeof DeepOnly$a, ShallowOnly$>>[\\"l\\"]> } : {})
   & ($<typeof DeepOnly$b, any> extends F ? { b: (_$ShallowOnly<Extract<F, $<typeof DeepOnly$b, ShallowOnly$>>[\\"l\\"]> | null)[] } : {})
-type $DeepOnly<F extends DeepOnly$[]> = _$DeepOnly<F[number]>;
+export type $DeepOnly<F extends DeepOnly$[]> = _$DeepOnly<F[number]>;
 
 type _$Recursive<F extends Recursive$> =
   & (typeof Recursive$id extends F ? { id: ID } : {})
   & ($<typeof Recursive$next, any> extends F ? { next: _$Recursive<Extract<F, $<typeof Recursive$next, Recursive$>>[\\"l\\"]> } : {})
-type $Recursive<F extends Recursive$[]> = _$Recursive<F[number]>;
+export type $Recursive<F extends Recursive$[]> = _$Recursive<F[number]>;
 
 type _$ShallowOnly<F extends ShallowOnly$> =
   & (typeof ShallowOnly$a extends F ? { a: String } : {})
   & (typeof ShallowOnly$b extends F ? { b: Number } : {})
-type $ShallowOnly<F extends ShallowOnly$[]> = _$ShallowOnly<F[number]>;"
+export type $ShallowOnly<F extends ShallowOnly$[]> = _$ShallowOnly<F[number]>;"
 `;

@@ -1,13 +1,11 @@
 
-import { Context, Obj, Prop } from ".";
+import { Obj, Prop } from ".";
 import stringifyId from "./stringifyId";
 import indent from "../indent";
 
 type P = [Prop, string, string];
 
-export default (obj: Obj, ctx: Context) => {
-  ctx.exports.push("$" + obj.type);
-
+export default (obj: Obj) => {
   const shallows = obj.shallowProps.map((prop): P =>
     [prop, "typeof " + stringifyId(prop.id), prop.type]
   );
@@ -24,7 +22,7 @@ export default (obj: Obj, ctx: Context) => {
     ).join("")
   }`;
 
-  const alias = `type $${obj.type}<F extends ${obj.type}$[]> = _$${obj.type}<F[number]>;`;
+  const alias = `export type $${obj.type}<F extends ${obj.type}$[]> = _$${obj.type}<F[number]>;`;
 
   return core + alias;
 }

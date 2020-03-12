@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` 1`] = `
-"type ABC =
+"export type ABC =
   | \\"A\\"
   | \\"B\\"
   | \\"C\\"
-type OnlyOneOption =
+export type OnlyOneOption =
   | \\"JustThis\\"
-type Letter =
+export type Letter =
   | \\"A\\"
   | \\"B\\"
   | \\"C\\"
@@ -34,7 +34,7 @@ type Letter =
   | \\"X\\"
   | \\"Y\\"
   | \\"Z\\"
-type AlphaNum =
+export type AlphaNum =
   | \\"C1\\"
   | \\"P2\\"
   | \\"P3\\"
@@ -45,7 +45,7 @@ type AlphaNum =
   | \\"C8\\"
   | \\"C9\\"
   | \\"C10\\"
-type Underscores =
+export type Underscores =
   | \\"_\\"
   | \\"__\\"
   | \\"___\\"

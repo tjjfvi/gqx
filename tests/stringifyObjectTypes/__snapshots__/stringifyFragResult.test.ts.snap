@@ -5,26 +5,26 @@ exports[`stringifyObjectTypes.gql BinaryTree 1`] = `
   & (typeof BinaryTree$node extends F ? { node: String } : {})
   & ($<typeof BinaryTree$left, any> extends F ? { left: (_$BinaryTree<Extract<F, $<typeof BinaryTree$left, BinaryTree$>>[\\"l\\"]> | null) } : {})
   & ($<typeof BinaryTree$right, any> extends F ? { right: (_$BinaryTree<Extract<F, $<typeof BinaryTree$right, BinaryTree$>>[\\"l\\"]> | null) } : {})
-type $BinaryTree<F extends BinaryTree$[]> = _$BinaryTree<F[number]>;"
+export type $BinaryTree<F extends BinaryTree$[]> = _$BinaryTree<F[number]>;"
 `;
 
 exports[`stringifyObjectTypes.gql DeepOnly 1`] = `
 "type _$DeepOnly<F extends DeepOnly$> =
   & ($<typeof DeepOnly$a, any> extends F ? { a: _$ShallowOnly<Extract<F, $<typeof DeepOnly$a, ShallowOnly$>>[\\"l\\"]> } : {})
   & ($<typeof DeepOnly$b, any> extends F ? { b: (_$ShallowOnly<Extract<F, $<typeof DeepOnly$b, ShallowOnly$>>[\\"l\\"]> | null)[] } : {})
-type $DeepOnly<F extends DeepOnly$[]> = _$DeepOnly<F[number]>;"
+export type $DeepOnly<F extends DeepOnly$[]> = _$DeepOnly<F[number]>;"
 `;
 
 exports[`stringifyObjectTypes.gql Recursive 1`] = `
 "type _$Recursive<F extends Recursive$> =
   & (typeof Recursive$id extends F ? { id: ID } : {})
   & ($<typeof Recursive$next, any> extends F ? { next: _$Recursive<Extract<F, $<typeof Recursive$next, Recursive$>>[\\"l\\"]> } : {})
-type $Recursive<F extends Recursive$[]> = _$Recursive<F[number]>;"
+export type $Recursive<F extends Recursive$[]> = _$Recursive<F[number]>;"
 `;
 
 exports[`stringifyObjectTypes.gql ShallowOnly 1`] = `
 "type _$ShallowOnly<F extends ShallowOnly$> =
   & (typeof ShallowOnly$a extends F ? { a: String } : {})
   & (typeof ShallowOnly$b extends F ? { b: Number } : {})
-type $ShallowOnly<F extends ShallowOnly$[]> = _$ShallowOnly<F[number]>;"
+export type $ShallowOnly<F extends ShallowOnly$[]> = _$ShallowOnly<F[number]>;"
 `;

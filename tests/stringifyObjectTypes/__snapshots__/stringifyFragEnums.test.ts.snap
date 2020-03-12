@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` 1`] = `
-"type BinaryTree$ =
+"export type BinaryTree$ =
   | typeof BinaryTree$node
   | $<typeof BinaryTree$left, BinaryTree$>
   | $<typeof BinaryTree$right, BinaryTree$>
 
-type DeepOnly$ =
+export type DeepOnly$ =
   | $<typeof DeepOnly$a, ShallowOnly$>
   | $<typeof DeepOnly$b, ShallowOnly$>
 
-type Recursive$ =
+export type Recursive$ =
   | typeof Recursive$id
   | $<typeof Recursive$next, Recursive$>
 
-type ShallowOnly$ =
+export type ShallowOnly$ =
   | typeof ShallowOnly$a
   | typeof ShallowOnly$b
 
 
-type $_ =
+export type $_ =
   | BinaryTree$
   | DeepOnly$
   | Recursive$

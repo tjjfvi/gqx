@@ -8,15 +8,13 @@ import {
 import stringifyEnumTypes from "./stringifyEnumTypes";
 import stringifyInputTypes from "./stringifyInputTypes";
 import stringifyObjectTypes from "./stringifyObjectTypes";
-import stringifyExports from "./stringifyExports";
 import stringifyOperations from "./stringifyOperations";
 import stringifyBoilerplate from "./stringifyBoilerplate";
 import groupDefinitions from "./groupDefinitions";
 import loadConfig, { Config } from "./loadConfig";
-import stringifyDirectives, { Prop as DirProp } from "./stringifyDirectives";
+import stringifyDirectives from "./stringifyDirectives";
 
 interface Context {
-  exports: string[];
   inputTypes: { [k: string]: InputValueDefinitionNode[] };
   enumTypes: { [k: string]: EnumValueDefinitionNode[] };
   objectTypes: { [k: string]: FieldDefinitionNode[] };
@@ -36,7 +34,6 @@ export default ({ schema, template }: { schema: string; template: string }) => {
     enumTypes: {},
     inputTypes: {},
     objectTypes: {},
-    exports: [],
     config,
   };
 
@@ -49,7 +46,6 @@ export default ({ schema, template }: { schema: string; template: string }) => {
     stringifyObjectTypes(ctx),
     stringifyOperations(ctx),
     stringifyDirectives(ctx),
-    stringifyExports(ctx),
   ].join("\n\n").replace(/\n\n\n+/g, "\n\n");
 
   return wrapper(code);

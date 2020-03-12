@@ -79,7 +79,7 @@ const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, prop
   }
 }
 
-type Category =
+export type Category =
   | \\"Horror\\"
   | \\"SciFi\\"
   | \\"Fiction\\"
@@ -140,14 +140,14 @@ class User$author { private static _: any; static type = \\"User\\"; static prop
 class User$name { private static _: any; static type = \\"User\\"; static prop = \\"name\\"; }
 class User$reviews { private static _: any; static type = \\"User\\"; static prop = \\"reviews\\"; }
 
-type Author$ =
+export type Author$ =
   | typeof Author$id
   | typeof Author$name
   | typeof Author$rating
   | $<typeof Author$books, Book$>
   | $<typeof Author$favoriteBook, Book$>
 
-type Book$ =
+export type Book$ =
   | typeof Book$categories
   | typeof Book$description
   | typeof Book$id
@@ -156,7 +156,7 @@ type Book$ =
   | $<typeof Book$author, Author$>
   | $<typeof Book$reviews, Review$>
 
-type Review$ =
+export type Review$ =
   | typeof Review$details
   | typeof Review$id
   | typeof Review$rating
@@ -164,13 +164,13 @@ type Review$ =
   | $<typeof Review$book, Book$>
   | $<typeof Review$user, User$>
 
-type User$ =
+export type User$ =
   | typeof User$id
   | typeof User$name
   | $<typeof User$author, Author$>
   | $<typeof User$reviews, Review$>
 
-type $_ =
+export type $_ =
   | Author$
   | Book$
   | Review$
@@ -182,7 +182,7 @@ const _Author = {
   rating: Author$rating,
 };
 
-const Author: typeof _Author & {
+export const Author: typeof _Author & {
   books: $$MapWrap<typeof Book, typeof Author$books>,
   favoriteBook: $$MapWrap<typeof Book, typeof Author$favoriteBook>,
 } = {
@@ -199,7 +199,7 @@ const _Book = {
   title: Book$title,
 };
 
-const Book: typeof _Book & {
+export const Book: typeof _Book & {
   author: $$MapWrap<typeof Author, typeof Book$author>,
   reviews: $$MapWrap<typeof Review, typeof Book$reviews>,
 } = {
@@ -215,7 +215,7 @@ const _Review = {
   title: Review$title,
 };
 
-const Review: typeof _Review & {
+export const Review: typeof _Review & {
   book: $$MapWrap<typeof Book, typeof Review$book>,
   user: $$MapWrap<typeof User, typeof Review$user>,
 } = {
@@ -229,7 +229,7 @@ const _User = {
   name: User$name,
 };
 
-const User: typeof _User & {
+export const User: typeof _User & {
   author: $$MapWrap<typeof Author, typeof User$author>,
   reviews: $$MapWrap<typeof Review, typeof User$reviews>,
 } = {
@@ -244,7 +244,7 @@ type _$Author<F extends Author$> =
   & (typeof Author$rating extends F ? { rating: StarRating } : {})
   & ($<typeof Author$books, any> extends F ? { books: _$Book<Extract<F, $<typeof Author$books, Book$>>[\\"l\\"]>[] } : {})
   & ($<typeof Author$favoriteBook, any> extends F ? { favoriteBook: _$Book<Extract<F, $<typeof Author$favoriteBook, Book$>>[\\"l\\"]> } : {})
-type $Author<F extends Author$[]> = _$Author<F[number]>;
+export type $Author<F extends Author$[]> = _$Author<F[number]>;
 
 type _$Book<F extends Book$> =
   & (typeof Book$categories extends F ? { categories: Category[] } : {})
@@ -254,7 +254,7 @@ type _$Book<F extends Book$> =
   & (typeof Book$title extends F ? { title: String } : {})
   & ($<typeof Book$author, any> extends F ? { author: _$Author<Extract<F, $<typeof Book$author, Author$>>[\\"l\\"]> } : {})
   & ($<typeof Book$reviews, any> extends F ? { reviews: _$Review<Extract<F, $<typeof Book$reviews, Review$>>[\\"l\\"]>[] } : {})
-type $Book<F extends Book$[]> = _$Book<F[number]>;
+export type $Book<F extends Book$[]> = _$Book<F[number]>;
 
 type _$Review<F extends Review$> =
   & (typeof Review$details extends F ? { details: (String | null) } : {})
@@ -263,14 +263,14 @@ type _$Review<F extends Review$> =
   & (typeof Review$title extends F ? { title: (String | null) } : {})
   & ($<typeof Review$book, any> extends F ? { book: _$Book<Extract<F, $<typeof Review$book, Book$>>[\\"l\\"]> } : {})
   & ($<typeof Review$user, any> extends F ? { user: _$User<Extract<F, $<typeof Review$user, User$>>[\\"l\\"]> } : {})
-type $Review<F extends Review$[]> = _$Review<F[number]>;
+export type $Review<F extends Review$[]> = _$Review<F[number]>;
 
 type _$User<F extends User$> =
   & (typeof User$id extends F ? { id: ID } : {})
   & (typeof User$name extends F ? { name: String } : {})
   & ($<typeof User$author, any> extends F ? { author: (_$Author<Extract<F, $<typeof User$author, Author$>>[\\"l\\"]> | null) } : {})
   & ($<typeof User$reviews, any> extends F ? { reviews: _$Review<Extract<F, $<typeof User$reviews, Review$>>[\\"l\\"]>[] } : {})
-type $User<F extends User$[]> = _$User<F[number]>;
+export type $User<F extends User$[]> = _$User<F[number]>;
 
 class Query$getAuthor {
   private static _: any;
@@ -376,7 +376,7 @@ export namespace $$Output {
     never
 }
 
-const gqx = {
+export const gqx = {
   query: {
     getAuthor: _gqx<typeof Query$getAuthor>(Query$getAuthor),
     getBook: _gqx<typeof Query$getBook>(Query$getBook),
@@ -482,28 +482,6 @@ export namespace $$Directives {
     T extends User$name ? User.name :
     T extends User$reviews ? User.reviews :
     never
-}
-
-export {
-  Category,
-  Cursor,
-  BookFilter,
-  AuthorFilter,
-  ReviewInput,
-  $_,
-  Author$,
-  Book$,
-  Review$,
-  User$,
-  Author,
-  Book,
-  Review,
-  User,
-  $Author,
-  $Book,
-  $Review,
-  $User,
-  gqx,
 }
 "
 `;

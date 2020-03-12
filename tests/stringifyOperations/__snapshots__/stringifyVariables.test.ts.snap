@@ -3,7 +3,7 @@
 exports[`empty 1`] = `""`;
 
 exports[`one 1`] = `
-"const gqx = {
+"export const gqx = {
   query: {
     argsObjectArr2D: _gqx<typeof Query$argsObjectArr2D>(Query$argsObjectArr2D),
     argsObjectArrMM: _gqx<typeof Query$argsObjectArrMM>(Query$argsObjectArrMM),
@@ -68,7 +68,7 @@ exports[`one 1`] = `
 `;
 
 exports[`two 1`] = `
-"const gqx1 = {
+"export const gqx1 = {
   query: {
     argsObjectArr2D: _gqx1<typeof Query$argsObjectArr2D>(Query$argsObjectArr2D),
     argsObjectArrMM: _gqx1<typeof Query$argsObjectArrMM>(Query$argsObjectArrMM),
@@ -131,7 +131,7 @@ exports[`two 1`] = `
   },
 }
 
-const gqx2 = {
+export const gqx2 = {
   query: {
     argsObjectArr2D: _gqx2<typeof Query$argsObjectArr2D>(Query$argsObjectArr2D),
     argsObjectArrMM: _gqx2<typeof Query$argsObjectArrMM>(Query$argsObjectArrMM),
