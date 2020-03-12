@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 
 import gqx from "../src/index";
 import * as fs from "fs";
