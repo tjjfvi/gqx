@@ -1,8 +1,2 @@
-src
-tests
-*.config.js
-tsconfig.json
-*.gql
-*.ts
-*.tgz
-.*
+**
+!dist/**/*
