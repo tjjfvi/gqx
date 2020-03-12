@@ -144,7 +144,7 @@ const Author: typeof _Author & {
   ..._Author,
   books: $$mapWrap(() => Book, Author$books),
   favoriteBook: $$mapWrap(() => Book, Author$favoriteBook),
-}
+};
 
 const _Book = {
   categories: Book$categories,
@@ -158,7 +158,7 @@ const Book: typeof _Book & {
 } = {
   ..._Book,
   author: $$mapWrap(() => Author, Book$author),
-}
+};
 
 type _$Author<F extends Author$> =
   & (typeof Author$id extends F ? { id: ID } : {})
@@ -219,6 +219,7 @@ export namespace $$Input {
       filter?: (BookFilter | null | void);
     }
   }
+
   export type $<T> =
     T extends typeof Query$getAuthor ? Query.getAuthor :
     T extends typeof Query$getBook ? Query.getBook :
@@ -232,6 +233,7 @@ export namespace $$Frag {
     export type getBook = Book$;
     export type listBooks = Book$;
   }
+
   export type $<T> =
     T extends typeof Query$getAuthor ? Query.getAuthor :
     T extends typeof Query$getBook ? Query.getBook :
@@ -245,6 +247,7 @@ export namespace $$Output {
     export type getBook<F extends $$Frag.$<typeof Query$getBook>[]> = $Book<F>
     export type listBooks<F extends $$Frag.$<typeof Query$listBooks>[]> = $Book<F>[]
   }
+
   export type $<T, F extends $$Frag.$<T>[]> =
     F extends $$Frag.$<typeof Query$getAuthor>[] ? Query.getAuthor<F> :
     F extends $$Frag.$<typeof Query$getBook>[] ? Query.getBook<F> :
@@ -262,14 +265,50 @@ const gqx = {
 
 export namespace Gqx {
   export namespace Query {
-    export type getAuthor = _Gqx<Query$getAuthor>;
-    export type getBook = _Gqx<Query$getBook>;
-    export type listBooks = _Gqx<Query$listBooks>;
+    export type getAuthor = _Gqx<typeof Query$getAuthor>;
+    export type getBook = _Gqx<typeof Query$getBook>;
+    export type listBooks = _Gqx<typeof Query$listBooks>;
   }
+
   export type $<T> =
     T extends typeof Query$getAuthor ? Query.getAuthor :
     T extends typeof Query$getBook ? Query.getBook :
     T extends typeof Query$listBooks ? Query.listBooks :
+    never
+}
+
+export namespace $$Directives {
+  export namespace Query {
+    export type getAuthor = {}
+    export type getBook = {}
+    export type listBooks = {}
+  }
+  export namespace Book {
+    export type id = {}
+    export type author = {}
+    export type title = {}
+    export type description = {}
+    export type categories = {}
+  }
+  export namespace Author {
+    export type id = {}
+    export type name = {}
+    export type books = {}
+    export type favoriteBook = {}
+  }
+  export type $<T> =
+    T extends Query$getAuthor ? Query.getAuthor :
+    T extends Query$getBook ? Query.getBook :
+    T extends Query$listBooks ? Query.listBooks :
+    T extends Book$id ? Book.id :
+    T extends Book$author ? Book.author :
+    T extends Book$title ? Book.title :
+    T extends Book$description ? Book.description :
+    T extends Book$categories ? Book.categories :
+    T extends Author$id ? Author.id :
+    T extends Author$name ? Author.name :
+    T extends Author$books ? Author.books :
+    T extends Author$favoriteBook ? Author.favoriteBook :
     never
 }
 
