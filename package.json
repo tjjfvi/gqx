@@ -28,7 +28,7 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean; tsc",
+    "build": "npm run clean; tsc; cp src/boilerplate.ts dist/src/",
     "prepack": "npm run build",
     "postpack": "npm run clean",
     "index": "create-index -u src/ -x ts -X ts -S",
