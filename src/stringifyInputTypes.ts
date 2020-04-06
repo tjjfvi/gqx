@@ -4,5 +4,5 @@ import { Context } from ".";
 
 export default (ctx: Context) =>
   Object.entries(ctx.inputTypes).map(([name, fields]) =>
-    stringifyInputType(name, fields)
+    "export " + stringifyInputType(name, fields)
   ).join("\n\n")

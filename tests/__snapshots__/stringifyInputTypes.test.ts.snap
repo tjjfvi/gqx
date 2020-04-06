@@ -1,49 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`stringifyInputTypes.gql * 1`] = `
-"interface Mandatory {
+"export interface Mandatory {
   a: String;
   b: Int;
   c: Fraction;
 }
 
-interface MandatoryList {
+export interface MandatoryList {
   a: String[];
   b: Int[];
   c: Fraction[];
 }
 
-interface Nullable {
+export interface Nullable {
   a?: (String | null | void);
   b?: (Int | null | void);
   c?: (Fraction | null | void);
 }
 
-interface NullableListOfMandatory {
+export interface NullableListOfMandatory {
   a?: (String[] | null | void);
   b?: (Int[] | null | void);
   c?: (Fraction[] | null | void);
 }
 
-interface MandatoryListOfNullable {
+export interface MandatoryListOfNullable {
   a: (String | null | void)[];
   b: (Int | null | void)[];
   c: (Fraction | null | void)[];
 }
 
-interface NullableList {
+export interface NullableList {
   a?: ((String | null | void)[] | null | void);
   b?: ((Int | null | void)[] | null | void);
   c?: ((Fraction | null | void)[] | null | void);
 }
 
-interface List2D {
+export interface List2D {
   a: String[][];
   b: Int[][];
   c: Fraction[][];
 }
 
-interface Fraction {
+export interface Fraction {
   numerator: Int;
   denominator: Int;
 }"

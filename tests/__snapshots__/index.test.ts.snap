@@ -93,24 +93,24 @@ export type Category =
   | \\"Utopian\\"
   | \\"Religous\\"
 
-interface Cursor {
+export interface Cursor {
   start: Int;
   limit: Int;
 }
 
-interface BookFilter {
+export interface BookFilter {
   title?: (String | null | void);
   author?: (AuthorFilter | null | void);
   categories?: (Category[] | null | void);
   rating: StarRating;
 }
 
-interface AuthorFilter {
+export interface AuthorFilter {
   name?: (String | null | void);
   rating?: (StarRating | null | void);
 }
 
-interface ReviewInput {
+export interface ReviewInput {
   rating: StarRating;
   book: ID;
   title?: (String | null | void);
