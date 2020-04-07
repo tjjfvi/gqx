@@ -1,10 +1,10 @@
 
 
-import { Obj, Context } from ".";
+import { Obj } from ".";
 import stringifyId from "./stringifyId";
 import indent from "../indent";
 
-export default (objs: Obj[], ctx: Context) =>
+export default (objs: Obj[]) =>
   [
     ...objs.map(obj =>
       [

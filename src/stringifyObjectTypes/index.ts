@@ -31,8 +31,8 @@ export default (ctx: Context) => {
 
   return [
     stringifyIds(ids),
-    stringifyFragEnums(objs, ctx),
-    ...objs.map(o => stringifyFragObject(o, ctx)),
+    stringifyFragEnums(objs),
+    ...objs.map(o => stringifyFragObject(o)),
     ...objs.map(o => stringifyFragResult(o))
   ].join("\n\n");
 }

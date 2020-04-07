@@ -160,19 +160,30 @@ export const Book: typeof _Book & {
   author: $$mapWrap(() => Author, Book$author),
 };
 
+interface $Author$id { id: ID; }
+interface $Author$name { name: String; }
+interface $Author$books<F extends Author$> { books: _$Book<Extract<F, $<typeof Author$books, Book$>>["l"]>[]; }
+interface $Author$favoriteBook<F extends Author$> { favoriteBook: _$Book<Extract<F, $<typeof Author$favoriteBook, Book$>>["l"]>; }
+
 type _$Author<F extends Author$> =
-  & (typeof Author$id extends F ? { id: ID } : {})
-  & (typeof Author$name extends F ? { name: String } : {})
-  & ($<typeof Author$books, any> extends F ? { books: _$Book<Extract<F, $<typeof Author$books, Book$>>["l"]>[] } : {})
-  & ($<typeof Author$favoriteBook, any> extends F ? { favoriteBook: _$Book<Extract<F, $<typeof Author$favoriteBook, Book$>>["l"]> } : {})
+  & (typeof Author$id extends F ? $Author$id : {})
+  & (typeof Author$name extends F ? $Author$name : {})
+  & ($<typeof Author$books, any> extends F ? $Author$books<F> : {})
+  & ($<typeof Author$favoriteBook, any> extends F ? $Author$favoriteBook<F> : {})
 export type $Author<F extends Author$[]> = _$Author<F[number]>;
 
+interface $Book$categories { categories: Category[]; }
+interface $Book$description { description: String; }
+interface $Book$id { id: ID; }
+interface $Book$title { title: String; }
+interface $Book$author<F extends Book$> { author: _$Author<Extract<F, $<typeof Book$author, Author$>>["l"]>; }
+
 type _$Book<F extends Book$> =
-  & (typeof Book$categories extends F ? { categories: Category[] } : {})
-  & (typeof Book$description extends F ? { description: String } : {})
-  & (typeof Book$id extends F ? { id: ID } : {})
-  & (typeof Book$title extends F ? { title: String } : {})
-  & ($<typeof Book$author, any> extends F ? { author: _$Author<Extract<F, $<typeof Book$author, Author$>>["l"]> } : {})
+  & (typeof Book$categories extends F ? $Book$categories : {})
+  & (typeof Book$description extends F ? $Book$description : {})
+  & (typeof Book$id extends F ? $Book$id : {})
+  & (typeof Book$title extends F ? $Book$title : {})
+  & ($<typeof Book$author, any> extends F ? $Book$author<F> : {})
 export type $Book<F extends Book$[]> = _$Book<F[number]>;
 
 class Query$getAuthor {

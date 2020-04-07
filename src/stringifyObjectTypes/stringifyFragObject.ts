@@ -1,9 +1,9 @@
 
-import { Context, Obj, Prop } from ".";
+import { Obj, Prop } from ".";
 import stringifyId from "./stringifyId";
 import indent from "../indent";
 
-export default (obj: Obj, ctx: Context) => {
+export default (obj: Obj) => {
   const shallowObj = genObj(obj.shallowProps, p => stringifyId(p.id));
 
   const deepType = genObj(obj.deepProps, p =>
