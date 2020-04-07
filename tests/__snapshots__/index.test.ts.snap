@@ -333,11 +333,13 @@ export namespace $$Input {
   }
 
   export type $<T> =
-    T extends typeof Query$getAuthor ? Query.getAuthor :
-    T extends typeof Query$getBook ? Query.getBook :
-    T extends typeof Query$listBooks ? Query.listBooks :
-    T extends typeof Mutation$addReview ? Mutation.addReview :
-    never
+    T extends typeof Query$getAuthor ? Query.getAuthor : $$1<T>;
+  type $$1<T> =
+    T extends typeof Query$getBook ? Query.getBook : $$2<T>;
+  type $$2<T> =
+    T extends typeof Query$listBooks ? Query.listBooks : $$3<T>;
+  type $$3<T> =
+    T extends typeof Mutation$addReview ? Mutation.addReview : never;
 }
 
 export namespace $$Frag {
@@ -351,11 +353,13 @@ export namespace $$Frag {
   }
 
   export type $<T> =
-    T extends typeof Query$getAuthor ? Query.getAuthor :
-    T extends typeof Query$getBook ? Query.getBook :
-    T extends typeof Query$listBooks ? Query.listBooks :
-    T extends typeof Mutation$addReview ? Mutation.addReview :
-    never
+    T extends typeof Query$getAuthor ? Query.getAuthor : $$1<T>;
+  type $$1<T> =
+    T extends typeof Query$getBook ? Query.getBook : $$2<T>;
+  type $$2<T> =
+    T extends typeof Query$listBooks ? Query.listBooks : $$3<T>;
+  type $$3<T> =
+    T extends typeof Mutation$addReview ? Mutation.addReview : never;
 }
 
 export namespace $$Output {
@@ -369,11 +373,13 @@ export namespace $$Output {
   }
 
   export type $<T, F extends $$Frag.$<T>[]> =
-    F extends $$Frag.$<typeof Query$getAuthor>[] ? Query.getAuthor<F> :
-    F extends $$Frag.$<typeof Query$getBook>[] ? Query.getBook<F> :
-    F extends $$Frag.$<typeof Query$listBooks>[] ? Query.listBooks<F> :
-    F extends $$Frag.$<typeof Mutation$addReview>[] ? Mutation.addReview<F> :
-    never
+    T extends typeof Query$getAuthor ? F extends $$Frag.$<typeof Query$getAuthor>[] ? Query.getAuthor<F> : $$1<T, F> : $$1<T, F>;
+  type $$1<T, F extends $$Frag.$<T>[]> =
+    T extends typeof Query$getBook ? F extends $$Frag.$<typeof Query$getBook>[] ? Query.getBook<F> : $$2<T, F> : $$2<T, F>;
+  type $$2<T, F extends $$Frag.$<T>[]> =
+    T extends typeof Query$listBooks ? F extends $$Frag.$<typeof Query$listBooks>[] ? Query.listBooks<F> : $$3<T, F> : $$3<T, F>;
+  type $$3<T, F extends $$Frag.$<T>[]> =
+    T extends typeof Mutation$addReview ? F extends $$Frag.$<typeof Mutation$addReview>[] ? Mutation.addReview<F> : never : never;
 }
 
 export const gqx = {
@@ -398,11 +404,13 @@ export namespace Gqx {
   }
 
   export type $<T> =
-    T extends typeof Query$getAuthor ? Query.getAuthor :
-    T extends typeof Query$getBook ? Query.getBook :
-    T extends typeof Query$listBooks ? Query.listBooks :
-    T extends typeof Mutation$addReview ? Mutation.addReview :
-    never
+    T extends typeof Query$getAuthor ? Query.getAuthor : $$1<T>;
+  type $$1<T> =
+    T extends typeof Query$getBook ? Query.getBook : $$2<T>;
+  type $$2<T> =
+    T extends typeof Query$listBooks ? Query.listBooks : $$3<T>;
+  type $$3<T> =
+    T extends typeof Mutation$addReview ? Mutation.addReview : never;
 }
 
 export namespace $$Directives {

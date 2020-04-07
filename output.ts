@@ -76,7 +76,7 @@ const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, prop
   }
 }
 
-type Category =
+export type Category =
   | "Horror"
   | "SciFi"
   | "Fiction"
@@ -90,18 +90,18 @@ type Category =
   | "Utopian"
   | "Religous"
 
-interface Cursor {
+export interface Cursor {
   start: Int;
   limit: Int;
 }
 
-interface BookFilter {
+export interface BookFilter {
   title?: (String | null | void);
   author?: (AuthorFilter | null | void);
   categories?: (Category[] | null | void);
 }
 
-interface AuthorFilter {
+export interface AuthorFilter {
   name?: (String | null | void);
 }
 
@@ -115,20 +115,20 @@ class Book$title { private static _: any; static type = "Book"; static prop = "t
 class Book$description { private static _: any; static type = "Book"; static prop = "description"; }
 class Book$categories { private static _: any; static type = "Book"; static prop = "categories"; }
 
-type Author$ =
+export type Author$ =
   | typeof Author$id
   | typeof Author$name
   | $<typeof Author$books, Book$>
   | $<typeof Author$favoriteBook, Book$>
 
-type Book$ =
+export type Book$ =
   | typeof Book$categories
   | typeof Book$description
   | typeof Book$id
   | typeof Book$title
   | $<typeof Book$author, Author$>
 
-type $_ =
+export type $_ =
   | Author$
   | Book$
 
@@ -137,7 +137,7 @@ const _Author = {
   name: Author$name,
 };
 
-const Author: typeof _Author & {
+export const Author: typeof _Author & {
   books: $$MapWrap<typeof Book, typeof Author$books>,
   favoriteBook: $$MapWrap<typeof Book, typeof Author$favoriteBook>,
 } = {
@@ -153,7 +153,7 @@ const _Book = {
   title: Book$title,
 };
 
-const Book: typeof _Book & {
+export const Book: typeof _Book & {
   author: $$MapWrap<typeof Author, typeof Book$author>,
 } = {
   ..._Book,
@@ -165,7 +165,7 @@ type _$Author<F extends Author$> =
   & (typeof Author$name extends F ? { name: String } : {})
   & ($<typeof Author$books, any> extends F ? { books: _$Book<Extract<F, $<typeof Author$books, Book$>>["l"]>[] } : {})
   & ($<typeof Author$favoriteBook, any> extends F ? { favoriteBook: _$Book<Extract<F, $<typeof Author$favoriteBook, Book$>>["l"]> } : {})
-type $Author<F extends Author$[]> = _$Author<F[number]>;
+export type $Author<F extends Author$[]> = _$Author<F[number]>;
 
 type _$Book<F extends Book$> =
   & (typeof Book$categories extends F ? { categories: Category[] } : {})
@@ -173,7 +173,7 @@ type _$Book<F extends Book$> =
   & (typeof Book$id extends F ? { id: ID } : {})
   & (typeof Book$title extends F ? { title: String } : {})
   & ($<typeof Book$author, any> extends F ? { author: _$Author<Extract<F, $<typeof Book$author, Author$>>["l"]> } : {})
-type $Book<F extends Book$[]> = _$Book<F[number]>;
+export type $Book<F extends Book$[]> = _$Book<F[number]>;
 
 class Query$getAuthor {
   private static _: any;
@@ -221,10 +221,11 @@ export namespace $$Input {
   }
 
   export type $<T> =
-    T extends typeof Query$getAuthor ? Query.getAuthor :
-    T extends typeof Query$getBook ? Query.getBook :
-    T extends typeof Query$listBooks ? Query.listBooks :
-    never
+    T extends typeof Query$getAuthor ? Query.getAuthor : $$1<T>;
+  type $$1<T> =
+    T extends typeof Query$getBook ? Query.getBook : $$2<T>;
+  type $$2<T> =
+    T extends typeof Query$listBooks ? Query.listBooks : never;
 }
 
 export namespace $$Frag {
@@ -235,10 +236,11 @@ export namespace $$Frag {
   }
 
   export type $<T> =
-    T extends typeof Query$getAuthor ? Query.getAuthor :
-    T extends typeof Query$getBook ? Query.getBook :
-    T extends typeof Query$listBooks ? Query.listBooks :
-    never
+    T extends typeof Query$getAuthor ? Query.getAuthor : $$1<T>;
+  type $$1<T> =
+    T extends typeof Query$getBook ? Query.getBook : $$2<T>;
+  type $$2<T> =
+    T extends typeof Query$listBooks ? Query.listBooks : never;
 }
 
 export namespace $$Output {
@@ -249,13 +251,14 @@ export namespace $$Output {
   }
 
   export type $<T, F extends $$Frag.$<T>[]> =
-    F extends $$Frag.$<typeof Query$getAuthor>[] ? Query.getAuthor<F> :
-    F extends $$Frag.$<typeof Query$getBook>[] ? Query.getBook<F> :
-    F extends $$Frag.$<typeof Query$listBooks>[] ? Query.listBooks<F> :
-    never
+    T extends typeof Query$getAuthor ? F extends $$Frag.$<typeof Query$getAuthor>[] ? Query.getAuthor<F> : $$1<T, F> : $$1<T, F>;
+  type $$1<T, F extends $$Frag.$<T>[]> =
+    T extends typeof Query$getBook ? F extends $$Frag.$<typeof Query$getBook>[] ? Query.getBook<F> : $$2<T, F> : $$2<T, F>;
+  type $$2<T, F extends $$Frag.$<T>[]> =
+    T extends typeof Query$listBooks ? F extends $$Frag.$<typeof Query$listBooks>[] ? Query.listBooks<F> : never : never;
 }
 
-const gqx = {
+export const gqx = {
   query: {
     getAuthor: _gqx<typeof Query$getAuthor>(Query$getAuthor),
     getBook: _gqx<typeof Query$getBook>(Query$getBook),
@@ -271,10 +274,11 @@ export namespace Gqx {
   }
 
   export type $<T> =
-    T extends typeof Query$getAuthor ? Query.getAuthor :
-    T extends typeof Query$getBook ? Query.getBook :
-    T extends typeof Query$listBooks ? Query.listBooks :
-    never
+    T extends typeof Query$getAuthor ? Query.getAuthor : $$1<T>;
+  type $$1<T> =
+    T extends typeof Query$getBook ? Query.getBook : $$2<T>;
+  type $$2<T> =
+    T extends typeof Query$listBooks ? Query.listBooks : never;
 }
 
 export namespace $$Directives {
@@ -310,20 +314,5 @@ export namespace $$Directives {
     T extends Author$books ? Author.books :
     T extends Author$favoriteBook ? Author.favoriteBook :
     never
-}
-
-export {
-  Category,
-  Cursor,
-  BookFilter,
-  AuthorFilter,
-  $_,
-  Author$,
-  Book$,
-  Author,
-  Book,
-  $Author,
-  $Book,
-  gqx,
 }
 
