@@ -46,7 +46,7 @@ const $$mapWrap = <O, F>(o: () => O, f: F): $$MapWrap<O, F> =>
           $$mapWrap(() => o()[k], f) :
           $$(f, o()[k]) :
         // @ts-ignore
-        (...a: any) => ("$" in o() ? o().$(a) : a).map((a: any) => $$(f, a))
+        (a: any) => ("$" in o() ? o().$(a) : a).map((a: any) => $$(f, a))
     ),
   })
 
