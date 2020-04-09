@@ -66,7 +66,11 @@ const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, prop
   return request;
 
   function genFrag(subs: Subs){
-    return `{ ${Object.entries(subs).map(([k, v]) => v === true ? k : k + " " + genFrag(v)).join(" ")} }`;
+    return (
+      Object.keys(subs).length ?
+        `{ ${Object.entries(subs).map(([k, v]) => v === true ? k : k + " " + genFrag(v)).join(" ")} }` :
+        ""
+    );
   }
 
   function populateSubs(prop: $_, subs: Subs | true){
