@@ -16,6 +16,9 @@ type Boolean = boolean;
 interface $<F, L> { f: F; l: L }
 const $$ = <F, L>(f: F, l: L) => ({ f, l });
 
+export type $$DeepArray<T> = (T | DeepArray<T>)[];
+export type $$UnwrapDeepArray<T extends DeepArray<any>> = T extends DeepArray<infer U> ? U : never;
+
 interface $$OperationId {
   typeProp: string;
   type: string;
@@ -29,7 +32,8 @@ type $$Wrap<X, Y> = X extends $<infer F, infer L> ? $<F, $$Wrap<L, Y>> : never;
 type $$MapWrap<O, F> = {
   [K in keyof O | typeof __wrap__ | "$"]:
     K extends "$" ?
-      <T extends $_>(x: T[]) => $<F, O extends { [__wrap__]: infer X } ? $$Wrap<X, T> : T>[] :
+      <T extends $_, TA extends DeepArray<T>>(...x: TA) =>
+        $<F, O extends { [__wrap__]: infer X } ? $$Wrap<X, T> : T>[] :
       K extends keyof O ?
         O[K] extends $_ ?
           $<F, O[K]> :
@@ -46,7 +50,7 @@ const $$mapWrap = <O, F>(o: () => O, f: F): $$MapWrap<O, F> =>
           $$mapWrap(() => o()[k], f) :
           $$(f, o()[k]) :
         // @ts-ignore
-        (a: any) => ("$" in o() ? o().$(a) : a).map((a: any) => $$(f, a))
+        (a: any) => ("$" in o() ? o().$(a) : a).flat(Infinity).map((a: any) => $$(f, a))
     ),
   })
 

@@ -9,7 +9,7 @@ type _$BinaryTree<F extends BinaryTree$> =
   & (typeof BinaryTree$node extends F ? $BinaryTree$node : {})
   & ($<typeof BinaryTree$left, any> extends F ? $BinaryTree$left<F> : {})
   & ($<typeof BinaryTree$right, any> extends F ? $BinaryTree$right<F> : {})
-export type $BinaryTree<F extends BinaryTree$[]> = _$BinaryTree<F[number]>;"
+export type $BinaryTree<F extends $$DeepArray<BinaryTree$>> = _$BinaryTree<$$UnwrapDeepArray<F[number]>>;"
 `;
 
 exports[`stringifyObjectTypes.gql DeepOnly 1`] = `
@@ -19,7 +19,7 @@ interface $DeepOnly$b<F extends DeepOnly$> { b: (_$ShallowOnly<Extract<F, $<type
 type _$DeepOnly<F extends DeepOnly$> =
   & ($<typeof DeepOnly$a, any> extends F ? $DeepOnly$a<F> : {})
   & ($<typeof DeepOnly$b, any> extends F ? $DeepOnly$b<F> : {})
-export type $DeepOnly<F extends DeepOnly$[]> = _$DeepOnly<F[number]>;"
+export type $DeepOnly<F extends $$DeepArray<DeepOnly$>> = _$DeepOnly<$$UnwrapDeepArray<F[number]>>;"
 `;
 
 exports[`stringifyObjectTypes.gql Recursive 1`] = `
@@ -29,7 +29,7 @@ interface $Recursive$next<F extends Recursive$> { next: _$Recursive<Extract<F, $
 type _$Recursive<F extends Recursive$> =
   & (typeof Recursive$id extends F ? $Recursive$id : {})
   & ($<typeof Recursive$next, any> extends F ? $Recursive$next<F> : {})
-export type $Recursive<F extends Recursive$[]> = _$Recursive<F[number]>;"
+export type $Recursive<F extends $$DeepArray<Recursive$>> = _$Recursive<$$UnwrapDeepArray<F[number]>>;"
 `;
 
 exports[`stringifyObjectTypes.gql ShallowOnly 1`] = `
@@ -39,5 +39,5 @@ interface $ShallowOnly$b { b: Number; }
 type _$ShallowOnly<F extends ShallowOnly$> =
   & (typeof ShallowOnly$a extends F ? $ShallowOnly$a : {})
   & (typeof ShallowOnly$b extends F ? $ShallowOnly$b : {})
-export type $ShallowOnly<F extends ShallowOnly$[]> = _$ShallowOnly<F[number]>;"
+export type $ShallowOnly<F extends $$DeepArray<ShallowOnly$>> = _$ShallowOnly<$$UnwrapDeepArray<F[number]>>;"
 `;

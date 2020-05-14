@@ -16,6 +16,9 @@ type Boolean = boolean;
 interface $<F, L> { f: F; l: L }
 const $$ = <F, L>(f: F, l: L) => ({ f, l });
 
+export type $$DeepArray<T> = (T | DeepArray<T>)[];
+export type $$UnwrapDeepArray<T extends DeepArray<any>> = T extends DeepArray<infer U> ? U : never;
+
 interface $$OperationId {
   typeProp: string;
   type: string;
@@ -29,7 +32,8 @@ type $$Wrap<X, Y> = X extends $<infer F, infer L> ? $<F, $$Wrap<L, Y>> : never;
 type $$MapWrap<O, F> = {
   [K in keyof O | typeof __wrap__ | \\"$\\"]:
     K extends \\"$\\" ?
-      <T extends $_>(x: T[]) => $<F, O extends { [__wrap__]: infer X } ? $$Wrap<X, T> : T>[] :
+      <T extends $_, TA extends DeepArray<T>>(...x: TA) =>
+        $<F, O extends { [__wrap__]: infer X } ? $$Wrap<X, T> : T>[] :
       K extends keyof O ?
         O[K] extends $_ ?
           $<F, O[K]> :
@@ -46,7 +50,7 @@ const $$mapWrap = <O, F>(o: () => O, f: F): $$MapWrap<O, F> =>
           $$mapWrap(() => o()[k], f) :
           $$(f, o()[k]) :
         // @ts-ignore
-        (...a: any) => (\\"$\\" in o() ? o().$(a) : a).map((a: any) => $$(f, a))
+        (a: any) => (\\"$\\" in o() ? o().$(a) : a).flat(Infinity).map((a: any) => $$(f, a))
     ),
   })
 
@@ -66,7 +70,11 @@ const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, prop
   return request;
 
   function genFrag(subs: Subs){
-    return \`{ \${Object.entries(subs).map(([k, v]) => v === true ? k : k + \\" \\" + genFrag(v)).join(\\" \\")} }\`;
+    return (
+      Object.keys(subs).length ?
+        \`{ \${Object.entries(subs).map(([k, v]) => v === true ? k : k + \\" \\" + genFrag(v)).join(\\" \\")} }\` :
+        \\"\\"
+    );
   }
 
   function populateSubs(prop: $_, subs: Subs | true){
@@ -250,7 +258,7 @@ type _$Author<F extends Author$> =
   & (typeof Author$rating extends F ? $Author$rating : {})
   & ($<typeof Author$books, any> extends F ? $Author$books<F> : {})
   & ($<typeof Author$favoriteBook, any> extends F ? $Author$favoriteBook<F> : {})
-export type $Author<F extends Author$[]> = _$Author<F[number]>;
+export type $Author<F extends $$DeepArray<Author$>> = _$Author<$$UnwrapDeepArray<F[number]>>;
 
 interface $Book$categories { categories: Category[]; }
 interface $Book$description { description: String; }
@@ -268,7 +276,7 @@ type _$Book<F extends Book$> =
   & (typeof Book$title extends F ? $Book$title : {})
   & ($<typeof Book$author, any> extends F ? $Book$author<F> : {})
   & ($<typeof Book$reviews, any> extends F ? $Book$reviews<F> : {})
-export type $Book<F extends Book$[]> = _$Book<F[number]>;
+export type $Book<F extends $$DeepArray<Book$>> = _$Book<$$UnwrapDeepArray<F[number]>>;
 
 interface $Review$details { details: (String | null); }
 interface $Review$id { id: ID; }
@@ -284,7 +292,7 @@ type _$Review<F extends Review$> =
   & (typeof Review$title extends F ? $Review$title : {})
   & ($<typeof Review$book, any> extends F ? $Review$book<F> : {})
   & ($<typeof Review$user, any> extends F ? $Review$user<F> : {})
-export type $Review<F extends Review$[]> = _$Review<F[number]>;
+export type $Review<F extends $$DeepArray<Review$>> = _$Review<$$UnwrapDeepArray<F[number]>>;
 
 interface $User$id { id: ID; }
 interface $User$name { name: String; }
@@ -296,7 +304,7 @@ type _$User<F extends User$> =
   & (typeof User$name extends F ? $User$name : {})
   & ($<typeof User$author, any> extends F ? $User$author<F> : {})
   & ($<typeof User$reviews, any> extends F ? $User$reviews<F> : {})
-export type $User<F extends User$[]> = _$User<F[number]>;
+export type $User<F extends $$DeepArray<User$>> = _$User<$$UnwrapDeepArray<F[number]>>;
 
 class Query$getAuthor {
   private static _: any;
@@ -370,12 +378,12 @@ export namespace $$Input {
 
 export namespace $$Frag {
   export namespace Query {
-    export type getAuthor = Author$;
-    export type getBook = Book$;
-    export type listBooks = Book$;
+    export type getAuthor = $$DeepArray<Author>;
+    export type getBook = $$DeepArray<Book>;
+    export type listBooks = $$DeepArray<Book>;
   }
   export namespace Mutation {
-    export type addReview = Review$;
+    export type addReview = $$DeepArray<Review>;
   }
 
   export type $<T> =
