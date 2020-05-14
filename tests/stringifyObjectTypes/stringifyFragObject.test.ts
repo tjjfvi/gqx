@@ -4,9 +4,9 @@ import stringifyFragObject from "../../src/stringifyObjectTypes/stringifyFragObj
 import { Obj } from "../../src/stringifyObjectTypes";
 
 describe("stringifyObjectTypes.gql", () => {
-  const [objs,, ctx] = generateObjs(utils.getOperations(["stringifyObjectTypes"]));
+  const [objs] = generateObjs(utils.getOperations(["stringifyObjectTypes"]));
   test.each(objs.map((o): [string, Obj] => [o.type, o]))("%s", (_, o) => {
-    const code = stringifyFragObject(o, ctx);
+    const code = stringifyFragObject(o);
     expect(code).toParse().toMatchSnapshot();
   })
 })

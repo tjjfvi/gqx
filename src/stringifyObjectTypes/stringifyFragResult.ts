@@ -28,7 +28,7 @@ export default (obj: Obj) => {
   }`;
 
   const alias =
-    `export type $${obj.type}<F extends $$DeepArray<${obj.type}$>> = _$${obj.type}<$$UnwrapDeepArray<F[number]>>;`;
+    `export type $${obj.type}<F extends $$DeepArray<${obj.type}$>> = _$${obj.type}<$$UnwrapDeepArray<F>>;`;
 
   return interfaces + "\n\n" + core + alias;
 }

@@ -797,13 +797,13 @@ export namespace $$Input {
 
 export namespace $$Frag {
   export namespace Query {
-    export type argsObjectArr2D = $$DeepArray<AnObjectType>;
-    export type argsObjectArrMM = $$DeepArray<AnObjectType>;
-    export type argsObjectArrMN = $$DeepArray<AnObjectType>;
-    export type argsObjectArrNM = $$DeepArray<AnObjectType>;
-    export type argsObjectArrNN = $$DeepArray<AnObjectType>;
-    export type argsObjectMand = $$DeepArray<AnObjectType>;
-    export type argsObjectNull = $$DeepArray<AnObjectType>;
+    export type argsObjectArr2D = $$DeepArray<AnObjectType$>;
+    export type argsObjectArrMM = $$DeepArray<AnObjectType$>;
+    export type argsObjectArrMN = $$DeepArray<AnObjectType$>;
+    export type argsObjectArrNM = $$DeepArray<AnObjectType$>;
+    export type argsObjectArrNN = $$DeepArray<AnObjectType$>;
+    export type argsObjectMand = $$DeepArray<AnObjectType$>;
+    export type argsObjectNull = $$DeepArray<AnObjectType$>;
     export type argsScalarArr2D = never;
     export type argsScalarArrMM = never;
     export type argsScalarArrMN = never;
@@ -811,13 +811,13 @@ export namespace $$Frag {
     export type argsScalarArrNN = never;
     export type argsScalarMand = never;
     export type argsScalarNull = never;
-    export type noArgsObjectArr2D = $$DeepArray<AnObjectType>;
-    export type noArgsObjectArrMM = $$DeepArray<AnObjectType>;
-    export type noArgsObjectArrMN = $$DeepArray<AnObjectType>;
-    export type noArgsObjectArrNM = $$DeepArray<AnObjectType>;
-    export type noArgsObjectArrNN = $$DeepArray<AnObjectType>;
-    export type noArgsObjectMand = $$DeepArray<AnObjectType>;
-    export type noArgsObjectNull = $$DeepArray<AnObjectType>;
+    export type noArgsObjectArr2D = $$DeepArray<AnObjectType$>;
+    export type noArgsObjectArrMM = $$DeepArray<AnObjectType$>;
+    export type noArgsObjectArrMN = $$DeepArray<AnObjectType$>;
+    export type noArgsObjectArrNM = $$DeepArray<AnObjectType$>;
+    export type noArgsObjectArrNN = $$DeepArray<AnObjectType$>;
+    export type noArgsObjectMand = $$DeepArray<AnObjectType$>;
+    export type noArgsObjectNull = $$DeepArray<AnObjectType$>;
     export type noArgsScalarArr2D = never;
     export type noArgsScalarArrMM = never;
     export type noArgsScalarArrMN = never;
@@ -827,13 +827,13 @@ export namespace $$Frag {
     export type noArgsScalarNull = never;
   }
   export namespace Mutation {
-    export type argsObjectArr2D = $$DeepArray<AnotherObjectType>;
-    export type argsObjectArrMM = $$DeepArray<AnotherObjectType>;
-    export type argsObjectArrMN = $$DeepArray<AnotherObjectType>;
-    export type argsObjectArrNM = $$DeepArray<AnotherObjectType>;
-    export type argsObjectArrNN = $$DeepArray<AnotherObjectType>;
-    export type argsObjectMand = $$DeepArray<AnotherObjectType>;
-    export type argsObjectNull = $$DeepArray<AnotherObjectType>;
+    export type argsObjectArr2D = $$DeepArray<AnotherObjectType$>;
+    export type argsObjectArrMM = $$DeepArray<AnotherObjectType$>;
+    export type argsObjectArrMN = $$DeepArray<AnotherObjectType$>;
+    export type argsObjectArrNM = $$DeepArray<AnotherObjectType$>;
+    export type argsObjectArrNN = $$DeepArray<AnotherObjectType$>;
+    export type argsObjectMand = $$DeepArray<AnotherObjectType$>;
+    export type argsObjectNull = $$DeepArray<AnotherObjectType$>;
     export type argsScalarArr2D = never;
     export type argsScalarArrMM = never;
     export type argsScalarArrMN = never;
@@ -841,13 +841,13 @@ export namespace $$Frag {
     export type argsScalarArrNN = never;
     export type argsScalarMand = never;
     export type argsScalarNull = never;
-    export type noArgsObjectArr2D = $$DeepArray<AnotherObjectType>;
-    export type noArgsObjectArrMM = $$DeepArray<AnotherObjectType>;
-    export type noArgsObjectArrMN = $$DeepArray<AnotherObjectType>;
-    export type noArgsObjectArrNM = $$DeepArray<AnotherObjectType>;
-    export type noArgsObjectArrNN = $$DeepArray<AnotherObjectType>;
-    export type noArgsObjectMand = $$DeepArray<AnotherObjectType>;
-    export type noArgsObjectNull = $$DeepArray<AnotherObjectType>;
+    export type noArgsObjectArr2D = $$DeepArray<AnotherObjectType$>;
+    export type noArgsObjectArrMM = $$DeepArray<AnotherObjectType$>;
+    export type noArgsObjectArrMN = $$DeepArray<AnotherObjectType$>;
+    export type noArgsObjectArrNM = $$DeepArray<AnotherObjectType$>;
+    export type noArgsObjectArrNN = $$DeepArray<AnotherObjectType$>;
+    export type noArgsObjectMand = $$DeepArray<AnotherObjectType$>;
+    export type noArgsObjectNull = $$DeepArray<AnotherObjectType$>;
     export type noArgsScalarArr2D = never;
     export type noArgsScalarArrMM = never;
     export type noArgsScalarArrMN = never;
@@ -1147,7 +1147,66 @@ export namespace $$Output {
     T extends typeof Mutation$noArgsScalarNull ? F extends $$Frag.$<typeof Mutation$noArgsScalarNull>[] ? Mutation.noArgsScalarNull<F> : never : never;
 }
 
-
-
-"
+export const $$generateObject = <F extends $$GqxFunc>(f: $$GqxImpl<F>) => ({
+  query: {
+    argsObjectArr2D: f(Query$argsObjectArr2D),
+    argsObjectArrMM: f(Query$argsObjectArrMM),
+    argsObjectArrMN: f(Query$argsObjectArrMN),
+    argsObjectArrNM: f(Query$argsObjectArrNM),
+    argsObjectArrNN: f(Query$argsObjectArrNN),
+    argsObjectMand: f(Query$argsObjectMand),
+    argsObjectNull: f(Query$argsObjectNull),
+    argsScalarArr2D: f(Query$argsScalarArr2D),
+    argsScalarArrMM: f(Query$argsScalarArrMM),
+    argsScalarArrMN: f(Query$argsScalarArrMN),
+    argsScalarArrNM: f(Query$argsScalarArrNM),
+    argsScalarArrNN: f(Query$argsScalarArrNN),
+    argsScalarMand: f(Query$argsScalarMand),
+    argsScalarNull: f(Query$argsScalarNull),
+    noArgsObjectArr2D: f(Query$noArgsObjectArr2D),
+    noArgsObjectArrMM: f(Query$noArgsObjectArrMM),
+    noArgsObjectArrMN: f(Query$noArgsObjectArrMN),
+    noArgsObjectArrNM: f(Query$noArgsObjectArrNM),
+    noArgsObjectArrNN: f(Query$noArgsObjectArrNN),
+    noArgsObjectMand: f(Query$noArgsObjectMand),
+    noArgsObjectNull: f(Query$noArgsObjectNull),
+    noArgsScalarArr2D: f(Query$noArgsScalarArr2D),
+    noArgsScalarArrMM: f(Query$noArgsScalarArrMM),
+    noArgsScalarArrMN: f(Query$noArgsScalarArrMN),
+    noArgsScalarArrNM: f(Query$noArgsScalarArrNM),
+    noArgsScalarArrNN: f(Query$noArgsScalarArrNN),
+    noArgsScalarMand: f(Query$noArgsScalarMand),
+    noArgsScalarNull: f(Query$noArgsScalarNull),
+  },
+  mutation: {
+    argsObjectArr2D: f(Mutation$argsObjectArr2D),
+    argsObjectArrMM: f(Mutation$argsObjectArrMM),
+    argsObjectArrMN: f(Mutation$argsObjectArrMN),
+    argsObjectArrNM: f(Mutation$argsObjectArrNM),
+    argsObjectArrNN: f(Mutation$argsObjectArrNN),
+    argsObjectMand: f(Mutation$argsObjectMand),
+    argsObjectNull: f(Mutation$argsObjectNull),
+    argsScalarArr2D: f(Mutation$argsScalarArr2D),
+    argsScalarArrMM: f(Mutation$argsScalarArrMM),
+    argsScalarArrMN: f(Mutation$argsScalarArrMN),
+    argsScalarArrNM: f(Mutation$argsScalarArrNM),
+    argsScalarArrNN: f(Mutation$argsScalarArrNN),
+    argsScalarMand: f(Mutation$argsScalarMand),
+    argsScalarNull: f(Mutation$argsScalarNull),
+    noArgsObjectArr2D: f(Mutation$noArgsObjectArr2D),
+    noArgsObjectArrMM: f(Mutation$noArgsObjectArrMM),
+    noArgsObjectArrMN: f(Mutation$noArgsObjectArrMN),
+    noArgsObjectArrNM: f(Mutation$noArgsObjectArrNM),
+    noArgsObjectArrNN: f(Mutation$noArgsObjectArrNN),
+    noArgsObjectMand: f(Mutation$noArgsObjectMand),
+    noArgsObjectNull: f(Mutation$noArgsObjectNull),
+    noArgsScalarArr2D: f(Mutation$noArgsScalarArr2D),
+    noArgsScalarArrMM: f(Mutation$noArgsScalarArrMM),
+    noArgsScalarArrMN: f(Mutation$noArgsScalarArrMN),
+    noArgsScalarArrNM: f(Mutation$noArgsScalarArrNM),
+    noArgsScalarArrNN: f(Mutation$noArgsScalarArrNN),
+    noArgsScalarMand: f(Mutation$noArgsScalarMand),
+    noArgsScalarNull: f(Mutation$noArgsScalarNull),
+  },
+})"
 `;

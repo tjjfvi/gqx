@@ -8,17 +8,17 @@ export default (objs: Obj[], ctx: Context) =>
     "$$Output",
     objs,
     (o, p) =>
-      `type ${p.id.prop}<F extends $$Frag.$<typeof ${stringifyId(p.id)}>[]> = ${p.wrap(
+      `type ${p.id.prop}<F extends $$Frag.$<typeof ${stringifyId(p.id)}>> = ${p.wrap(
         p.type in ctx.objectTypes ?
           `$${p.type}<F>` :
           p.type
       )}`,
-    ", F extends $$Frag.$<T>[]",
+    ", F extends $$Frag.$<T>",
     ", F",
     (o, p, next) => {
       let id = stringifyId(p.id);
       return (
-        `T extends typeof ${id} ? F extends $$Frag.$<typeof ${id}>[] ? ${o.type}.${p.id.prop}<F> : ${next} : ${next}`
+        `T extends typeof ${id} ? F extends $$Frag.$<typeof ${id}> ? ${o.type}.${p.id.prop}<F> : ${next} : ${next}`
       );
     }
   )

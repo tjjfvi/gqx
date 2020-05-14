@@ -5,9 +5,8 @@ import stringifyProps from "./stringifyProps"
 import stringifyInputTypes from "./stringifyInputTypes";
 import stringifyFragTypes from "./stringifyFragTypes";
 import stringifyOutputTypes from "./stringifyOutputTypes";
-import stringifyVariables from "./stringifyVariables";
+import stringifyObjectGen from "./stringifyObjectGen";
 import generateObjs from "./generateObjs";
-import stringifyTypeVars from "./stringifyTypeVars";
 
 
 interface Id {
@@ -38,8 +37,7 @@ export default (ctx: Context) => {
     stringifyInputTypes(objs),
     stringifyFragTypes(objs, ctx),
     stringifyOutputTypes(objs, ctx),
-    stringifyVariables(objs, ctx),
-    stringifyTypeVars(objs, ctx),
+    stringifyObjectGen(objs),
   ].join("\n\n");
 }
 

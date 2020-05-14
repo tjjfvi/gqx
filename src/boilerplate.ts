@@ -16,10 +16,17 @@ type Boolean = boolean;
 interface $<F, L> { f: F; l: L }
 const $$ = <F, L>(f: F, l: L) => ({ f, l });
 
-export type $$DeepArray<T> = (T | DeepArray<T>)[];
-export type $$UnwrapDeepArray<T extends DeepArray<any>> = T extends DeepArray<infer U> ? U : never;
+export type $$DeepArray<T> = (T | $$DeepArray<T>)[];
+export type $$UnwrapDeepArray<T extends $$DeepArray<any>> = T extends $$DeepArray<infer U> ? U : never;
 
-interface $$OperationId {
+export interface $$GqxFunc {
+  id: $$OperationId;
+  result: unknown;
+}
+type $$CallGqxFunc<F extends $$GqxFunc, I extends $$OperationId> = (F & { id: I })["result"];
+export type $$GqxImpl<F extends $$GqxFunc> = <I extends $$OperationId>(id: I) => $$CallGqxFunc<F, I>;
+
+export interface $$OperationId {
   typeProp: string;
   type: string;
   prop: string;
@@ -32,7 +39,7 @@ type $$Wrap<X, Y> = X extends $<infer F, infer L> ? $<F, $$Wrap<L, Y>> : never;
 type $$MapWrap<O, F> = {
   [K in keyof O | typeof __wrap__ | "$"]:
     K extends "$" ?
-      <T extends $_, TA extends DeepArray<T>>(...x: TA) =>
+      <T extends $_>(x: $$DeepArray<T>) =>
         $<F, O extends { [__wrap__]: infer X } ? $$Wrap<X, T> : T>[] :
       K extends keyof O ?
         O[K] extends $_ ?
@@ -54,10 +61,10 @@ const $$mapWrap = <O, F>(o: () => O, f: F): $$MapWrap<O, F> =>
     ),
   })
 
-const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, props: $$Frag.$<I>[]) => {
+const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, props: $$Frag.$<I>) => {
   interface Subs { [k: string]: true | Subs }
   const subs: Subs = {};
-  props.map(prop => populateSubs(prop, subs));
+  populateSubs(props, subs);
   const frag = genFrag(subs);
   const inputKeys = Object.keys(input);
   const inputDef = inputKeys.length ? `(${inputKeys.map(k =>
@@ -77,7 +84,9 @@ const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, prop
     );
   }
 
-  function populateSubs(prop: $_, subs: Subs | true){
+  function populateSubs(prop: $_ | $$DeepArray<$_>, subs: Subs | true){
+    if(prop instanceof Array)
+      return prop.map(p => populateSubs(p, subs));
     if(subs === true)
       return;
     if("prop" in prop)

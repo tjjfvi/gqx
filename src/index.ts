@@ -11,7 +11,6 @@ import stringifyObjectTypes from "./stringifyObjectTypes";
 import stringifyOperations from "./stringifyOperations";
 import stringifyBoilerplate from "./stringifyBoilerplate";
 import groupDefinitions from "./groupDefinitions";
-import loadConfig, { Config } from "./loadConfig";
 import stringifyDirectives from "./stringifyDirectives";
 
 interface Context {
@@ -20,13 +19,11 @@ interface Context {
   objectTypes: { [k: string]: FieldDefinitionNode[] };
   operations: [string, string][];
   baseTypes: string[];
-  config: Config;
 }
 
-export default ({ schema, template }: { schema: string; template: string }) => {
+export default ({ schema }: { schema: string }) => {
 
   const ast = parse(schema);
-  const [config, wrapper] = loadConfig(template);
 
   const ctx: Context = {
     operations: [],
@@ -34,12 +31,12 @@ export default ({ schema, template }: { schema: string; template: string }) => {
     enumTypes: {},
     inputTypes: {},
     objectTypes: {},
-    config,
   };
 
   groupDefinitions(ctx, ast.definitions);
 
   const code = [
+    "/* eslint-disable */",
     stringifyBoilerplate(),
     stringifyEnumTypes(ctx),
     stringifyInputTypes(ctx),
@@ -48,7 +45,7 @@ export default ({ schema, template }: { schema: string; template: string }) => {
     stringifyDirectives(ctx),
   ].join("\n\n").replace(/\n\n\n+/g, "\n\n");
 
-  return wrapper(code);
+  return code;
 
 }
 

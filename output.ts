@@ -1,8 +1,4 @@
-
 /* eslint-disable */
-
-const _gqx = <I>(id: I) => <T extends $$Frag.$<I>[]>(input: $$Input.$<I>, frag: T): $$Output.$<I, T> => (null as any);
-type _Gqx<I> = $$Frag.$<I>[];
 
 type Int = number;
 type Float = number;
@@ -13,7 +9,17 @@ type Boolean = boolean;
 interface $<F, L> { f: F; l: L }
 const $$ = <F, L>(f: F, l: L) => ({ f, l });
 
-interface $$OperationId {
+export type $$DeepArray<T> = (T | $$DeepArray<T>)[];
+export type $$UnwrapDeepArray<T extends $$DeepArray<any>> = T extends $$DeepArray<infer U> ? U : never;
+
+export interface $$GqxFunc {
+  id: $$OperationId;
+  result: unknown;
+}
+type $$CallGqxFunc<F extends $$GqxFunc, I extends $$OperationId> = (F & { id: I })["result"];
+export type $$GqxImpl<F extends $$GqxFunc> = <I extends $$OperationId>(id: I) => $$CallGqxFunc<F, I>;
+
+export interface $$OperationId {
   typeProp: string;
   type: string;
   prop: string;
@@ -26,7 +32,8 @@ type $$Wrap<X, Y> = X extends $<infer F, infer L> ? $<F, $$Wrap<L, Y>> : never;
 type $$MapWrap<O, F> = {
   [K in keyof O | typeof __wrap__ | "$"]:
     K extends "$" ?
-      <T extends $_>(x: T[]) => $<F, O extends { [__wrap__]: infer X } ? $$Wrap<X, T> : T>[] :
+      <T extends $_>(x: $$DeepArray<T>) =>
+        $<F, O extends { [__wrap__]: infer X } ? $$Wrap<X, T> : T>[] :
       K extends keyof O ?
         O[K] extends $_ ?
           $<F, O[K]> :
@@ -43,14 +50,14 @@ const $$mapWrap = <O, F>(o: () => O, f: F): $$MapWrap<O, F> =>
           $$mapWrap(() => o()[k], f) :
           $$(f, o()[k]) :
         // @ts-ignore
-        (...a: any) => ("$" in o() ? o().$(a) : a).map((a: any) => $$(f, a))
+        (a: any) => ("$" in o() ? o().$(a) : a).flat(Infinity).map((a: any) => $$(f, a))
     ),
   })
 
-const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, props: $$Frag.$<I>[]) => {
+const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, props: $$Frag.$<I>) => {
   interface Subs { [k: string]: true | Subs }
   const subs: Subs = {};
-  props.map(prop => populateSubs(prop, subs));
+  populateSubs(props, subs);
   const frag = genFrag(subs);
   const inputKeys = Object.keys(input);
   const inputDef = inputKeys.length ? `(${inputKeys.map(k =>
@@ -63,10 +70,16 @@ const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, prop
   return request;
 
   function genFrag(subs: Subs){
-    return `{ ${Object.entries(subs).map(([k, v]) => v === true ? k : k + " " + genFrag(v)).join(" ")} }`;
+    return (
+      Object.keys(subs).length ?
+        `{ ${Object.entries(subs).map(([k, v]) => v === true ? k : k + " " + genFrag(v)).join(" ")} }` :
+        ""
+    );
   }
 
-  function populateSubs(prop: $_, subs: Subs | true){
+  function populateSubs(prop: $_ | $$DeepArray<$_>, subs: Subs | true){
+    if(prop instanceof Array)
+      return prop.map(p => populateSubs(p, subs));
     if(subs === true)
       return;
     if("prop" in prop)
@@ -170,7 +183,7 @@ type _$Author<F extends Author$> =
   & (typeof Author$name extends F ? $Author$name : {})
   & ($<typeof Author$books, any> extends F ? $Author$books<F> : {})
   & ($<typeof Author$favoriteBook, any> extends F ? $Author$favoriteBook<F> : {})
-export type $Author<F extends Author$[]> = _$Author<F[number]>;
+export type $Author<F extends $$DeepArray<Author$>> = _$Author<$$UnwrapDeepArray<F>>;
 
 interface $Book$categories { categories: Category[]; }
 interface $Book$description { description: String; }
@@ -184,7 +197,7 @@ type _$Book<F extends Book$> =
   & (typeof Book$id extends F ? $Book$id : {})
   & (typeof Book$title extends F ? $Book$title : {})
   & ($<typeof Book$author, any> extends F ? $Book$author<F> : {})
-export type $Book<F extends Book$[]> = _$Book<F[number]>;
+export type $Book<F extends $$DeepArray<Book$>> = _$Book<$$UnwrapDeepArray<F>>;
 
 class Query$getAuthor {
   private static _: any;
@@ -241,9 +254,9 @@ export namespace $$Input {
 
 export namespace $$Frag {
   export namespace Query {
-    export type getAuthor = Author$;
-    export type getBook = Book$;
-    export type listBooks = Book$;
+    export type getAuthor = $$DeepArray<Author$>;
+    export type getBook = $$DeepArray<Book$>;
+    export type listBooks = $$DeepArray<Book$>;
   }
 
   export type $<T> =
@@ -256,41 +269,26 @@ export namespace $$Frag {
 
 export namespace $$Output {
   export namespace Query {
-    export type getAuthor<F extends $$Frag.$<typeof Query$getAuthor>[]> = $Author<F>
-    export type getBook<F extends $$Frag.$<typeof Query$getBook>[]> = $Book<F>
-    export type listBooks<F extends $$Frag.$<typeof Query$listBooks>[]> = $Book<F>[]
+    export type getAuthor<F extends $$Frag.$<typeof Query$getAuthor>> = $Author<F>
+    export type getBook<F extends $$Frag.$<typeof Query$getBook>> = $Book<F>
+    export type listBooks<F extends $$Frag.$<typeof Query$listBooks>> = $Book<F>[]
   }
 
-  export type $<T, F extends $$Frag.$<T>[]> =
-    T extends typeof Query$getAuthor ? F extends $$Frag.$<typeof Query$getAuthor>[] ? Query.getAuthor<F> : $$1<T, F> : $$1<T, F>;
-  type $$1<T, F extends $$Frag.$<T>[]> =
-    T extends typeof Query$getBook ? F extends $$Frag.$<typeof Query$getBook>[] ? Query.getBook<F> : $$2<T, F> : $$2<T, F>;
-  type $$2<T, F extends $$Frag.$<T>[]> =
-    T extends typeof Query$listBooks ? F extends $$Frag.$<typeof Query$listBooks>[] ? Query.listBooks<F> : never : never;
+  export type $<T, F extends $$Frag.$<T>> =
+    T extends typeof Query$getAuthor ? F extends $$Frag.$<typeof Query$getAuthor> ? Query.getAuthor<F> : $$1<T, F> : $$1<T, F>;
+  type $$1<T, F extends $$Frag.$<T>> =
+    T extends typeof Query$getBook ? F extends $$Frag.$<typeof Query$getBook> ? Query.getBook<F> : $$2<T, F> : $$2<T, F>;
+  type $$2<T, F extends $$Frag.$<T>> =
+    T extends typeof Query$listBooks ? F extends $$Frag.$<typeof Query$listBooks> ? Query.listBooks<F> : never : never;
 }
 
-export const gqx = {
+export const $$generateObject = <F extends $$GqxFunc>(f: $$GqxImpl<F>) => ({
   query: {
-    getAuthor: _gqx<typeof Query$getAuthor>(Query$getAuthor),
-    getBook: _gqx<typeof Query$getBook>(Query$getBook),
-    listBooks: _gqx<typeof Query$listBooks>(Query$listBooks),
+    getAuthor: f(Query$getAuthor),
+    getBook: f(Query$getBook),
+    listBooks: f(Query$listBooks),
   },
-}
-
-export namespace Gqx {
-  export namespace Query {
-    export type getAuthor = _Gqx<typeof Query$getAuthor>;
-    export type getBook = _Gqx<typeof Query$getBook>;
-    export type listBooks = _Gqx<typeof Query$listBooks>;
-  }
-
-  export type $<T> =
-    T extends typeof Query$getAuthor ? Query.getAuthor : $$1<T>;
-  type $$1<T> =
-    T extends typeof Query$getBook ? Query.getBook : $$2<T>;
-  type $$2<T> =
-    T extends typeof Query$listBooks ? Query.listBooks : never;
-}
+})
 
 export namespace $$Directives {
   export namespace Query {
@@ -326,4 +324,3 @@ export namespace $$Directives {
     T extends Author$favoriteBook ? Author.favoriteBook :
     never
 }
-

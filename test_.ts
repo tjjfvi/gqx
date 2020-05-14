@@ -1,5 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { gqx, Book, Author } from "./output";
+import { Book, Author, $$GqxFunc, $$OperationId, $$Frag, $$Input, $$Output, $$generateObject } from "./output";
+
+type GqxOut_<I extends $$OperationId> = <T extends $$Frag.$<I>>(input: $$Input.$<I>, frag: T) => $$Output.$<I, T>;
+
+interface GqxOut extends $$GqxFunc {
+  result: GqxOut_<this["id"]>;
+}
+
+const gqx = $$generateObject<GqxOut>(() => null as any);
 
 const frag = [
   Book.id,

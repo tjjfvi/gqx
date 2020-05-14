@@ -1,13 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` 1`] = `
-"
-/* eslint-disable */
-
-const _gqx = <I>(id: I) => <T extends $$Frag.$<I>[]>(input: $$Input.$<I>, frag: T): $$Output.$<I, T> => (null as any);
-type _Gqx<I> = $$Frag.$<I>[];
-
-type Int = number;
+"type Int = number;
 type Float = number;
 type String = string;
 type ID = string;
@@ -18,6 +12,13 @@ const $$ = <F, L>(f: F, l: L) => ({ f, l });
 
 export type $$DeepArray<T> = (T | DeepArray<T>)[];
 export type $$UnwrapDeepArray<T extends DeepArray<any>> = T extends DeepArray<infer U> ? U : never;
+
+export interface $$GqxFunc {
+  id: $_;
+  result: unknown;
+}
+type $$CallGqxFunc<F extends $$GqxFunc, I extends $_> = ($$GqxFunc & { id: I })[\\"result\\"];
+export type $$GqxImpl<F extends $$GqxFunc> = <I extends $_>(id: I) => $$CallGqxFunc<F, I>;
 
 interface $$OperationId {
   typeProp: string;
@@ -378,12 +379,12 @@ export namespace $$Input {
 
 export namespace $$Frag {
   export namespace Query {
-    export type getAuthor = $$DeepArray<Author>;
-    export type getBook = $$DeepArray<Book>;
-    export type listBooks = $$DeepArray<Book>;
+    export type getAuthor = $$DeepArray<Author$>;
+    export type getBook = $$DeepArray<Book$>;
+    export type listBooks = $$DeepArray<Book$>;
   }
   export namespace Mutation {
-    export type addReview = $$DeepArray<Review>;
+    export type addReview = $$DeepArray<Review$>;
   }
 
   export type $<T> =
@@ -416,36 +417,16 @@ export namespace $$Output {
     T extends typeof Mutation$addReview ? F extends $$Frag.$<typeof Mutation$addReview>[] ? Mutation.addReview<F> : never : never;
 }
 
-export const gqx = {
+export const $$generateObject = <F extends $$GqxFunc>(f: $$GqxImpl<F>) => ({
   query: {
-    getAuthor: _gqx<typeof Query$getAuthor>(Query$getAuthor),
-    getBook: _gqx<typeof Query$getBook>(Query$getBook),
-    listBooks: _gqx<typeof Query$listBooks>(Query$listBooks),
+    getAuthor: f(Query$getAuthor),
+    getBook: f(Query$getBook),
+    listBooks: f(Query$listBooks),
   },
   mutation: {
-    addReview: _gqx<typeof Mutation$addReview>(Mutation$addReview),
+    addReview: f(Mutation$addReview),
   },
-}
-
-export namespace Gqx {
-  export namespace Query {
-    export type getAuthor = _Gqx<typeof Query$getAuthor>;
-    export type getBook = _Gqx<typeof Query$getBook>;
-    export type listBooks = _Gqx<typeof Query$listBooks>;
-  }
-  export namespace Mutation {
-    export type addReview = _Gqx<typeof Mutation$addReview>;
-  }
-
-  export type $<T> =
-    T extends typeof Query$getAuthor ? Query.getAuthor : $$1<T>;
-  type $$1<T> =
-    T extends typeof Query$getBook ? Query.getBook : $$2<T>;
-  type $$2<T> =
-    T extends typeof Query$listBooks ? Query.listBooks : $$3<T>;
-  type $$3<T> =
-    T extends typeof Mutation$addReview ? Mutation.addReview : never;
-}
+})
 
 export namespace $$Directives {
   export namespace Query {
@@ -524,6 +505,5 @@ export namespace $$Directives {
     T extends User$name ? User.name :
     T extends User$reviews ? User.reviews :
     never
-}
-"
+}"
 `;

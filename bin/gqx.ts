@@ -7,20 +7,17 @@ import program from "commander";
 
 program
   .option("-s, --schema <path>", "Input GraphQL Schema")
-  .option("-t, --template <path>", "Template JS File")
   .option("-o, --output <path>", "Output File");
 
 program.parse(process.argv);
 
 (() => {
 
-  if(!program.schema || !program.template)
-    return console.log("Must provide --schema and --template");
+  if(!program.schema)
+    return console.log("Must provide --schema");
 
-  if(program.output) {
+  if(program.output)
     console.log(`Using schema: ${program.schema}`);
-    console.log(`Using template: ${program.template}`);
-  }
 
   let schema = (
     fs.statSync(program.schema).isDirectory() ?
@@ -30,9 +27,7 @@ program.parse(process.argv);
       [program.schema]
   ).map(f => fs.readFileSync(f, "utf8")).join("\n\n");
 
-  let template = fs.readFileSync(program.template, "utf8");
-
-  let out = gqx({ schema, template });
+  let out = gqx({ schema });
 
   if(program.output) {
     console.log(`Writing output to: ${program.output}`);
