@@ -40,17 +40,19 @@ const _BinaryTree = {
 };
 
 export const BinaryTree: typeof _BinaryTree & {
-  left: $$MapWrap<typeof BinaryTree, typeof BinaryTree$left>,
-  right: $$MapWrap<typeof BinaryTree, typeof BinaryTree$right>,
+  left: $$MapWrap<typeof$BinaryTree, typeof BinaryTree$left>,
+  right: $$MapWrap<typeof$BinaryTree, typeof BinaryTree$right>,
 } = {
   ..._BinaryTree,
   left: $$mapWrap(() => BinaryTree, BinaryTree$left),
   right: $$mapWrap(() => BinaryTree, BinaryTree$right),
 };
 
+type typeof$BinaryTree = typeof BinaryTree
+
 export const DeepOnly: {
-  a: $$MapWrap<typeof ShallowOnly, typeof DeepOnly$a>,
-  b: $$MapWrap<typeof ShallowOnly, typeof DeepOnly$b>,
+  a: $$MapWrap<typeof$ShallowOnly, typeof DeepOnly$a>,
+  b: $$MapWrap<typeof$ShallowOnly, typeof DeepOnly$b>,
 } = {
   a: $$mapWrap(() => ShallowOnly, DeepOnly$a),
   b: $$mapWrap(() => ShallowOnly, DeepOnly$b),
@@ -61,11 +63,13 @@ const _Recursive = {
 };
 
 export const Recursive: typeof _Recursive & {
-  next: $$MapWrap<typeof Recursive, typeof Recursive$next>,
+  next: $$MapWrap<typeof$Recursive, typeof Recursive$next>,
 } = {
   ..._Recursive,
   next: $$mapWrap(() => Recursive, Recursive$next),
 };
+
+type typeof$Recursive = typeof Recursive
 
 export const ShallowOnly = {
   a: ShallowOnly$a,
@@ -80,7 +84,7 @@ type _$BinaryTree<F extends BinaryTree$> =
   & (typeof BinaryTree$node extends F ? $BinaryTree$node : {})
   & ($<typeof BinaryTree$left, any> extends F ? $BinaryTree$left<F> : {})
   & ($<typeof BinaryTree$right, any> extends F ? $BinaryTree$right<F> : {})
-export type $BinaryTree<F extends $$DeepArray<BinaryTree$>> = _$BinaryTree<$$UnwrapDeepArray<F[number]>>;
+export type $BinaryTree<F extends $$DeepArray<BinaryTree$>> = _$BinaryTree<$$UnwrapDeepArray<F>>;
 
 interface $DeepOnly$a<F extends DeepOnly$> { a: _$ShallowOnly<Extract<F, $<typeof DeepOnly$a, ShallowOnly$>>[\\"l\\"]>; }
 interface $DeepOnly$b<F extends DeepOnly$> { b: (_$ShallowOnly<Extract<F, $<typeof DeepOnly$b, ShallowOnly$>>[\\"l\\"]> | null)[]; }
@@ -88,7 +92,7 @@ interface $DeepOnly$b<F extends DeepOnly$> { b: (_$ShallowOnly<Extract<F, $<type
 type _$DeepOnly<F extends DeepOnly$> =
   & ($<typeof DeepOnly$a, any> extends F ? $DeepOnly$a<F> : {})
   & ($<typeof DeepOnly$b, any> extends F ? $DeepOnly$b<F> : {})
-export type $DeepOnly<F extends $$DeepArray<DeepOnly$>> = _$DeepOnly<$$UnwrapDeepArray<F[number]>>;
+export type $DeepOnly<F extends $$DeepArray<DeepOnly$>> = _$DeepOnly<$$UnwrapDeepArray<F>>;
 
 interface $Recursive$id { id: ID; }
 interface $Recursive$next<F extends Recursive$> { next: _$Recursive<Extract<F, $<typeof Recursive$next, Recursive$>>[\\"l\\"]>; }
@@ -96,7 +100,7 @@ interface $Recursive$next<F extends Recursive$> { next: _$Recursive<Extract<F, $
 type _$Recursive<F extends Recursive$> =
   & (typeof Recursive$id extends F ? $Recursive$id : {})
   & ($<typeof Recursive$next, any> extends F ? $Recursive$next<F> : {})
-export type $Recursive<F extends $$DeepArray<Recursive$>> = _$Recursive<$$UnwrapDeepArray<F[number]>>;
+export type $Recursive<F extends $$DeepArray<Recursive$>> = _$Recursive<$$UnwrapDeepArray<F>>;
 
 interface $ShallowOnly$a { a: String; }
 interface $ShallowOnly$b { b: Number; }
@@ -104,5 +108,5 @@ interface $ShallowOnly$b { b: Number; }
 type _$ShallowOnly<F extends ShallowOnly$> =
   & (typeof ShallowOnly$a extends F ? $ShallowOnly$a : {})
   & (typeof ShallowOnly$b extends F ? $ShallowOnly$b : {})
-export type $ShallowOnly<F extends $$DeepArray<ShallowOnly$>> = _$ShallowOnly<$$UnwrapDeepArray<F[number]>>;"
+export type $ShallowOnly<F extends $$DeepArray<ShallowOnly$>> = _$ShallowOnly<$$UnwrapDeepArray<F>>;"
 `;

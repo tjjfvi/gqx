@@ -6,19 +6,21 @@ exports[`stringifyObjectTypes.gql BinaryTree 1`] = `
 };
 
 export const BinaryTree: typeof _BinaryTree & {
-  left: $$MapWrap<typeof BinaryTree, typeof BinaryTree$left>,
-  right: $$MapWrap<typeof BinaryTree, typeof BinaryTree$right>,
+  left: $$MapWrap<typeof$BinaryTree, typeof BinaryTree$left>,
+  right: $$MapWrap<typeof$BinaryTree, typeof BinaryTree$right>,
 } = {
   ..._BinaryTree,
   left: $$mapWrap(() => BinaryTree, BinaryTree$left),
   right: $$mapWrap(() => BinaryTree, BinaryTree$right),
-};"
+};
+
+type typeof$BinaryTree = typeof BinaryTree"
 `;
 
 exports[`stringifyObjectTypes.gql DeepOnly 1`] = `
 "export const DeepOnly: {
-  a: $$MapWrap<typeof ShallowOnly, typeof DeepOnly$a>,
-  b: $$MapWrap<typeof ShallowOnly, typeof DeepOnly$b>,
+  a: $$MapWrap<typeof$ShallowOnly, typeof DeepOnly$a>,
+  b: $$MapWrap<typeof$ShallowOnly, typeof DeepOnly$b>,
 } = {
   a: $$mapWrap(() => ShallowOnly, DeepOnly$a),
   b: $$mapWrap(() => ShallowOnly, DeepOnly$b),
@@ -31,11 +33,13 @@ exports[`stringifyObjectTypes.gql Recursive 1`] = `
 };
 
 export const Recursive: typeof _Recursive & {
-  next: $$MapWrap<typeof Recursive, typeof Recursive$next>,
+  next: $$MapWrap<typeof$Recursive, typeof Recursive$next>,
 } = {
   ..._Recursive,
   next: $$mapWrap(() => Recursive, Recursive$next),
-};"
+};
+
+type typeof$Recursive = typeof Recursive"
 `;
 
 exports[`stringifyObjectTypes.gql ShallowOnly 1`] = `

@@ -7,7 +7,7 @@ export default (obj: Obj) => {
   const shallowObj = genObj(obj.shallowProps, p => stringifyId(p.id));
 
   const deepType = genObj(obj.deepProps, p =>
-    `$$MapWrap<typeof ${p.type}, typeof ${stringifyId(p.id)}>`
+    `$$MapWrap<typeof$${p.type}, typeof ${stringifyId(p.id)}>`
   );
 
   const deepObj = genObj(obj.deepProps, p =>
@@ -24,6 +24,8 @@ export default (obj: Obj) => {
 const _${obj.type} = ${shallowObj};
 
 export const ${obj.type}: typeof _${obj.type} & ${deepType} = ${deepObj};
+
+type typeof$${obj.type} = typeof ${obj.type}
 `.trim();
 }
 

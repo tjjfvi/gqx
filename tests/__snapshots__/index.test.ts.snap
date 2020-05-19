@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` 1`] = `
-"type Int = number;
+"/* eslint-disable */
+
+type Int = number;
 type Float = number;
 type String = string;
 type ID = string;
@@ -10,17 +12,17 @@ type Boolean = boolean;
 interface $<F, L> { f: F; l: L }
 const $$ = <F, L>(f: F, l: L) => ({ f, l });
 
-export type $$DeepArray<T> = (T | DeepArray<T>)[];
-export type $$UnwrapDeepArray<T extends DeepArray<any>> = T extends DeepArray<infer U> ? U : never;
+export type $$DeepArray<T> = (T | $$DeepArray<T>)[];
+export type $$UnwrapDeepArray<T extends $$DeepArray<any>> = T extends $$DeepArray<infer U> ? U : never;
 
 export interface $$GqxFunc {
-  id: $_;
+  id: $$OperationId;
   result: unknown;
 }
-type $$CallGqxFunc<F extends $$GqxFunc, I extends $_> = ($$GqxFunc & { id: I })[\\"result\\"];
-export type $$GqxImpl<F extends $$GqxFunc> = <I extends $_>(id: I) => $$CallGqxFunc<F, I>;
+type $$CallGqxFunc<F extends $$GqxFunc, I extends $$OperationId> = (F & { id: I })[\\"result\\"];
+export type $$GqxImpl<F extends $$GqxFunc> = <I extends $$OperationId>(id: I) => $$CallGqxFunc<F, I>;
 
-interface $$OperationId {
+export interface $$OperationId {
   typeProp: string;
   type: string;
   prop: string;
@@ -33,7 +35,7 @@ type $$Wrap<X, Y> = X extends $<infer F, infer L> ? $<F, $$Wrap<L, Y>> : never;
 type $$MapWrap<O, F> = {
   [K in keyof O | typeof __wrap__ | \\"$\\"]:
     K extends \\"$\\" ?
-      <T extends $_, TA extends DeepArray<T>>(...x: TA) =>
+      <T extends $_>(x: $$DeepArray<T>) =>
         $<F, O extends { [__wrap__]: infer X } ? $$Wrap<X, T> : T>[] :
       K extends keyof O ?
         O[K] extends $_ ?
@@ -55,10 +57,10 @@ const $$mapWrap = <O, F>(o: () => O, f: F): $$MapWrap<O, F> =>
     ),
   })
 
-const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, props: $$Frag.$<I>[]) => {
+const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, props: $$Frag.$<I>) => {
   interface Subs { [k: string]: true | Subs }
   const subs: Subs = {};
-  props.map(prop => populateSubs(prop, subs));
+  populateSubs(props, subs);
   const frag = genFrag(subs);
   const inputKeys = Object.keys(input);
   const inputDef = inputKeys.length ? \`(\${inputKeys.map(k =>
@@ -78,7 +80,9 @@ const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, prop
     );
   }
 
-  function populateSubs(prop: $_, subs: Subs | true){
+  function populateSubs(prop: $_ | $$DeepArray<$_>, subs: Subs | true){
+    if(prop instanceof Array)
+      return prop.map(p => populateSubs(p, subs));
     if(subs === true)
       return;
     if(\\"prop\\" in prop)
@@ -192,13 +196,15 @@ const _Author = {
 };
 
 export const Author: typeof _Author & {
-  books: $$MapWrap<typeof Book, typeof Author$books>,
-  favoriteBook: $$MapWrap<typeof Book, typeof Author$favoriteBook>,
+  books: $$MapWrap<typeof$Book, typeof Author$books>,
+  favoriteBook: $$MapWrap<typeof$Book, typeof Author$favoriteBook>,
 } = {
   ..._Author,
   books: $$mapWrap(() => Book, Author$books),
   favoriteBook: $$mapWrap(() => Book, Author$favoriteBook),
 };
+
+type typeof$Author = typeof Author
 
 const _Book = {
   categories: Book$categories,
@@ -209,13 +215,15 @@ const _Book = {
 };
 
 export const Book: typeof _Book & {
-  author: $$MapWrap<typeof Author, typeof Book$author>,
-  reviews: $$MapWrap<typeof Review, typeof Book$reviews>,
+  author: $$MapWrap<typeof$Author, typeof Book$author>,
+  reviews: $$MapWrap<typeof$Review, typeof Book$reviews>,
 } = {
   ..._Book,
   author: $$mapWrap(() => Author, Book$author),
   reviews: $$mapWrap(() => Review, Book$reviews),
 };
+
+type typeof$Book = typeof Book
 
 const _Review = {
   details: Review$details,
@@ -225,13 +233,15 @@ const _Review = {
 };
 
 export const Review: typeof _Review & {
-  book: $$MapWrap<typeof Book, typeof Review$book>,
-  user: $$MapWrap<typeof User, typeof Review$user>,
+  book: $$MapWrap<typeof$Book, typeof Review$book>,
+  user: $$MapWrap<typeof$User, typeof Review$user>,
 } = {
   ..._Review,
   book: $$mapWrap(() => Book, Review$book),
   user: $$mapWrap(() => User, Review$user),
 };
+
+type typeof$Review = typeof Review
 
 const _User = {
   id: User$id,
@@ -239,13 +249,15 @@ const _User = {
 };
 
 export const User: typeof _User & {
-  author: $$MapWrap<typeof Author, typeof User$author>,
-  reviews: $$MapWrap<typeof Review, typeof User$reviews>,
+  author: $$MapWrap<typeof$Author, typeof User$author>,
+  reviews: $$MapWrap<typeof$Review, typeof User$reviews>,
 } = {
   ..._User,
   author: $$mapWrap(() => Author, User$author),
   reviews: $$mapWrap(() => Review, User$reviews),
 };
+
+type typeof$User = typeof User
 
 interface $Author$id { id: ID; }
 interface $Author$name { name: String; }
@@ -259,7 +271,7 @@ type _$Author<F extends Author$> =
   & (typeof Author$rating extends F ? $Author$rating : {})
   & ($<typeof Author$books, any> extends F ? $Author$books<F> : {})
   & ($<typeof Author$favoriteBook, any> extends F ? $Author$favoriteBook<F> : {})
-export type $Author<F extends $$DeepArray<Author$>> = _$Author<$$UnwrapDeepArray<F[number]>>;
+export type $Author<F extends $$DeepArray<Author$>> = _$Author<$$UnwrapDeepArray<F>>;
 
 interface $Book$categories { categories: Category[]; }
 interface $Book$description { description: String; }
@@ -277,7 +289,7 @@ type _$Book<F extends Book$> =
   & (typeof Book$title extends F ? $Book$title : {})
   & ($<typeof Book$author, any> extends F ? $Book$author<F> : {})
   & ($<typeof Book$reviews, any> extends F ? $Book$reviews<F> : {})
-export type $Book<F extends $$DeepArray<Book$>> = _$Book<$$UnwrapDeepArray<F[number]>>;
+export type $Book<F extends $$DeepArray<Book$>> = _$Book<$$UnwrapDeepArray<F>>;
 
 interface $Review$details { details: (String | null); }
 interface $Review$id { id: ID; }
@@ -293,7 +305,7 @@ type _$Review<F extends Review$> =
   & (typeof Review$title extends F ? $Review$title : {})
   & ($<typeof Review$book, any> extends F ? $Review$book<F> : {})
   & ($<typeof Review$user, any> extends F ? $Review$user<F> : {})
-export type $Review<F extends $$DeepArray<Review$>> = _$Review<$$UnwrapDeepArray<F[number]>>;
+export type $Review<F extends $$DeepArray<Review$>> = _$Review<$$UnwrapDeepArray<F>>;
 
 interface $User$id { id: ID; }
 interface $User$name { name: String; }
@@ -305,7 +317,7 @@ type _$User<F extends User$> =
   & (typeof User$name extends F ? $User$name : {})
   & ($<typeof User$author, any> extends F ? $User$author<F> : {})
   & ($<typeof User$reviews, any> extends F ? $User$reviews<F> : {})
-export type $User<F extends $$DeepArray<User$>> = _$User<$$UnwrapDeepArray<F[number]>>;
+export type $User<F extends $$DeepArray<User$>> = _$User<$$UnwrapDeepArray<F>>;
 
 class Query$getAuthor {
   private static _: any;
@@ -399,22 +411,22 @@ export namespace $$Frag {
 
 export namespace $$Output {
   export namespace Query {
-    export type getAuthor<F extends $$Frag.$<typeof Query$getAuthor>[]> = $Author<F>
-    export type getBook<F extends $$Frag.$<typeof Query$getBook>[]> = $Book<F>
-    export type listBooks<F extends $$Frag.$<typeof Query$listBooks>[]> = $Book<F>[]
+    export type getAuthor<F extends $$Frag.$<typeof Query$getAuthor>> = $Author<F>
+    export type getBook<F extends $$Frag.$<typeof Query$getBook>> = $Book<F>
+    export type listBooks<F extends $$Frag.$<typeof Query$listBooks>> = $Book<F>[]
   }
   export namespace Mutation {
-    export type addReview<F extends $$Frag.$<typeof Mutation$addReview>[]> = $Review<F>
+    export type addReview<F extends $$Frag.$<typeof Mutation$addReview>> = $Review<F>
   }
 
-  export type $<T, F extends $$Frag.$<T>[]> =
-    T extends typeof Query$getAuthor ? F extends $$Frag.$<typeof Query$getAuthor>[] ? Query.getAuthor<F> : $$1<T, F> : $$1<T, F>;
-  type $$1<T, F extends $$Frag.$<T>[]> =
-    T extends typeof Query$getBook ? F extends $$Frag.$<typeof Query$getBook>[] ? Query.getBook<F> : $$2<T, F> : $$2<T, F>;
-  type $$2<T, F extends $$Frag.$<T>[]> =
-    T extends typeof Query$listBooks ? F extends $$Frag.$<typeof Query$listBooks>[] ? Query.listBooks<F> : $$3<T, F> : $$3<T, F>;
-  type $$3<T, F extends $$Frag.$<T>[]> =
-    T extends typeof Mutation$addReview ? F extends $$Frag.$<typeof Mutation$addReview>[] ? Mutation.addReview<F> : never : never;
+  export type $<T, F extends $$Frag.$<T>> =
+    T extends typeof Query$getAuthor ? F extends $$Frag.$<typeof Query$getAuthor> ? Query.getAuthor<F> : $$1<T, F> : $$1<T, F>;
+  type $$1<T, F extends $$Frag.$<T>> =
+    T extends typeof Query$getBook ? F extends $$Frag.$<typeof Query$getBook> ? Query.getBook<F> : $$2<T, F> : $$2<T, F>;
+  type $$2<T, F extends $$Frag.$<T>> =
+    T extends typeof Query$listBooks ? F extends $$Frag.$<typeof Query$listBooks> ? Query.listBooks<F> : $$3<T, F> : $$3<T, F>;
+  type $$3<T, F extends $$Frag.$<T>> =
+    T extends typeof Mutation$addReview ? F extends $$Frag.$<typeof Mutation$addReview> ? Mutation.addReview<F> : never : never;
 }
 
 export const $$generateObject = <F extends $$GqxFunc>(f: $$GqxImpl<F>) => ({

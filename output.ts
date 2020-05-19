@@ -102,6 +102,211 @@ export type Category =
   | "Dystopian"
   | "Utopian"
   | "Religous"
+export type Language =
+  | "aa"
+  | "ab"
+  | "af"
+  | "ak"
+  | "sq"
+  | "am"
+  | "ar"
+  | "an"
+  | "hy"
+  | "as"
+  | "av"
+  | "ae"
+  | "ay"
+  | "az"
+  | "ba"
+  | "bm"
+  | "eu"
+  | "be"
+  | "bn"
+  | "bh"
+  | "bi"
+  | "bo"
+  | "bs"
+  | "br"
+  | "bg"
+  | "my"
+  | "ca"
+  | "cs"
+  | "ch"
+  | "ce"
+  | "zh"
+  | "cu"
+  | "cv"
+  | "kw"
+  | "co"
+  | "cr"
+  | "cy"
+  | "cs"
+  | "da"
+  | "de"
+  | "dv"
+  | "nl"
+  | "dz"
+  | "el"
+  | "en"
+  | "eo"
+  | "et"
+  | "eu"
+  | "ee"
+  | "fo"
+  | "fa"
+  | "fj"
+  | "fi"
+  | "fr"
+  | "fr"
+  | "fy"
+  | "ff"
+  | "ka"
+  | "de"
+  | "gd"
+  | "ga"
+  | "gl"
+  | "gv"
+  | "el"
+  | "gn"
+  | "gu"
+  | "ht"
+  | "ha"
+  | "he"
+  | "hz"
+  | "hi"
+  | "ho"
+  | "hr"
+  | "hu"
+  | "hy"
+  | "ig"
+  | "is"
+  | "io"
+  | "ii"
+  | "iu"
+  | "ie"
+  | "ia"
+  | "id"
+  | "ik"
+  | "is"
+  | "it"
+  | "jv"
+  | "ja"
+  | "kl"
+  | "kn"
+  | "ks"
+  | "ka"
+  | "kr"
+  | "kk"
+  | "km"
+  | "ki"
+  | "rw"
+  | "ky"
+  | "kv"
+  | "kg"
+  | "ko"
+  | "kj"
+  | "ku"
+  | "lo"
+  | "la"
+  | "lv"
+  | "li"
+  | "ln"
+  | "lt"
+  | "lb"
+  | "lu"
+  | "lg"
+  | "mk"
+  | "mh"
+  | "ml"
+  | "mi"
+  | "mr"
+  | "ms"
+  | "mk"
+  | "mg"
+  | "mt"
+  | "mn"
+  | "mi"
+  | "ms"
+  | "my"
+  | "na"
+  | "nv"
+  | "nr"
+  | "nd"
+  | "ng"
+  | "ne"
+  | "nl"
+  | "nn"
+  | "nb"
+  | "no"
+  | "ny"
+  | "oc"
+  | "oj"
+  | "or"
+  | "om"
+  | "os"
+  | "pa"
+  | "fa"
+  | "pi"
+  | "pl"
+  | "pt"
+  | "ps"
+  | "qu"
+  | "rm"
+  | "ro"
+  | "ro"
+  | "rn"
+  | "ru"
+  | "sg"
+  | "sa"
+  | "si"
+  | "sk"
+  | "sk"
+  | "sl"
+  | "se"
+  | "sm"
+  | "sn"
+  | "sd"
+  | "so"
+  | "st"
+  | "es"
+  | "sq"
+  | "sc"
+  | "sr"
+  | "ss"
+  | "su"
+  | "sw"
+  | "sv"
+  | "ty"
+  | "ta"
+  | "tt"
+  | "te"
+  | "tg"
+  | "tl"
+  | "th"
+  | "bo"
+  | "ti"
+  | "to"
+  | "tn"
+  | "ts"
+  | "tk"
+  | "tr"
+  | "tw"
+  | "ug"
+  | "uk"
+  | "ur"
+  | "uz"
+  | "ve"
+  | "vi"
+  | "vo"
+  | "cy"
+  | "wa"
+  | "wo"
+  | "xh"
+  | "yi"
+  | "yo"
+  | "za"
+  | "zh"
+  | "zu"
 
 export interface Cursor {
   start: Int;
@@ -123,10 +328,12 @@ class Author$name { private static _: any; static type = "Author"; static prop =
 class Author$books { private static _: any; static type = "Author"; static prop = "books"; }
 class Author$favoriteBook { private static _: any; static type = "Author"; static prop = "favoriteBook"; }
 class Book$id { private static _: any; static type = "Book"; static prop = "id"; }
+class Book$language { private static _: any; static type = "Book"; static prop = "language"; }
 class Book$author { private static _: any; static type = "Book"; static prop = "author"; }
 class Book$title { private static _: any; static type = "Book"; static prop = "title"; }
 class Book$description { private static _: any; static type = "Book"; static prop = "description"; }
 class Book$categories { private static _: any; static type = "Book"; static prop = "categories"; }
+class Book$translation { private static _: any; static type = "Book"; static prop = "translation"; }
 
 export type Author$ =
   | typeof Author$id
@@ -138,8 +345,10 @@ export type Book$ =
   | typeof Book$categories
   | typeof Book$description
   | typeof Book$id
+  | typeof Book$language
   | typeof Book$title
   | $<typeof Book$author, Author$>
+  | $<typeof Book$translation, Book$>
 
 export type $_ =
   | Author$
@@ -151,27 +360,34 @@ const _Author = {
 };
 
 export const Author: typeof _Author & {
-  books: $$MapWrap<typeof Book, typeof Author$books>,
-  favoriteBook: $$MapWrap<typeof Book, typeof Author$favoriteBook>,
+  books: $$MapWrap<typeof$Book, typeof Author$books>,
+  favoriteBook: $$MapWrap<typeof$Book, typeof Author$favoriteBook>,
 } = {
   ..._Author,
   books: $$mapWrap(() => Book, Author$books),
   favoriteBook: $$mapWrap(() => Book, Author$favoriteBook),
 };
 
+type typeof$Author = typeof Author
+
 const _Book = {
   categories: Book$categories,
   description: Book$description,
   id: Book$id,
+  language: Book$language,
   title: Book$title,
 };
 
 export const Book: typeof _Book & {
-  author: $$MapWrap<typeof Author, typeof Book$author>,
+  author: $$MapWrap<typeof$Author, typeof Book$author>,
+  translation: $$MapWrap<typeof$Book, typeof Book$translation>,
 } = {
   ..._Book,
   author: $$mapWrap(() => Author, Book$author),
+  translation: $$mapWrap(() => Book, Book$translation),
 };
+
+type typeof$Book = typeof Book
 
 interface $Author$id { id: ID; }
 interface $Author$name { name: String; }
@@ -188,15 +404,19 @@ export type $Author<F extends $$DeepArray<Author$>> = _$Author<$$UnwrapDeepArray
 interface $Book$categories { categories: Category[]; }
 interface $Book$description { description: String; }
 interface $Book$id { id: ID; }
+interface $Book$language { language: Language; }
 interface $Book$title { title: String; }
 interface $Book$author<F extends Book$> { author: _$Author<Extract<F, $<typeof Book$author, Author$>>["l"]>; }
+interface $Book$translation<F extends Book$> { translation: (_$Book<Extract<F, $<typeof Book$translation, Book$>>["l"]> | null); }
 
 type _$Book<F extends Book$> =
   & (typeof Book$categories extends F ? $Book$categories : {})
   & (typeof Book$description extends F ? $Book$description : {})
   & (typeof Book$id extends F ? $Book$id : {})
+  & (typeof Book$language extends F ? $Book$language : {})
   & (typeof Book$title extends F ? $Book$title : {})
   & ($<typeof Book$author, any> extends F ? $Book$author<F> : {})
+  & ($<typeof Book$translation, any> extends F ? $Book$translation<F> : {})
 export type $Book<F extends $$DeepArray<Book$>> = _$Book<$$UnwrapDeepArray<F>>;
 
 class Query$getAuthor {
@@ -298,10 +518,12 @@ export namespace $$Directives {
   }
   export namespace Book {
     export type id = {}
+    export type language = {}
     export type author = {}
     export type title = {}
     export type description = {}
     export type categories = {}
+    export type translation = {}
   }
   export namespace Author {
     export type id = {}
@@ -314,10 +536,12 @@ export namespace $$Directives {
     T extends Query$getBook ? Query.getBook :
     T extends Query$listBooks ? Query.listBooks :
     T extends Book$id ? Book.id :
+    T extends Book$language ? Book.language :
     T extends Book$author ? Book.author :
     T extends Book$title ? Book.title :
     T extends Book$description ? Book.description :
     T extends Book$categories ? Book.categories :
+    T extends Book$translation ? Book.translation :
     T extends Author$id ? Author.id :
     T extends Author$name ? Author.name :
     T extends Author$books ? Author.books :
