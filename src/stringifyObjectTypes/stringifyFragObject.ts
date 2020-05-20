@@ -4,6 +4,8 @@ import stringifyId from "./stringifyId";
 import indent from "../indent";
 
 export default (obj: Obj) => {
+  const typeofType = `\n\ntype typeof$${obj.type} = typeof ${obj.type}`
+
   const shallowObj = genObj(obj.shallowProps, p => stringifyId(p.id));
 
   const deepType = genObj(obj.deepProps, p =>
@@ -15,18 +17,17 @@ export default (obj: Obj) => {
   obj.shallowProps.length ? indent`..._${obj.type},\n` : "");
 
   if(!obj.deepProps.length)
-    return `export const ${obj.type} = ${shallowObj};`;
+    return `export const ${obj.type} = ${shallowObj};` + typeofType;
 
   if(!obj.shallowProps.length)
-    return `export const ${obj.type}: ${deepType} = ${deepObj};`;
+    return `export const ${obj.type}: ${deepType} = ${deepObj};` + typeofType;
+
 
   return `
 const _${obj.type} = ${shallowObj};
 
 export const ${obj.type}: typeof _${obj.type} & ${deepType} = ${deepObj};
-
-type typeof$${obj.type} = typeof ${obj.type}
-`.trim();
+`.trim() + typeofType;
 }
 
 function genObj(props: Prop[], f: (p: Prop) => string, str = ""){

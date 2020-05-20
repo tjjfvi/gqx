@@ -6,7 +6,7 @@ import indent from "../indent";
 const str = (x: string) => JSON.stringify(x);
 
 export default (objs: Obj[]) =>
-  objs.map(obj => obj.props.map(prop => `class ${stringifyId(prop.id)} {
+  objs.map(obj => obj.props.map(prop => `export class ${stringifyId(prop.id)} {
   private static _: any;
   static typeProp = ${str(obj.prop)};
   static type = ${str(obj.type)};

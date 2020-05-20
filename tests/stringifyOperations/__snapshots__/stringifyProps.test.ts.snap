@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` 1`] = `
-"class Query$argsObjectArr2D {
+"export class Query$argsObjectArr2D {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -12,7 +12,7 @@ exports[` 1`] = `
   };
 }
 
-class Query$argsObjectArrMM {
+export class Query$argsObjectArrMM {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -23,7 +23,7 @@ class Query$argsObjectArrMM {
   };
 }
 
-class Query$argsObjectArrMN {
+export class Query$argsObjectArrMN {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -34,7 +34,7 @@ class Query$argsObjectArrMN {
   };
 }
 
-class Query$argsObjectArrNM {
+export class Query$argsObjectArrNM {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -45,7 +45,7 @@ class Query$argsObjectArrNM {
   };
 }
 
-class Query$argsObjectArrNN {
+export class Query$argsObjectArrNN {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -56,7 +56,7 @@ class Query$argsObjectArrNN {
   };
 }
 
-class Query$argsObjectMand {
+export class Query$argsObjectMand {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -67,7 +67,7 @@ class Query$argsObjectMand {
   };
 }
 
-class Query$argsObjectNull {
+export class Query$argsObjectNull {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -78,7 +78,7 @@ class Query$argsObjectNull {
   };
 }
 
-class Query$argsScalarArr2D {
+export class Query$argsScalarArr2D {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -89,7 +89,7 @@ class Query$argsScalarArr2D {
   };
 }
 
-class Query$argsScalarArrMM {
+export class Query$argsScalarArrMM {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -100,7 +100,7 @@ class Query$argsScalarArrMM {
   };
 }
 
-class Query$argsScalarArrMN {
+export class Query$argsScalarArrMN {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -111,7 +111,7 @@ class Query$argsScalarArrMN {
   };
 }
 
-class Query$argsScalarArrNM {
+export class Query$argsScalarArrNM {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -122,7 +122,7 @@ class Query$argsScalarArrNM {
   };
 }
 
-class Query$argsScalarArrNN {
+export class Query$argsScalarArrNN {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -133,7 +133,7 @@ class Query$argsScalarArrNN {
   };
 }
 
-class Query$argsScalarMand {
+export class Query$argsScalarMand {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -144,7 +144,7 @@ class Query$argsScalarMand {
   };
 }
 
-class Query$argsScalarNull {
+export class Query$argsScalarNull {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -155,7 +155,7 @@ class Query$argsScalarNull {
   };
 }
 
-class Query$noArgsObjectArr2D {
+export class Query$noArgsObjectArr2D {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -163,7 +163,7 @@ class Query$noArgsObjectArr2D {
   static inputTypes = {};
 }
 
-class Query$noArgsObjectArrMM {
+export class Query$noArgsObjectArrMM {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -171,7 +171,7 @@ class Query$noArgsObjectArrMM {
   static inputTypes = {};
 }
 
-class Query$noArgsObjectArrMN {
+export class Query$noArgsObjectArrMN {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -179,7 +179,7 @@ class Query$noArgsObjectArrMN {
   static inputTypes = {};
 }
 
-class Query$noArgsObjectArrNM {
+export class Query$noArgsObjectArrNM {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -187,7 +187,7 @@ class Query$noArgsObjectArrNM {
   static inputTypes = {};
 }
 
-class Query$noArgsObjectArrNN {
+export class Query$noArgsObjectArrNN {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -195,7 +195,7 @@ class Query$noArgsObjectArrNN {
   static inputTypes = {};
 }
 
-class Query$noArgsObjectMand {
+export class Query$noArgsObjectMand {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -203,7 +203,7 @@ class Query$noArgsObjectMand {
   static inputTypes = {};
 }
 
-class Query$noArgsObjectNull {
+export class Query$noArgsObjectNull {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -211,7 +211,7 @@ class Query$noArgsObjectNull {
   static inputTypes = {};
 }
 
-class Query$noArgsScalarArr2D {
+export class Query$noArgsScalarArr2D {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -219,7 +219,7 @@ class Query$noArgsScalarArr2D {
   static inputTypes = {};
 }
 
-class Query$noArgsScalarArrMM {
+export class Query$noArgsScalarArrMM {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -227,7 +227,7 @@ class Query$noArgsScalarArrMM {
   static inputTypes = {};
 }
 
-class Query$noArgsScalarArrMN {
+export class Query$noArgsScalarArrMN {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -235,7 +235,7 @@ class Query$noArgsScalarArrMN {
   static inputTypes = {};
 }
 
-class Query$noArgsScalarArrNM {
+export class Query$noArgsScalarArrNM {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -243,7 +243,7 @@ class Query$noArgsScalarArrNM {
   static inputTypes = {};
 }
 
-class Query$noArgsScalarArrNN {
+export class Query$noArgsScalarArrNN {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -251,7 +251,7 @@ class Query$noArgsScalarArrNN {
   static inputTypes = {};
 }
 
-class Query$noArgsScalarMand {
+export class Query$noArgsScalarMand {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -259,7 +259,7 @@ class Query$noArgsScalarMand {
   static inputTypes = {};
 }
 
-class Query$noArgsScalarNull {
+export class Query$noArgsScalarNull {
   private static _: any;
   static typeProp = \\"query\\";
   static type = \\"Query\\";
@@ -267,7 +267,7 @@ class Query$noArgsScalarNull {
   static inputTypes = {};
 }
 
-class Mutation$argsObjectArr2D {
+export class Mutation$argsObjectArr2D {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -278,7 +278,7 @@ class Mutation$argsObjectArr2D {
   };
 }
 
-class Mutation$argsObjectArrMM {
+export class Mutation$argsObjectArrMM {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -289,7 +289,7 @@ class Mutation$argsObjectArrMM {
   };
 }
 
-class Mutation$argsObjectArrMN {
+export class Mutation$argsObjectArrMN {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -300,7 +300,7 @@ class Mutation$argsObjectArrMN {
   };
 }
 
-class Mutation$argsObjectArrNM {
+export class Mutation$argsObjectArrNM {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -311,7 +311,7 @@ class Mutation$argsObjectArrNM {
   };
 }
 
-class Mutation$argsObjectArrNN {
+export class Mutation$argsObjectArrNN {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -322,7 +322,7 @@ class Mutation$argsObjectArrNN {
   };
 }
 
-class Mutation$argsObjectMand {
+export class Mutation$argsObjectMand {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -333,7 +333,7 @@ class Mutation$argsObjectMand {
   };
 }
 
-class Mutation$argsObjectNull {
+export class Mutation$argsObjectNull {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -344,7 +344,7 @@ class Mutation$argsObjectNull {
   };
 }
 
-class Mutation$argsScalarArr2D {
+export class Mutation$argsScalarArr2D {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -355,7 +355,7 @@ class Mutation$argsScalarArr2D {
   };
 }
 
-class Mutation$argsScalarArrMM {
+export class Mutation$argsScalarArrMM {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -366,7 +366,7 @@ class Mutation$argsScalarArrMM {
   };
 }
 
-class Mutation$argsScalarArrMN {
+export class Mutation$argsScalarArrMN {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -377,7 +377,7 @@ class Mutation$argsScalarArrMN {
   };
 }
 
-class Mutation$argsScalarArrNM {
+export class Mutation$argsScalarArrNM {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -388,7 +388,7 @@ class Mutation$argsScalarArrNM {
   };
 }
 
-class Mutation$argsScalarArrNN {
+export class Mutation$argsScalarArrNN {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -399,7 +399,7 @@ class Mutation$argsScalarArrNN {
   };
 }
 
-class Mutation$argsScalarMand {
+export class Mutation$argsScalarMand {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -410,7 +410,7 @@ class Mutation$argsScalarMand {
   };
 }
 
-class Mutation$argsScalarNull {
+export class Mutation$argsScalarNull {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -421,7 +421,7 @@ class Mutation$argsScalarNull {
   };
 }
 
-class Mutation$noArgsObjectArr2D {
+export class Mutation$noArgsObjectArr2D {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -429,7 +429,7 @@ class Mutation$noArgsObjectArr2D {
   static inputTypes = {};
 }
 
-class Mutation$noArgsObjectArrMM {
+export class Mutation$noArgsObjectArrMM {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -437,7 +437,7 @@ class Mutation$noArgsObjectArrMM {
   static inputTypes = {};
 }
 
-class Mutation$noArgsObjectArrMN {
+export class Mutation$noArgsObjectArrMN {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -445,7 +445,7 @@ class Mutation$noArgsObjectArrMN {
   static inputTypes = {};
 }
 
-class Mutation$noArgsObjectArrNM {
+export class Mutation$noArgsObjectArrNM {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -453,7 +453,7 @@ class Mutation$noArgsObjectArrNM {
   static inputTypes = {};
 }
 
-class Mutation$noArgsObjectArrNN {
+export class Mutation$noArgsObjectArrNN {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -461,7 +461,7 @@ class Mutation$noArgsObjectArrNN {
   static inputTypes = {};
 }
 
-class Mutation$noArgsObjectMand {
+export class Mutation$noArgsObjectMand {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -469,7 +469,7 @@ class Mutation$noArgsObjectMand {
   static inputTypes = {};
 }
 
-class Mutation$noArgsObjectNull {
+export class Mutation$noArgsObjectNull {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -477,7 +477,7 @@ class Mutation$noArgsObjectNull {
   static inputTypes = {};
 }
 
-class Mutation$noArgsScalarArr2D {
+export class Mutation$noArgsScalarArr2D {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -485,7 +485,7 @@ class Mutation$noArgsScalarArr2D {
   static inputTypes = {};
 }
 
-class Mutation$noArgsScalarArrMM {
+export class Mutation$noArgsScalarArrMM {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -493,7 +493,7 @@ class Mutation$noArgsScalarArrMM {
   static inputTypes = {};
 }
 
-class Mutation$noArgsScalarArrMN {
+export class Mutation$noArgsScalarArrMN {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -501,7 +501,7 @@ class Mutation$noArgsScalarArrMN {
   static inputTypes = {};
 }
 
-class Mutation$noArgsScalarArrNM {
+export class Mutation$noArgsScalarArrNM {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -509,7 +509,7 @@ class Mutation$noArgsScalarArrNM {
   static inputTypes = {};
 }
 
-class Mutation$noArgsScalarArrNN {
+export class Mutation$noArgsScalarArrNN {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -517,7 +517,7 @@ class Mutation$noArgsScalarArrNN {
   static inputTypes = {};
 }
 
-class Mutation$noArgsScalarMand {
+export class Mutation$noArgsScalarMand {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";
@@ -525,7 +525,7 @@ class Mutation$noArgsScalarMand {
   static inputTypes = {};
 }
 
-class Mutation$noArgsScalarNull {
+export class Mutation$noArgsScalarNull {
   private static _: any;
   static typeProp = \\"mutation\\";
   static type = \\"Mutation\\";

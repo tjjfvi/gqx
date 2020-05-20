@@ -1,13 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` 1`] = `
-"class BinaryTree$node { private static _: any; static type = \\"BinaryTree\\"; static prop = \\"node\\"; }
-class BinaryTree$left { private static _: any; static type = \\"BinaryTree\\"; static prop = \\"left\\"; }
-class BinaryTree$right { private static _: any; static type = \\"BinaryTree\\"; static prop = \\"right\\"; }
-class DeepOnly$a { private static _: any; static type = \\"DeepOnly\\"; static prop = \\"a\\"; }
-class DeepOnly$b { private static _: any; static type = \\"DeepOnly\\"; static prop = \\"b\\"; }
-class Recursive$id { private static _: any; static type = \\"Recursive\\"; static prop = \\"id\\"; }
-class Recursive$next { private static _: any; static type = \\"Recursive\\"; static prop = \\"next\\"; }
-class ShallowOnly$a { private static _: any; static type = \\"ShallowOnly\\"; static prop = \\"a\\"; }
-class ShallowOnly$b { private static _: any; static type = \\"ShallowOnly\\"; static prop = \\"b\\"; }"
+"class BinaryTree$node {
+  private static _: any;
+  static type = \\"BinaryTree\\" as const;
+  static prop = \\"node\\" as const;
+  static f = BinaryTree$node;
+}
+class BinaryTree$left {
+  private static _: any;
+  static type = \\"BinaryTree\\" as const;
+  static prop = \\"left\\" as const;
+  static f = BinaryTree$left;
+}
+class BinaryTree$right {
+  private static _: any;
+  static type = \\"BinaryTree\\" as const;
+  static prop = \\"right\\" as const;
+  static f = BinaryTree$right;
+}
+class DeepOnly$a {
+  private static _: any;
+  static type = \\"DeepOnly\\" as const;
+  static prop = \\"a\\" as const;
+  static f = DeepOnly$a;
+}
+class DeepOnly$b {
+  private static _: any;
+  static type = \\"DeepOnly\\" as const;
+  static prop = \\"b\\" as const;
+  static f = DeepOnly$b;
+}
+class Recursive$id {
+  private static _: any;
+  static type = \\"Recursive\\" as const;
+  static prop = \\"id\\" as const;
+  static f = Recursive$id;
+}
+class Recursive$next {
+  private static _: any;
+  static type = \\"Recursive\\" as const;
+  static prop = \\"next\\" as const;
+  static f = Recursive$next;
+}
+class ShallowOnly$a {
+  private static _: any;
+  static type = \\"ShallowOnly\\" as const;
+  static prop = \\"a\\" as const;
+  static f = ShallowOnly$a;
+}
+class ShallowOnly$b {
+  private static _: any;
+  static type = \\"ShallowOnly\\" as const;
+  static prop = \\"b\\" as const;
+  static f = ShallowOnly$b;
+}"
 `;

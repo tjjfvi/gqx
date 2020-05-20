@@ -1,15 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` 1`] = `
-"class BinaryTree$node { private static _: any; static type = \\"BinaryTree\\"; static prop = \\"node\\"; }
-class BinaryTree$left { private static _: any; static type = \\"BinaryTree\\"; static prop = \\"left\\"; }
-class BinaryTree$right { private static _: any; static type = \\"BinaryTree\\"; static prop = \\"right\\"; }
-class DeepOnly$a { private static _: any; static type = \\"DeepOnly\\"; static prop = \\"a\\"; }
-class DeepOnly$b { private static _: any; static type = \\"DeepOnly\\"; static prop = \\"b\\"; }
-class Recursive$id { private static _: any; static type = \\"Recursive\\"; static prop = \\"id\\"; }
-class Recursive$next { private static _: any; static type = \\"Recursive\\"; static prop = \\"next\\"; }
-class ShallowOnly$a { private static _: any; static type = \\"ShallowOnly\\"; static prop = \\"a\\"; }
-class ShallowOnly$b { private static _: any; static type = \\"ShallowOnly\\"; static prop = \\"b\\"; }
+"class BinaryTree$node {
+  private static _: any;
+  static type = \\"BinaryTree\\" as const;
+  static prop = \\"node\\" as const;
+  static f = BinaryTree$node;
+}
+class BinaryTree$left {
+  private static _: any;
+  static type = \\"BinaryTree\\" as const;
+  static prop = \\"left\\" as const;
+  static f = BinaryTree$left;
+}
+class BinaryTree$right {
+  private static _: any;
+  static type = \\"BinaryTree\\" as const;
+  static prop = \\"right\\" as const;
+  static f = BinaryTree$right;
+}
+class DeepOnly$a {
+  private static _: any;
+  static type = \\"DeepOnly\\" as const;
+  static prop = \\"a\\" as const;
+  static f = DeepOnly$a;
+}
+class DeepOnly$b {
+  private static _: any;
+  static type = \\"DeepOnly\\" as const;
+  static prop = \\"b\\" as const;
+  static f = DeepOnly$b;
+}
+class Recursive$id {
+  private static _: any;
+  static type = \\"Recursive\\" as const;
+  static prop = \\"id\\" as const;
+  static f = Recursive$id;
+}
+class Recursive$next {
+  private static _: any;
+  static type = \\"Recursive\\" as const;
+  static prop = \\"next\\" as const;
+  static f = Recursive$next;
+}
+class ShallowOnly$a {
+  private static _: any;
+  static type = \\"ShallowOnly\\" as const;
+  static prop = \\"a\\" as const;
+  static f = ShallowOnly$a;
+}
+class ShallowOnly$b {
+  private static _: any;
+  static type = \\"ShallowOnly\\" as const;
+  static prop = \\"b\\" as const;
+  static f = ShallowOnly$b;
+}
 
 export type BinaryTree$ =
   | typeof BinaryTree$node
@@ -58,6 +103,8 @@ export const DeepOnly: {
   b: $$mapWrap(() => ShallowOnly, DeepOnly$b),
 };
 
+type typeof$DeepOnly = typeof DeepOnly
+
 const _Recursive = {
   id: Recursive$id,
 };
@@ -76,37 +123,34 @@ export const ShallowOnly = {
   b: ShallowOnly$b,
 };
 
-interface $BinaryTree$node { node: String; }
-interface $BinaryTree$left<F extends BinaryTree$> { left: (_$BinaryTree<Extract<F, $<typeof BinaryTree$left, BinaryTree$>>[\\"l\\"]> | null); }
-interface $BinaryTree$right<F extends BinaryTree$> { right: (_$BinaryTree<Extract<F, $<typeof BinaryTree$right, BinaryTree$>>[\\"l\\"]> | null); }
+type typeof$ShallowOnly = typeof ShallowOnly
 
-type _$BinaryTree<F extends BinaryTree$> =
-  & (typeof BinaryTree$node extends F ? $BinaryTree$node : {})
-  & ($<typeof BinaryTree$left, any> extends F ? $BinaryTree$left<F> : {})
-  & ($<typeof BinaryTree$right, any> extends F ? $BinaryTree$right<F> : {})
-export type $BinaryTree<F extends $$DeepArray<BinaryTree$>> = _$BinaryTree<$$UnwrapDeepArray<F>>;
+interface __$BinaryTree<F extends BinaryTree$> {
+  node: String,
+  left: _$BinaryTree<Extract<F, $<typeof BinaryTree$left, BinaryTree$>>[\\"l\\"]>,
+  right: _$BinaryTree<Extract<F, $<typeof BinaryTree$right, BinaryTree$>>[\\"l\\"]>,
+}
+type _$BinaryTree<F extends BinaryTree$> = Pick<__$BinaryTree<F>, F[\\"f\\"][\\"prop\\"]>;
+export type $BinaryTree<F extends $$DeepArray<BinaryTree$>> = _$BinaryTree<$$UnwrapDeepArray<F>>
 
-interface $DeepOnly$a<F extends DeepOnly$> { a: _$ShallowOnly<Extract<F, $<typeof DeepOnly$a, ShallowOnly$>>[\\"l\\"]>; }
-interface $DeepOnly$b<F extends DeepOnly$> { b: (_$ShallowOnly<Extract<F, $<typeof DeepOnly$b, ShallowOnly$>>[\\"l\\"]> | null)[]; }
+interface __$DeepOnly<F extends DeepOnly$> {
+  a: _$ShallowOnly<Extract<F, $<typeof DeepOnly$a, ShallowOnly$>>[\\"l\\"]>,
+  b: _$ShallowOnly<Extract<F, $<typeof DeepOnly$b, ShallowOnly$>>[\\"l\\"]>,
+}
+type _$DeepOnly<F extends DeepOnly$> = Pick<__$DeepOnly<F>, F[\\"f\\"][\\"prop\\"]>;
+export type $DeepOnly<F extends $$DeepArray<DeepOnly$>> = _$DeepOnly<$$UnwrapDeepArray<F>>
 
-type _$DeepOnly<F extends DeepOnly$> =
-  & ($<typeof DeepOnly$a, any> extends F ? $DeepOnly$a<F> : {})
-  & ($<typeof DeepOnly$b, any> extends F ? $DeepOnly$b<F> : {})
-export type $DeepOnly<F extends $$DeepArray<DeepOnly$>> = _$DeepOnly<$$UnwrapDeepArray<F>>;
+interface __$Recursive<F extends Recursive$> {
+  id: ID,
+  next: _$Recursive<Extract<F, $<typeof Recursive$next, Recursive$>>[\\"l\\"]>,
+}
+type _$Recursive<F extends Recursive$> = Pick<__$Recursive<F>, F[\\"f\\"][\\"prop\\"]>;
+export type $Recursive<F extends $$DeepArray<Recursive$>> = _$Recursive<$$UnwrapDeepArray<F>>
 
-interface $Recursive$id { id: ID; }
-interface $Recursive$next<F extends Recursive$> { next: _$Recursive<Extract<F, $<typeof Recursive$next, Recursive$>>[\\"l\\"]>; }
-
-type _$Recursive<F extends Recursive$> =
-  & (typeof Recursive$id extends F ? $Recursive$id : {})
-  & ($<typeof Recursive$next, any> extends F ? $Recursive$next<F> : {})
-export type $Recursive<F extends $$DeepArray<Recursive$>> = _$Recursive<$$UnwrapDeepArray<F>>;
-
-interface $ShallowOnly$a { a: String; }
-interface $ShallowOnly$b { b: Number; }
-
-type _$ShallowOnly<F extends ShallowOnly$> =
-  & (typeof ShallowOnly$a extends F ? $ShallowOnly$a : {})
-  & (typeof ShallowOnly$b extends F ? $ShallowOnly$b : {})
-export type $ShallowOnly<F extends $$DeepArray<ShallowOnly$>> = _$ShallowOnly<$$UnwrapDeepArray<F>>;"
+interface __$ShallowOnly<F extends ShallowOnly$> {
+  a: String,
+  b: Number,
+}
+type _$ShallowOnly<F extends ShallowOnly$> = Pick<__$ShallowOnly<F>, F[\\"f\\"][\\"prop\\"]>;
+export type $ShallowOnly<F extends $$DeepArray<ShallowOnly$>> = _$ShallowOnly<$$UnwrapDeepArray<F>>"
 `;

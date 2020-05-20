@@ -323,17 +323,72 @@ export interface AuthorFilter {
   name?: (String | null | void);
 }
 
-class Author$id { private static _: any; static type = "Author"; static prop = "id"; }
-class Author$name { private static _: any; static type = "Author"; static prop = "name"; }
-class Author$books { private static _: any; static type = "Author"; static prop = "books"; }
-class Author$favoriteBook { private static _: any; static type = "Author"; static prop = "favoriteBook"; }
-class Book$id { private static _: any; static type = "Book"; static prop = "id"; }
-class Book$language { private static _: any; static type = "Book"; static prop = "language"; }
-class Book$author { private static _: any; static type = "Book"; static prop = "author"; }
-class Book$title { private static _: any; static type = "Book"; static prop = "title"; }
-class Book$description { private static _: any; static type = "Book"; static prop = "description"; }
-class Book$categories { private static _: any; static type = "Book"; static prop = "categories"; }
-class Book$translation { private static _: any; static type = "Book"; static prop = "translation"; }
+class Author$id {
+  private static _: any;
+  static type = "Author" as const;
+  static prop = "id" as const;
+  static f = Author$id;
+}
+class Author$name {
+  private static _: any;
+  static type = "Author" as const;
+  static prop = "name" as const;
+  static f = Author$name;
+}
+class Author$books {
+  private static _: any;
+  static type = "Author" as const;
+  static prop = "books" as const;
+  static f = Author$books;
+}
+class Author$favoriteBook {
+  private static _: any;
+  static type = "Author" as const;
+  static prop = "favoriteBook" as const;
+  static f = Author$favoriteBook;
+}
+class Book$id {
+  private static _: any;
+  static type = "Book" as const;
+  static prop = "id" as const;
+  static f = Book$id;
+}
+class Book$language {
+  private static _: any;
+  static type = "Book" as const;
+  static prop = "language" as const;
+  static f = Book$language;
+}
+class Book$author {
+  private static _: any;
+  static type = "Book" as const;
+  static prop = "author" as const;
+  static f = Book$author;
+}
+class Book$title {
+  private static _: any;
+  static type = "Book" as const;
+  static prop = "title" as const;
+  static f = Book$title;
+}
+class Book$description {
+  private static _: any;
+  static type = "Book" as const;
+  static prop = "description" as const;
+  static f = Book$description;
+}
+class Book$categories {
+  private static _: any;
+  static type = "Book" as const;
+  static prop = "categories" as const;
+  static f = Book$categories;
+}
+class Book$translation {
+  private static _: any;
+  static type = "Book" as const;
+  static prop = "translation" as const;
+  static f = Book$translation;
+}
 
 export type Author$ =
   | typeof Author$id
@@ -389,35 +444,26 @@ export const Book: typeof _Book & {
 
 type typeof$Book = typeof Book
 
-interface $Author$id { id: ID; }
-interface $Author$name { name: String; }
-interface $Author$books<F extends Author$> { books: _$Book<Extract<F, $<typeof Author$books, Book$>>["l"]>[]; }
-interface $Author$favoriteBook<F extends Author$> { favoriteBook: _$Book<Extract<F, $<typeof Author$favoriteBook, Book$>>["l"]>; }
+interface __$Author<F extends Author$> {
+  id: ID,
+  name: String,
+  books: _$Book<Extract<F, $<typeof Author$books, Book$>>["l"]>,
+  favoriteBook: _$Book<Extract<F, $<typeof Author$favoriteBook, Book$>>["l"]>,
+}
+type _$Author<F extends Author$> = Pick<__$Author<F>, F["f"]["prop"]>;
+export type $Author<F extends $$DeepArray<Author$>> = _$Author<$$UnwrapDeepArray<F>>
 
-type _$Author<F extends Author$> =
-  & (typeof Author$id extends F ? $Author$id : {})
-  & (typeof Author$name extends F ? $Author$name : {})
-  & ($<typeof Author$books, any> extends F ? $Author$books<F> : {})
-  & ($<typeof Author$favoriteBook, any> extends F ? $Author$favoriteBook<F> : {})
-export type $Author<F extends $$DeepArray<Author$>> = _$Author<$$UnwrapDeepArray<F>>;
-
-interface $Book$categories { categories: Category[]; }
-interface $Book$description { description: String; }
-interface $Book$id { id: ID; }
-interface $Book$language { language: Language; }
-interface $Book$title { title: String; }
-interface $Book$author<F extends Book$> { author: _$Author<Extract<F, $<typeof Book$author, Author$>>["l"]>; }
-interface $Book$translation<F extends Book$> { translation: (_$Book<Extract<F, $<typeof Book$translation, Book$>>["l"]> | null); }
-
-type _$Book<F extends Book$> =
-  & (typeof Book$categories extends F ? $Book$categories : {})
-  & (typeof Book$description extends F ? $Book$description : {})
-  & (typeof Book$id extends F ? $Book$id : {})
-  & (typeof Book$language extends F ? $Book$language : {})
-  & (typeof Book$title extends F ? $Book$title : {})
-  & ($<typeof Book$author, any> extends F ? $Book$author<F> : {})
-  & ($<typeof Book$translation, any> extends F ? $Book$translation<F> : {})
-export type $Book<F extends $$DeepArray<Book$>> = _$Book<$$UnwrapDeepArray<F>>;
+interface __$Book<F extends Book$> {
+  categories: Category,
+  description: String,
+  id: ID,
+  language: Language,
+  title: String,
+  author: _$Author<Extract<F, $<typeof Book$author, Author$>>["l"]>,
+  translation: _$Book<Extract<F, $<typeof Book$translation, Book$>>["l"]>,
+}
+type _$Book<F extends Book$> = Pick<__$Book<F>, F["f"]["prop"]>;
+export type $Book<F extends $$DeepArray<Book$>> = _$Book<$$UnwrapDeepArray<F>>
 
 class Query$getAuthor {
   private static _: any;
@@ -465,11 +511,9 @@ export namespace $$Input {
   }
 
   export type $<T> =
-    T extends typeof Query$getAuthor ? Query.getAuthor : $$1<T>;
-  type $$1<T> =
-    T extends typeof Query$getBook ? Query.getBook : $$2<T>;
-  type $$2<T> =
-    T extends typeof Query$listBooks ? Query.listBooks : never;
+    | (T extends typeof Query$getAuthor ? Query.getAuthor : never)
+    | (T extends typeof Query$getBook ? Query.getBook : never)
+    | (T extends typeof Query$listBooks ? Query.listBooks : never)
 }
 
 export namespace $$Frag {
@@ -480,11 +524,9 @@ export namespace $$Frag {
   }
 
   export type $<T> =
-    T extends typeof Query$getAuthor ? Query.getAuthor : $$1<T>;
-  type $$1<T> =
-    T extends typeof Query$getBook ? Query.getBook : $$2<T>;
-  type $$2<T> =
-    T extends typeof Query$listBooks ? Query.listBooks : never;
+    | (T extends typeof Query$getAuthor ? Query.getAuthor : never)
+    | (T extends typeof Query$getBook ? Query.getBook : never)
+    | (T extends typeof Query$listBooks ? Query.listBooks : never)
 }
 
 export namespace $$Output {
@@ -495,11 +537,9 @@ export namespace $$Output {
   }
 
   export type $<T, F extends $$Frag.$<T>> =
-    T extends typeof Query$getAuthor ? F extends $$Frag.$<typeof Query$getAuthor> ? Query.getAuthor<F> : $$1<T, F> : $$1<T, F>;
-  type $$1<T, F extends $$Frag.$<T>> =
-    T extends typeof Query$getBook ? F extends $$Frag.$<typeof Query$getBook> ? Query.getBook<F> : $$2<T, F> : $$2<T, F>;
-  type $$2<T, F extends $$Frag.$<T>> =
-    T extends typeof Query$listBooks ? F extends $$Frag.$<typeof Query$listBooks> ? Query.listBooks<F> : never : never;
+    | (T extends typeof Query$getAuthor ? F extends $$Frag.$<typeof Query$getAuthor> ? Query.getAuthor<F> : never : never)
+    | (T extends typeof Query$getBook ? F extends $$Frag.$<typeof Query$getBook> ? Query.getBook<F> : never : never)
+    | (T extends typeof Query$listBooks ? F extends $$Frag.$<typeof Query$listBooks> ? Query.listBooks<F> : never : never)
 }
 
 export const $$generateObject = <F extends $$GqxFunc>(f: $$GqxImpl<F>) => ({

@@ -14,11 +14,10 @@ export default (objs: Obj[], ctx: Context) =>
           p.type
       )}`,
     ", F extends $$Frag.$<T>",
-    ", F",
-    (o, p, next) => {
+    (o, p) => {
       let id = stringifyId(p.id);
       return (
-        `T extends typeof ${id} ? F extends $$Frag.$<typeof ${id}> ? ${o.type}.${p.id.prop}<F> : ${next} : ${next}`
+        `T extends typeof ${id} ? F extends $$Frag.$<typeof ${id}> ? ${o.type}.${p.id.prop}<F> : never : never`
       );
     }
   )

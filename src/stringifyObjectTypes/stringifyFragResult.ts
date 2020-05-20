@@ -3,32 +3,28 @@ import { Obj, Prop } from ".";
 import stringifyId from "./stringifyId";
 import indent from "../indent";
 
-type P = [Prop, string, string, boolean];
+type P = [Prop, string];
 
 export default (obj: Obj) => {
   const shallows = obj.shallowProps.map((prop): P =>
-    [prop, "typeof " + stringifyId(prop.id), prop.type, false]
+    [prop, prop.type]
   );
 
-  const deeps = obj.deepProps.map((prop): [Prop, (x: string) => string] =>
-    [prop, x => `$<typeof ${stringifyId(prop.id)}, ${x}>`]
-  ).map(([prop, sub]): P =>
-    [prop, sub("any"), `_$${prop.type}<Extract<F, ${sub(prop.type + "$")}>["l"]>`, true]
+  const deeps = obj.deepProps.map((prop): P =>
+    [prop, `_$${prop.type}<Extract<F, $<typeof ${stringifyId(prop.id)}, ${prop.type}$>>["l"]>`]
   );
 
-  const interfaces = [...shallows, ...deeps].map(x =>
-    `interface $${stringifyId(x[0].id)}${x[3] ? `<F extends ${obj.type}$>` : ""}` +
-    ` { ${x[0].id.prop}: ${x[0].wrap(x[2])}; }`
+  const interfaceProps = [...shallows, ...deeps].map(x =>
+    indent`${x[0].id.prop}: ${x[1]},`
   ).join("\n");
 
-  const core = `type _$${obj.type}<F extends ${obj.type}$> =\n${
-    [...shallows, ...deeps].map(x =>
-      indent`& (${x[1]} extends F ? $${stringifyId(x[0].id)}${x[3] ? "<F>" : ""} : {})\n`
-    ).join("")
-  }`;
+  const full = `interface __$${obj.type}<F extends ${obj.type}$> {\n${interfaceProps}\n}`;
+
+  const filtered =
+    `type _$${obj.type}<F extends ${obj.type}$> = Pick<__$${obj.type}<F>, F["f"]["prop"]>;`
 
   const alias =
-    `export type $${obj.type}<F extends $$DeepArray<${obj.type}$>> = _$${obj.type}<$$UnwrapDeepArray<F>>;`;
+    `export type $${obj.type}<F extends $$DeepArray<${obj.type}$>> = _$${obj.type}<$$UnwrapDeepArray<F>>`
 
-  return interfaces + "\n\n" + core + alias;
+  return [full, filtered, alias].join("\n");
 }

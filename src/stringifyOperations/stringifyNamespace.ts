@@ -8,9 +8,8 @@ export default (
   objs: Obj[],
   f: (obj: Obj, prop: Prop) => string,
   extraGenerics = "",
-  passGenerics = "",
-  cond = (o: Obj, p: Prop, next: string) =>
-    `T extends typeof ${stringifyId(p.id)} ? ${o.type}.${p.id.prop} : ${next}`
+  cond = (o: Obj, p: Prop) =>
+    `T extends typeof ${stringifyId(p.id)} ? ${o.type}.${p.id.prop} : never`
 ) =>
   `
 export namespace ${name} {
@@ -22,10 +21,9 @@ ${
   ).join("")
 }
 ${
-  indent`export ${
-    objs.flatMap(o => o.props.map(p => [o, p] as [Obj, Prop])).map(([o, p], i, a) =>
-      `type ${i ? "$$" + i : "$"}<T${extraGenerics}> =\n` +
-      indent(cond(o, p, (i === a.length - 1 ? "never" : `$$${i + 1}<T${passGenerics}>`))) + ";"
+  indent`export type $<T${extraGenerics}> =\n${
+    objs.flatMap(o => o.props.map(p => [o, p] as [Obj, Prop])).map(([o, p]) =>
+      indent`| (${cond(o, p)})`
     ).join("\n")
   }`
 }

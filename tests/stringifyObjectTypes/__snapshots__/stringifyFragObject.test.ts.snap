@@ -24,7 +24,9 @@ exports[`stringifyObjectTypes.gql DeepOnly 1`] = `
 } = {
   a: $$mapWrap(() => ShallowOnly, DeepOnly$a),
   b: $$mapWrap(() => ShallowOnly, DeepOnly$b),
-};"
+};
+
+type typeof$DeepOnly = typeof DeepOnly"
 `;
 
 exports[`stringifyObjectTypes.gql Recursive 1`] = `
@@ -46,5 +48,7 @@ exports[`stringifyObjectTypes.gql ShallowOnly 1`] = `
 "export const ShallowOnly = {
   a: ShallowOnly$a,
   b: ShallowOnly$b,
-};"
+};
+
+type typeof$ShallowOnly = typeof ShallowOnly"
 `;
