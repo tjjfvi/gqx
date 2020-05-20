@@ -15,7 +15,7 @@ export default (obj: Obj) => {
   );
 
   const interfaceProps = [...shallows, ...deeps].map(x =>
-    indent`${x[0].id.prop}: ${x[1]},`
+    indent`${x[0].id.prop}: ${x[0].wrap(x[1])},`
   ).join("\n");
 
   const full = `interface __$${obj.type}<F extends ${obj.type}$> {\n${interfaceProps}\n}`;
