@@ -61,7 +61,7 @@ const $$mapWrap = <O, F>(o: () => O, f: F): $$MapWrap<O, F> =>
     ),
   })
 
-const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, props: $$Frag.$<I>) => {
+export const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, props: $$Frag.$<I>) => {
   interface Subs { [k: string]: true | Subs }
   const subs: Subs = {};
   populateSubs(props, subs);
