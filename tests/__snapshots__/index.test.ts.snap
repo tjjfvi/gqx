@@ -57,7 +57,7 @@ const $$mapWrap = <O, F>(o: () => O, f: F): $$MapWrap<O, F> =>
     ),
   })
 
-const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, props: $$Frag.$<I>) => {
+export const $$reconstruct = <I extends $$OperationId>(id: I, input: $$Input.$<I>, props: $$Frag.$<I>) => {
   interface Subs { [k: string]: true | Subs }
   const subs: Subs = {};
   populateSubs(props, subs);
@@ -373,29 +373,29 @@ interface __$Author<F extends Author$> {
   id: ID,
   name: String,
   rating: StarRating,
-  books: _$Book<Extract<F, $<typeof Author$books, Book$>>[\\"l\\"]>,
+  books: _$Book<Extract<F, $<typeof Author$books, Book$>>[\\"l\\"]>[],
   favoriteBook: _$Book<Extract<F, $<typeof Author$favoriteBook, Book$>>[\\"l\\"]>,
 }
 type _$Author<F extends Author$> = Pick<__$Author<F>, F[\\"f\\"][\\"prop\\"]>;
 export type $Author<F extends $$DeepArray<Author$>> = _$Author<$$UnwrapDeepArray<F>>
 
 interface __$Book<F extends Book$> {
-  categories: Category,
+  categories: Category[],
   description: String,
   id: ID,
   rating: StarRating,
   title: String,
   author: _$Author<Extract<F, $<typeof Book$author, Author$>>[\\"l\\"]>,
-  reviews: _$Review<Extract<F, $<typeof Book$reviews, Review$>>[\\"l\\"]>,
+  reviews: _$Review<Extract<F, $<typeof Book$reviews, Review$>>[\\"l\\"]>[],
 }
 type _$Book<F extends Book$> = Pick<__$Book<F>, F[\\"f\\"][\\"prop\\"]>;
 export type $Book<F extends $$DeepArray<Book$>> = _$Book<$$UnwrapDeepArray<F>>
 
 interface __$Review<F extends Review$> {
-  details: String,
+  details: (String | null),
   id: ID,
   rating: StarRating,
-  title: String,
+  title: (String | null),
   book: _$Book<Extract<F, $<typeof Review$book, Book$>>[\\"l\\"]>,
   user: _$User<Extract<F, $<typeof Review$user, User$>>[\\"l\\"]>,
 }
@@ -405,8 +405,8 @@ export type $Review<F extends $$DeepArray<Review$>> = _$Review<$$UnwrapDeepArray
 interface __$User<F extends User$> {
   id: ID,
   name: String,
-  author: _$Author<Extract<F, $<typeof User$author, Author$>>[\\"l\\"]>,
-  reviews: _$Review<Extract<F, $<typeof User$reviews, Review$>>[\\"l\\"]>,
+  author: (_$Author<Extract<F, $<typeof User$author, Author$>>[\\"l\\"]> | null),
+  reviews: _$Review<Extract<F, $<typeof User$reviews, Review$>>[\\"l\\"]>[],
 }
 type _$User<F extends User$> = Pick<__$User<F>, F[\\"f\\"][\\"prop\\"]>;
 export type $User<F extends $$DeepArray<User$>> = _$User<$$UnwrapDeepArray<F>>

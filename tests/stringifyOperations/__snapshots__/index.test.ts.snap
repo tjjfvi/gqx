@@ -749,13 +749,13 @@ export namespace $$Frag {
     export type argsObjectArrNN = $$DeepArray<AnObjectType$>;
     export type argsObjectMand = $$DeepArray<AnObjectType$>;
     export type argsObjectNull = $$DeepArray<AnObjectType$>;
-    export type argsScalarArr2D = never;
-    export type argsScalarArrMM = never;
-    export type argsScalarArrMN = never;
-    export type argsScalarArrNM = never;
-    export type argsScalarArrNN = never;
-    export type argsScalarMand = never;
-    export type argsScalarNull = never;
+    export type argsScalarArr2D = $$DeepArray<never>;
+    export type argsScalarArrMM = $$DeepArray<never>;
+    export type argsScalarArrMN = $$DeepArray<never>;
+    export type argsScalarArrNM = $$DeepArray<never>;
+    export type argsScalarArrNN = $$DeepArray<never>;
+    export type argsScalarMand = $$DeepArray<never>;
+    export type argsScalarNull = $$DeepArray<never>;
     export type noArgsObjectArr2D = $$DeepArray<AnObjectType$>;
     export type noArgsObjectArrMM = $$DeepArray<AnObjectType$>;
     export type noArgsObjectArrMN = $$DeepArray<AnObjectType$>;
@@ -763,13 +763,13 @@ export namespace $$Frag {
     export type noArgsObjectArrNN = $$DeepArray<AnObjectType$>;
     export type noArgsObjectMand = $$DeepArray<AnObjectType$>;
     export type noArgsObjectNull = $$DeepArray<AnObjectType$>;
-    export type noArgsScalarArr2D = never;
-    export type noArgsScalarArrMM = never;
-    export type noArgsScalarArrMN = never;
-    export type noArgsScalarArrNM = never;
-    export type noArgsScalarArrNN = never;
-    export type noArgsScalarMand = never;
-    export type noArgsScalarNull = never;
+    export type noArgsScalarArr2D = $$DeepArray<never>;
+    export type noArgsScalarArrMM = $$DeepArray<never>;
+    export type noArgsScalarArrMN = $$DeepArray<never>;
+    export type noArgsScalarArrNM = $$DeepArray<never>;
+    export type noArgsScalarArrNN = $$DeepArray<never>;
+    export type noArgsScalarMand = $$DeepArray<never>;
+    export type noArgsScalarNull = $$DeepArray<never>;
   }
   export namespace Mutation {
     export type argsObjectArr2D = $$DeepArray<AnotherObjectType$>;
@@ -779,13 +779,13 @@ export namespace $$Frag {
     export type argsObjectArrNN = $$DeepArray<AnotherObjectType$>;
     export type argsObjectMand = $$DeepArray<AnotherObjectType$>;
     export type argsObjectNull = $$DeepArray<AnotherObjectType$>;
-    export type argsScalarArr2D = never;
-    export type argsScalarArrMM = never;
-    export type argsScalarArrMN = never;
-    export type argsScalarArrNM = never;
-    export type argsScalarArrNN = never;
-    export type argsScalarMand = never;
-    export type argsScalarNull = never;
+    export type argsScalarArr2D = $$DeepArray<never>;
+    export type argsScalarArrMM = $$DeepArray<never>;
+    export type argsScalarArrMN = $$DeepArray<never>;
+    export type argsScalarArrNM = $$DeepArray<never>;
+    export type argsScalarArrNN = $$DeepArray<never>;
+    export type argsScalarMand = $$DeepArray<never>;
+    export type argsScalarNull = $$DeepArray<never>;
     export type noArgsObjectArr2D = $$DeepArray<AnotherObjectType$>;
     export type noArgsObjectArrMM = $$DeepArray<AnotherObjectType$>;
     export type noArgsObjectArrMN = $$DeepArray<AnotherObjectType$>;
@@ -793,13 +793,13 @@ export namespace $$Frag {
     export type noArgsObjectArrNN = $$DeepArray<AnotherObjectType$>;
     export type noArgsObjectMand = $$DeepArray<AnotherObjectType$>;
     export type noArgsObjectNull = $$DeepArray<AnotherObjectType$>;
-    export type noArgsScalarArr2D = never;
-    export type noArgsScalarArrMM = never;
-    export type noArgsScalarArrMN = never;
-    export type noArgsScalarArrNM = never;
-    export type noArgsScalarArrNN = never;
-    export type noArgsScalarMand = never;
-    export type noArgsScalarNull = never;
+    export type noArgsScalarArr2D = $$DeepArray<never>;
+    export type noArgsScalarArrMM = $$DeepArray<never>;
+    export type noArgsScalarArrMN = $$DeepArray<never>;
+    export type noArgsScalarArrNM = $$DeepArray<never>;
+    export type noArgsScalarArrNN = $$DeepArray<never>;
+    export type noArgsScalarMand = $$DeepArray<never>;
+    export type noArgsScalarNull = $$DeepArray<never>;
   }
 
   export type $<T> =

@@ -127,15 +127,15 @@ type typeof$ShallowOnly = typeof ShallowOnly
 
 interface __$BinaryTree<F extends BinaryTree$> {
   node: String,
-  left: _$BinaryTree<Extract<F, $<typeof BinaryTree$left, BinaryTree$>>[\\"l\\"]>,
-  right: _$BinaryTree<Extract<F, $<typeof BinaryTree$right, BinaryTree$>>[\\"l\\"]>,
+  left: (_$BinaryTree<Extract<F, $<typeof BinaryTree$left, BinaryTree$>>[\\"l\\"]> | null),
+  right: (_$BinaryTree<Extract<F, $<typeof BinaryTree$right, BinaryTree$>>[\\"l\\"]> | null),
 }
 type _$BinaryTree<F extends BinaryTree$> = Pick<__$BinaryTree<F>, F[\\"f\\"][\\"prop\\"]>;
 export type $BinaryTree<F extends $$DeepArray<BinaryTree$>> = _$BinaryTree<$$UnwrapDeepArray<F>>
 
 interface __$DeepOnly<F extends DeepOnly$> {
   a: _$ShallowOnly<Extract<F, $<typeof DeepOnly$a, ShallowOnly$>>[\\"l\\"]>,
-  b: _$ShallowOnly<Extract<F, $<typeof DeepOnly$b, ShallowOnly$>>[\\"l\\"]>,
+  b: (_$ShallowOnly<Extract<F, $<typeof DeepOnly$b, ShallowOnly$>>[\\"l\\"]> | null)[],
 }
 type _$DeepOnly<F extends DeepOnly$> = Pick<__$DeepOnly<F>, F[\\"f\\"][\\"prop\\"]>;
 export type $DeepOnly<F extends $$DeepArray<DeepOnly$>> = _$DeepOnly<$$UnwrapDeepArray<F>>
