@@ -19,12 +19,12 @@ const $$ = <F, L>(f: F, l: L) => ({ f, l });
 export type $$DeepArray<T> = (T | $$DeepArray<T>)[];
 export type $$UnwrapDeepArray<T extends $$DeepArray<any>> = T extends $$DeepArray<infer U> ? U : never;
 
-export interface $$GqxFunc {
+export interface $$GqxGen {
   id: $$OperationId;
-  result: unknown;
+  return: unknown;
 }
-type $$CallGqxFunc<F extends $$GqxFunc, I extends $$OperationId> = (F & { id: I })["result"];
-export type $$GqxImpl<F extends $$GqxFunc> = <I extends $$OperationId>(id: I) => $$CallGqxFunc<F, I>;
+type $$CallGqxGen<F extends $$GqxGen, I extends $$OperationId> = (F & { id: I })["return"];
+export type $$GqxImpl<F extends $$GqxGen> = <I extends $$OperationId>(id: I) => $$CallGqxGen<F, I>;
 
 export interface $$OperationId {
   typeProp: string;
