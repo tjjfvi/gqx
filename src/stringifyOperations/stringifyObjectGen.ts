@@ -4,7 +4,7 @@ import stringifyId from "./stringifyId";
 import indent from "../indent";
 
 export default (objs: Obj[]) =>
-  `export const $$generateObject = <F extends $$GqxGen>(f: $$GqxImpl<F>) => ({\n${
+  `export const $$generateObject = <R extends $$GqxReturn>(f: $$GqxImpl<R>) => ({\n${
     objs.map(o =>
       indent`${o.prop}: {\n${
         o.props.map(p =>

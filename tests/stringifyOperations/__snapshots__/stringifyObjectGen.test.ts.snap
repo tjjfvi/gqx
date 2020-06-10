@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` 1`] = `
-"export const $$generateObject = <F extends $$GqxGen>(f: $$GqxImpl<F>) => ({
+"export const $$generateObject = <R extends $$GqxReturn>(f: $$GqxImpl<R>) => ({
   query: {
     argsObjectArr2D: f(Query$argsObjectArr2D),
     argsObjectArrMM: f(Query$argsObjectArrMM),

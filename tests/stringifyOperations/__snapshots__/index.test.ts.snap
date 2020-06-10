@@ -982,7 +982,7 @@ export namespace $$Output {
     | (T extends typeof Mutation$noArgsScalarNull ? F extends $$Frag.$<typeof Mutation$noArgsScalarNull> ? Mutation.noArgsScalarNull<F> : never : never)
 }
 
-export const $$generateObject = <F extends $$GqxGen>(f: $$GqxImpl<F>) => ({
+export const $$generateObject = <R extends $$GqxReturn>(f: $$GqxImpl<R>) => ({
   query: {
     argsObjectArr2D: f(Query$argsObjectArr2D),
     argsObjectArrMM: f(Query$argsObjectArrMM),
