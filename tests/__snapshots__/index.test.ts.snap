@@ -452,6 +452,12 @@ export class Mutation$addReview {
   };
 }
 
+type $$OperationIds = never
+  | Query$getAuthor
+  | Query$getBook
+  | Query$listBooks
+  | Mutation$addReview
+
 export namespace $$Input {
   export namespace Query {
     export interface getAuthor {
