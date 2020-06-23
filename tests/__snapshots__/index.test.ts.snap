@@ -453,10 +453,10 @@ export class Mutation$addReview {
 }
 
 export type $$OperationIds = never
-  | Query$getAuthor
-  | Query$getBook
-  | Query$listBooks
-  | Mutation$addReview
+  | typeof Query$getAuthor
+  | typeof Query$getBook
+  | typeof Query$listBooks
+  | typeof Mutation$addReview
 
 export namespace $$Input {
   export namespace Query {

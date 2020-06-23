@@ -534,62 +534,62 @@ export class Mutation$noArgsScalarNull {
 }
 
 export type $$OperationIds = never
-  | Query$argsObjectArr2D
-  | Query$argsObjectArrMM
-  | Query$argsObjectArrMN
-  | Query$argsObjectArrNM
-  | Query$argsObjectArrNN
-  | Query$argsObjectMand
-  | Query$argsObjectNull
-  | Query$argsScalarArr2D
-  | Query$argsScalarArrMM
-  | Query$argsScalarArrMN
-  | Query$argsScalarArrNM
-  | Query$argsScalarArrNN
-  | Query$argsScalarMand
-  | Query$argsScalarNull
-  | Query$noArgsObjectArr2D
-  | Query$noArgsObjectArrMM
-  | Query$noArgsObjectArrMN
-  | Query$noArgsObjectArrNM
-  | Query$noArgsObjectArrNN
-  | Query$noArgsObjectMand
-  | Query$noArgsObjectNull
-  | Query$noArgsScalarArr2D
-  | Query$noArgsScalarArrMM
-  | Query$noArgsScalarArrMN
-  | Query$noArgsScalarArrNM
-  | Query$noArgsScalarArrNN
-  | Query$noArgsScalarMand
-  | Query$noArgsScalarNull
-  | Mutation$argsObjectArr2D
-  | Mutation$argsObjectArrMM
-  | Mutation$argsObjectArrMN
-  | Mutation$argsObjectArrNM
-  | Mutation$argsObjectArrNN
-  | Mutation$argsObjectMand
-  | Mutation$argsObjectNull
-  | Mutation$argsScalarArr2D
-  | Mutation$argsScalarArrMM
-  | Mutation$argsScalarArrMN
-  | Mutation$argsScalarArrNM
-  | Mutation$argsScalarArrNN
-  | Mutation$argsScalarMand
-  | Mutation$argsScalarNull
-  | Mutation$noArgsObjectArr2D
-  | Mutation$noArgsObjectArrMM
-  | Mutation$noArgsObjectArrMN
-  | Mutation$noArgsObjectArrNM
-  | Mutation$noArgsObjectArrNN
-  | Mutation$noArgsObjectMand
-  | Mutation$noArgsObjectNull
-  | Mutation$noArgsScalarArr2D
-  | Mutation$noArgsScalarArrMM
-  | Mutation$noArgsScalarArrMN
-  | Mutation$noArgsScalarArrNM
-  | Mutation$noArgsScalarArrNN
-  | Mutation$noArgsScalarMand
-  | Mutation$noArgsScalarNull
+  | typeof Query$argsObjectArr2D
+  | typeof Query$argsObjectArrMM
+  | typeof Query$argsObjectArrMN
+  | typeof Query$argsObjectArrNM
+  | typeof Query$argsObjectArrNN
+  | typeof Query$argsObjectMand
+  | typeof Query$argsObjectNull
+  | typeof Query$argsScalarArr2D
+  | typeof Query$argsScalarArrMM
+  | typeof Query$argsScalarArrMN
+  | typeof Query$argsScalarArrNM
+  | typeof Query$argsScalarArrNN
+  | typeof Query$argsScalarMand
+  | typeof Query$argsScalarNull
+  | typeof Query$noArgsObjectArr2D
+  | typeof Query$noArgsObjectArrMM
+  | typeof Query$noArgsObjectArrMN
+  | typeof Query$noArgsObjectArrNM
+  | typeof Query$noArgsObjectArrNN
+  | typeof Query$noArgsObjectMand
+  | typeof Query$noArgsObjectNull
+  | typeof Query$noArgsScalarArr2D
+  | typeof Query$noArgsScalarArrMM
+  | typeof Query$noArgsScalarArrMN
+  | typeof Query$noArgsScalarArrNM
+  | typeof Query$noArgsScalarArrNN
+  | typeof Query$noArgsScalarMand
+  | typeof Query$noArgsScalarNull
+  | typeof Mutation$argsObjectArr2D
+  | typeof Mutation$argsObjectArrMM
+  | typeof Mutation$argsObjectArrMN
+  | typeof Mutation$argsObjectArrNM
+  | typeof Mutation$argsObjectArrNN
+  | typeof Mutation$argsObjectMand
+  | typeof Mutation$argsObjectNull
+  | typeof Mutation$argsScalarArr2D
+  | typeof Mutation$argsScalarArrMM
+  | typeof Mutation$argsScalarArrMN
+  | typeof Mutation$argsScalarArrNM
+  | typeof Mutation$argsScalarArrNN
+  | typeof Mutation$argsScalarMand
+  | typeof Mutation$argsScalarNull
+  | typeof Mutation$noArgsObjectArr2D
+  | typeof Mutation$noArgsObjectArrMM
+  | typeof Mutation$noArgsObjectArrMN
+  | typeof Mutation$noArgsObjectArrNM
+  | typeof Mutation$noArgsObjectArrNN
+  | typeof Mutation$noArgsObjectMand
+  | typeof Mutation$noArgsObjectNull
+  | typeof Mutation$noArgsScalarArr2D
+  | typeof Mutation$noArgsScalarArrMM
+  | typeof Mutation$noArgsScalarArrMN
+  | typeof Mutation$noArgsScalarArrNM
+  | typeof Mutation$noArgsScalarArrNN
+  | typeof Mutation$noArgsScalarMand
+  | typeof Mutation$noArgsScalarNull
 
 
 

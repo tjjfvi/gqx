@@ -21,6 +21,6 @@ export class ${stringifyId(prop.id)} {
 }\n\n`.trimStart()).join("")
     ).join(""),
     `export type $$OperationIds = never\n`,
-    objs.map(obj => obj.props.map(prop => indent`| ${stringifyId(prop.id)}`).join("\n")).join("\n"),
+    objs.map(obj => obj.props.map(prop => indent`| typeof ${stringifyId(prop.id)}`).join("\n")).join("\n"),
     "\n\n",
   ].join("")
