@@ -130,133 +130,133 @@ export interface ReviewInput {
   details?: (String | null | void);
 }
 
-class Author$id {
+export class Author$id {
   private static _: any;
   static type = \\"Author\\" as const;
   static prop = \\"id\\" as const;
   static f = Author$id;
 }
-class Author$name {
+export class Author$name {
   private static _: any;
   static type = \\"Author\\" as const;
   static prop = \\"name\\" as const;
   static f = Author$name;
 }
-class Author$books {
+export class Author$books {
   private static _: any;
   static type = \\"Author\\" as const;
   static prop = \\"books\\" as const;
   static f = Author$books;
 }
-class Author$favoriteBook {
+export class Author$favoriteBook {
   private static _: any;
   static type = \\"Author\\" as const;
   static prop = \\"favoriteBook\\" as const;
   static f = Author$favoriteBook;
 }
-class Author$rating {
+export class Author$rating {
   private static _: any;
   static type = \\"Author\\" as const;
   static prop = \\"rating\\" as const;
   static f = Author$rating;
 }
-class Book$id {
+export class Book$id {
   private static _: any;
   static type = \\"Book\\" as const;
   static prop = \\"id\\" as const;
   static f = Book$id;
 }
-class Book$author {
+export class Book$author {
   private static _: any;
   static type = \\"Book\\" as const;
   static prop = \\"author\\" as const;
   static f = Book$author;
 }
-class Book$title {
+export class Book$title {
   private static _: any;
   static type = \\"Book\\" as const;
   static prop = \\"title\\" as const;
   static f = Book$title;
 }
-class Book$description {
+export class Book$description {
   private static _: any;
   static type = \\"Book\\" as const;
   static prop = \\"description\\" as const;
   static f = Book$description;
 }
-class Book$categories {
+export class Book$categories {
   private static _: any;
   static type = \\"Book\\" as const;
   static prop = \\"categories\\" as const;
   static f = Book$categories;
 }
-class Book$reviews {
+export class Book$reviews {
   private static _: any;
   static type = \\"Book\\" as const;
   static prop = \\"reviews\\" as const;
   static f = Book$reviews;
 }
-class Book$rating {
+export class Book$rating {
   private static _: any;
   static type = \\"Book\\" as const;
   static prop = \\"rating\\" as const;
   static f = Book$rating;
 }
-class Review$id {
+export class Review$id {
   private static _: any;
   static type = \\"Review\\" as const;
   static prop = \\"id\\" as const;
   static f = Review$id;
 }
-class Review$rating {
+export class Review$rating {
   private static _: any;
   static type = \\"Review\\" as const;
   static prop = \\"rating\\" as const;
   static f = Review$rating;
 }
-class Review$book {
+export class Review$book {
   private static _: any;
   static type = \\"Review\\" as const;
   static prop = \\"book\\" as const;
   static f = Review$book;
 }
-class Review$user {
+export class Review$user {
   private static _: any;
   static type = \\"Review\\" as const;
   static prop = \\"user\\" as const;
   static f = Review$user;
 }
-class Review$title {
+export class Review$title {
   private static _: any;
   static type = \\"Review\\" as const;
   static prop = \\"title\\" as const;
   static f = Review$title;
 }
-class Review$details {
+export class Review$details {
   private static _: any;
   static type = \\"Review\\" as const;
   static prop = \\"details\\" as const;
   static f = Review$details;
 }
-class User$id {
+export class User$id {
   private static _: any;
   static type = \\"User\\" as const;
   static prop = \\"id\\" as const;
   static f = User$id;
 }
-class User$author {
+export class User$author {
   private static _: any;
   static type = \\"User\\" as const;
   static prop = \\"author\\" as const;
   static f = User$author;
 }
-class User$name {
+export class User$name {
   private static _: any;
   static type = \\"User\\" as const;
   static prop = \\"name\\" as const;
   static f = User$name;
 }
-class User$reviews {
+export class User$reviews {
   private static _: any;
   static type = \\"User\\" as const;
   static prop = \\"reviews\\" as const;

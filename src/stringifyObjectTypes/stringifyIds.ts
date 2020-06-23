@@ -8,7 +8,7 @@ const str = (x: string) => JSON.stringify(x);
 export default (ids: Id[]) =>
   ids.map(id =>
     [
-      `class ${stringifyId(id)} {`,
+      `export class ${stringifyId(id)} {`,
       indent`private static _: any;`,
       indent`static type = ${str(id.type)} as const;`,
       indent`static prop = ${str(id.prop)} as const;`,
