@@ -77,11 +77,11 @@ exports[` 1`] = `
     }
   }
   export type $<T> =
-    T extends Query$noDirectives ? Query.noDirectives :
-    T extends Query$oneDirective ? Query.oneDirective :
-    T extends Query$multDirectivesArgs ? Query.multDirectivesArgs :
-    T extends Query$multDirectivesNullArgs ? Query.multDirectivesNullArgs :
-    T extends Query$multDirectivesNoArgs ? Query.multDirectivesNoArgs :
+    T extends typeof Query$noDirectives ? Query.noDirectives :
+    T extends typeof Query$oneDirective ? Query.oneDirective :
+    T extends typeof Query$multDirectivesArgs ? Query.multDirectivesArgs :
+    T extends typeof Query$multDirectivesNullArgs ? Query.multDirectivesNullArgs :
+    T extends typeof Query$multDirectivesNoArgs ? Query.multDirectivesNoArgs :
     never
 }"
 `;

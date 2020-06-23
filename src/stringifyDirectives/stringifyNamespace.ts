@@ -29,6 +29,6 @@ export default (objs: Obj[]) =>
     ).join("\n")
   }\n${
     indent`export type $<T> =${objs.map(o => o.props.map(p =>
-      indent`\nT extends ${p.type}$${p.prop} ? ${p.type}.${p.prop} :`
+      indent`\nT extends typeof ${p.type}$${p.prop} ? ${p.type}.${p.prop} :`
     ).join("")).join("")}\n${indent`never\n`}`
   }}`

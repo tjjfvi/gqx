@@ -573,32 +573,32 @@ export namespace $$Directives {
     export type reviews = {}
   }
   export type $<T> =
-    T extends Query$getAuthor ? Query.getAuthor :
-    T extends Query$getBook ? Query.getBook :
-    T extends Query$listBooks ? Query.listBooks :
-    T extends Mutation$addReview ? Mutation.addReview :
-    T extends Book$id ? Book.id :
-    T extends Book$author ? Book.author :
-    T extends Book$title ? Book.title :
-    T extends Book$description ? Book.description :
-    T extends Book$categories ? Book.categories :
-    T extends Book$reviews ? Book.reviews :
-    T extends Book$rating ? Book.rating :
-    T extends Author$id ? Author.id :
-    T extends Author$name ? Author.name :
-    T extends Author$books ? Author.books :
-    T extends Author$favoriteBook ? Author.favoriteBook :
-    T extends Author$rating ? Author.rating :
-    T extends Review$id ? Review.id :
-    T extends Review$rating ? Review.rating :
-    T extends Review$book ? Review.book :
-    T extends Review$user ? Review.user :
-    T extends Review$title ? Review.title :
-    T extends Review$details ? Review.details :
-    T extends User$id ? User.id :
-    T extends User$author ? User.author :
-    T extends User$name ? User.name :
-    T extends User$reviews ? User.reviews :
+    T extends typeof Query$getAuthor ? Query.getAuthor :
+    T extends typeof Query$getBook ? Query.getBook :
+    T extends typeof Query$listBooks ? Query.listBooks :
+    T extends typeof Mutation$addReview ? Mutation.addReview :
+    T extends typeof Book$id ? Book.id :
+    T extends typeof Book$author ? Book.author :
+    T extends typeof Book$title ? Book.title :
+    T extends typeof Book$description ? Book.description :
+    T extends typeof Book$categories ? Book.categories :
+    T extends typeof Book$reviews ? Book.reviews :
+    T extends typeof Book$rating ? Book.rating :
+    T extends typeof Author$id ? Author.id :
+    T extends typeof Author$name ? Author.name :
+    T extends typeof Author$books ? Author.books :
+    T extends typeof Author$favoriteBook ? Author.favoriteBook :
+    T extends typeof Author$rating ? Author.rating :
+    T extends typeof Review$id ? Review.id :
+    T extends typeof Review$rating ? Review.rating :
+    T extends typeof Review$book ? Review.book :
+    T extends typeof Review$user ? Review.user :
+    T extends typeof Review$title ? Review.title :
+    T extends typeof Review$details ? Review.details :
+    T extends typeof User$id ? User.id :
+    T extends typeof User$author ? User.author :
+    T extends typeof User$name ? User.name :
+    T extends typeof User$reviews ? User.reviews :
     never
 }"
 `;
