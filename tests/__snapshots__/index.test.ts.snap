@@ -452,7 +452,7 @@ export class Mutation$addReview {
   };
 }
 
-type $$OperationIds = never
+export type $$OperationIds = never
   | Query$getAuthor
   | Query$getBook
   | Query$listBooks

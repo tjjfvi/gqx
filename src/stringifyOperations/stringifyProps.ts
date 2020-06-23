@@ -20,7 +20,7 @@ export class ${stringifyId(prop.id)} {
   ).join("") + "  " : ""}};
 }\n\n`.trimStart()).join("")
     ).join(""),
-    `type $$OperationIds = never\n`,
+    `export type $$OperationIds = never\n`,
     objs.map(obj => obj.props.map(prop => indent`| ${stringifyId(prop.id)}`).join("\n")).join("\n"),
     "\n\n",
   ].join("")

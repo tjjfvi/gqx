@@ -533,7 +533,7 @@ export class Mutation$noArgsScalarNull {
   static inputTypes = {};
 }
 
-type $$OperationIds = never
+export type $$OperationIds = never
   | Query$argsObjectArr2D
   | Query$argsObjectArrMM
   | Query$argsObjectArrMN
