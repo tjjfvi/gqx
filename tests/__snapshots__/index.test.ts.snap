@@ -413,9 +413,9 @@ export type $User<F extends $$DeepArray<User$>> = _$User<$$UnwrapDeepArray<F>>
 
 export class Query$getAuthor {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"getAuthor\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"getAuthor\\" as const;
   static inputTypes = {
     id: \\"ID!\\",
   };
@@ -423,9 +423,9 @@ export class Query$getAuthor {
 
 export class Query$getBook {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"getBook\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"getBook\\" as const;
   static inputTypes = {
     id: \\"ID!\\",
   };
@@ -433,9 +433,9 @@ export class Query$getBook {
 
 export class Query$listBooks {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"listBooks\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"listBooks\\" as const;
   static inputTypes = {
     cursor: \\"Cursor\\",
     filter: \\"BookFilter\\",
@@ -444,9 +444,9 @@ export class Query$listBooks {
 
 export class Mutation$addReview {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"addReview\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"addReview\\" as const;
   static inputTypes = {
     input: \\"ReviewInput!\\",
   };

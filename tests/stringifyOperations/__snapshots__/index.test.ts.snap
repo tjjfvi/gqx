@@ -3,9 +3,9 @@
 exports[` 1`] = `
 "export class Query$argsObjectArr2D {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"argsObjectArr2D\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"argsObjectArr2D\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -14,9 +14,9 @@ exports[` 1`] = `
 
 export class Query$argsObjectArrMM {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"argsObjectArrMM\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"argsObjectArrMM\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -25,9 +25,9 @@ export class Query$argsObjectArrMM {
 
 export class Query$argsObjectArrMN {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"argsObjectArrMN\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"argsObjectArrMN\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -36,9 +36,9 @@ export class Query$argsObjectArrMN {
 
 export class Query$argsObjectArrNM {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"argsObjectArrNM\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"argsObjectArrNM\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -47,9 +47,9 @@ export class Query$argsObjectArrNM {
 
 export class Query$argsObjectArrNN {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"argsObjectArrNN\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"argsObjectArrNN\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -58,9 +58,9 @@ export class Query$argsObjectArrNN {
 
 export class Query$argsObjectMand {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"argsObjectMand\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"argsObjectMand\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -69,9 +69,9 @@ export class Query$argsObjectMand {
 
 export class Query$argsObjectNull {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"argsObjectNull\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"argsObjectNull\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -80,9 +80,9 @@ export class Query$argsObjectNull {
 
 export class Query$argsScalarArr2D {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"argsScalarArr2D\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"argsScalarArr2D\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -91,9 +91,9 @@ export class Query$argsScalarArr2D {
 
 export class Query$argsScalarArrMM {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"argsScalarArrMM\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"argsScalarArrMM\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -102,9 +102,9 @@ export class Query$argsScalarArrMM {
 
 export class Query$argsScalarArrMN {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"argsScalarArrMN\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"argsScalarArrMN\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -113,9 +113,9 @@ export class Query$argsScalarArrMN {
 
 export class Query$argsScalarArrNM {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"argsScalarArrNM\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"argsScalarArrNM\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -124,9 +124,9 @@ export class Query$argsScalarArrNM {
 
 export class Query$argsScalarArrNN {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"argsScalarArrNN\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"argsScalarArrNN\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -135,9 +135,9 @@ export class Query$argsScalarArrNN {
 
 export class Query$argsScalarMand {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"argsScalarMand\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"argsScalarMand\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -146,9 +146,9 @@ export class Query$argsScalarMand {
 
 export class Query$argsScalarNull {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"argsScalarNull\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"argsScalarNull\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -157,121 +157,121 @@ export class Query$argsScalarNull {
 
 export class Query$noArgsObjectArr2D {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"noArgsObjectArr2D\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"noArgsObjectArr2D\\" as const;
   static inputTypes = {};
 }
 
 export class Query$noArgsObjectArrMM {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"noArgsObjectArrMM\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"noArgsObjectArrMM\\" as const;
   static inputTypes = {};
 }
 
 export class Query$noArgsObjectArrMN {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"noArgsObjectArrMN\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"noArgsObjectArrMN\\" as const;
   static inputTypes = {};
 }
 
 export class Query$noArgsObjectArrNM {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"noArgsObjectArrNM\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"noArgsObjectArrNM\\" as const;
   static inputTypes = {};
 }
 
 export class Query$noArgsObjectArrNN {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"noArgsObjectArrNN\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"noArgsObjectArrNN\\" as const;
   static inputTypes = {};
 }
 
 export class Query$noArgsObjectMand {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"noArgsObjectMand\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"noArgsObjectMand\\" as const;
   static inputTypes = {};
 }
 
 export class Query$noArgsObjectNull {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"noArgsObjectNull\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"noArgsObjectNull\\" as const;
   static inputTypes = {};
 }
 
 export class Query$noArgsScalarArr2D {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"noArgsScalarArr2D\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"noArgsScalarArr2D\\" as const;
   static inputTypes = {};
 }
 
 export class Query$noArgsScalarArrMM {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"noArgsScalarArrMM\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"noArgsScalarArrMM\\" as const;
   static inputTypes = {};
 }
 
 export class Query$noArgsScalarArrMN {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"noArgsScalarArrMN\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"noArgsScalarArrMN\\" as const;
   static inputTypes = {};
 }
 
 export class Query$noArgsScalarArrNM {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"noArgsScalarArrNM\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"noArgsScalarArrNM\\" as const;
   static inputTypes = {};
 }
 
 export class Query$noArgsScalarArrNN {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"noArgsScalarArrNN\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"noArgsScalarArrNN\\" as const;
   static inputTypes = {};
 }
 
 export class Query$noArgsScalarMand {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"noArgsScalarMand\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"noArgsScalarMand\\" as const;
   static inputTypes = {};
 }
 
 export class Query$noArgsScalarNull {
   private static _: any;
-  static typeProp = \\"query\\";
-  static type = \\"Query\\";
-  static prop = \\"noArgsScalarNull\\";
+  static typeProp = \\"query\\" as const;
+  static type = \\"Query\\" as const;
+  static prop = \\"noArgsScalarNull\\" as const;
   static inputTypes = {};
 }
 
 export class Mutation$argsObjectArr2D {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"argsObjectArr2D\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"argsObjectArr2D\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -280,9 +280,9 @@ export class Mutation$argsObjectArr2D {
 
 export class Mutation$argsObjectArrMM {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"argsObjectArrMM\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"argsObjectArrMM\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -291,9 +291,9 @@ export class Mutation$argsObjectArrMM {
 
 export class Mutation$argsObjectArrMN {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"argsObjectArrMN\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"argsObjectArrMN\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -302,9 +302,9 @@ export class Mutation$argsObjectArrMN {
 
 export class Mutation$argsObjectArrNM {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"argsObjectArrNM\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"argsObjectArrNM\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -313,9 +313,9 @@ export class Mutation$argsObjectArrNM {
 
 export class Mutation$argsObjectArrNN {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"argsObjectArrNN\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"argsObjectArrNN\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -324,9 +324,9 @@ export class Mutation$argsObjectArrNN {
 
 export class Mutation$argsObjectMand {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"argsObjectMand\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"argsObjectMand\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -335,9 +335,9 @@ export class Mutation$argsObjectMand {
 
 export class Mutation$argsObjectNull {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"argsObjectNull\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"argsObjectNull\\" as const;
   static inputTypes = {
     a: \\"String!\\",
     b: \\"Float\\",
@@ -346,9 +346,9 @@ export class Mutation$argsObjectNull {
 
 export class Mutation$argsScalarArr2D {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"argsScalarArr2D\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"argsScalarArr2D\\" as const;
   static inputTypes = {
     a: \\"Boolean!\\",
     b: \\"Int\\",
@@ -357,9 +357,9 @@ export class Mutation$argsScalarArr2D {
 
 export class Mutation$argsScalarArrMM {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"argsScalarArrMM\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"argsScalarArrMM\\" as const;
   static inputTypes = {
     a: \\"Boolean!\\",
     b: \\"Int\\",
@@ -368,9 +368,9 @@ export class Mutation$argsScalarArrMM {
 
 export class Mutation$argsScalarArrMN {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"argsScalarArrMN\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"argsScalarArrMN\\" as const;
   static inputTypes = {
     a: \\"Boolean!\\",
     b: \\"Int\\",
@@ -379,9 +379,9 @@ export class Mutation$argsScalarArrMN {
 
 export class Mutation$argsScalarArrNM {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"argsScalarArrNM\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"argsScalarArrNM\\" as const;
   static inputTypes = {
     a: \\"Boolean!\\",
     b: \\"Int\\",
@@ -390,9 +390,9 @@ export class Mutation$argsScalarArrNM {
 
 export class Mutation$argsScalarArrNN {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"argsScalarArrNN\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"argsScalarArrNN\\" as const;
   static inputTypes = {
     a: \\"Boolean!\\",
     b: \\"Int\\",
@@ -401,9 +401,9 @@ export class Mutation$argsScalarArrNN {
 
 export class Mutation$argsScalarMand {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"argsScalarMand\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"argsScalarMand\\" as const;
   static inputTypes = {
     a: \\"Boolean!\\",
     b: \\"Int\\",
@@ -412,9 +412,9 @@ export class Mutation$argsScalarMand {
 
 export class Mutation$argsScalarNull {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"argsScalarNull\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"argsScalarNull\\" as const;
   static inputTypes = {
     a: \\"Boolean!\\",
     b: \\"Int\\",
@@ -423,113 +423,113 @@ export class Mutation$argsScalarNull {
 
 export class Mutation$noArgsObjectArr2D {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"noArgsObjectArr2D\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"noArgsObjectArr2D\\" as const;
   static inputTypes = {};
 }
 
 export class Mutation$noArgsObjectArrMM {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"noArgsObjectArrMM\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"noArgsObjectArrMM\\" as const;
   static inputTypes = {};
 }
 
 export class Mutation$noArgsObjectArrMN {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"noArgsObjectArrMN\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"noArgsObjectArrMN\\" as const;
   static inputTypes = {};
 }
 
 export class Mutation$noArgsObjectArrNM {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"noArgsObjectArrNM\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"noArgsObjectArrNM\\" as const;
   static inputTypes = {};
 }
 
 export class Mutation$noArgsObjectArrNN {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"noArgsObjectArrNN\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"noArgsObjectArrNN\\" as const;
   static inputTypes = {};
 }
 
 export class Mutation$noArgsObjectMand {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"noArgsObjectMand\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"noArgsObjectMand\\" as const;
   static inputTypes = {};
 }
 
 export class Mutation$noArgsObjectNull {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"noArgsObjectNull\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"noArgsObjectNull\\" as const;
   static inputTypes = {};
 }
 
 export class Mutation$noArgsScalarArr2D {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"noArgsScalarArr2D\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"noArgsScalarArr2D\\" as const;
   static inputTypes = {};
 }
 
 export class Mutation$noArgsScalarArrMM {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"noArgsScalarArrMM\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"noArgsScalarArrMM\\" as const;
   static inputTypes = {};
 }
 
 export class Mutation$noArgsScalarArrMN {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"noArgsScalarArrMN\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"noArgsScalarArrMN\\" as const;
   static inputTypes = {};
 }
 
 export class Mutation$noArgsScalarArrNM {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"noArgsScalarArrNM\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"noArgsScalarArrNM\\" as const;
   static inputTypes = {};
 }
 
 export class Mutation$noArgsScalarArrNN {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"noArgsScalarArrNN\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"noArgsScalarArrNN\\" as const;
   static inputTypes = {};
 }
 
 export class Mutation$noArgsScalarMand {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"noArgsScalarMand\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"noArgsScalarMand\\" as const;
   static inputTypes = {};
 }
 
 export class Mutation$noArgsScalarNull {
   private static _: any;
-  static typeProp = \\"mutation\\";
-  static type = \\"Mutation\\";
-  static prop = \\"noArgsScalarNull\\";
+  static typeProp = \\"mutation\\" as const;
+  static type = \\"Mutation\\" as const;
+  static prop = \\"noArgsScalarNull\\" as const;
   static inputTypes = {};
 }
 

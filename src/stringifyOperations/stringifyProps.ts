@@ -12,9 +12,9 @@ export default (objs: Obj[]) =>
         `
 export class ${stringifyId(prop.id)} {
   private static _: any;
-  static typeProp = ${str(obj.prop)};
-  static type = ${str(obj.type)};
-  static prop = ${str(prop.id.prop)};
+  static typeProp = ${str(obj.prop)} as const;
+  static type = ${str(obj.type)} as const;
+  static prop = ${str(prop.id.prop)} as const;
   static inputTypes = {${prop.args.length ? "\n" + prop.args.map(n =>
     indent(indent`${n.name.value}: ${str(n.type.loc.source.body.slice(n.type.loc.start, n.type.loc.end))},\n`)
   ).join("") + "  " : ""}};
