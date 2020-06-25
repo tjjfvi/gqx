@@ -6,7 +6,6 @@ export default (ctx: Context): [Obj[], Id[], Context] => {
   const ids: Id[] = [];
   const objs: Obj[] =
     Object.keys(ctx.objectTypes)
-      .filter(k => !ctx.baseTypes.includes(k))
       .sort()
       .map(name => {
         const fields = ctx.objectTypes[name];
@@ -24,6 +23,8 @@ export default (ctx: Context): [Obj[], Id[], Context] => {
             shallow,
             wrap,
             wrapHKT,
+            args: field.arguments?.slice() ?? [],
+            directives: field.directives?.slice() ?? [],
           };
           return prop;
         }).sort((p, q) => p.id.prop > q.id.prop ? 1 : -1);
@@ -33,6 +34,8 @@ export default (ctx: Context): [Obj[], Id[], Context] => {
           type: name,
           shallowProps,
           deepProps,
+          props,
+          isBase: ctx.baseTypes.includes(name),
         };
         return obj;
       });

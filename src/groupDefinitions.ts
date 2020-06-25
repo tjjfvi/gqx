@@ -2,8 +2,8 @@ import { Context } from ".";
 import { DefinitionNode, SchemaDefinitionNode } from "graphql";
 
 export default (ctx: Context, definitions: readonly DefinitionNode[]) => {
-  // @ts-ignore
-  const schemaDef: void | SchemaDefinitionNode = definitions.find(d => d.kind === "SchemaDefinition");
+  const schemaDef: undefined | SchemaDefinitionNode =
+    definitions.find((d): d is SchemaDefinitionNode => d.kind === "SchemaDefinition");
   const operations: [string, string][] = schemaDef ?
     schemaDef.operationTypes.map(o => [o.operation, o.type.name.value]) :
     [];

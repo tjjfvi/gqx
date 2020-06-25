@@ -41,6 +41,7 @@ export default ({ schema }: { schema: string }) => {
     stringifyInputTypes(ctx),
     stringifyObjectTypes(ctx),
     stringifyOperations(ctx),
+    "",
   ].join("\n\n").replace(/\n\n\n+/g, "\n\n");
 
   return code;

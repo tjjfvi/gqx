@@ -6,7 +6,7 @@ import indent from "../indent";
 export default (obj: Obj) => {
   const typeofType = `\n\ntype typeof$${obj.type} = typeof ${obj.type}`
 
-  const shallowObj = genObj(obj.shallowProps, p => stringifyId(p.id));
+  const shallowObj = genObj(obj.shallowProps, p => stringifyId(p.id)) + " as const";
 
   const deepType = genObj(obj.deepProps, p =>
     `$$MapWrap<typeof$${p.type}, ${stringifyId(p.id)}>`
