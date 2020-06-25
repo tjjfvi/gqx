@@ -1,10 +1,6 @@
 
 import { Context } from "..";
 import { InputValueDefinitionNode } from "graphql";
-import stringifyProps from "./stringifyProps"
-import stringifyInputTypes from "./stringifyInputTypes";
-import stringifyFragTypes from "./stringifyFragTypes";
-import stringifyOutputTypes from "./stringifyOutputTypes";
 import stringifyObjectGen from "./stringifyObjectGen";
 import generateObjs from "./generateObjs";
 
@@ -33,10 +29,6 @@ export default (ctx: Context) => {
   const [objs] = generateObjs(ctx);
 
   return [
-    stringifyProps(objs),
-    stringifyInputTypes(objs),
-    stringifyFragTypes(objs, ctx),
-    stringifyOutputTypes(objs, ctx),
     stringifyObjectGen(objs),
   ].join("\n\n");
 }

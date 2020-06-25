@@ -1,16 +1,19 @@
 
 import unwrapType from "./unwrapType";
 import { InputValueDefinitionNode } from "graphql";
-import indent from "./indent";
+import { Context } from "./stringifyOperations";
+import { stringifyObject } from "./stringifyObject";
 
-export default (name: string, fields: InputValueDefinitionNode[]) =>
-  `interface ${name} ` + (
-    fields.length ?
-      `{\n${fields.map(field => {
-        let [type, wrap, maybe] = unwrapType(field.type, true);
-        let typeStr = wrap(type.name.value);
-        let colon = maybe ? "?: " : ": ";
-        return indent`${field.name.value}${colon}${typeStr};`;
-      }).join("\n")}\n}` :
-      "{}"
+export default (ctx: Context, fields: InputValueDefinitionNode[]) =>
+  stringifyObject(
+    fields.map(field => {
+      const [{ name: { value: typeName } }, wrap, maybe] = unwrapType(field.type, true);
+      const type = (
+        typeName in ctx.objectTypes || typeName in ctx.inputTypes || typeName in ctx.enumTypes ?
+          typeName :
+          `$$Scalars[${JSON.stringify(typeName)}]`
+      );
+      const typeStr = wrap(type);
+      return [field.name.value, maybe, typeStr];
+    })
   )

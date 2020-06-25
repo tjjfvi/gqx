@@ -2,7 +2,7 @@
 import { Context } from "..";
 import stringifyFragEnums from "./stringifyFragEnums";
 import stringifyFragResult from "./stringifyFragResult";
-import stringifyIds from "./stringifyIds";
+import { stringifyObjectTypeInfo } from "./stringifyObjectTypeInfo";
 import stringifyFragObject from "./stringifyFragObject";
 import generateObjs from "./generateObjs";
 
@@ -16,6 +16,7 @@ interface Prop {
   type: string;
   shallow: boolean;
   wrap: (x: string) => string;
+  wrapHKT: string;
 }
 
 interface Obj {
@@ -27,10 +28,10 @@ interface Obj {
 export { Id, Prop, Obj, Context };
 
 export default (ctx: Context) => {
-  const [objs, ids] = generateObjs(ctx);
+  const [objs] = generateObjs(ctx);
 
   return [
-    stringifyIds(ids),
+    stringifyObjectTypeInfo(objs),
     stringifyFragEnums(objs),
     ...objs.map(o => stringifyFragObject(o)),
     ...objs.map(o => stringifyFragResult(o))

@@ -16,13 +16,14 @@ export default (ctx: Context): [Obj[], Id[], Context] => {
             prop: field.name.value,
           };
           ids.push(id);
-          const [{ name: { value: typeName } }, wrap] = unwrapType(field.type);
+          const [{ name: { value: typeName } }, wrap,, wrapHKT] = unwrapType(field.type);
           const shallow = !(typeName in ctx.objectTypes);
           let prop: Prop = {
             id,
             type: typeName,
             shallow,
             wrap,
+            wrapHKT,
           };
           return prop;
         }).sort((p, q) => p.id.prop > q.id.prop ? 1 : -1);
