@@ -5,6 +5,7 @@
     "removeComments": true,
     "declaration": true,
     "downlevelIteration": true,
+    "strict": true,
     "lib": [
       "ES2019"
     ],

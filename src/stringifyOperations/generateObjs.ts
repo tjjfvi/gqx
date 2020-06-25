@@ -17,7 +17,7 @@ export default (ctx: Context): [Obj[], Context] => {
             id,
             type: typeName,
             wrap,
-            args: field.arguments.slice(),
+            args: field.arguments?.slice() ?? [],
           };
           return prop;
         }).sort((p, q) => p.id.prop > q.id.prop ? 1 : -1);
