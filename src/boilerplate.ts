@@ -213,7 +213,7 @@ export const $$reconstruct = <I extends $$AnyProp>(id: I, input: $$Input<I>, pro
   const frag = genFrag(subs);
   const inputKeys = Object.keys(input);
   const inputDef = inputKeys.length ? `(${inputKeys.map(k =>
-    `$${k}: ${$$objectTypeInfoMap[id.split("$")[0]].inputTypes[id][k]}`
+    `$${k}: ${$$objectTypeInfoMap[id.split("$")[0]].inputTypeStrings[id][k]}`
   ).join(", ")})` : "";
   const inputPass = inputKeys.length ? `(${inputKeys.map(k =>
     `${k}: $${k}`
