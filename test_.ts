@@ -10,12 +10,12 @@ interface GqxOut extends $$GqxReturn {
 
 const gqx = $$generateObject<GqxOut>(() => null as any);
 
-const frag = [
+const frag = Book.$(
   Book.id,
   Book.categories,
   Book.author.name,
   Book.author.$(Author.id, Author.books.title)
-];
+);
 const result = gqx.query.getBook({ id: "id" }, frag);
 
 result.id

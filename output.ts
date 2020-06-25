@@ -487,7 +487,10 @@ export type Author$ = $$ObjectTypeInfoMap["Author"]["Frag"];
 export type Book$ = $$ObjectTypeInfoMap["Book"]["Frag"];
 export type Query$ = $$ObjectTypeInfoMap["Query"]["Frag"];
 
+const Author$ = <F extends $$DeepArray<Author$>>(...frag: F) => [...frag];
+
 const _Author = {
+  $: Author$,
   id: "Author$id",
   name: "Author$name",
 } as const;
@@ -503,7 +506,10 @@ export const Author: typeof _Author & {
 
 type typeof$Author = typeof Author
 
+const Book$ = <F extends $$DeepArray<Book$>>(...frag: F) => [...frag];
+
 const _Book = {
+  $: Book$,
   categories: "Book$categories",
   description: "Book$description",
   id: "Book$id",
@@ -522,11 +528,15 @@ export const Book: typeof _Book & {
 
 type typeof$Book = typeof Book
 
+const Query$ = <F extends $$DeepArray<Query$>>(...frag: F) => [...frag];
+
 export const Query: {
+  $: typeof Query$,
   getAuthor: $$MapWrap<typeof$Author, "Query$getAuthor">,
   getBook: $$MapWrap<typeof$Book, "Query$getBook">,
   listBooks: $$MapWrap<typeof$Book, "Query$listBooks">,
 } = {
+  $: Query$,
   getAuthor: $$mapWrap(() => Author, "Query$getAuthor"),
   getBook: $$mapWrap(() => Book, "Query$getBook"),
   listBooks: $$mapWrap(() => Book, "Query$listBooks"),
