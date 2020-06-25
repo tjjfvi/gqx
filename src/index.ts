@@ -11,7 +11,6 @@ import stringifyObjectTypes from "./stringifyObjectTypes";
 import stringifyOperations from "./stringifyOperations";
 import stringifyBoilerplate from "./stringifyBoilerplate";
 import groupDefinitions from "./groupDefinitions";
-import stringifyDirectives from "./stringifyDirectives";
 
 interface Context {
   inputTypes: { [k: string]: InputValueDefinitionNode[] };
@@ -42,7 +41,6 @@ export default ({ schema }: { schema: string }) => {
     stringifyInputTypes(ctx),
     stringifyObjectTypes(ctx),
     stringifyOperations(ctx),
-    stringifyDirectives(ctx),
   ].join("\n\n").replace(/\n\n\n+/g, "\n\n");
 
   return code;

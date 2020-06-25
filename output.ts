@@ -393,9 +393,23 @@ export const Book: typeof _Book & {
 
 type typeof$Book = typeof Book
 
+export const Query: {
+  getAuthor: $$MapWrap<typeof$Author, "Query$getAuthor">,
+  getBook: $$MapWrap<typeof$Book, "Query$getBook">,
+  listBooks: $$MapWrap<typeof$Book, "Query$listBooks">,
+} = {
+  getAuthor: $$mapWrap(() => Author, "Query$getAuthor"),
+  getBook: $$mapWrap(() => Book, "Query$getBook"),
+  listBooks: $$mapWrap(() => Book, "Query$listBooks"),
+};
+
+type typeof$Query = typeof Query
+
 export type $Author<F extends $$DeepArray<Author$>> = $$Result<"Author", $$UnwrapDeepArray<F>>
 
 export type $Book<F extends $$DeepArray<Book$>> = $$Result<"Book", $$UnwrapDeepArray<F>>
+
+export type $Query<F extends $$DeepArray<Query$>> = $$Result<"Query", $$UnwrapDeepArray<F>>
 
 export const $$generateObject = <R extends $$GqxReturn>(f: $$GqxImpl<R>) => ({
   query: {
@@ -404,42 +418,3 @@ export const $$generateObject = <R extends $$GqxReturn>(f: $$GqxImpl<R>) => ({
     listBooks: f("Query$listBooks"),
   },
 })
-
-export namespace $$Directives {
-  export namespace Query {
-    export type getAuthor = {}
-    export type getBook = {}
-    export type listBooks = {}
-  }
-  export namespace Book {
-    export type id = {}
-    export type language = {}
-    export type author = {}
-    export type title = {}
-    export type description = {}
-    export type categories = {}
-    export type translation = {}
-  }
-  export namespace Author {
-    export type id = {}
-    export type name = {}
-    export type books = {}
-    export type favoriteBook = {}
-  }
-  export type $<T> =
-    T extends typeof Query$getAuthor ? Query.getAuthor :
-    T extends typeof Query$getBook ? Query.getBook :
-    T extends typeof Query$listBooks ? Query.listBooks :
-    T extends typeof Book$id ? Book.id :
-    T extends typeof Book$language ? Book.language :
-    T extends typeof Book$author ? Book.author :
-    T extends typeof Book$title ? Book.title :
-    T extends typeof Book$description ? Book.description :
-    T extends typeof Book$categories ? Book.categories :
-    T extends typeof Book$translation ? Book.translation :
-    T extends typeof Author$id ? Author.id :
-    T extends typeof Author$name ? Author.name :
-    T extends typeof Author$books ? Author.books :
-    T extends typeof Author$favoriteBook ? Author.favoriteBook :
-    never
-}
