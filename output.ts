@@ -1,12 +1,6 @@
 /* eslint-disable */
 
-export interface $$Scalars {
-  ID: string;
-  String: string;
-  Boolean: boolean;
-  Float: number;
-  Int: number;
-}
+import { $$Scalars } from "./scalars";
 
 export interface $<F, L> { readonly f: F; readonly l: L }
 export const $ = <F, L>(f: F, l: L) => ({ f, l });
@@ -212,7 +206,7 @@ export const $$reconstruct = <I extends $$AnyProp>(id: I, input: $$Input<I>, pro
   const frag = genFrag(subs);
   const inputKeys = Object.keys(input);
   const inputDef = inputKeys.length ? `(${inputKeys.map(k =>
-    `$${k}: ${$$objectTypeInfoMap[id.split("$")[0]].inputTypes[id][k]}`
+    `$${k}: ${$$objectTypeInfoMap[id.split("$")[0]].inputTypeStrings[id][k]}`
   ).join(", ")})` : "";
   const inputPass = inputKeys.length ? `(${inputKeys.map(k =>
     `${k}: $${k}`
@@ -308,63 +302,63 @@ export type $$ObjectType = (
 const $$objectTypeInfoMap = {
   Author: new $$ObjectTypeInfo(
     {
-      "Author$id": "id",
-      "Author$name": "name",
+      Author$id: "id",
+      Author$name: "name",
     },
     {
       id: "Author$id",
       name: "Author$name",
     },
     null as any as {
-      "Author$id": "ID",
-      "Author$name": "String",
+      Author$id: "ID",
+      Author$name: "String",
     },
     null as any as {
-      "Author$id": $$Identity,
-      "Author$name": $$Identity,
+      Author$id: $$Identity,
+      Author$name: $$Identity,
     },
     {
-      "Author$books": "books",
-      "Author$favoriteBook": "favoriteBook",
+      Author$books: "books",
+      Author$favoriteBook: "favoriteBook",
     },
     {
       books: "Author$books",
       favoriteBook: "Author$favoriteBook",
     },
     null as any as {
-      "Author$books": "Book",
-      "Author$favoriteBook": "Book",
+      Author$books: "Book",
+      Author$favoriteBook: "Book",
     },
     null as any as {
-      "Author$books": $$Array<$$Identity>,
-      "Author$favoriteBook": $$Identity,
+      Author$books: $$Array<$$Identity>,
+      Author$favoriteBook: $$Identity,
     },
     null as any as {
-      "Author$books": {},
-      "Author$favoriteBook": {},
-      "Author$id": {},
-      "Author$name": {},
+      Author$books: {},
+      Author$favoriteBook: {},
+      Author$id: {},
+      Author$name: {},
     },
     {
-      "Author$books": {},
-      "Author$favoriteBook": {},
-      "Author$id": {},
-      "Author$name": {},
+      Author$books: {},
+      Author$favoriteBook: {},
+      Author$id: {},
+      Author$name: {},
     },
     {
-      "Author$books": {},
-      "Author$favoriteBook": {},
-      "Author$id": {},
-      "Author$name": {},
+      Author$books: {},
+      Author$favoriteBook: {},
+      Author$id: {},
+      Author$name: {},
     },
   ),
   Book: new $$ObjectTypeInfo(
     {
-      "Book$categories": "categories",
-      "Book$description": "description",
-      "Book$id": "id",
-      "Book$language": "language",
-      "Book$title": "title",
+      Book$categories: "categories",
+      Book$description: "description",
+      Book$id: "id",
+      Book$language: "language",
+      Book$title: "title",
     },
     {
       categories: "Book$categories",
@@ -374,73 +368,73 @@ const $$objectTypeInfoMap = {
       title: "Book$title",
     },
     null as any as {
-      "Book$categories": "Category",
-      "Book$description": "String",
-      "Book$id": "ID",
-      "Book$language": "Language",
-      "Book$title": "String",
+      Book$categories: "Category",
+      Book$description: "String",
+      Book$id: "ID",
+      Book$language: "Language",
+      Book$title: "String",
     },
     null as any as {
-      "Book$categories": $$Array<$$Identity>,
-      "Book$description": $$Identity,
-      "Book$id": $$Identity,
-      "Book$language": $$Identity,
-      "Book$title": $$Identity,
+      Book$categories: $$Array<$$Identity>,
+      Book$description: $$Identity,
+      Book$id: $$Identity,
+      Book$language: $$Identity,
+      Book$title: $$Identity,
     },
     {
-      "Book$author": "author",
-      "Book$translation": "translation",
+      Book$author: "author",
+      Book$translation: "translation",
     },
     {
       author: "Book$author",
       translation: "Book$translation",
     },
     null as any as {
-      "Book$author": "Author",
-      "Book$translation": "Book",
+      Book$author: "Author",
+      Book$translation: "Book",
     },
     null as any as {
-      "Book$author": $$Identity,
-      "Book$translation": $$Optional<$$Identity>,
+      Book$author: $$Identity,
+      Book$translation: $$Optional<$$Identity>,
     },
     null as any as {
-      "Book$author": {},
-      "Book$categories": {},
-      "Book$description": {},
-      "Book$id": {},
-      "Book$language": {},
-      "Book$title": {},
-      "Book$translation": {
+      Book$author: {},
+      Book$categories: {},
+      Book$description: {},
+      Book$id: {},
+      Book$language: {},
+      Book$title: {},
+      Book$translation: {
         language: Language,
       },
     },
     {
-      "Book$author": {},
-      "Book$categories": {},
-      "Book$description": {},
-      "Book$id": {},
-      "Book$language": {},
-      "Book$title": {},
-      "Book$translation": {
+      Book$author: {},
+      Book$categories: {},
+      Book$description: {},
+      Book$id: {},
+      Book$language: {},
+      Book$title: {},
+      Book$translation: {
         language: "Language!",
       },
     },
     {
-      "Book$author": {},
-      "Book$categories": {},
-      "Book$description": {},
-      "Book$id": {},
-      "Book$language": {},
-      "Book$title": {},
-      "Book$translation": {},
+      Book$author: {},
+      Book$categories: {},
+      Book$description: {},
+      Book$id: {},
+      Book$language: {},
+      Book$title: {},
+      Book$translation: {},
     },
   ),
   Query: new $$ObjectTypeInfo(
     {}, {}, {}, {},
     {
-      "Query$getAuthor": "getAuthor",
-      "Query$getBook": "getBook",
-      "Query$listBooks": "listBooks",
+      Query$getAuthor: "getAuthor",
+      Query$getBook: "getBook",
+      Query$listBooks: "listBooks",
     },
     {
       getAuthor: "Query$getAuthor",
@@ -448,43 +442,43 @@ const $$objectTypeInfoMap = {
       listBooks: "Query$listBooks",
     },
     null as any as {
-      "Query$getAuthor": "Author",
-      "Query$getBook": "Book",
-      "Query$listBooks": "Book",
+      Query$getAuthor: "Author",
+      Query$getBook: "Book",
+      Query$listBooks: "Book",
     },
     null as any as {
-      "Query$getAuthor": $$Identity,
-      "Query$getBook": $$Identity,
-      "Query$listBooks": $$Array<$$Identity>,
+      Query$getAuthor: $$Identity,
+      Query$getBook: $$Identity,
+      Query$listBooks: $$Array<$$Identity>,
     },
     null as any as {
-      "Query$getAuthor": {
+      Query$getAuthor: {
         id: $$Scalars["ID"],
       },
-      "Query$getBook": {
+      Query$getBook: {
         id: $$Scalars["ID"],
       },
-      "Query$listBooks": {
+      Query$listBooks: {
         cursor?: (Cursor | null | undefined),
         filter?: (BookFilter | null | undefined),
       },
     },
     {
-      "Query$getAuthor": {
+      Query$getAuthor: {
         id: "ID!",
       },
-      "Query$getBook": {
+      Query$getBook: {
         id: "ID!",
       },
-      "Query$listBooks": {
+      Query$listBooks: {
         cursor: "Cursor",
         filter: "BookFilter",
       },
     },
     {
-      "Query$getAuthor": {},
-      "Query$getBook": {},
-      "Query$listBooks": {},
+      Query$getAuthor: {},
+      Query$getBook: {},
+      Query$listBooks: {},
     },
   ),
 }

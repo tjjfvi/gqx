@@ -12,7 +12,7 @@ export const stringifyObject = (entries: ObjectEntry[], multiline = true) => {
       originalKey[0] === '"' && originalKey[originalKey.length - 1] === '"' ?
         JSON.parse(originalKey) :
         originalKey
-    const requotedProp = unquotedKey.match(/^(?!\d)\w\w*$/) ? unquotedKey : JSON.stringify(unquotedKey);
+    const requotedProp = unquotedKey.match(/^(?!\d)[\w$]+$/) ? unquotedKey : JSON.stringify(unquotedKey);
 
     const str = `${requotedProp}${optional ? "?" : ""}: ${value},`;
     return multiline ? indent(str) : str
