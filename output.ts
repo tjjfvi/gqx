@@ -171,14 +171,14 @@ export type $$GqxReturn = $$HKT<$$AnyProp>;
 type $$CallGqxReturn<R extends $$GqxReturn, I extends $$AnyProp> = $$CallHKT<R, I>;
 export type $$GqxImpl<R extends $$GqxReturn> = <I extends $$AnyProp>(id: I) => $$CallGqxReturn<R, I>;
 
-const __wrap__ = Symbol();
+declare const __wrap__: unique symbol;
 
 type $$Wrap<X, Y> = X extends $<infer F, infer L> ? $<F, $$Wrap<L, Y>> : never;
 type $$MapWrap<O, F> = {
   [K in keyof O | typeof __wrap__ | "$"]:
   K extends "$" ?
-  <T extends $$AnyFrag>(x: $$DeepArray<T>) =>
-    $<F, O extends { [__wrap__]: infer X } ? $$Wrap<X, T> : T>[] :
+  <T extends $$DeepArray<$$AnyFrag>>(...x: T) =>
+    $<F, O extends { [__wrap__]: infer X } ? $$Wrap<X, $$UnwrapDeepArray<T>> : $$UnwrapDeepArray<T>>[] :
   K extends keyof O ?
   O[K] extends $$AnyFrag ?
   $<F, O[K]> :
@@ -195,7 +195,7 @@ const $$mapWrap = <O, F>(o: () => O, f: F): $$MapWrap<O, F> =>
           $$mapWrap(() => o()[k], f) :
           $(f, o()[k]) :
         // @ts-ignore
-        (a: any) => ("$" in o() ? o().$(a) : a).flat(Infinity).map((a: any) => $(f, a))
+        (...a: any) => ("$" in o() ? o().$(...a) : a).flat(Infinity).map((a: any) => $(f, a))
     ),
   })
 

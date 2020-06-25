@@ -14,7 +14,7 @@ const frag = [
   Book.id,
   Book.categories,
   Book.author.name,
-  ...Book.author.$([Author.id, Author.books.title])
+  Book.author.$(Author.id, Author.books.title)
 ];
 const result = gqx.query.getBook({ id: "id" }, frag);
 
