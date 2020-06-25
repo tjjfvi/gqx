@@ -7,7 +7,7 @@ if(!0) throw new Error("boilerplate.ts should not be imported")
 
 /* --- */
 
-import { $$Scalars } from "./scalars.ts";
+import { $$Scalars } from "./scalars";
 
 export interface $<F, L> { readonly f: F; readonly l: L }
 export const $ = <F, L>(f: F, l: L) => ({ f, l });
