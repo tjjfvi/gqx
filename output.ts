@@ -69,9 +69,10 @@ type _$$Result<O extends _$$ObjectTypeInfo, F extends O["Frag"]> = (
   Pick<$$InflateObjectType<O, __$$Result<O, F>>, O["PropName"][Extract<F, string> | Extract<F, { f: string }>["f"]]>
 )
 
-export type $$Result<O extends $$ObjectType, F extends $$ObjectTypeInfoMap[O]["Frag"]> = (
-  _$$Result<$$ObjectTypeInfoMap[O], F>
-)
+export type $$Result<O extends $$ObjectType, F extends $$ObjectTypeInfoMap[O]["Frag"]> =
+  $$Expand<_$$Result<$$ObjectTypeInfoMap[O], F>>
+
+export type $$Expand<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
 
 export type _$$ObjectTypeInfo = $$ObjectTypeInfo<any, any, any, any, any, any, any, any, any, any>;
 

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { Book, Author, $$GqxReturn, $$AnyProp, $$Frag, $$Input, $$Output, $$generateObject  } from "./output";
+import { Book, Author, $$GqxReturn, $$AnyProp, $$Frag, $$Input, $$Output, $$generateObject } from "./output";
 
 type GqxOut_<I extends $$AnyProp> = <T extends $$Frag<I>>(input: $$Input<I>, frag: T) => $$Output<I, T>;
 
