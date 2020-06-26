@@ -6,21 +6,21 @@ import indent from "../indent";
 export default (obj: Obj) => {
   const typeofType = `\n\ntype typeof$${obj.type} = typeof ${obj.type}`
 
-  const fragCast = `const ${obj.type}$ = <F extends $$DeepArray<${obj.type}$>>(...frag: F) => [...frag];\n\n`
+  const fragCast = `const ${obj.type}$$ = <F extends $$DeepArray<${obj.type}$>>(...frag: F): F[number][] => frag;\n\n`
 
   const shallowObj = genObj(
     obj.shallowProps,
     p => stringifyId(p.id),
-    indent`$: ${obj.type}$,\n`
+    indent`$: ${obj.type}$$,\n`
   ) + " as const";
 
   const deepType = genObj(obj.deepProps, p =>
     `$$MapWrap<typeof$${p.type}, ${stringifyId(p.id)}>`,
-  obj.shallowProps.length ? "" : indent`$: typeof ${obj.type}$,\n`);
+  obj.shallowProps.length ? "" : indent`$: typeof ${obj.type}$$,\n`);
 
   const deepObj = genObj(obj.deepProps, p =>
     `$$mapWrap(() => ${p.type}, ${stringifyId(p.id)})`,
-  obj.shallowProps.length ? indent`..._${obj.type},\n` : indent`$: ${obj.type}$,\n`);
+  obj.shallowProps.length ? indent`..._${obj.type},\n` : indent`$: ${obj.type}$$,\n`);
 
   if(!obj.deepProps.length)
     return fragCast + `export const ${obj.type} = ${shallowObj};` + typeofType;
