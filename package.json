@@ -1,6 +1,6 @@
 {
   "name": "@gqx/core",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "",
   "main": "dist/src/index.js",
   "dependencies": {
