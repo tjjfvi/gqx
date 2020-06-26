@@ -3,7 +3,8 @@ import {
   parse,
   InputValueDefinitionNode,
   FieldDefinitionNode,
-  EnumValueDefinitionNode
+  EnumValueDefinitionNode,
+  DirectiveNode
 } from "graphql";
 import stringifyEnumTypes from "./stringifyEnumTypes";
 import stringifyInputTypes from "./stringifyInputTypes";
@@ -11,8 +12,10 @@ import stringifyObjectTypes from "./stringifyObjectTypes";
 import stringifyOperations from "./stringifyOperations";
 import stringifyBoilerplate from "./stringifyBoilerplate";
 import groupDefinitions from "./groupDefinitions";
+import { stringifyTypeDirectives } from "./stringifyTypeDirectives";
 
 interface Context {
+  typeDirectives: Record<string, DirectiveNode[]>;
   inputTypes: { [k: string]: InputValueDefinitionNode[] };
   enumTypes: { [k: string]: EnumValueDefinitionNode[] };
   objectTypes: { [k: string]: FieldDefinitionNode[] };
@@ -30,6 +33,7 @@ export default ({ schema }: { schema: string }) => {
     enumTypes: {},
     inputTypes: {},
     objectTypes: {},
+    typeDirectives: {},
   };
 
   groupDefinitions(ctx, ast.definitions);
@@ -41,6 +45,7 @@ export default ({ schema }: { schema: string }) => {
     stringifyInputTypes(ctx),
     stringifyObjectTypes(ctx),
     stringifyOperations(ctx),
+    stringifyTypeDirectives(ctx),
     "",
   ].join("\n\n").replace(/\n\n\n+/g, "\n\n");
 

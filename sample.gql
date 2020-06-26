@@ -30,7 +30,9 @@ input BookFilter {
     categories: [Category!]
 }
 
-type Author {
+directive @testOnAuthor on OBJECT
+
+type Author @testOnAuthor {
     id: ID!
     name: String!
     books: [Book!]!

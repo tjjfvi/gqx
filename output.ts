@@ -192,9 +192,9 @@ const $$mapWrap = <O, F>(o: () => O, f: F): $$MapWrap<O, F> =>
   new Proxy(Object.create(null), {
     get: (t, k: string) => t[k] || (t[k] =
       k !== "$" ?
-        o()[k].$ ?
-          $$mapWrap(() => o()[k], f) :
-          $(f, o()[k]) :
+        (o as any)()[k].$ ?
+          $$mapWrap(() => (o as any)()[k], f) :
+          $(f, (o as any)()[k]) :
         // @ts-ignore
         (...a: any) => ("$" in o() ? o().$(...a) : a).flat(Infinity).map((a: any) => $(f, a))
     ),
@@ -207,7 +207,7 @@ export const $$reconstruct = <I extends $$AnyProp>(id: I, input: $$Input<I>, pro
   const frag = genFrag(subs);
   const inputKeys = Object.keys(input);
   const inputDef = inputKeys.length ? `(${inputKeys.map(k =>
-    `$${k}: ${$$objectTypeInfoMap[id.split("$")[0]].inputTypeStrings[id][k]}`
+    `$${k}: ${($$objectTypeInfoMap as any)[id.split("$")[0]].inputTypeStrings[id][k]}`
   ).join(", ")})` : "";
   const inputPass = inputKeys.length ? `(${inputKeys.map(k =>
     `${k}: $${k}`
@@ -215,7 +215,7 @@ export const $$reconstruct = <I extends $$AnyProp>(id: I, input: $$Input<I>, pro
   const request = `${id.split("$")[0].toLowerCase()}${inputDef} { ${id.split("$")[1]}${inputPass}${frag} }`;
   return request;
 
-  function genFrag(subs: Subs){
+  function genFrag(subs: Subs): string{
     return (
       Object.keys(subs).length ?
         `{ ${Object.entries(subs).map(([k, v]) => v === true ? k : k + " " + genFrag(v)).join(" ")} }` :
@@ -223,19 +223,19 @@ export const $$reconstruct = <I extends $$AnyProp>(id: I, input: $$Input<I>, pro
     );
   }
 
-  function populateSubs(prop: $$AnyFrag | $$DeepArray<$$AnyFrag>, subs: Subs | true){
+  function populateSubs(prop: $$AnyFrag | $$DeepArray<$$AnyFrag>, subs: Subs | true): void{
     if(prop instanceof Array)
-      return prop.map(p => populateSubs(p, subs));
-    if(subs === true)
+      prop.map(p => populateSubs(p, subs));
+    else if(subs === true)
       return;
-    if(typeof prop === "string")
-      return subs[prop.split("$")[1]] = true;
-    const name = prop.f.split("$")[1];
-    populateSubs(prop.l, subs[name] = (subs[name] || {}));
+    else if(typeof prop === "string")
+      subs[prop.split("$")[1]] = true;
+    else {
+      const name = prop.f.split("$")[1];
+      populateSubs(prop.l, subs[name] = (subs[name] || {}));
+    }
   }
 }
-
-/* --- End Boilerplate --- */
 
 export type Category = (
   | "Childrens"
@@ -556,4 +556,15 @@ export const $$generateObject = <R extends $$GqxReturn>(f: $$GqxImpl<R>) => ({
     listBooks: f("Query$listBooks"),
   },
 })
+
+export type $$TypeDirectives = typeof $$typeDirectives;
+export const $$typeDirectives = {
+  Query: {},
+  Book: {},
+  Author: {
+    testOnAuthor: {},
+  },
+  Category: {},
+  Language: {},
+}
 
