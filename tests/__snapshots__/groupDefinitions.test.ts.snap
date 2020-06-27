@@ -4,8 +4,8 @@ exports[` 1`] = `
 Object {
   "enumTypes": Array [
     1,
-    1,
-    1,
+    2,
+    2,
     26,
   ],
   "inputTypes": Array [
@@ -43,6 +43,23 @@ Object {
             "start": 659,
           },
           "value": "FirstPost",
+        },
+      },
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 711,
+          "start": 701,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 711,
+            "start": 701,
+          },
+          "value": "SecondPost",
         },
       },
     ],
@@ -491,6 +508,23 @@ Object {
       },
     ],
     "PreextendedEnum": Array [
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumValueDefinition",
+        "loc": Object {
+          "end": 756,
+          "start": 747,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 756,
+            "start": 747,
+          },
+          "value": "SecondPre",
+        },
+      },
       Object {
         "description": undefined,
         "directives": Array [],
@@ -1144,5 +1178,15 @@ Object {
     ],
   },
   "operations": Array [],
+  "typeDirectives": Object {
+    "ExtendedEnum": Array [],
+    "ExtendedObject": Array [],
+    "ManyEnum": Array [],
+    "ManyObject": Array [],
+    "PreextendedEnum": Array [],
+    "PreextendedObject": Array [],
+    "UnextendedEnum": Array [],
+    "UnextendedObject": Array [],
+  },
 }
 `;

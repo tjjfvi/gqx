@@ -23,6 +23,26 @@ Array [
     "type": "DeepOnly",
   },
   Object {
+    "prop": "noDirectives",
+    "type": "Query",
+  },
+  Object {
+    "prop": "oneDirective",
+    "type": "Query",
+  },
+  Object {
+    "prop": "multDirectivesArgs",
+    "type": "Query",
+  },
+  Object {
+    "prop": "multDirectivesNullArgs",
+    "type": "Query",
+  },
+  Object {
+    "prop": "multDirectivesNoArgs",
+    "type": "Query",
+  },
+  Object {
     "prop": "id",
     "type": "Recursive",
   },
@@ -54,6 +74,11 @@ Array [
     "s": 0,
   },
   Object {
+    "d": 4,
+    "n": "Query",
+    "s": 1,
+  },
+  Object {
     "d": 1,
     "n": "Recursive",
     "s": 1,
@@ -71,33 +96,105 @@ Array [
   Object {
     "deepProps": Array [
       Object {
+        "args": Array [],
+        "directives": Array [],
         "id": Object {
           "prop": "left",
           "type": "BinaryTree",
         },
+        "loc": Object {
+          "end": 1066,
+          "start": 1050,
+        },
         "shallow": false,
         "type": "BinaryTree",
         "wrap": [Function],
+        "wrapHKT": "$$Optional<$$Identity>",
       },
       Object {
+        "args": Array [],
+        "directives": Array [],
         "id": Object {
           "prop": "right",
           "type": "BinaryTree",
         },
+        "loc": Object {
+          "end": 1086,
+          "start": 1069,
+        },
         "shallow": false,
         "type": "BinaryTree",
         "wrap": [Function],
+        "wrapHKT": "$$Optional<$$Identity>",
       },
     ],
-    "shallowProps": Array [
+    "isBase": false,
+    "props": Array [
       Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
+          "prop": "left",
+          "type": "BinaryTree",
+        },
+        "loc": Object {
+          "end": 1066,
+          "start": 1050,
+        },
+        "shallow": false,
+        "type": "BinaryTree",
+        "wrap": [Function],
+        "wrapHKT": "$$Optional<$$Identity>",
+      },
+      Object {
+        "args": Array [],
+        "directives": Array [],
         "id": Object {
           "prop": "node",
           "type": "BinaryTree",
         },
+        "loc": Object {
+          "end": 1047,
+          "start": 1034,
+        },
         "shallow": true,
         "type": "String",
         "wrap": [Function],
+        "wrapHKT": "$$Identity",
+      },
+      Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
+          "prop": "right",
+          "type": "BinaryTree",
+        },
+        "loc": Object {
+          "end": 1086,
+          "start": 1069,
+        },
+        "shallow": false,
+        "type": "BinaryTree",
+        "wrap": [Function],
+        "wrapHKT": "$$Optional<$$Identity>",
+      },
+    ],
+    "shallowProps": Array [
+      Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
+          "prop": "node",
+          "type": "BinaryTree",
+        },
+        "loc": Object {
+          "end": 1047,
+          "start": 1034,
+        },
+        "shallow": true,
+        "type": "String",
+        "wrap": [Function],
+        "wrapHKT": "$$Identity",
       },
     ],
     "type": "BinaryTree",
@@ -105,22 +202,71 @@ Array [
   Object {
     "deepProps": Array [
       Object {
+        "args": Array [],
+        "directives": Array [],
         "id": Object {
           "prop": "a",
           "type": "DeepOnly",
         },
-        "shallow": false,
-        "type": "ShallowOnly",
-        "wrap": [Function],
-      },
-      Object {
-        "id": Object {
-          "prop": "b",
-          "type": "DeepOnly",
+        "loc": Object {
+          "end": 941,
+          "start": 926,
         },
         "shallow": false,
         "type": "ShallowOnly",
         "wrap": [Function],
+        "wrapHKT": "$$Identity",
+      },
+      Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
+          "prop": "b",
+          "type": "DeepOnly",
+        },
+        "loc": Object {
+          "end": 961,
+          "start": 944,
+        },
+        "shallow": false,
+        "type": "ShallowOnly",
+        "wrap": [Function],
+        "wrapHKT": "$$Array<$$Optional<$$Identity>>",
+      },
+    ],
+    "isBase": false,
+    "props": Array [
+      Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
+          "prop": "a",
+          "type": "DeepOnly",
+        },
+        "loc": Object {
+          "end": 941,
+          "start": 926,
+        },
+        "shallow": false,
+        "type": "ShallowOnly",
+        "wrap": [Function],
+        "wrapHKT": "$$Identity",
+      },
+      Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
+          "prop": "b",
+          "type": "DeepOnly",
+        },
+        "loc": Object {
+          "end": 961,
+          "start": 944,
+        },
+        "shallow": false,
+        "type": "ShallowOnly",
+        "wrap": [Function],
+        "wrapHKT": "$$Array<$$Optional<$$Identity>>",
       },
     ],
     "shallowProps": Array [],
@@ -129,48 +275,1842 @@ Array [
   Object {
     "deepProps": Array [
       Object {
+        "args": Array [],
+        "directives": Array [
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 416,
+                  "start": 407,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 408,
+                    "start": 407,
+                  },
+                  "value": "a",
+                },
+                "value": Object {
+                  "block": false,
+                  "kind": "StringValue",
+                  "loc": Object {
+                    "end": 416,
+                    "start": 410,
+                  },
+                  "value": "test",
+                },
+              },
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 426,
+                  "start": 418,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 419,
+                    "start": 418,
+                  },
+                  "value": "b",
+                },
+                "value": Object {
+                  "kind": "IntValue",
+                  "loc": Object {
+                    "end": 426,
+                    "start": 421,
+                  },
+                  "value": "12345",
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 427,
+              "start": 396,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 406,
+                "start": 397,
+              },
+              "value": "scalarArg",
+            },
+          },
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 476,
+                  "start": 440,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 441,
+                    "start": 440,
+                  },
+                  "value": "a",
+                },
+                "value": Object {
+                  "fields": Array [
+                    Object {
+                      "kind": "ObjectField",
+                      "loc": Object {
+                        "end": 449,
+                        "start": 445,
+                      },
+                      "name": Object {
+                        "kind": "Name",
+                        "loc": Object {
+                          "end": 446,
+                          "start": 445,
+                        },
+                        "value": "x",
+                      },
+                      "value": Object {
+                        "kind": "IntValue",
+                        "loc": Object {
+                          "end": 449,
+                          "start": 448,
+                        },
+                        "value": "5",
+                      },
+                    },
+                    Object {
+                      "kind": "ObjectField",
+                      "loc": Object {
+                        "end": 461,
+                        "start": 451,
+                      },
+                      "name": Object {
+                        "kind": "Name",
+                        "loc": Object {
+                          "end": 452,
+                          "start": 451,
+                        },
+                        "value": "y",
+                      },
+                      "value": Object {
+                        "kind": "ListValue",
+                        "loc": Object {
+                          "end": 461,
+                          "start": 454,
+                        },
+                        "values": Array [
+                          Object {
+                            "kind": "IntValue",
+                            "loc": Object {
+                              "end": 456,
+                              "start": 455,
+                            },
+                            "value": "1",
+                          },
+                          Object {
+                            "kind": "IntValue",
+                            "loc": Object {
+                              "end": 458,
+                              "start": 457,
+                            },
+                            "value": "2",
+                          },
+                          Object {
+                            "kind": "IntValue",
+                            "loc": Object {
+                              "end": 460,
+                              "start": 459,
+                            },
+                            "value": "3",
+                          },
+                        ],
+                      },
+                    },
+                    Object {
+                      "kind": "ObjectField",
+                      "loc": Object {
+                        "end": 474,
+                        "start": 463,
+                      },
+                      "name": Object {
+                        "kind": "Name",
+                        "loc": Object {
+                          "end": 464,
+                          "start": 463,
+                        },
+                        "value": "z",
+                      },
+                      "value": Object {
+                        "fields": Array [
+                          Object {
+                            "kind": "ObjectField",
+                            "loc": Object {
+                              "end": 472,
+                              "start": 468,
+                            },
+                            "name": Object {
+                              "kind": "Name",
+                              "loc": Object {
+                                "end": 469,
+                                "start": 468,
+                              },
+                              "value": "x",
+                            },
+                            "value": Object {
+                              "kind": "IntValue",
+                              "loc": Object {
+                                "end": 472,
+                                "start": 471,
+                              },
+                              "value": "5",
+                            },
+                          },
+                        ],
+                        "kind": "ObjectValue",
+                        "loc": Object {
+                          "end": 474,
+                          "start": 466,
+                        },
+                      },
+                    },
+                  ],
+                  "kind": "ObjectValue",
+                  "loc": Object {
+                    "end": 476,
+                    "start": 443,
+                  },
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 477,
+              "start": 430,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 439,
+                "start": 431,
+              },
+              "value": "inputArg",
+            },
+          },
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 515,
+                  "start": 494,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 495,
+                    "start": 494,
+                  },
+                  "value": "a",
+                },
+                "value": Object {
+                  "kind": "ListValue",
+                  "loc": Object {
+                    "end": 515,
+                    "start": 497,
+                  },
+                  "values": Array [
+                    Object {
+                      "block": false,
+                      "kind": "StringValue",
+                      "loc": Object {
+                        "end": 501,
+                        "start": 498,
+                      },
+                      "value": "a",
+                    },
+                    Object {
+                      "block": false,
+                      "kind": "StringValue",
+                      "loc": Object {
+                        "end": 505,
+                        "start": 502,
+                      },
+                      "value": "b",
+                    },
+                    Object {
+                      "block": false,
+                      "kind": "StringValue",
+                      "loc": Object {
+                        "end": 509,
+                        "start": 506,
+                      },
+                      "value": "c",
+                    },
+                    Object {
+                      "kind": "NullValue",
+                      "loc": Object {
+                        "end": 514,
+                        "start": 510,
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 516,
+              "start": 480,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 493,
+                "start": 481,
+              },
+              "value": "scalarArrArg",
+            },
+          },
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 560,
+                  "start": 532,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 533,
+                    "start": 532,
+                  },
+                  "value": "a",
+                },
+                "value": Object {
+                  "kind": "ListValue",
+                  "loc": Object {
+                    "end": 560,
+                    "start": 535,
+                  },
+                  "values": Array [
+                    Object {
+                      "fields": Array [
+                        Object {
+                          "kind": "ObjectField",
+                          "loc": Object {
+                            "end": 540,
+                            "start": 537,
+                          },
+                          "name": Object {
+                            "kind": "Name",
+                            "loc": Object {
+                              "end": 538,
+                              "start": 537,
+                            },
+                            "value": "x",
+                          },
+                          "value": Object {
+                            "kind": "IntValue",
+                            "loc": Object {
+                              "end": 540,
+                              "start": 539,
+                            },
+                            "value": "5",
+                          },
+                        },
+                      ],
+                      "kind": "ObjectValue",
+                      "loc": Object {
+                        "end": 541,
+                        "start": 536,
+                      },
+                    },
+                    Object {
+                      "fields": Array [
+                        Object {
+                          "kind": "ObjectField",
+                          "loc": Object {
+                            "end": 546,
+                            "start": 543,
+                          },
+                          "name": Object {
+                            "kind": "Name",
+                            "loc": Object {
+                              "end": 544,
+                              "start": 543,
+                            },
+                            "value": "x",
+                          },
+                          "value": Object {
+                            "kind": "IntValue",
+                            "loc": Object {
+                              "end": 546,
+                              "start": 545,
+                            },
+                            "value": "6",
+                          },
+                        },
+                      ],
+                      "kind": "ObjectValue",
+                      "loc": Object {
+                        "end": 547,
+                        "start": 542,
+                      },
+                    },
+                    Object {
+                      "fields": Array [
+                        Object {
+                          "kind": "ObjectField",
+                          "loc": Object {
+                            "end": 558,
+                            "start": 549,
+                          },
+                          "name": Object {
+                            "kind": "Name",
+                            "loc": Object {
+                              "end": 550,
+                              "start": 549,
+                            },
+                            "value": "y",
+                          },
+                          "value": Object {
+                            "kind": "ListValue",
+                            "loc": Object {
+                              "end": 558,
+                              "start": 551,
+                            },
+                            "values": Array [
+                              Object {
+                                "kind": "IntValue",
+                                "loc": Object {
+                                  "end": 553,
+                                  "start": 552,
+                                },
+                                "value": "1",
+                              },
+                              Object {
+                                "kind": "IntValue",
+                                "loc": Object {
+                                  "end": 555,
+                                  "start": 554,
+                                },
+                                "value": "2",
+                              },
+                              Object {
+                                "kind": "IntValue",
+                                "loc": Object {
+                                  "end": 557,
+                                  "start": 556,
+                                },
+                                "value": "3",
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                      "kind": "ObjectValue",
+                      "loc": Object {
+                        "end": 559,
+                        "start": 548,
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 561,
+              "start": 519,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 531,
+                "start": 520,
+              },
+              "value": "inputArrArg",
+            },
+          },
+        ],
         "id": Object {
-          "prop": "next",
-          "type": "Recursive",
+          "prop": "multDirectivesArgs",
+          "type": "Query",
+        },
+        "loc": Object {
+          "end": 561,
+          "start": 362,
+        },
+        "shallow": false,
+        "type": "BinaryTree",
+        "wrap": [Function],
+        "wrapHKT": "$$Identity",
+      },
+      Object {
+        "args": Array [],
+        "directives": Array [
+          Object {
+            "arguments": Array [],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 744,
+              "start": 737,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 744,
+                "start": 738,
+              },
+              "value": "noArgs",
+            },
+          },
+          Object {
+            "arguments": Array [],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 757,
+              "start": 747,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 757,
+                "start": 748,
+              },
+              "value": "scalarArg",
+            },
+          },
+          Object {
+            "arguments": Array [],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 769,
+              "start": 760,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 769,
+                "start": 761,
+              },
+              "value": "inputArg",
+            },
+          },
+          Object {
+            "arguments": Array [],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 785,
+              "start": 772,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 785,
+                "start": 773,
+              },
+              "value": "scalarArrArg",
+            },
+          },
+          Object {
+            "arguments": Array [],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 800,
+              "start": 788,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 800,
+                "start": 789,
+              },
+              "value": "inputArrArg",
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "multDirectivesNoArgs",
+          "type": "Query",
+        },
+        "loc": Object {
+          "end": 800,
+          "start": 701,
+        },
+        "shallow": false,
+        "type": "ShallowOnly",
+        "wrap": [Function],
+        "wrapHKT": "$$Optional<$$Identity>",
+      },
+      Object {
+        "args": Array [],
+        "directives": Array [
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 618,
+                  "start": 611,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 612,
+                    "start": 611,
+                  },
+                  "value": "a",
+                },
+                "value": Object {
+                  "kind": "NullValue",
+                  "loc": Object {
+                    "end": 618,
+                    "start": 614,
+                  },
+                },
+              },
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 627,
+                  "start": 620,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 621,
+                    "start": 620,
+                  },
+                  "value": "b",
+                },
+                "value": Object {
+                  "kind": "NullValue",
+                  "loc": Object {
+                    "end": 627,
+                    "start": 623,
+                  },
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 628,
+              "start": 600,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 610,
+                "start": 601,
+              },
+              "value": "scalarArg",
+            },
+          },
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 648,
+                  "start": 641,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 642,
+                    "start": 641,
+                  },
+                  "value": "a",
+                },
+                "value": Object {
+                  "kind": "NullValue",
+                  "loc": Object {
+                    "end": 648,
+                    "start": 644,
+                  },
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 649,
+              "start": 631,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 640,
+                "start": 632,
+              },
+              "value": "inputArg",
+            },
+          },
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 673,
+                  "start": 666,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 667,
+                    "start": 666,
+                  },
+                  "value": "a",
+                },
+                "value": Object {
+                  "kind": "NullValue",
+                  "loc": Object {
+                    "end": 673,
+                    "start": 669,
+                  },
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 674,
+              "start": 652,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 665,
+                "start": 653,
+              },
+              "value": "scalarArrArg",
+            },
+          },
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 697,
+                  "start": 690,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 691,
+                    "start": 690,
+                  },
+                  "value": "a",
+                },
+                "value": Object {
+                  "kind": "NullValue",
+                  "loc": Object {
+                    "end": 697,
+                    "start": 693,
+                  },
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 698,
+              "start": 677,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 689,
+                "start": 678,
+              },
+              "value": "inputArrArg",
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "multDirectivesNullArgs",
+          "type": "Query",
+        },
+        "loc": Object {
+          "end": 698,
+          "start": 564,
+        },
+        "shallow": false,
+        "type": "DeepOnly",
+        "wrap": [Function],
+        "wrapHKT": "$$Identity",
+      },
+      Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
+          "prop": "noDirectives",
+          "type": "Query",
+        },
+        "loc": Object {
+          "end": 312,
+          "start": 285,
         },
         "shallow": false,
         "type": "Recursive",
         "wrap": [Function],
+        "wrapHKT": "$$Array<$$Identity>",
+      },
+    ],
+    "isBase": false,
+    "props": Array [
+      Object {
+        "args": Array [],
+        "directives": Array [
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 416,
+                  "start": 407,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 408,
+                    "start": 407,
+                  },
+                  "value": "a",
+                },
+                "value": Object {
+                  "block": false,
+                  "kind": "StringValue",
+                  "loc": Object {
+                    "end": 416,
+                    "start": 410,
+                  },
+                  "value": "test",
+                },
+              },
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 426,
+                  "start": 418,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 419,
+                    "start": 418,
+                  },
+                  "value": "b",
+                },
+                "value": Object {
+                  "kind": "IntValue",
+                  "loc": Object {
+                    "end": 426,
+                    "start": 421,
+                  },
+                  "value": "12345",
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 427,
+              "start": 396,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 406,
+                "start": 397,
+              },
+              "value": "scalarArg",
+            },
+          },
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 476,
+                  "start": 440,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 441,
+                    "start": 440,
+                  },
+                  "value": "a",
+                },
+                "value": Object {
+                  "fields": Array [
+                    Object {
+                      "kind": "ObjectField",
+                      "loc": Object {
+                        "end": 449,
+                        "start": 445,
+                      },
+                      "name": Object {
+                        "kind": "Name",
+                        "loc": Object {
+                          "end": 446,
+                          "start": 445,
+                        },
+                        "value": "x",
+                      },
+                      "value": Object {
+                        "kind": "IntValue",
+                        "loc": Object {
+                          "end": 449,
+                          "start": 448,
+                        },
+                        "value": "5",
+                      },
+                    },
+                    Object {
+                      "kind": "ObjectField",
+                      "loc": Object {
+                        "end": 461,
+                        "start": 451,
+                      },
+                      "name": Object {
+                        "kind": "Name",
+                        "loc": Object {
+                          "end": 452,
+                          "start": 451,
+                        },
+                        "value": "y",
+                      },
+                      "value": Object {
+                        "kind": "ListValue",
+                        "loc": Object {
+                          "end": 461,
+                          "start": 454,
+                        },
+                        "values": Array [
+                          Object {
+                            "kind": "IntValue",
+                            "loc": Object {
+                              "end": 456,
+                              "start": 455,
+                            },
+                            "value": "1",
+                          },
+                          Object {
+                            "kind": "IntValue",
+                            "loc": Object {
+                              "end": 458,
+                              "start": 457,
+                            },
+                            "value": "2",
+                          },
+                          Object {
+                            "kind": "IntValue",
+                            "loc": Object {
+                              "end": 460,
+                              "start": 459,
+                            },
+                            "value": "3",
+                          },
+                        ],
+                      },
+                    },
+                    Object {
+                      "kind": "ObjectField",
+                      "loc": Object {
+                        "end": 474,
+                        "start": 463,
+                      },
+                      "name": Object {
+                        "kind": "Name",
+                        "loc": Object {
+                          "end": 464,
+                          "start": 463,
+                        },
+                        "value": "z",
+                      },
+                      "value": Object {
+                        "fields": Array [
+                          Object {
+                            "kind": "ObjectField",
+                            "loc": Object {
+                              "end": 472,
+                              "start": 468,
+                            },
+                            "name": Object {
+                              "kind": "Name",
+                              "loc": Object {
+                                "end": 469,
+                                "start": 468,
+                              },
+                              "value": "x",
+                            },
+                            "value": Object {
+                              "kind": "IntValue",
+                              "loc": Object {
+                                "end": 472,
+                                "start": 471,
+                              },
+                              "value": "5",
+                            },
+                          },
+                        ],
+                        "kind": "ObjectValue",
+                        "loc": Object {
+                          "end": 474,
+                          "start": 466,
+                        },
+                      },
+                    },
+                  ],
+                  "kind": "ObjectValue",
+                  "loc": Object {
+                    "end": 476,
+                    "start": 443,
+                  },
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 477,
+              "start": 430,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 439,
+                "start": 431,
+              },
+              "value": "inputArg",
+            },
+          },
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 515,
+                  "start": 494,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 495,
+                    "start": 494,
+                  },
+                  "value": "a",
+                },
+                "value": Object {
+                  "kind": "ListValue",
+                  "loc": Object {
+                    "end": 515,
+                    "start": 497,
+                  },
+                  "values": Array [
+                    Object {
+                      "block": false,
+                      "kind": "StringValue",
+                      "loc": Object {
+                        "end": 501,
+                        "start": 498,
+                      },
+                      "value": "a",
+                    },
+                    Object {
+                      "block": false,
+                      "kind": "StringValue",
+                      "loc": Object {
+                        "end": 505,
+                        "start": 502,
+                      },
+                      "value": "b",
+                    },
+                    Object {
+                      "block": false,
+                      "kind": "StringValue",
+                      "loc": Object {
+                        "end": 509,
+                        "start": 506,
+                      },
+                      "value": "c",
+                    },
+                    Object {
+                      "kind": "NullValue",
+                      "loc": Object {
+                        "end": 514,
+                        "start": 510,
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 516,
+              "start": 480,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 493,
+                "start": 481,
+              },
+              "value": "scalarArrArg",
+            },
+          },
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 560,
+                  "start": 532,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 533,
+                    "start": 532,
+                  },
+                  "value": "a",
+                },
+                "value": Object {
+                  "kind": "ListValue",
+                  "loc": Object {
+                    "end": 560,
+                    "start": 535,
+                  },
+                  "values": Array [
+                    Object {
+                      "fields": Array [
+                        Object {
+                          "kind": "ObjectField",
+                          "loc": Object {
+                            "end": 540,
+                            "start": 537,
+                          },
+                          "name": Object {
+                            "kind": "Name",
+                            "loc": Object {
+                              "end": 538,
+                              "start": 537,
+                            },
+                            "value": "x",
+                          },
+                          "value": Object {
+                            "kind": "IntValue",
+                            "loc": Object {
+                              "end": 540,
+                              "start": 539,
+                            },
+                            "value": "5",
+                          },
+                        },
+                      ],
+                      "kind": "ObjectValue",
+                      "loc": Object {
+                        "end": 541,
+                        "start": 536,
+                      },
+                    },
+                    Object {
+                      "fields": Array [
+                        Object {
+                          "kind": "ObjectField",
+                          "loc": Object {
+                            "end": 546,
+                            "start": 543,
+                          },
+                          "name": Object {
+                            "kind": "Name",
+                            "loc": Object {
+                              "end": 544,
+                              "start": 543,
+                            },
+                            "value": "x",
+                          },
+                          "value": Object {
+                            "kind": "IntValue",
+                            "loc": Object {
+                              "end": 546,
+                              "start": 545,
+                            },
+                            "value": "6",
+                          },
+                        },
+                      ],
+                      "kind": "ObjectValue",
+                      "loc": Object {
+                        "end": 547,
+                        "start": 542,
+                      },
+                    },
+                    Object {
+                      "fields": Array [
+                        Object {
+                          "kind": "ObjectField",
+                          "loc": Object {
+                            "end": 558,
+                            "start": 549,
+                          },
+                          "name": Object {
+                            "kind": "Name",
+                            "loc": Object {
+                              "end": 550,
+                              "start": 549,
+                            },
+                            "value": "y",
+                          },
+                          "value": Object {
+                            "kind": "ListValue",
+                            "loc": Object {
+                              "end": 558,
+                              "start": 551,
+                            },
+                            "values": Array [
+                              Object {
+                                "kind": "IntValue",
+                                "loc": Object {
+                                  "end": 553,
+                                  "start": 552,
+                                },
+                                "value": "1",
+                              },
+                              Object {
+                                "kind": "IntValue",
+                                "loc": Object {
+                                  "end": 555,
+                                  "start": 554,
+                                },
+                                "value": "2",
+                              },
+                              Object {
+                                "kind": "IntValue",
+                                "loc": Object {
+                                  "end": 557,
+                                  "start": 556,
+                                },
+                                "value": "3",
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                      "kind": "ObjectValue",
+                      "loc": Object {
+                        "end": 559,
+                        "start": 548,
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 561,
+              "start": 519,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 531,
+                "start": 520,
+              },
+              "value": "inputArrArg",
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "multDirectivesArgs",
+          "type": "Query",
+        },
+        "loc": Object {
+          "end": 561,
+          "start": 362,
+        },
+        "shallow": false,
+        "type": "BinaryTree",
+        "wrap": [Function],
+        "wrapHKT": "$$Identity",
+      },
+      Object {
+        "args": Array [],
+        "directives": Array [
+          Object {
+            "arguments": Array [],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 744,
+              "start": 737,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 744,
+                "start": 738,
+              },
+              "value": "noArgs",
+            },
+          },
+          Object {
+            "arguments": Array [],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 757,
+              "start": 747,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 757,
+                "start": 748,
+              },
+              "value": "scalarArg",
+            },
+          },
+          Object {
+            "arguments": Array [],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 769,
+              "start": 760,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 769,
+                "start": 761,
+              },
+              "value": "inputArg",
+            },
+          },
+          Object {
+            "arguments": Array [],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 785,
+              "start": 772,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 785,
+                "start": 773,
+              },
+              "value": "scalarArrArg",
+            },
+          },
+          Object {
+            "arguments": Array [],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 800,
+              "start": 788,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 800,
+                "start": 789,
+              },
+              "value": "inputArrArg",
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "multDirectivesNoArgs",
+          "type": "Query",
+        },
+        "loc": Object {
+          "end": 800,
+          "start": 701,
+        },
+        "shallow": false,
+        "type": "ShallowOnly",
+        "wrap": [Function],
+        "wrapHKT": "$$Optional<$$Identity>",
+      },
+      Object {
+        "args": Array [],
+        "directives": Array [
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 618,
+                  "start": 611,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 612,
+                    "start": 611,
+                  },
+                  "value": "a",
+                },
+                "value": Object {
+                  "kind": "NullValue",
+                  "loc": Object {
+                    "end": 618,
+                    "start": 614,
+                  },
+                },
+              },
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 627,
+                  "start": 620,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 621,
+                    "start": 620,
+                  },
+                  "value": "b",
+                },
+                "value": Object {
+                  "kind": "NullValue",
+                  "loc": Object {
+                    "end": 627,
+                    "start": 623,
+                  },
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 628,
+              "start": 600,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 610,
+                "start": 601,
+              },
+              "value": "scalarArg",
+            },
+          },
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 648,
+                  "start": 641,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 642,
+                    "start": 641,
+                  },
+                  "value": "a",
+                },
+                "value": Object {
+                  "kind": "NullValue",
+                  "loc": Object {
+                    "end": 648,
+                    "start": 644,
+                  },
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 649,
+              "start": 631,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 640,
+                "start": 632,
+              },
+              "value": "inputArg",
+            },
+          },
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 673,
+                  "start": 666,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 667,
+                    "start": 666,
+                  },
+                  "value": "a",
+                },
+                "value": Object {
+                  "kind": "NullValue",
+                  "loc": Object {
+                    "end": 673,
+                    "start": 669,
+                  },
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 674,
+              "start": 652,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 665,
+                "start": 653,
+              },
+              "value": "scalarArrArg",
+            },
+          },
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 697,
+                  "start": 690,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 691,
+                    "start": 690,
+                  },
+                  "value": "a",
+                },
+                "value": Object {
+                  "kind": "NullValue",
+                  "loc": Object {
+                    "end": 697,
+                    "start": 693,
+                  },
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 698,
+              "start": 677,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 689,
+                "start": 678,
+              },
+              "value": "inputArrArg",
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "multDirectivesNullArgs",
+          "type": "Query",
+        },
+        "loc": Object {
+          "end": 698,
+          "start": 564,
+        },
+        "shallow": false,
+        "type": "DeepOnly",
+        "wrap": [Function],
+        "wrapHKT": "$$Identity",
+      },
+      Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
+          "prop": "noDirectives",
+          "type": "Query",
+        },
+        "loc": Object {
+          "end": 312,
+          "start": 285,
+        },
+        "shallow": false,
+        "type": "Recursive",
+        "wrap": [Function],
+        "wrapHKT": "$$Array<$$Identity>",
+      },
+      Object {
+        "args": Array [],
+        "directives": Array [
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 358,
+                  "start": 347,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 348,
+                    "start": 347,
+                  },
+                  "value": "x",
+                },
+                "value": Object {
+                  "block": false,
+                  "kind": "StringValue",
+                  "loc": Object {
+                    "end": 358,
+                    "start": 350,
+                  },
+                  "value": "string",
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 359,
+              "start": 336,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 346,
+                "start": 337,
+              },
+              "value": "scalarArg",
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "oneDirective",
+          "type": "Query",
+        },
+        "loc": Object {
+          "end": 359,
+          "start": 315,
+        },
+        "shallow": true,
+        "type": "String",
+        "wrap": [Function],
+        "wrapHKT": "$$Optional<$$Identity>",
       },
     ],
     "shallowProps": Array [
       Object {
+        "args": Array [],
+        "directives": Array [
+          Object {
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "loc": Object {
+                  "end": 358,
+                  "start": 347,
+                },
+                "name": Object {
+                  "kind": "Name",
+                  "loc": Object {
+                    "end": 348,
+                    "start": 347,
+                  },
+                  "value": "x",
+                },
+                "value": Object {
+                  "block": false,
+                  "kind": "StringValue",
+                  "loc": Object {
+                    "end": 358,
+                    "start": 350,
+                  },
+                  "value": "string",
+                },
+              },
+            ],
+            "kind": "Directive",
+            "loc": Object {
+              "end": 359,
+              "start": 336,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 346,
+                "start": 337,
+              },
+              "value": "scalarArg",
+            },
+          },
+        ],
+        "id": Object {
+          "prop": "oneDirective",
+          "type": "Query",
+        },
+        "loc": Object {
+          "end": 359,
+          "start": 315,
+        },
+        "shallow": true,
+        "type": "String",
+        "wrap": [Function],
+        "wrapHKT": "$$Optional<$$Identity>",
+      },
+    ],
+    "type": "Query",
+  },
+  Object {
+    "deepProps": Array [
+      Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
+          "prop": "next",
+          "type": "Recursive",
+        },
+        "loc": Object {
+          "end": 1010,
+          "start": 994,
+        },
+        "shallow": false,
+        "type": "Recursive",
+        "wrap": [Function],
+        "wrapHKT": "$$Identity",
+      },
+    ],
+    "isBase": false,
+    "props": Array [
+      Object {
+        "args": Array [],
+        "directives": Array [],
         "id": Object {
           "prop": "id",
           "type": "Recursive",
         },
+        "loc": Object {
+          "end": 991,
+          "start": 984,
+        },
         "shallow": true,
         "type": "ID",
         "wrap": [Function],
+        "wrapHKT": "$$Identity",
+      },
+      Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
+          "prop": "next",
+          "type": "Recursive",
+        },
+        "loc": Object {
+          "end": 1010,
+          "start": 994,
+        },
+        "shallow": false,
+        "type": "Recursive",
+        "wrap": [Function],
+        "wrapHKT": "$$Identity",
+      },
+    ],
+    "shallowProps": Array [
+      Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
+          "prop": "id",
+          "type": "Recursive",
+        },
+        "loc": Object {
+          "end": 991,
+          "start": 984,
+        },
+        "shallow": true,
+        "type": "ID",
+        "wrap": [Function],
+        "wrapHKT": "$$Identity",
       },
     ],
     "type": "Recursive",
   },
   Object {
     "deepProps": Array [],
-    "shallowProps": Array [
+    "isBase": false,
+    "props": Array [
       Object {
+        "args": Array [],
+        "directives": Array [],
         "id": Object {
           "prop": "a",
           "type": "ShallowOnly",
         },
+        "loc": Object {
+          "end": 891,
+          "start": 881,
+        },
         "shallow": true,
         "type": "String",
         "wrap": [Function],
+        "wrapHKT": "$$Identity",
       },
       Object {
+        "args": Array [],
+        "directives": Array [],
         "id": Object {
           "prop": "b",
           "type": "ShallowOnly",
         },
+        "loc": Object {
+          "end": 904,
+          "start": 894,
+        },
         "shallow": true,
         "type": "Number",
         "wrap": [Function],
+        "wrapHKT": "$$Identity",
+      },
+    ],
+    "shallowProps": Array [
+      Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
+          "prop": "a",
+          "type": "ShallowOnly",
+        },
+        "loc": Object {
+          "end": 891,
+          "start": 881,
+        },
+        "shallow": true,
+        "type": "String",
+        "wrap": [Function],
+        "wrapHKT": "$$Identity",
+      },
+      Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
+          "prop": "b",
+          "type": "ShallowOnly",
+        },
+        "loc": Object {
+          "end": 904,
+          "start": 894,
+        },
+        "shallow": true,
+        "type": "Number",
+        "wrap": [Function],
+        "wrapHKT": "$$Identity",
       },
     ],
     "type": "ShallowOnly",

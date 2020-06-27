@@ -1,5 +1,5 @@
 
-directive @auth(test: BookFilter, test2: [String!]!) on FIELD_DEFINITION
+directive @auth(test: BookFilter, test2: [String!]!) on FIELD_DEFINITION | OBJECT
 
 schema {
   query: Query
@@ -21,7 +21,7 @@ input Cursor {
   limit: Int!
 }
 
-type Book {
+type Book @auth(test: {title:"stuffs"},test2:["bye1","bye2"]) {
   id: ID!
   author: Author!
   title: String!

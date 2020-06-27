@@ -1,4 +1,37 @@
 
+directive @noArgs on FIELD_DEFINITION
+directive @scalarArg(a: String, b: Int) on FIELD_DEFINITION
+directive @inputArg(a: InputType) on FIELD_DEFINITION
+directive @scalarArrArg(a: [String]) on FIELD_DEFINITION
+directive @inputArrArg(a: [InputType]) on FIELD_DEFINITION
+
+type Query {
+  noDirectives: [Recursive!]!
+  oneDirective: String @scalarArg(x: "string")
+  multDirectivesArgs: BinaryTree!
+  @scalarArg(a: "test", b: 12345)
+  @inputArg(a: { x: 5, y: [1,2,3], z: { x: 5 } })
+  @scalarArrArg(a: ["a","b","c",null])
+  @inputArrArg(a: [{x:5},{x:6},{y:[1,2,3]}])
+  multDirectivesNullArgs: DeepOnly!
+  @scalarArg(a: null, b: null)
+  @inputArg(a: null)
+  @scalarArrArg(a: null)
+  @inputArrArg(a: null)
+  multDirectivesNoArgs: ShallowOnly
+  @noArgs
+  @scalarArg
+  @inputArg
+  @scalarArrArg
+  @inputArrArg
+}
+
+input InputType {
+  x: Int
+  y: [Int]
+  z: InputType
+}
+
 type ShallowOnly {
   a: String!
   b: Number!

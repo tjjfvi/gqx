@@ -4,18 +4,21 @@ import { parse } from "graphql";
 import { Context } from "../src";
 import groupDefinitions from "../src/groupDefinitions";
 
+const gqlPath = (name: string) => __dirname + "/gql/" + name + ".gql";
+
 const readGql = (...names: string[]) => names.map(name =>
-  readFileSync(__dirname + "/gql/" + name + ".gql", "utf8")
+  readFileSync(gqlPath(name), "utf8")
 ).join("\n\n\n");
 
 const parseGql = (...names: string[]) => parse(readGql(...names));
 
 const emptyCtx = (): Context => ({
   baseTypes: [],
+  operations: [],
   enumTypes: {},
   inputTypes: {},
   objectTypes: {},
-  operations: [],
+  typeDirectives: {},
 });
 
 const getOperations = (names: string[], ctx = emptyCtx()) => {
@@ -23,6 +26,6 @@ const getOperations = (names: string[], ctx = emptyCtx()) => {
   return ctx;
 }
 
-const utils = { readGql, parseGql, emptyCtx, getOperations };
+const utils = { gqlPath, readGql, parseGql, emptyCtx, getOperations };
 
 export default utils;

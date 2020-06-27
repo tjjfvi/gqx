@@ -1,38 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`stringifyObjectTypes.gql BinaryTree 1`] = `
-"interface __$BinaryTree<F extends BinaryTree$> {
-  node: String,
-  left: (_$BinaryTree<Extract<F, $<typeof BinaryTree$left, BinaryTree$>>[\\"l\\"]> | null),
-  right: (_$BinaryTree<Extract<F, $<typeof BinaryTree$right, BinaryTree$>>[\\"l\\"]> | null),
-}
-type _$BinaryTree<F extends BinaryTree$> = Pick<__$BinaryTree<F>, F[\\"f\\"][\\"prop\\"]>;
-export type $BinaryTree<F extends $$DeepArray<BinaryTree$>> = _$BinaryTree<$$UnwrapDeepArray<F>>"
-`;
+exports[`stringifyObjectTypes.gql BinaryTree 1`] = `"export type $BinaryTree<F extends $$DeepArray<BinaryTree$>> = $$Result<\\"BinaryTree\\", $$UnwrapDeepArray<F>>"`;
 
-exports[`stringifyObjectTypes.gql DeepOnly 1`] = `
-"interface __$DeepOnly<F extends DeepOnly$> {
-  a: _$ShallowOnly<Extract<F, $<typeof DeepOnly$a, ShallowOnly$>>[\\"l\\"]>,
-  b: (_$ShallowOnly<Extract<F, $<typeof DeepOnly$b, ShallowOnly$>>[\\"l\\"]> | null)[],
-}
-type _$DeepOnly<F extends DeepOnly$> = Pick<__$DeepOnly<F>, F[\\"f\\"][\\"prop\\"]>;
-export type $DeepOnly<F extends $$DeepArray<DeepOnly$>> = _$DeepOnly<$$UnwrapDeepArray<F>>"
-`;
+exports[`stringifyObjectTypes.gql DeepOnly 1`] = `"export type $DeepOnly<F extends $$DeepArray<DeepOnly$>> = $$Result<\\"DeepOnly\\", $$UnwrapDeepArray<F>>"`;
 
-exports[`stringifyObjectTypes.gql Recursive 1`] = `
-"interface __$Recursive<F extends Recursive$> {
-  id: ID,
-  next: _$Recursive<Extract<F, $<typeof Recursive$next, Recursive$>>[\\"l\\"]>,
-}
-type _$Recursive<F extends Recursive$> = Pick<__$Recursive<F>, F[\\"f\\"][\\"prop\\"]>;
-export type $Recursive<F extends $$DeepArray<Recursive$>> = _$Recursive<$$UnwrapDeepArray<F>>"
-`;
+exports[`stringifyObjectTypes.gql Query 1`] = `"export type $Query<F extends $$DeepArray<Query$>> = $$Result<\\"Query\\", $$UnwrapDeepArray<F>>"`;
 
-exports[`stringifyObjectTypes.gql ShallowOnly 1`] = `
-"interface __$ShallowOnly<F extends ShallowOnly$> {
-  a: String,
-  b: Number,
-}
-type _$ShallowOnly<F extends ShallowOnly$> = Pick<__$ShallowOnly<F>, F[\\"f\\"][\\"prop\\"]>;
-export type $ShallowOnly<F extends $$DeepArray<ShallowOnly$>> = _$ShallowOnly<$$UnwrapDeepArray<F>>"
-`;
+exports[`stringifyObjectTypes.gql Recursive 1`] = `"export type $Recursive<F extends $$DeepArray<Recursive$>> = $$Result<\\"Recursive\\", $$UnwrapDeepArray<F>>"`;
+
+exports[`stringifyObjectTypes.gql ShallowOnly 1`] = `"export type $ShallowOnly<F extends $$DeepArray<ShallowOnly$>> = $$Result<\\"ShallowOnly\\", $$UnwrapDeepArray<F>>"`;

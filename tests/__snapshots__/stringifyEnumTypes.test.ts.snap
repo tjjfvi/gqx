@@ -1,54 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` 1`] = `
-"export type ABC =
-  | \\"A\\"
-  | \\"B\\"
-  | \\"C\\"
-export type OnlyOneOption =
+"export type ABC = (
+  | \\"A\\" | \\"B\\" | \\"C\\"
+)
+
+export type OnlyOneOption = (
   | \\"JustThis\\"
-export type Letter =
-  | \\"A\\"
-  | \\"B\\"
-  | \\"C\\"
-  | \\"D\\"
-  | \\"E\\"
-  | \\"F\\"
-  | \\"G\\"
-  | \\"H\\"
-  | \\"I\\"
-  | \\"J\\"
-  | \\"K\\"
-  | \\"L\\"
-  | \\"M\\"
-  | \\"N\\"
-  | \\"O\\"
-  | \\"P\\"
-  | \\"Q\\"
-  | \\"R\\"
-  | \\"S\\"
-  | \\"T\\"
-  | \\"U\\"
-  | \\"V\\"
-  | \\"W\\"
-  | \\"X\\"
-  | \\"Y\\"
-  | \\"Z\\"
-export type AlphaNum =
+  | \\"OopsThisToo\\"
+)
+
+export type Letter = (
+  | \\"A\\" | \\"B\\" | \\"C\\" | \\"D\\" | \\"E\\" | \\"F\\" | \\"G\\" | \\"H\\" | \\"I\\" | \\"J\\" | \\"K\\" | \\"L\\" | \\"M\\"
+  | \\"N\\" | \\"O\\" | \\"P\\" | \\"Q\\" | \\"R\\" | \\"S\\" | \\"T\\" | \\"U\\" | \\"V\\" | \\"W\\" | \\"X\\" | \\"Y\\" | \\"Z\\"
+)
+
+export type AlphaNum = (
   | \\"C1\\"
-  | \\"P2\\"
-  | \\"P3\\"
+  | \\"C10\\"
   | \\"C4\\"
-  | \\"P5\\"
   | \\"C6\\"
-  | \\"P7\\"
   | \\"C8\\"
   | \\"C9\\"
-  | \\"C10\\"
-export type Underscores =
+  | \\"P2\\"
+  | \\"P3\\"
+  | \\"P5\\"
+  | \\"P7\\"
+)
+
+export type Underscores = (
   | \\"_\\"
   | \\"__\\"
   | \\"___\\"
   | \\"____\\"
-  | \\"_____\\""
+  | \\"_____\\"
+)
+
+export interface $$EnumTypes {
+  ABC: ABC,
+  OnlyOneOption: OnlyOneOption,
+  Letter: Letter,
+  AlphaNum: AlphaNum,
+  Underscores: Underscores,
+}"
 `;

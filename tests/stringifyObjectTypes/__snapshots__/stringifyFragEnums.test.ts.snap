@@ -1,27 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` 1`] = `
-"export type BinaryTree$ =
-  | typeof BinaryTree$node
-  | $<typeof BinaryTree$left, BinaryTree$>
-  | $<typeof BinaryTree$right, BinaryTree$>
-
-export type DeepOnly$ =
-  | $<typeof DeepOnly$a, ShallowOnly$>
-  | $<typeof DeepOnly$b, ShallowOnly$>
-
-export type Recursive$ =
-  | typeof Recursive$id
-  | $<typeof Recursive$next, Recursive$>
-
-export type ShallowOnly$ =
-  | typeof ShallowOnly$a
-  | typeof ShallowOnly$b
-
-
-export type $_ =
-  | BinaryTree$
-  | DeepOnly$
-  | Recursive$
-  | ShallowOnly$"
+"export type BinaryTree$ = $$ObjectTypeInfoMap[\\"BinaryTree\\"][\\"Frag\\"];
+export type DeepOnly$ = $$ObjectTypeInfoMap[\\"DeepOnly\\"][\\"Frag\\"];
+export type Query$ = $$ObjectTypeInfoMap[\\"Query\\"][\\"Frag\\"];
+export type Recursive$ = $$ObjectTypeInfoMap[\\"Recursive\\"][\\"Frag\\"];
+export type ShallowOnly$ = $$ObjectTypeInfoMap[\\"ShallowOnly\\"][\\"Frag\\"];"
 `;
