@@ -9,7 +9,7 @@ exports[` 1`] = `
   | \\"ShallowOnly\\"
 )
 
-const $$objectTypeInfoMap = {
+export const $$objectTypeInfoMap = {
   BinaryTree: new $$ObjectTypeInfo(
     {
       BinaryTree$node: \\"node\\",

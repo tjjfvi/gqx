@@ -296,7 +296,7 @@ export type $$ObjectType = (
   | \\"User\\"
 )
 
-const $$objectTypeInfoMap = {
+export const $$objectTypeInfoMap = {
   Author: new $$ObjectTypeInfo(
     {
       Author$id: \\"id\\",

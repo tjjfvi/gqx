@@ -12,7 +12,7 @@ const str = (str: string) => JSON.stringify(str);
 
 export const stringifyObjectTypeInfo = (ctx: Context, objs: Obj[]) =>
   `export type $$ObjectType = ${stringifyEnum(objs.map(v => JSON.stringify(v.type)))}\n\n` +
-  "const $$objectTypeInfoMap = " + stringifyObject(objs.map(obj =>
+  "export const $$objectTypeInfoMap = " + stringifyObject(objs.map(obj =>
     [obj.type, [
       "new $$ObjectTypeInfo(",
       ...[

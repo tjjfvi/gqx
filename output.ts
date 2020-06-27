@@ -303,7 +303,7 @@ export type $$ObjectType = (
   | "Query"
 )
 
-const $$objectTypeInfoMap = {
+export const $$objectTypeInfoMap = {
   Author: new $$ObjectTypeInfo(
     {
       Author$id: "id",
