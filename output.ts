@@ -356,10 +356,10 @@ const $$objectTypeInfoMap = {
       Author$name: {},
     },
     {
-      Author$books: "sample.gql",
-      Author$favoriteBook: "sample.gql",
-      Author$id: "sample.gql",
-      Author$name: "sample.gql",
+      Author$books: "sample",
+      Author$favoriteBook: "sample",
+      Author$id: "sample",
+      Author$name: "sample",
     } as const,
   ),
   Book: new $$ObjectTypeInfo(
@@ -439,13 +439,13 @@ const $$objectTypeInfoMap = {
       Book$translation: {},
     },
     {
-      Book$author: "sample.gql",
-      Book$categories: "sample.gql",
-      Book$description: "sample.gql",
-      Book$id: "sample.gql",
-      Book$language: "sample.gql",
-      Book$title: "sample.gql",
-      Book$translation: "sample.gql",
+      Book$author: "sample",
+      Book$categories: "sample",
+      Book$description: "sample",
+      Book$id: "sample",
+      Book$language: "sample",
+      Book$title: "sample",
+      Book$translation: "sample",
     } as const,
   ),
   Query: new $$ObjectTypeInfo(
@@ -500,9 +500,9 @@ const $$objectTypeInfoMap = {
       Query$listBooks: {},
     },
     {
-      Query$getAuthor: "sample.gql",
-      Query$getBook: "sample.gql",
-      Query$listBooks: "sample.gql",
+      Query$getAuthor: "sample",
+      Query$getBook: "sample",
+      Query$listBooks: "sample",
     } as const,
   ),
 }

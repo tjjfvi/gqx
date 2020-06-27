@@ -356,11 +356,11 @@ const $$objectTypeInfoMap = {
       Author$rating: {},
     },
     {
-      Author$books: \\"extensive.gql\\",
-      Author$favoriteBook: \\"extensive.gql\\",
-      Author$id: \\"extensive.gql\\",
-      Author$name: \\"extensive.gql\\",
-      Author$rating: \\"extensive.gql\\",
+      Author$books: \\"extensive\\",
+      Author$favoriteBook: \\"extensive\\",
+      Author$id: \\"extensive\\",
+      Author$name: \\"extensive\\",
+      Author$rating: \\"extensive\\",
     } as const,
   ),
   Book: new $$ObjectTypeInfo(
@@ -436,13 +436,13 @@ const $$objectTypeInfoMap = {
       Book$title: {},
     },
     {
-      Book$author: \\"extensive.gql\\",
-      Book$categories: \\"extensive.gql\\",
-      Book$description: \\"extensive.gql\\",
-      Book$id: \\"extensive.gql\\",
-      Book$rating: \\"extensive.gql\\",
-      Book$reviews: \\"extensive.gql\\",
-      Book$title: \\"extensive.gql\\",
+      Book$author: \\"extensive\\",
+      Book$categories: \\"extensive\\",
+      Book$description: \\"extensive\\",
+      Book$id: \\"extensive\\",
+      Book$rating: \\"extensive\\",
+      Book$reviews: \\"extensive\\",
+      Book$title: \\"extensive\\",
     } as const,
   ),
   Mutation: new $$ObjectTypeInfo(
@@ -483,7 +483,7 @@ const $$objectTypeInfoMap = {
       },
     },
     {
-      Mutation$addReview: \\"extensive.gql\\",
+      Mutation$addReview: \\"extensive\\",
     } as const,
   ),
   Query: new $$ObjectTypeInfo(
@@ -538,9 +538,9 @@ const $$objectTypeInfoMap = {
       Query$listBooks: {},
     },
     {
-      Query$getAuthor: \\"extensive.gql\\",
-      Query$getBook: \\"extensive.gql\\",
-      Query$listBooks: \\"extensive.gql\\",
+      Query$getAuthor: \\"extensive\\",
+      Query$getBook: \\"extensive\\",
+      Query$listBooks: \\"extensive\\",
     } as const,
   ),
   Review: new $$ObjectTypeInfo(
@@ -609,12 +609,12 @@ const $$objectTypeInfoMap = {
       Review$user: {},
     },
     {
-      Review$book: \\"extensive.gql\\",
-      Review$details: \\"extensive.gql\\",
-      Review$id: \\"extensive.gql\\",
-      Review$rating: \\"extensive.gql\\",
-      Review$title: \\"extensive.gql\\",
-      Review$user: \\"extensive.gql\\",
+      Review$book: \\"extensive\\",
+      Review$details: \\"extensive\\",
+      Review$id: \\"extensive\\",
+      Review$rating: \\"extensive\\",
+      Review$title: \\"extensive\\",
+      Review$user: \\"extensive\\",
     } as const,
   ),
   User: new $$ObjectTypeInfo(
@@ -669,10 +669,10 @@ const $$objectTypeInfoMap = {
       User$reviews: {},
     },
     {
-      User$author: \\"extensive.gql\\",
-      User$id: \\"extensive.gql\\",
-      User$name: \\"extensive.gql\\",
-      User$reviews: \\"extensive.gql\\",
+      User$author: \\"extensive\\",
+      User$id: \\"extensive\\",
+      User$name: \\"extensive\\",
+      User$reviews: \\"extensive\\",
     } as const,
   ),
 }

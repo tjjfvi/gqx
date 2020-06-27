@@ -2,9 +2,9 @@
 
 exports[` 1`] = `
 Array [
-  "extension.gql",
-  "extension.graphql",
-  "subfolder/deep/nesting/ofPaths.gql",
+  "extension",
+  "extension",
+  "subfolder/deep/nesting/ofPaths",
 ]
 `;
 

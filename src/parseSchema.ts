@@ -15,13 +15,13 @@ export const parseSchema = (basePath: string) => {
   const findAllFiles = (curPath: string, name: string, isRoot = false): DocumentNode[] =>
     fs.statSync(curPath).isDirectory() ?
       fs.readdirSync(curPath).flatMap(sub =>
-        findAllFiles(path.join(curPath, sub), isRoot ? sub : name + "/" + sub, false)
+        findAllFiles(path.join(curPath, sub), (isRoot ? "" : name + "/") + path.parse(sub).name, false)
       ) :
       curPath.endsWith(".gql") || curPath.endsWith(".graphql") ?
         parseFile(curPath, name) :
         []
 
-  const asts = findAllFiles(basePath, path.parse(basePath).base, true);
+  const asts = findAllFiles(basePath, path.parse(basePath).name, true);
 
   return asts;
 }
