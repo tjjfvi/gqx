@@ -1,0 +1,284 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+Array [
+  "extension.gql",
+  "extension.graphql",
+  "subfolder/deep/nesting/ofPaths.gql",
+]
+`;
+
+exports[` 2`] = `
+Array [
+  Object {
+    "definitions": Array [
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumTypeDefinition",
+        "loc": Object {
+          "end": 25,
+          "start": 1,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 15,
+            "start": 6,
+          },
+          "value": "Extension",
+        },
+        "values": Array [
+          Object {
+            "description": undefined,
+            "directives": Array [],
+            "kind": "EnumValueDefinition",
+            "loc": Object {
+              "end": 23,
+              "start": 20,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 23,
+                "start": 20,
+              },
+              "value": "gql",
+            },
+          },
+        ],
+      },
+    ],
+    "kind": "Document",
+    "loc": Object {
+      "end": 26,
+      "start": 0,
+    },
+  },
+  Object {
+    "definitions": Array [
+      Object {
+        "directives": Array [],
+        "kind": "EnumTypeExtension",
+        "loc": Object {
+          "end": 36,
+          "start": 1,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 22,
+            "start": 13,
+          },
+          "value": "Extension",
+        },
+        "values": Array [
+          Object {
+            "description": undefined,
+            "directives": Array [],
+            "kind": "EnumValueDefinition",
+            "loc": Object {
+              "end": 34,
+              "start": 27,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 34,
+                "start": 27,
+              },
+              "value": "graphql",
+            },
+          },
+        ],
+      },
+    ],
+    "kind": "Document",
+    "loc": Object {
+      "end": 37,
+      "start": 0,
+    },
+  },
+  Object {
+    "definitions": Array [
+      Object {
+        "description": undefined,
+        "directives": Array [],
+        "kind": "EnumTypeDefinition",
+        "loc": Object {
+          "end": 62,
+          "start": 1,
+        },
+        "name": Object {
+          "kind": "Name",
+          "loc": Object {
+            "end": 11,
+            "start": 6,
+          },
+          "value": "Words",
+        },
+        "values": Array [
+          Object {
+            "description": undefined,
+            "directives": Array [],
+            "kind": "EnumValueDefinition",
+            "loc": Object {
+              "end": 21,
+              "start": 16,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 21,
+                "start": 16,
+              },
+              "value": "These",
+            },
+          },
+          Object {
+            "description": undefined,
+            "directives": Array [],
+            "kind": "EnumValueDefinition",
+            "loc": Object {
+              "end": 25,
+              "start": 22,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 25,
+                "start": 22,
+              },
+              "value": "Are",
+            },
+          },
+          Object {
+            "description": undefined,
+            "directives": Array [],
+            "kind": "EnumValueDefinition",
+            "loc": Object {
+              "end": 30,
+              "start": 26,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 30,
+                "start": 26,
+              },
+              "value": "Many",
+            },
+          },
+          Object {
+            "description": undefined,
+            "directives": Array [],
+            "kind": "EnumValueDefinition",
+            "loc": Object {
+              "end": 36,
+              "start": 31,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 36,
+                "start": 31,
+              },
+              "value": "Words",
+            },
+          },
+          Object {
+            "description": undefined,
+            "directives": Array [],
+            "kind": "EnumValueDefinition",
+            "loc": Object {
+              "end": 40,
+              "start": 39,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 40,
+                "start": 39,
+              },
+              "value": "I",
+            },
+          },
+          Object {
+            "description": undefined,
+            "directives": Array [],
+            "kind": "EnumValueDefinition",
+            "loc": Object {
+              "end": 46,
+              "start": 41,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 46,
+                "start": 41,
+              },
+              "value": "Can_t",
+            },
+          },
+          Object {
+            "description": undefined,
+            "directives": Array [],
+            "kind": "EnumValueDefinition",
+            "loc": Object {
+              "end": 52,
+              "start": 47,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 52,
+                "start": 47,
+              },
+              "value": "Think",
+            },
+          },
+          Object {
+            "description": undefined,
+            "directives": Array [],
+            "kind": "EnumValueDefinition",
+            "loc": Object {
+              "end": 55,
+              "start": 53,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 55,
+                "start": 53,
+              },
+              "value": "Of",
+            },
+          },
+          Object {
+            "description": undefined,
+            "directives": Array [],
+            "kind": "EnumValueDefinition",
+            "loc": Object {
+              "end": 60,
+              "start": 56,
+            },
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 60,
+                "start": 56,
+              },
+              "value": "More",
+            },
+          },
+        ],
+      },
+    ],
+    "kind": "Document",
+    "loc": Object {
+      "end": 63,
+      "start": 0,
+    },
+  },
+]
+`;

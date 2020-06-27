@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`keyEdgeCases 1`] = `
+"{
+  this: doesntNeedQuotes,
+  \\"this definitely\\": does,
+  \\"as does\\": this,
+}"
+`;
+
+exports[`noProps 1`] = `"{}"`;
+
+exports[`optional 1`] = `
+"{
+  this?: isOptional,
+  however: thisIsnt,
+  and: thisDefinitelyIsnt,
+}"
+`;
+
+exports[`singleLine 1`] = `"{singular: line,}"`;

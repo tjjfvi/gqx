@@ -11,7 +11,7 @@ export const stringifyTypeDirectives = (ctx: Context) =>
         directive.name.value,
         stringifyObject(directive.arguments?.map(arg =>
           [arg.name.value, stringifyValue(arg.value)]
-        ) ?? [])
+        ) || [])
       ]
     ))]
   ))

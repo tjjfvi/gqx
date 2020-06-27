@@ -828,7 +828,9 @@ export const $$typeDirectives = {
     },
   },
   Author: {},
-  Category: {},
+  Category: {
+    auth: {},
+  },
   Review: {},
   User: {},
   StarRating: {},

@@ -33,7 +33,7 @@
     "postpack": "npm run clean",
     "index": "create-index -u src/ -x ts -X ts -S",
     "sample": "ts-node ./bin/gqx.ts -s sample.gql -o output.ts",
-    "test": "jest"
+    "test": "jest --coverage -u"
   },
   "bin": {
     "gqx": "./dist/bin/gqx.js"

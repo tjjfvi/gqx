@@ -1,5 +1,5 @@
 
-directive @auth(test: BookFilter, test2: [String!]!) on FIELD_DEFINITION | OBJECT
+directive @auth(test: BookFilter, test2: [String!]) on FIELD_DEFINITION | OBJECT
 
 schema {
   query: Query
@@ -47,7 +47,7 @@ input AuthorFilter {
   name: String
 }
 
-enum Category {
+enum Category @auth {
   Horror
   SciFi
   Fiction
