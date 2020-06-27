@@ -1,10 +1,9 @@
 
 import {
-  parse,
   InputValueDefinitionNode,
   FieldDefinitionNode,
   EnumValueDefinitionNode,
-  DirectiveNode
+  DirectiveNode,
 } from "graphql";
 import stringifyEnumTypes from "./stringifyEnumTypes";
 import stringifyInputTypes from "./stringifyInputTypes";
@@ -13,6 +12,7 @@ import stringifyOperations from "./stringifyOperations";
 import stringifyBoilerplate from "./stringifyBoilerplate";
 import groupDefinitions from "./groupDefinitions";
 import { stringifyTypeDirectives } from "./stringifyTypeDirectives";
+import { parseSchema } from "./parseSchema";
 
 interface Context {
   typeDirectives: Record<string, DirectiveNode[]>;
@@ -23,9 +23,7 @@ interface Context {
   baseTypes: string[];
 }
 
-export default ({ schema }: { schema: string }) => {
-
-  const ast = parse(schema);
+export default ({ schemaPath }: { schemaPath: string }) => {
 
   const ctx: Context = {
     operations: [],
@@ -36,7 +34,9 @@ export default ({ schema }: { schema: string }) => {
     typeDirectives: {},
   };
 
-  groupDefinitions(ctx, ast.definitions);
+  const asts = parseSchema(schemaPath);
+
+  groupDefinitions(ctx, asts.flatMap(x => x.definitions));
 
   const code = [
     "/* eslint-disable */",

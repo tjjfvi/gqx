@@ -25,6 +25,7 @@ export default (ctx: Context): [Obj[], Id[], Context] => {
             wrapHKT,
             args: field.arguments?.slice() ?? [],
             directives: field.directives?.slice() ?? [],
+            loc: field.loc,
           };
           return prop;
         }).sort((p, q) => p.id.prop > q.id.prop ? 1 : -1);

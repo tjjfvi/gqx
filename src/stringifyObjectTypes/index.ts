@@ -5,7 +5,7 @@ import stringifyFragResult from "./stringifyFragResult";
 import { stringifyObjectTypeInfo } from "./stringifyObjectTypeInfo";
 import stringifyFragObject from "./stringifyFragObject";
 import generateObjs from "./generateObjs";
-import { InputValueDefinitionNode, DirectiveNode } from "graphql";
+import { InputValueDefinitionNode, DirectiveNode, Location } from "graphql";
 
 interface Id {
   type: string;
@@ -20,6 +20,7 @@ interface Prop {
   wrapHKT: string;
   args: InputValueDefinitionNode[];
   directives: DirectiveNode[];
+  loc?: Location;
 }
 
 interface Obj {

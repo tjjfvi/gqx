@@ -15,21 +15,21 @@ export const stringifyObjectTypeInfo = (ctx: Context, objs: Obj[]) =>
   "const $$objectTypeInfoMap = " + stringifyObject(objs.map(obj =>
     [obj.type, [
       "new $$ObjectTypeInfo(",
-      ...[obj.shallowProps, obj.deepProps].flatMap(props =>
-        !props.length ?
-          indent`{}, {}, {}, {},` :
-          [
-            stringifyObject(props.map(prop => [stringifyId(prop.id), str(prop.id.prop)])),
-            stringifyObject(props.map(prop => [str(prop.id.prop), stringifyId(prop.id)])),
-            "null as any as " + stringifyObject(props.map(prop =>
-              [stringifyId(prop.id), str(prop.type)]
-            )),
-            "null as any as " + stringifyObject(props.map(prop =>
-              [stringifyId(prop.id), prop.wrapHKT]
-            )),
-          ].map(str => indent`${str},`)
-      ),
       ...[
+        ...[obj.shallowProps, obj.deepProps].flatMap(props =>
+          !props.length ?
+            "{}, {}, {}, {}" :
+            [
+              stringifyObject(props.map(prop => [stringifyId(prop.id), str(prop.id.prop)])),
+              stringifyObject(props.map(prop => [str(prop.id.prop), stringifyId(prop.id)])),
+              "null as any as " + stringifyObject(props.map(prop =>
+                [stringifyId(prop.id), str(prop.type)]
+              )),
+              "null as any as " + stringifyObject(props.map(prop =>
+                [stringifyId(prop.id), prop.wrapHKT]
+              )),
+            ]
+        ),
         "null as any as " + stringifyObject(obj.props.map(prop =>
           [stringifyId(prop.id), stringifyInputType(ctx, prop.args)]
         )),
@@ -51,6 +51,9 @@ export const stringifyObjectTypeInfo = (ctx: Context, objs: Obj[]) =>
             ]
           ))]
         )),
+        stringifyObject(obj.props.map(prop =>
+          [stringifyId(prop.id), JSON.stringify(prop.loc?.source.name ?? null)]
+        )) + " as const",
       ].map(str => indent`${str},`),
       ")",
     ].join("\n")]

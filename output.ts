@@ -74,7 +74,7 @@ export type $$Result<O extends $$ObjectType, F extends $$ObjectTypeInfoMap[O]["F
 
 export type $$Expand<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
 
-export type _$$ObjectTypeInfo = $$ObjectTypeInfo<any, any, any, any, any, any, any, any, any, any>;
+export type _$$ObjectTypeInfo = $$ObjectTypeInfo<any, any, any, any, any, any, any, any, any, any, any>;
 
 export type $$PropToInputType = {
   [K in keyof $$PropToInfo]: $$PropToInfo[K]["InputTypes"][Extract<K, keyof $$PropToInfo[K]["InputTypes"]>];
@@ -107,7 +107,8 @@ export class $$ObjectTypeInfo<
   DeepWrap extends Record<keyof DeepPropName, $$HKT>,
   InputTypes extends Record<keyof ShallowPropName | keyof DeepPropName, {}>,
   Directives extends Record<keyof ShallowPropName | keyof DeepPropName, Record<string, {}>>,
-  > {
+  SourceFiles extends Record<keyof ShallowPropName | keyof DeepPropName, string>,
+> {
 
   declare ShallowProp: keyof ShallowPropName;
   declare ShallowName: keyof ShallowNameProp;
@@ -123,6 +124,7 @@ export class $$ObjectTypeInfo<
   declare DeepWrap: DeepWrap;
   declare InputTypes: InputTypes;
   declare Directives: Directives;
+  declare SourceFiles: SourceFiles;
 
   declare ShallowFrag: this["ShallowProp"];
   declare DeepFrag: Values<_$$DeepFrag<this>>;
@@ -146,6 +148,7 @@ export class $$ObjectTypeInfo<
     _4: InputTypes,
     public inputTypeStrings: Record<keyof ShallowPropName | keyof DeepPropName, any>,
     public directives: Directives,
+    public sourceFiles: SourceFiles,
   ){
 
   }
@@ -352,6 +355,12 @@ const $$objectTypeInfoMap = {
       Author$id: {},
       Author$name: {},
     },
+    {
+      Author$books: "sample.gql",
+      Author$favoriteBook: "sample.gql",
+      Author$id: "sample.gql",
+      Author$name: "sample.gql",
+    } as const,
   ),
   Book: new $$ObjectTypeInfo(
     {
@@ -429,6 +438,15 @@ const $$objectTypeInfoMap = {
       Book$title: {},
       Book$translation: {},
     },
+    {
+      Book$author: "sample.gql",
+      Book$categories: "sample.gql",
+      Book$description: "sample.gql",
+      Book$id: "sample.gql",
+      Book$language: "sample.gql",
+      Book$title: "sample.gql",
+      Book$translation: "sample.gql",
+    } as const,
   ),
   Query: new $$ObjectTypeInfo(
     {}, {}, {}, {},
@@ -481,6 +499,11 @@ const $$objectTypeInfoMap = {
       Query$getBook: {},
       Query$listBooks: {},
     },
+    {
+      Query$getAuthor: "sample.gql",
+      Query$getBook: "sample.gql",
+      Query$listBooks: "sample.gql",
+    } as const,
   ),
 }
 

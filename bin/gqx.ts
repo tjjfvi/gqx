@@ -2,7 +2,6 @@
 
 import gqx from "../src/index";
 import * as fs from "fs";
-import path from "path";
 import program from "commander";
 
 program
@@ -19,15 +18,7 @@ program.parse(process.argv);
   if(program.output)
     console.log(`Using schema: ${program.schema}`);
 
-  let schema = (
-    fs.statSync(program.schema).isDirectory() ?
-      fs.readdirSync(program.schema)
-        .filter(f => f.endsWith(".gql") || f.endsWith(".graphql"))
-        .map(f => path.join(program.schema, f)) :
-      [program.schema]
-  ).map(f => fs.readFileSync(f, "utf8")).join("\n\n");
-
-  let out = gqx({ schema });
+  let out = gqx({ schemaPath: program.schema });
 
   if(program.output) {
     console.log(`Writing output to: ${program.output}`);
