@@ -285,6 +285,9 @@ export const $$reconstruct = <I extends $$AnyProp>(id: I, input: $$Input<I>, pro
     const inlineFrag = "... on " + type;
     subs = subs[inlineFrag] = subs[inlineFrag] ?? {};
 
+    if(subs === true)
+      return;
+
     if(typeof prop === "string")
       return void (subs[name] = true);
 
