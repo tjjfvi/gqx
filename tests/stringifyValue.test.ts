@@ -4,7 +4,7 @@ import { ValueNode } from "graphql";
 describe("stringifyDirectives.gql", () => {
   test.each(
     Object.values(utils.getOperations(["stringifyObjectTypes"]).objectTypes)
-      .flatMap(x => x)
+      .flatMap(x => x.fields)
       .flatMap(x => x.directives?.slice() ?? [])
       .flatMap(d => d.arguments?.slice() ?? [])
       .map(a => a.value)

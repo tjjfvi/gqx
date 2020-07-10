@@ -128,6 +128,7 @@ Array [
         "wrapHKT": "$$Optional<$$Identity>",
       },
     ],
+    "implements": Array [],
     "isBase": false,
     "props": Array [
       Object {
@@ -198,6 +199,7 @@ Array [
       },
     ],
     "type": "BinaryTree",
+    "unions": Array [],
   },
   Object {
     "deepProps": Array [
@@ -234,6 +236,7 @@ Array [
         "wrapHKT": "$$Array<$$Optional<$$Identity>>",
       },
     ],
+    "implements": Array [],
     "isBase": false,
     "props": Array [
       Object {
@@ -271,6 +274,7 @@ Array [
     ],
     "shallowProps": Array [],
     "type": "DeepOnly",
+    "unions": Array [],
   },
   Object {
     "deepProps": Array [
@@ -1060,6 +1064,7 @@ Array [
         "wrapHKT": "$$Array<$$Identity>",
       },
     ],
+    "implements": Array [],
     "isBase": false,
     "props": Array [
       Object {
@@ -1967,6 +1972,7 @@ Array [
       },
     ],
     "type": "Query",
+    "unions": Array [],
   },
   Object {
     "deepProps": Array [
@@ -1987,6 +1993,7 @@ Array [
         "wrapHKT": "$$Identity",
       },
     ],
+    "implements": Array [],
     "isBase": false,
     "props": Array [
       Object {
@@ -2041,9 +2048,11 @@ Array [
       },
     ],
     "type": "Recursive",
+    "unions": Array [],
   },
   Object {
     "deepProps": Array [],
+    "implements": Array [],
     "isBase": false,
     "props": Array [
       Object {
@@ -2114,6 +2123,7 @@ Array [
       },
     ],
     "type": "ShallowOnly",
+    "unions": Array [],
   },
 ]
 `;

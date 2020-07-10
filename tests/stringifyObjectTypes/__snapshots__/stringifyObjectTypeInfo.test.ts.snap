@@ -11,6 +11,7 @@ exports[` 1`] = `
 
 export const $$objectTypeInfoMap = {
   BinaryTree: new $$ObjectTypeInfo(
+    \\"BinaryTree\\",
     {
       BinaryTree$node: \\"node\\",
     },
@@ -59,8 +60,11 @@ export const $$objectTypeInfoMap = {
       BinaryTree$node: \\"GraphQL request\\",
       BinaryTree$right: \\"GraphQL request\\",
     } as const,
+    null as any as never,
+    null as any as never,
   ),
   DeepOnly: new $$ObjectTypeInfo(
+    \\"DeepOnly\\",
     {}, {}, {}, {},
     {
       DeepOnly$a: \\"a\\",
@@ -94,8 +98,11 @@ export const $$objectTypeInfoMap = {
       DeepOnly$a: \\"GraphQL request\\",
       DeepOnly$b: \\"GraphQL request\\",
     } as const,
+    null as any as never,
+    null as any as never,
   ),
   Query: new $$ObjectTypeInfo(
+    \\"Query\\",
     {
       Query$oneDirective: \\"oneDirective\\",
     },
@@ -227,8 +234,11 @@ export const $$objectTypeInfoMap = {
       Query$noDirectives: \\"GraphQL request\\",
       Query$oneDirective: \\"GraphQL request\\",
     } as const,
+    null as any as never,
+    null as any as never,
   ),
   Recursive: new $$ObjectTypeInfo(
+    \\"Recursive\\",
     {
       Recursive$id: \\"id\\",
     },
@@ -269,8 +279,11 @@ export const $$objectTypeInfoMap = {
       Recursive$id: \\"GraphQL request\\",
       Recursive$next: \\"GraphQL request\\",
     } as const,
+    null as any as never,
+    null as any as never,
   ),
   ShallowOnly: new $$ObjectTypeInfo(
+    \\"ShallowOnly\\",
     {
       ShallowOnly$a: \\"a\\",
       ShallowOnly$b: \\"b\\",
@@ -304,6 +317,8 @@ export const $$objectTypeInfoMap = {
       ShallowOnly$a: \\"GraphQL request\\",
       ShallowOnly$b: \\"GraphQL request\\",
     } as const,
+    null as any as never,
+    null as any as never,
   ),
 }"
 `;

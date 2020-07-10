@@ -871,311 +871,327 @@ Object {
     ],
   },
   "objectTypes": Object {
-    "ExtendedObject": Array [
-      Object {
-        "arguments": Array [],
-        "description": undefined,
-        "directives": Array [],
-        "kind": "FieldDefinition",
-        "loc": Object {
-          "end": 452,
-          "start": 435,
-        },
-        "name": Object {
-          "kind": "Name",
-          "loc": Object {
-            "end": 444,
-            "start": 435,
-          },
-          "value": "firstPost",
-        },
-        "type": Object {
-          "kind": "NamedType",
+    "ExtendedObject": Object {
+      "fields": Array [
+        Object {
+          "arguments": Array [],
+          "description": undefined,
+          "directives": Array [],
+          "kind": "FieldDefinition",
           "loc": Object {
             "end": 452,
-            "start": 446,
+            "start": 435,
           },
           "name": Object {
             "kind": "Name",
+            "loc": Object {
+              "end": 444,
+              "start": 435,
+            },
+            "value": "firstPost",
+          },
+          "type": Object {
+            "kind": "NamedType",
             "loc": Object {
               "end": 452,
               "start": 446,
             },
-            "value": "String",
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 452,
+                "start": 446,
+              },
+              "value": "String",
+            },
           },
         },
-      },
-      Object {
-        "arguments": Array [],
-        "description": undefined,
-        "directives": Array [],
-        "kind": "FieldDefinition",
-        "loc": Object {
-          "end": 502,
-          "start": 487,
-        },
-        "name": Object {
-          "kind": "Name",
-          "loc": Object {
-            "end": 497,
-            "start": 487,
-          },
-          "value": "secondPost",
-        },
-        "type": Object {
-          "kind": "NamedType",
+        Object {
+          "arguments": Array [],
+          "description": undefined,
+          "directives": Array [],
+          "kind": "FieldDefinition",
           "loc": Object {
             "end": 502,
-            "start": 499,
+            "start": 487,
           },
           "name": Object {
             "kind": "Name",
+            "loc": Object {
+              "end": 497,
+              "start": 487,
+            },
+            "value": "secondPost",
+          },
+          "type": Object {
+            "kind": "NamedType",
             "loc": Object {
               "end": 502,
               "start": 499,
             },
-            "value": "Int",
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 502,
+                "start": 499,
+              },
+              "value": "Int",
+            },
           },
         },
-      },
-    ],
-    "ManyObject": Array [
-      Object {
-        "arguments": Array [],
-        "description": undefined,
-        "directives": Array [],
-        "kind": "FieldDefinition",
-        "loc": Object {
-          "end": 332,
-          "start": 323,
-        },
-        "name": Object {
-          "kind": "Name",
-          "loc": Object {
-            "end": 324,
-            "start": 323,
-          },
-          "value": "a",
-        },
-        "type": Object {
-          "kind": "NamedType",
+      ],
+      "implements": Array [],
+      "unions": Array [],
+    },
+    "ManyObject": Object {
+      "fields": Array [
+        Object {
+          "arguments": Array [],
+          "description": undefined,
+          "directives": Array [],
+          "kind": "FieldDefinition",
           "loc": Object {
             "end": 332,
-            "start": 326,
+            "start": 323,
           },
           "name": Object {
             "kind": "Name",
+            "loc": Object {
+              "end": 324,
+              "start": 323,
+            },
+            "value": "a",
+          },
+          "type": Object {
+            "kind": "NamedType",
             "loc": Object {
               "end": 332,
               "start": 326,
             },
-            "value": "String",
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 332,
+                "start": 326,
+              },
+              "value": "String",
+            },
           },
         },
-      },
-      Object {
-        "arguments": Array [],
-        "description": undefined,
-        "directives": Array [],
-        "kind": "FieldDefinition",
-        "loc": Object {
-          "end": 341,
-          "start": 335,
-        },
-        "name": Object {
-          "kind": "Name",
-          "loc": Object {
-            "end": 336,
-            "start": 335,
-          },
-          "value": "b",
-        },
-        "type": Object {
-          "kind": "NamedType",
+        Object {
+          "arguments": Array [],
+          "description": undefined,
+          "directives": Array [],
+          "kind": "FieldDefinition",
           "loc": Object {
             "end": 341,
-            "start": 338,
+            "start": 335,
           },
           "name": Object {
             "kind": "Name",
+            "loc": Object {
+              "end": 336,
+              "start": 335,
+            },
+            "value": "b",
+          },
+          "type": Object {
+            "kind": "NamedType",
             "loc": Object {
               "end": 341,
               "start": 338,
             },
-            "value": "Int",
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 341,
+                "start": 338,
+              },
+              "value": "Int",
+            },
           },
         },
-      },
-      Object {
-        "arguments": Array [],
-        "description": undefined,
-        "directives": Array [],
-        "kind": "FieldDefinition",
-        "loc": Object {
-          "end": 352,
-          "start": 344,
-        },
-        "name": Object {
-          "kind": "Name",
-          "loc": Object {
-            "end": 345,
-            "start": 344,
-          },
-          "value": "c",
-        },
-        "type": Object {
-          "kind": "NamedType",
+        Object {
+          "arguments": Array [],
+          "description": undefined,
+          "directives": Array [],
+          "kind": "FieldDefinition",
           "loc": Object {
             "end": 352,
-            "start": 347,
+            "start": 344,
           },
           "name": Object {
             "kind": "Name",
+            "loc": Object {
+              "end": 345,
+              "start": 344,
+            },
+            "value": "c",
+          },
+          "type": Object {
+            "kind": "NamedType",
             "loc": Object {
               "end": 352,
               "start": 347,
             },
-            "value": "Float",
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 352,
+                "start": 347,
+              },
+              "value": "Float",
+            },
           },
         },
-      },
-      Object {
-        "arguments": Array [],
-        "description": undefined,
-        "directives": Array [],
-        "kind": "FieldDefinition",
-        "loc": Object {
-          "end": 365,
-          "start": 355,
-        },
-        "name": Object {
-          "kind": "Name",
-          "loc": Object {
-            "end": 356,
-            "start": 355,
-          },
-          "value": "d",
-        },
-        "type": Object {
-          "kind": "NamedType",
+        Object {
+          "arguments": Array [],
+          "description": undefined,
+          "directives": Array [],
+          "kind": "FieldDefinition",
           "loc": Object {
             "end": 365,
-            "start": 358,
+            "start": 355,
           },
           "name": Object {
             "kind": "Name",
+            "loc": Object {
+              "end": 356,
+              "start": 355,
+            },
+            "value": "d",
+          },
+          "type": Object {
+            "kind": "NamedType",
             "loc": Object {
               "end": 365,
               "start": 358,
             },
-            "value": "Boolean",
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 365,
+                "start": 358,
+              },
+              "value": "Boolean",
+            },
           },
         },
-      },
-    ],
-    "PreextendedObject": Array [
-      Object {
-        "arguments": Array [],
-        "description": undefined,
-        "directives": Array [],
-        "kind": "FieldDefinition",
-        "loc": Object {
-          "end": 554,
-          "start": 540,
-        },
-        "name": Object {
-          "kind": "Name",
-          "loc": Object {
-            "end": 549,
-            "start": 540,
-          },
-          "value": "secondPre",
-        },
-        "type": Object {
-          "kind": "NamedType",
+      ],
+      "implements": Array [],
+      "unions": Array [],
+    },
+    "PreextendedObject": Object {
+      "fields": Array [
+        Object {
+          "arguments": Array [],
+          "description": undefined,
+          "directives": Array [],
+          "kind": "FieldDefinition",
           "loc": Object {
             "end": 554,
-            "start": 551,
+            "start": 540,
           },
           "name": Object {
             "kind": "Name",
+            "loc": Object {
+              "end": 549,
+              "start": 540,
+            },
+            "value": "secondPre",
+          },
+          "type": Object {
+            "kind": "NamedType",
             "loc": Object {
               "end": 554,
               "start": 551,
             },
-            "value": "Int",
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 554,
+                "start": 551,
+              },
+              "value": "Int",
+            },
           },
         },
-      },
-      Object {
-        "arguments": Array [],
-        "description": undefined,
-        "directives": Array [],
-        "kind": "FieldDefinition",
-        "loc": Object {
-          "end": 601,
-          "start": 585,
-        },
-        "name": Object {
-          "kind": "Name",
-          "loc": Object {
-            "end": 593,
-            "start": 585,
-          },
-          "value": "firstPre",
-        },
-        "type": Object {
-          "kind": "NamedType",
+        Object {
+          "arguments": Array [],
+          "description": undefined,
+          "directives": Array [],
+          "kind": "FieldDefinition",
           "loc": Object {
             "end": 601,
-            "start": 595,
+            "start": 585,
           },
           "name": Object {
             "kind": "Name",
+            "loc": Object {
+              "end": 593,
+              "start": 585,
+            },
+            "value": "firstPre",
+          },
+          "type": Object {
+            "kind": "NamedType",
             "loc": Object {
               "end": 601,
               "start": 595,
             },
-            "value": "String",
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 601,
+                "start": 595,
+              },
+              "value": "String",
+            },
           },
         },
-      },
-    ],
-    "UnextendedObject": Array [
-      Object {
-        "arguments": Array [],
-        "description": undefined,
-        "directives": Array [],
-        "kind": "FieldDefinition",
-        "loc": Object {
-          "end": 407,
-          "start": 395,
-        },
-        "name": Object {
-          "kind": "Name",
-          "loc": Object {
-            "end": 399,
-            "start": 395,
-          },
-          "value": "only",
-        },
-        "type": Object {
-          "kind": "NamedType",
+      ],
+      "implements": Array [],
+      "unions": Array [],
+    },
+    "UnextendedObject": Object {
+      "fields": Array [
+        Object {
+          "arguments": Array [],
+          "description": undefined,
+          "directives": Array [],
+          "kind": "FieldDefinition",
           "loc": Object {
             "end": 407,
-            "start": 401,
+            "start": 395,
           },
           "name": Object {
             "kind": "Name",
             "loc": Object {
+              "end": 399,
+              "start": 395,
+            },
+            "value": "only",
+          },
+          "type": Object {
+            "kind": "NamedType",
+            "loc": Object {
               "end": 407,
               "start": 401,
             },
-            "value": "String",
+            "name": Object {
+              "kind": "Name",
+              "loc": Object {
+                "end": 407,
+                "start": 401,
+              },
+              "value": "String",
+            },
           },
         },
-      },
-    ],
+      ],
+      "implements": Array [],
+      "unions": Array [],
+    },
   },
   "operations": Array [],
   "typeDirectives": Object {
