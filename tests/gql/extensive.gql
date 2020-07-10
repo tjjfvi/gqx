@@ -36,15 +36,28 @@ input BookFilter {
   categories: [Category!]
 }
 
-type Author {
-  id: ID!
-  name: String!
-  books: [Book!]!
-  favoriteBook: Book!
-}
-
 input AuthorFilter {
   name: String
+}
+
+type Author implements Person {
+    id: ID!
+    name: String!
+    books: [Book!]!
+    favoriteBook: Book!
+}
+
+type User implements Person {
+    id: ID!
+    name: String
+    favoriteBook: Book
+    reviews: [Review!]!
+}
+
+interface Person {
+    id: ID!
+    name: String
+    favoriteBook: Book
 }
 
 enum Category @auth {
@@ -69,13 +82,6 @@ type Review {
   user: User!
   title: String
   details: String
-}
-
-type User {
-  id: ID!
-  author: Author
-  name: String!
-  reviews: [Review!]!
 }
 
 input ReviewInput {

@@ -339,6 +339,7 @@ export type $$ObjectType = (
   | \\"Author\\"
   | \\"Book\\"
   | \\"Mutation\\"
+  | \\"Person\\"
   | \\"Query\\"
   | \\"Review\\"
   | \\"User\\"
@@ -412,7 +413,9 @@ export const $$objectTypeInfoMap = {
       Author$rating: \\"extensive\\",
     } as const,
     null as any as never,
-    null as any as never,
+    null as any as (
+      | \\"Person\\"
+    ),
   ),
   Book: new $$ObjectTypeInfo(
     \\"Book\\",
@@ -541,6 +544,62 @@ export const $$objectTypeInfoMap = {
       Mutation$addReview: \\"extensive\\",
     } as const,
     null as any as never,
+    null as any as never,
+  ),
+  Person: new $$ObjectTypeInfo(
+    \\"Person\\",
+    {
+      Person$id: \\"id\\",
+      Person$name: \\"name\\",
+    },
+    {
+      id: \\"Person$id\\",
+      name: \\"Person$name\\",
+    },
+    null as any as {
+      Person$id: \\"ID\\",
+      Person$name: \\"String\\",
+    },
+    null as any as {
+      Person$id: $$Identity,
+      Person$name: $$Optional<$$Identity>,
+    },
+    {
+      Person$favoriteBook: \\"favoriteBook\\",
+    },
+    {
+      favoriteBook: \\"Person$favoriteBook\\",
+    },
+    null as any as {
+      Person$favoriteBook: \\"Book\\",
+    },
+    null as any as {
+      Person$favoriteBook: $$Optional<$$Identity>,
+    },
+    null as any as {
+      Person$favoriteBook: {},
+      Person$id: {},
+      Person$name: {},
+    },
+    {
+      Person$favoriteBook: {},
+      Person$id: {},
+      Person$name: {},
+    },
+    {
+      Person$favoriteBook: {},
+      Person$id: {},
+      Person$name: {},
+    },
+    {
+      Person$favoriteBook: \\"extensive\\",
+      Person$id: \\"extensive\\",
+      Person$name: \\"extensive\\",
+    } as const,
+    null as any as (
+      | \\"Author\\"
+      | \\"User\\"
+    ),
     null as any as never,
   ),
   Query: new $$ObjectTypeInfo(
@@ -696,56 +755,59 @@ export const $$objectTypeInfoMap = {
     },
     null as any as {
       User$id: $$Identity,
-      User$name: $$Identity,
+      User$name: $$Optional<$$Identity>,
     },
     {
-      User$author: \\"author\\",
+      User$favoriteBook: \\"favoriteBook\\",
       User$reviews: \\"reviews\\",
     },
     {
-      author: \\"User$author\\",
+      favoriteBook: \\"User$favoriteBook\\",
       reviews: \\"User$reviews\\",
     },
     null as any as {
-      User$author: \\"Author\\",
+      User$favoriteBook: \\"Book\\",
       User$reviews: \\"Review\\",
     },
     null as any as {
-      User$author: $$Optional<$$Identity>,
+      User$favoriteBook: $$Optional<$$Identity>,
       User$reviews: $$Array<$$Identity>,
     },
     null as any as {
-      User$author: {},
+      User$favoriteBook: {},
       User$id: {},
       User$name: {},
       User$reviews: {},
     },
     {
-      User$author: {},
+      User$favoriteBook: {},
       User$id: {},
       User$name: {},
       User$reviews: {},
     },
     {
-      User$author: {},
+      User$favoriteBook: {},
       User$id: {},
       User$name: {},
       User$reviews: {},
     },
     {
-      User$author: \\"extensive\\",
+      User$favoriteBook: \\"extensive\\",
       User$id: \\"extensive\\",
       User$name: \\"extensive\\",
       User$reviews: \\"extensive\\",
     } as const,
     null as any as never,
-    null as any as never,
+    null as any as (
+      | \\"Person\\"
+    ),
   ),
 }
 
 export type Author$ = $$ObjectTypeInfoMap[\\"Author\\"][\\"Frag\\"];
 export type Book$ = $$ObjectTypeInfoMap[\\"Book\\"][\\"Frag\\"];
 export type Mutation$ = $$ObjectTypeInfoMap[\\"Mutation\\"][\\"Frag\\"];
+export type Person$ = $$ObjectTypeInfoMap[\\"Person\\"][\\"Frag\\"];
 export type Query$ = $$ObjectTypeInfoMap[\\"Query\\"][\\"Frag\\"];
 export type Review$ = $$ObjectTypeInfoMap[\\"Review\\"][\\"Frag\\"];
 export type User$ = $$ObjectTypeInfoMap[\\"User\\"][\\"Frag\\"];
@@ -804,6 +866,23 @@ export const Mutation: {
 
 type typeof$Mutation = typeof Mutation
 
+const Person$$ = <F extends $$DeepArray<Person$>>(...frag: F): F[number][] => frag;
+
+const _Person = {
+  $: Person$$,
+  id: \\"Person$id\\",
+  name: \\"Person$name\\",
+} as const;
+
+export const Person: typeof _Person & {
+  favoriteBook: $$MapWrap<typeof$Book, \\"Person$favoriteBook\\">,
+} = {
+  ..._Person,
+  favoriteBook: $$mapWrap(() => Book, \\"Person$favoriteBook\\"),
+};
+
+type typeof$Person = typeof Person
+
 const Query$$ = <F extends $$DeepArray<Query$>>(...frag: F): F[number][] => frag;
 
 export const Query: {
@@ -850,11 +929,11 @@ const _User = {
 } as const;
 
 export const User: typeof _User & {
-  author: $$MapWrap<typeof$Author, \\"User$author\\">,
+  favoriteBook: $$MapWrap<typeof$Book, \\"User$favoriteBook\\">,
   reviews: $$MapWrap<typeof$Review, \\"User$reviews\\">,
 } = {
   ..._User,
-  author: $$mapWrap(() => Author, \\"User$author\\"),
+  favoriteBook: $$mapWrap(() => Book, \\"User$favoriteBook\\"),
   reviews: $$mapWrap(() => Review, \\"User$reviews\\"),
 };
 
@@ -863,6 +942,7 @@ type typeof$User = typeof User
 export type $Author<F extends $$DeepArray<Author$>> = $$Result<\\"Author\\", $$UnwrapDeepArray<F>>
 export type $Book<F extends $$DeepArray<Book$>> = $$Result<\\"Book\\", $$UnwrapDeepArray<F>>
 export type $Mutation<F extends $$DeepArray<Mutation$>> = $$Result<\\"Mutation\\", $$UnwrapDeepArray<F>>
+export type $Person<F extends $$DeepArray<Person$>> = $$Result<\\"Person\\", $$UnwrapDeepArray<F>>
 export type $Query<F extends $$DeepArray<Query$>> = $$Result<\\"Query\\", $$UnwrapDeepArray<F>>
 export type $Review<F extends $$DeepArray<Review$>> = $$Result<\\"Review\\", $$UnwrapDeepArray<F>>
 export type $User<F extends $$DeepArray<User$>> = $$Result<\\"User\\", $$UnwrapDeepArray<F>>
@@ -894,11 +974,12 @@ export const $$typeDirectives = {
     },
   },
   Author: {},
+  User: {},
+  Person: {},
   Category: {
     auth: {},
   },
   Review: {},
-  User: {},
   StarRating: {},
 }
 

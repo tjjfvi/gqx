@@ -3,6 +3,10 @@
 exports[` 1`] = `
 Array [
   Object {
+    "prop": "id",
+    "type": "BinaryTree",
+  },
+  Object {
     "prop": "node",
     "type": "BinaryTree",
   },
@@ -58,6 +62,10 @@ Array [
     "prop": "b",
     "type": "ShallowOnly",
   },
+  Object {
+    "prop": "id",
+    "type": "WithId",
+  },
 ]
 `;
 
@@ -66,7 +74,7 @@ Array [
   Object {
     "d": 2,
     "n": "BinaryTree",
-    "s": 1,
+    "s": 2,
   },
   Object {
     "d": 2,
@@ -88,6 +96,11 @@ Array [
     "n": "ShallowOnly",
     "s": 2,
   },
+  Object {
+    "d": 0,
+    "n": "WithId",
+    "s": 1,
+  },
 ]
 `;
 
@@ -103,8 +116,8 @@ Array [
           "type": "BinaryTree",
         },
         "loc": Object {
-          "end": 1066,
-          "start": 1050,
+          "end": 1144,
+          "start": 1128,
         },
         "shallow": false,
         "type": "BinaryTree",
@@ -119,8 +132,8 @@ Array [
           "type": "BinaryTree",
         },
         "loc": Object {
-          "end": 1086,
-          "start": 1069,
+          "end": 1164,
+          "start": 1147,
         },
         "shallow": false,
         "type": "BinaryTree",
@@ -128,9 +141,27 @@ Array [
         "wrapHKT": "$$Optional<$$Identity>",
       },
     ],
-    "implements": Array [],
+    "implements": Array [
+      "WithId",
+    ],
     "isBase": false,
     "props": Array [
+      Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
+          "prop": "id",
+          "type": "BinaryTree",
+        },
+        "loc": Object {
+          "end": 1109,
+          "start": 1102,
+        },
+        "shallow": true,
+        "type": "ID",
+        "wrap": [Function],
+        "wrapHKT": "$$Identity",
+      },
       Object {
         "args": Array [],
         "directives": Array [],
@@ -139,8 +170,8 @@ Array [
           "type": "BinaryTree",
         },
         "loc": Object {
-          "end": 1066,
-          "start": 1050,
+          "end": 1144,
+          "start": 1128,
         },
         "shallow": false,
         "type": "BinaryTree",
@@ -155,8 +186,8 @@ Array [
           "type": "BinaryTree",
         },
         "loc": Object {
-          "end": 1047,
-          "start": 1034,
+          "end": 1125,
+          "start": 1112,
         },
         "shallow": true,
         "type": "String",
@@ -171,8 +202,8 @@ Array [
           "type": "BinaryTree",
         },
         "loc": Object {
-          "end": 1086,
-          "start": 1069,
+          "end": 1164,
+          "start": 1147,
         },
         "shallow": false,
         "type": "BinaryTree",
@@ -185,12 +216,28 @@ Array [
         "args": Array [],
         "directives": Array [],
         "id": Object {
+          "prop": "id",
+          "type": "BinaryTree",
+        },
+        "loc": Object {
+          "end": 1109,
+          "start": 1102,
+        },
+        "shallow": true,
+        "type": "ID",
+        "wrap": [Function],
+        "wrapHKT": "$$Identity",
+      },
+      Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
           "prop": "node",
           "type": "BinaryTree",
         },
         "loc": Object {
-          "end": 1047,
-          "start": 1034,
+          "end": 1125,
+          "start": 1112,
         },
         "shallow": true,
         "type": "String",
@@ -211,8 +258,8 @@ Array [
           "type": "DeepOnly",
         },
         "loc": Object {
-          "end": 941,
-          "start": 926,
+          "end": 973,
+          "start": 958,
         },
         "shallow": false,
         "type": "ShallowOnly",
@@ -227,8 +274,8 @@ Array [
           "type": "DeepOnly",
         },
         "loc": Object {
-          "end": 961,
-          "start": 944,
+          "end": 993,
+          "start": 976,
         },
         "shallow": false,
         "type": "ShallowOnly",
@@ -247,8 +294,8 @@ Array [
           "type": "DeepOnly",
         },
         "loc": Object {
-          "end": 941,
-          "start": 926,
+          "end": 973,
+          "start": 958,
         },
         "shallow": false,
         "type": "ShallowOnly",
@@ -263,8 +310,8 @@ Array [
           "type": "DeepOnly",
         },
         "loc": Object {
-          "end": 961,
-          "start": 944,
+          "end": 993,
+          "start": 976,
         },
         "shallow": false,
         "type": "ShallowOnly",
@@ -1984,8 +2031,8 @@ Array [
           "type": "Recursive",
         },
         "loc": Object {
-          "end": 1010,
-          "start": 994,
+          "end": 1060,
+          "start": 1044,
         },
         "shallow": false,
         "type": "Recursive",
@@ -1993,7 +2040,9 @@ Array [
         "wrapHKT": "$$Identity",
       },
     ],
-    "implements": Array [],
+    "implements": Array [
+      "WithId",
+    ],
     "isBase": false,
     "props": Array [
       Object {
@@ -2004,8 +2053,8 @@ Array [
           "type": "Recursive",
         },
         "loc": Object {
-          "end": 991,
-          "start": 984,
+          "end": 1041,
+          "start": 1034,
         },
         "shallow": true,
         "type": "ID",
@@ -2020,8 +2069,8 @@ Array [
           "type": "Recursive",
         },
         "loc": Object {
-          "end": 1010,
-          "start": 994,
+          "end": 1060,
+          "start": 1044,
         },
         "shallow": false,
         "type": "Recursive",
@@ -2038,8 +2087,8 @@ Array [
           "type": "Recursive",
         },
         "loc": Object {
-          "end": 991,
-          "start": 984,
+          "end": 1041,
+          "start": 1034,
         },
         "shallow": true,
         "type": "ID",
@@ -2063,8 +2112,8 @@ Array [
           "type": "ShallowOnly",
         },
         "loc": Object {
-          "end": 891,
-          "start": 881,
+          "end": 923,
+          "start": 913,
         },
         "shallow": true,
         "type": "String",
@@ -2079,8 +2128,8 @@ Array [
           "type": "ShallowOnly",
         },
         "loc": Object {
-          "end": 904,
-          "start": 894,
+          "end": 936,
+          "start": 926,
         },
         "shallow": true,
         "type": "Number",
@@ -2097,8 +2146,8 @@ Array [
           "type": "ShallowOnly",
         },
         "loc": Object {
-          "end": 891,
-          "start": 881,
+          "end": 923,
+          "start": 913,
         },
         "shallow": true,
         "type": "String",
@@ -2113,8 +2162,8 @@ Array [
           "type": "ShallowOnly",
         },
         "loc": Object {
-          "end": 904,
-          "start": 894,
+          "end": 936,
+          "start": 926,
         },
         "shallow": true,
         "type": "Number",
@@ -2124,6 +2173,52 @@ Array [
     ],
     "type": "ShallowOnly",
     "unions": Array [],
+  },
+  Object {
+    "deepProps": Array [],
+    "implements": Array [],
+    "isBase": false,
+    "props": Array [
+      Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
+          "prop": "id",
+          "type": "WithId",
+        },
+        "loc": Object {
+          "end": 888,
+          "start": 881,
+        },
+        "shallow": true,
+        "type": "ID",
+        "wrap": [Function],
+        "wrapHKT": "$$Identity",
+      },
+    ],
+    "shallowProps": Array [
+      Object {
+        "args": Array [],
+        "directives": Array [],
+        "id": Object {
+          "prop": "id",
+          "type": "WithId",
+        },
+        "loc": Object {
+          "end": 888,
+          "start": 881,
+        },
+        "shallow": true,
+        "type": "ID",
+        "wrap": [Function],
+        "wrapHKT": "$$Identity",
+      },
+    ],
+    "type": "WithId",
+    "unions": Array [
+      "Recursive",
+      "BinaryTree",
+    ],
   },
 ]
 `;

@@ -5,5 +5,6 @@ exports[` 1`] = `
 export type DeepOnly$ = $$ObjectTypeInfoMap[\\"DeepOnly\\"][\\"Frag\\"];
 export type Query$ = $$ObjectTypeInfoMap[\\"Query\\"][\\"Frag\\"];
 export type Recursive$ = $$ObjectTypeInfoMap[\\"Recursive\\"][\\"Frag\\"];
-export type ShallowOnly$ = $$ObjectTypeInfoMap[\\"ShallowOnly\\"][\\"Frag\\"];"
+export type ShallowOnly$ = $$ObjectTypeInfoMap[\\"ShallowOnly\\"][\\"Frag\\"];
+export type WithId$ = $$ObjectTypeInfoMap[\\"WithId\\"][\\"Frag\\"];"
 `;

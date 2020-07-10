@@ -5,6 +5,7 @@ exports[`stringifyObjectTypes.gql BinaryTree 1`] = `
 
 const _BinaryTree = {
   $: BinaryTree$$,
+  id: \\"BinaryTree$id\\",
   node: \\"BinaryTree$node\\",
 } as const;
 
@@ -88,4 +89,15 @@ export const ShallowOnly = {
 } as const;
 
 type typeof$ShallowOnly = typeof ShallowOnly"
+`;
+
+exports[`stringifyObjectTypes.gql WithId 1`] = `
+"const WithId$$ = <F extends $$DeepArray<WithId$>>(...frag: F): F[number][] => frag;
+
+export const WithId = {
+  $: WithId$$,
+  id: \\"WithId$id\\",
+} as const;
+
+type typeof$WithId = typeof WithId"
 `;

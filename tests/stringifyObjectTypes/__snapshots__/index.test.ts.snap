@@ -7,21 +7,26 @@ exports[` 1`] = `
   | \\"Query\\"
   | \\"Recursive\\"
   | \\"ShallowOnly\\"
+  | \\"WithId\\"
 )
 
 export const $$objectTypeInfoMap = {
   BinaryTree: new $$ObjectTypeInfo(
     \\"BinaryTree\\",
     {
+      BinaryTree$id: \\"id\\",
       BinaryTree$node: \\"node\\",
     },
     {
+      id: \\"BinaryTree$id\\",
       node: \\"BinaryTree$node\\",
     },
     null as any as {
+      BinaryTree$id: \\"ID\\",
       BinaryTree$node: \\"String\\",
     },
     null as any as {
+      BinaryTree$id: $$Identity,
       BinaryTree$node: $$Identity,
     },
     {
@@ -41,27 +46,33 @@ export const $$objectTypeInfoMap = {
       BinaryTree$right: $$Optional<$$Identity>,
     },
     null as any as {
+      BinaryTree$id: {},
       BinaryTree$left: {},
       BinaryTree$node: {},
       BinaryTree$right: {},
     },
     {
+      BinaryTree$id: {},
       BinaryTree$left: {},
       BinaryTree$node: {},
       BinaryTree$right: {},
     },
     {
+      BinaryTree$id: {},
       BinaryTree$left: {},
       BinaryTree$node: {},
       BinaryTree$right: {},
     },
     {
+      BinaryTree$id: \\"GraphQL request\\",
       BinaryTree$left: \\"GraphQL request\\",
       BinaryTree$node: \\"GraphQL request\\",
       BinaryTree$right: \\"GraphQL request\\",
     } as const,
     null as any as never,
-    null as any as never,
+    null as any as (
+      | \\"WithId\\"
+    ),
   ),
   DeepOnly: new $$ObjectTypeInfo(
     \\"DeepOnly\\",
@@ -280,7 +291,9 @@ export const $$objectTypeInfoMap = {
       Recursive$next: \\"GraphQL request\\",
     } as const,
     null as any as never,
-    null as any as never,
+    null as any as (
+      | \\"WithId\\"
+    ),
   ),
   ShallowOnly: new $$ObjectTypeInfo(
     \\"ShallowOnly\\",
@@ -320,6 +333,39 @@ export const $$objectTypeInfoMap = {
     null as any as never,
     null as any as never,
   ),
+  WithId: new $$ObjectTypeInfo(
+    \\"WithId\\",
+    {
+      WithId$id: \\"id\\",
+    },
+    {
+      id: \\"WithId$id\\",
+    },
+    null as any as {
+      WithId$id: \\"ID\\",
+    },
+    null as any as {
+      WithId$id: $$Identity,
+    },
+    {}, {}, {}, {},
+    null as any as {
+      WithId$id: {},
+    },
+    {
+      WithId$id: {},
+    },
+    {
+      WithId$id: {},
+    },
+    {
+      WithId$id: \\"GraphQL request\\",
+    } as const,
+    null as any as (
+      | \\"BinaryTree\\"
+      | \\"Recursive\\"
+    ),
+    null as any as never,
+  ),
 }
 
 export type BinaryTree$ = $$ObjectTypeInfoMap[\\"BinaryTree\\"][\\"Frag\\"];
@@ -327,11 +373,13 @@ export type DeepOnly$ = $$ObjectTypeInfoMap[\\"DeepOnly\\"][\\"Frag\\"];
 export type Query$ = $$ObjectTypeInfoMap[\\"Query\\"][\\"Frag\\"];
 export type Recursive$ = $$ObjectTypeInfoMap[\\"Recursive\\"][\\"Frag\\"];
 export type ShallowOnly$ = $$ObjectTypeInfoMap[\\"ShallowOnly\\"][\\"Frag\\"];
+export type WithId$ = $$ObjectTypeInfoMap[\\"WithId\\"][\\"Frag\\"];
 
 const BinaryTree$$ = <F extends $$DeepArray<BinaryTree$>>(...frag: F): F[number][] => frag;
 
 const _BinaryTree = {
   $: BinaryTree$$,
+  id: \\"BinaryTree$id\\",
   node: \\"BinaryTree$node\\",
 } as const;
 
@@ -408,9 +456,19 @@ export const ShallowOnly = {
 
 type typeof$ShallowOnly = typeof ShallowOnly
 
+const WithId$$ = <F extends $$DeepArray<WithId$>>(...frag: F): F[number][] => frag;
+
+export const WithId = {
+  $: WithId$$,
+  id: \\"WithId$id\\",
+} as const;
+
+type typeof$WithId = typeof WithId
+
 export type $BinaryTree<F extends $$DeepArray<BinaryTree$>> = $$Result<\\"BinaryTree\\", $$UnwrapDeepArray<F>>
 export type $DeepOnly<F extends $$DeepArray<DeepOnly$>> = $$Result<\\"DeepOnly\\", $$UnwrapDeepArray<F>>
 export type $Query<F extends $$DeepArray<Query$>> = $$Result<\\"Query\\", $$UnwrapDeepArray<F>>
 export type $Recursive<F extends $$DeepArray<Recursive$>> = $$Result<\\"Recursive\\", $$UnwrapDeepArray<F>>
-export type $ShallowOnly<F extends $$DeepArray<ShallowOnly$>> = $$Result<\\"ShallowOnly\\", $$UnwrapDeepArray<F>>"
+export type $ShallowOnly<F extends $$DeepArray<ShallowOnly$>> = $$Result<\\"ShallowOnly\\", $$UnwrapDeepArray<F>>
+export type $WithId<F extends $$DeepArray<WithId$>> = $$Result<\\"WithId\\", $$UnwrapDeepArray<F>>"
 `;

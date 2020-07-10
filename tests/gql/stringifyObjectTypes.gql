@@ -32,6 +32,10 @@ input InputType {
   z: InputType
 }
 
+interface WithId {
+  id: ID!
+}
+
 type ShallowOnly {
   a: String!
   b: Number!
@@ -42,12 +46,13 @@ type DeepOnly {
   b: [ShallowOnly]!
 }
 
-type Recursive {
+type Recursive implements WithId {
   id: ID!
   next: Recursive!
 }
 
-type BinaryTree {
+type BinaryTree implements WithId {
+  id: ID!
   node: String!
   left: BinaryTree
   right: BinaryTree

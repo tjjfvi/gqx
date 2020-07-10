@@ -9,3 +9,5 @@ exports[`stringifyObjectTypes.gql Query 1`] = `"export type $Query<F extends $$D
 exports[`stringifyObjectTypes.gql Recursive 1`] = `"export type $Recursive<F extends $$DeepArray<Recursive$>> = $$Result<\\"Recursive\\", $$UnwrapDeepArray<F>>"`;
 
 exports[`stringifyObjectTypes.gql ShallowOnly 1`] = `"export type $ShallowOnly<F extends $$DeepArray<ShallowOnly$>> = $$Result<\\"ShallowOnly\\", $$UnwrapDeepArray<F>>"`;
+
+exports[`stringifyObjectTypes.gql WithId 1`] = `"export type $WithId<F extends $$DeepArray<WithId$>> = $$Result<\\"WithId\\", $$UnwrapDeepArray<F>>"`;
