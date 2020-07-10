@@ -18,7 +18,7 @@ interface Context {
   typeDirectives: Record<string, DirectiveNode[]>;
   inputTypes: { [k: string]: InputValueDefinitionNode[] };
   enumTypes: { [k: string]: EnumValueDefinitionNode[] };
-  objectTypes: { [k: string]: FieldDefinitionNode[] };
+  objectTypes: { [k: string]: { fields: FieldDefinitionNode[]; unions: string[]; implements: string[] } };
   operations: [string, string][];
   baseTypes: string[];
 }

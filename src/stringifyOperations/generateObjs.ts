@@ -6,7 +6,7 @@ export default (ctx: Context): [Obj[], Context] => {
   const objs: Obj[] =
     ctx.operations
       .map(([prop, name]) => {
-        const fields = ctx.objectTypes[name];
+        const { fields } = ctx.objectTypes[name];
         const props = fields.map(field => {
           const id: Id = {
             type: name,

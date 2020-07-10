@@ -4,6 +4,7 @@ schema {
 }
 
 type Query {
+    getPerson(id: ID!): Person!
     getAuthor(id: ID!): Author!
     getBook(id: ID!): Book!
     listBooks(cursor: Cursor, filter: BookFilter): [Book!]!
@@ -32,11 +33,23 @@ input BookFilter {
 
 directive @testOnAuthor on OBJECT
 
-type Author @testOnAuthor {
+type Author implements Person @testOnAuthor {
     id: ID!
     name: String!
     books: [Book!]!
     favoriteBook: Book!
+}
+
+type User implements Person {
+    id: ID!
+    name: String
+    favoriteBook: Book
+}
+
+interface Person {
+    id: ID!
+    name: String
+    favoriteBook: Book
 }
 
 input AuthorFilter {

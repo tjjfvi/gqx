@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { Book, Author, $$GqxReturn, $$AnyProp, $$Frag, $$Input, $$Output, $$generateObject } from "./output";
+import { Author, $$GqxReturn, $$AnyProp, $$Frag, $$Input, $$Output, $$generateObject, Person } from "./output";
 
 type GqxOut_<I extends $$AnyProp> = <T extends $$Frag<I>>(input: $$Input<I>, frag: T) => $$Output<I, T>;
 
@@ -10,16 +10,16 @@ interface GqxOut extends $$GqxReturn {
 
 const gqx = $$generateObject<GqxOut>(() => null as any);
 
-const frag = Book.$(
-  Book.id,
-  Book.categories,
-  Book.author.name,
-  Book.author.$(Author.id, Author.books.title)
+const frag = Person.$(
+  Person.id,
+  Person.favoriteBook.id,
+  Author.name,
+  Author.books.id,
 );
-const result = gqx.query.getBook({ id: "id" }, frag);
+const result = gqx.query.getPerson({ id: "id" }, frag);
 
 result.id
-result.categories
-result.author.id
-result.author.name
-result.author.books[0].title
+if(result.__typename === "Author")
+  result.favoriteBook
+if(result.__typename === "User")
+  result.favoriteBook

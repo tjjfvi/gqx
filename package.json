@@ -6,7 +6,7 @@
   "dependencies": {
     "@types/js-yaml": "^3.12.2",
     "commander": "^4.1.1",
-    "graphql": "^14.6.0",
+    "graphql": "^15.3.0",
     "js-yaml": "^3.13.1",
     "tslib": "^1.11.1"
   },

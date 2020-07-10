@@ -28,6 +28,8 @@ interface Obj {
   shallowProps: Prop[];
   deepProps: Prop[];
   props: Prop[];
+  implements: string[];
+  unions: string[];
   isBase: boolean;
 }
 

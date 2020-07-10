@@ -54,11 +54,27 @@ type _$$DeepFrag<O extends _$$ObjectTypeInfo> =
 
 type Values<T> = T[keyof T];
 
-export type $$InflateObjectType<O extends _$$ObjectTypeInfo, HKT extends $$HKT<O["Prop"]>> = {
-  [K in O["Name"]]: $$CallHKT<O["Wrap"][O["NameProp"][K]], $$CallHKT<HKT, O["NameProp"][K]>>
-}
+export type $$DirectInflateObjectType<O extends _$$ObjectTypeInfo, HKT extends $$HKT<O["Prop"]>, Keys> =
+  Pick<
+    {
+      [K in O["Name"]]: $$CallHKT<O["Wrap"][O["NameProp"][K]], $$CallHKT<HKT, O["NameProp"][K]>>
+    },
+    Extract<Keys, O["Name"]>
+  >
 
-type ___$$Result<O extends _$$ObjectTypeInfo, F extends O["Frag"], P extends O["Prop"], T extends $$Type> =
+export type $$InflateObjectType<
+  O extends _$$ObjectTypeInfo,
+  HKT extends $$HKT<O["Prop"]>,
+  PHKT extends $$HKT<$$ObjectType>,
+> = (
+  O["Union"] extends "$$never" ?
+    { __typename: O["ObjectType"] } & $$DirectInflateObjectType<O, HKT, $$CallHKT<PHKT, O["ObjectType"]>> :
+    Values<{
+      [U in O["Union"]]: $$InflateObjectType<$$ObjectTypeInfoMap[U], HKT, PHKT>
+    }>
+);
+
+type ___$$Result<F extends $$AnyFrag, P extends $$AnyProp, T extends $$Type> =
   T extends $$ScalarType ?
   $$Scalars[T] :
   T extends $$EnumType ?
@@ -68,20 +84,32 @@ type ___$$Result<O extends _$$ObjectTypeInfo, F extends O["Frag"], P extends O["
   never
 
 // eslint-disable-next-line @typescript-eslint/class-name-casing
-interface __$$Result<O extends _$$ObjectTypeInfo, F extends O["Frag"]> extends $$HKT<O["Prop"]> {
-  return: ___$$Result<O, F, this["input"], O["Type"][this["input"]]>;
+interface __$$Result<F extends $$AnyFrag> extends $$HKT<$$AnyProp> {
+  return: ___$$Result<F, this["input"], $$PropToOutput[Extract<this["input"], keyof $$PropToOutput>]>;
 }
 
-type _$$Result<O extends _$$ObjectTypeInfo, F extends O["Frag"]> = (
-  Pick<$$InflateObjectType<O, __$$Result<O, F>>, O["PropName"][Extract<F, string> | Extract<F, { f: string }>["f"]]>
-)
+type $$FirstOfFrag<F> = Extract<F, string> | Extract<F, { f: string }>["f"];
+
+// eslint-disable-next-line @typescript-eslint/class-name-casing
+interface ____$$Result<O extends _$$ObjectTypeInfo, F extends O["Frag"]> extends $$HKT<$$ObjectType> {
+  return: $$PropToName[$$FirstOfFrag<Extract<F,
+    $$ObjectTypeInfoMap[this["input"] | $$ObjectTypeInfoMap[this["input"]]["Implements"]]["DirectFrag"]
+  >>];
+}
+
+type _$$Result<O extends _$$ObjectTypeInfo, F extends O["Frag"]> =
+  $$InflateObjectType<O, __$$Result<F>, ____$$Result<O, F>>
 
 export type $$Result<O extends $$ObjectType, F extends $$ObjectTypeInfoMap[O]["Frag"]> =
   $$Expand<_$$Result<$$ObjectTypeInfoMap[O], F>>
 
 export type $$Expand<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
 
-export type _$$ObjectTypeInfo = $$ObjectTypeInfo<any, any, any, any, any, any, any, any, any, any, any>;
+export type _$$ObjectTypeInfo = $$ObjectTypeInfo<any, any, any, any, any, any, any, any, any, any, any, any, any, any>;
+
+export type $$PropToName = {
+  [K in keyof $$PropToInfo]: $$PropToInfo[K]["PropName"][Extract<K, keyof $$PropToInfo[K]["PropName"]>];
+}
 
 export type $$PropToInputType = {
   [K in keyof $$PropToInfo]: $$PropToInfo[K]["InputTypes"][Extract<K, keyof $$PropToInfo[K]["InputTypes"]>];
@@ -104,6 +132,7 @@ export type $$PropToType = {
 }[$$ObjectType] extends (contravariant: infer T) => void ? T : void;
 
 export class $$ObjectTypeInfo<
+  ObjectType extends $$ObjectType,
   ShallowPropName extends Record<string, keyof ShallowNameProp>,
   ShallowNameProp extends Record<string, keyof ShallowPropName>,
   ShallowType extends Record<keyof ShallowPropName, $$ScalarType | $$EnumType>,
@@ -115,8 +144,11 @@ export class $$ObjectTypeInfo<
   InputTypes extends Record<keyof ShallowPropName | keyof DeepPropName, {}>,
   Directives extends Record<keyof ShallowPropName | keyof DeepPropName, Record<string, {}>>,
   SourceFiles extends Record<keyof ShallowPropName | keyof DeepPropName, string>,
+  Union extends $$ObjectType,
+  Implements extends $$ObjectType,
 > {
 
+  declare ObjectType: ObjectType;
   declare ShallowProp: keyof ShallowPropName;
   declare ShallowName: keyof ShallowNameProp;
   declare ShallowPropName: ShallowPropName;
@@ -132,30 +164,38 @@ export class $$ObjectTypeInfo<
   declare InputTypes: InputTypes;
   declare Directives: Directives;
   declare SourceFiles: SourceFiles;
+  declare Union: Union;
+  declare Implements: Implements;
 
-  declare ShallowFrag: this["ShallowProp"];
-  declare DeepFrag: Values<_$$DeepFrag<this>>;
+  declare DirectShallowFrag: this["ShallowProp"];
+  declare DirectDeepFrag: Values<_$$DeepFrag<this>>;
+  declare ShallowFrag: this["DirectShallowFrag"] | { [U in Union]: $$ObjectTypeInfoMap[U]["ShallowFrag"] }[Union];
+  declare DeepFrag: this["DirectDeepFrag"] | { [U in Union]: $$ObjectTypeInfoMap[U]["DeepFrag"] }[Union];
   declare PropName: ShallowPropName & DeepPropName;
   declare NameProp: ShallowNameProp & DeepNameProp;
   declare Wrap: ShallowWrap & DeepWrap;
   declare Type: DeepType & ShallowType;
   declare Prop: this["ShallowProp"] | this["DeepProp"];
   declare Name: this["ShallowName"] | this["DeepName"];
-  declare Frag: this["ShallowFrag"] | this["DeepFrag"];
+  declare DirectFrag: this["DirectShallowFrag"] | this["DirectDeepFrag"];
+  declare Frag: this["DirectFrag"] | { [U in Union]: $$ObjectTypeInfoMap[U]["Frag"] }[Union];
 
   constructor(
+    _0: ObjectType,
     public shallowPropToName: ShallowPropName,
     public shallowNameToProp: ShallowNameProp,
-    _0: ShallowType,
-    _1: ShallowWrap,
+    _1: ShallowType,
+    _2: ShallowWrap,
     public deepPropToName: DeepPropName,
     public deepNameToProp: DeepNameProp,
-    _2: DeepType,
-    _3: DeepWrap,
-    _4: InputTypes,
+    _3: DeepType,
+    _4: DeepWrap,
+    _5: InputTypes,
     public inputTypeStrings: Record<keyof ShallowPropName | keyof DeepPropName, any>,
     public directives: Directives,
     public sourceFiles: SourceFiles,
+    _6: Union,
+    _7: Implements,
   ){
 
   }
@@ -246,3 +286,5 @@ export const $$reconstruct = <I extends $$AnyProp>(id: I, input: $$Input<I>, pro
     }
   }
 }
+
+/* --- End Boilerplate --- */

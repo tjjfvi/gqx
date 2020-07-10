@@ -8,7 +8,7 @@ export default (ctx: Context): [Obj[], Id[], Context] => {
     Object.keys(ctx.objectTypes)
       .sort()
       .map(name => {
-        const fields = ctx.objectTypes[name];
+        const { fields, unions, implements: impls } = ctx.objectTypes[name];
         const props = fields.map(field => {
           const id: Id = {
             type: name,
@@ -36,6 +36,8 @@ export default (ctx: Context): [Obj[], Id[], Context] => {
           shallowProps,
           deepProps,
           props,
+          unions,
+          implements: impls,
           isBase: ctx.baseTypes.includes(name),
         };
         return obj;

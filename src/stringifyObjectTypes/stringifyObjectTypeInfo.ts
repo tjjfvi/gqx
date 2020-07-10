@@ -16,6 +16,7 @@ export const stringifyObjectTypeInfo = (ctx: Context, objs: Obj[]) =>
     [obj.type, [
       "new $$ObjectTypeInfo(",
       ...[
+        JSON.stringify(obj.type),
         ...[obj.shallowProps, obj.deepProps].flatMap(props =>
           !props.length ?
             "{}, {}, {}, {}" :
@@ -54,6 +55,8 @@ export const stringifyObjectTypeInfo = (ctx: Context, objs: Obj[]) =>
         stringifyObject(obj.props.map(prop =>
           [stringifyId(prop.id), JSON.stringify(prop.loc?.source.name ?? null)]
         )) + " as const",
+        "null as any as " + stringifyEnum(obj.unions.map(t => JSON.stringify(t))),
+        "null as any as " + stringifyEnum(obj.implements.map(t => JSON.stringify(t))),
       ].map(str => indent`${str},`),
       ")",
     ].join("\n")]

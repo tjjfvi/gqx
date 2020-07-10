@@ -1,12 +1,12 @@
 import path from "path";
 import fs from "fs";
-import { parse, Source, DocumentNode, createLexer } from "graphql";
+import { parse, Source, DocumentNode, Lexer } from "graphql";
 
 export const parseSchema = (basePath: string) => {
   const parseFile = (path: string, name: string) => {
     const body = fs.readFileSync(path, "utf8");
     const source = new Source(body, name);
-    const firstToken = createLexer(source, {}).advance();
+    const firstToken = new Lexer(source).advance();
     if(firstToken.kind === "<EOF>")
       return [];
     return [parse(new Source(body, name))];

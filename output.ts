@@ -47,11 +47,27 @@ type _$$DeepFrag<O extends _$$ObjectTypeInfo> =
 
 type Values<T> = T[keyof T];
 
-export type $$InflateObjectType<O extends _$$ObjectTypeInfo, HKT extends $$HKT<O["Prop"]>> = {
-  [K in O["Name"]]: $$CallHKT<O["Wrap"][O["NameProp"][K]], $$CallHKT<HKT, O["NameProp"][K]>>
-}
+export type $$DirectInflateObjectType<O extends _$$ObjectTypeInfo, HKT extends $$HKT<O["Prop"]>, Keys> =
+  Pick<
+    {
+      [K in O["Name"]]: $$CallHKT<O["Wrap"][O["NameProp"][K]], $$CallHKT<HKT, O["NameProp"][K]>>
+    },
+    Extract<Keys, O["Name"]>
+  >
 
-type ___$$Result<O extends _$$ObjectTypeInfo, F extends O["Frag"], P extends O["Prop"], T extends $$Type> =
+export type $$InflateObjectType<
+  O extends _$$ObjectTypeInfo,
+  HKT extends $$HKT<O["Prop"]>,
+  PHKT extends $$HKT<$$ObjectType>,
+> = (
+  O["Union"] extends "$$never" ?
+    { __typename: O["ObjectType"] } & $$DirectInflateObjectType<O, HKT, $$CallHKT<PHKT, O["ObjectType"]>> :
+    Values<{
+      [U in O["Union"]]: $$InflateObjectType<$$ObjectTypeInfoMap[U], HKT, PHKT>
+    }>
+);
+
+type ___$$Result<F extends $$AnyFrag, P extends $$AnyProp, T extends $$Type> =
   T extends $$ScalarType ?
   $$Scalars[T] :
   T extends $$EnumType ?
@@ -61,20 +77,32 @@ type ___$$Result<O extends _$$ObjectTypeInfo, F extends O["Frag"], P extends O["
   never
 
 // eslint-disable-next-line @typescript-eslint/class-name-casing
-interface __$$Result<O extends _$$ObjectTypeInfo, F extends O["Frag"]> extends $$HKT<O["Prop"]> {
-  return: ___$$Result<O, F, this["input"], O["Type"][this["input"]]>;
+interface __$$Result<F extends $$AnyFrag> extends $$HKT<$$AnyProp> {
+  return: ___$$Result<F, this["input"], $$PropToOutput[Extract<this["input"], keyof $$PropToOutput>]>;
 }
 
-type _$$Result<O extends _$$ObjectTypeInfo, F extends O["Frag"]> = (
-  Pick<$$InflateObjectType<O, __$$Result<O, F>>, O["PropName"][Extract<F, string> | Extract<F, { f: string }>["f"]]>
-)
+type $$FirstOfFrag<F> = Extract<F, string> | Extract<F, { f: string }>["f"];
+
+// eslint-disable-next-line @typescript-eslint/class-name-casing
+interface ____$$Result<O extends _$$ObjectTypeInfo, F extends O["Frag"]> extends $$HKT<$$ObjectType> {
+  return: $$PropToName[$$FirstOfFrag<Extract<F,
+    $$ObjectTypeInfoMap[this["input"] | $$ObjectTypeInfoMap[this["input"]]["Implements"]]["DirectFrag"]
+  >>];
+}
+
+type _$$Result<O extends _$$ObjectTypeInfo, F extends O["Frag"]> =
+  $$InflateObjectType<O, __$$Result<F>, ____$$Result<O, F>>
 
 export type $$Result<O extends $$ObjectType, F extends $$ObjectTypeInfoMap[O]["Frag"]> =
   $$Expand<_$$Result<$$ObjectTypeInfoMap[O], F>>
 
 export type $$Expand<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
 
-export type _$$ObjectTypeInfo = $$ObjectTypeInfo<any, any, any, any, any, any, any, any, any, any, any>;
+export type _$$ObjectTypeInfo = $$ObjectTypeInfo<any, any, any, any, any, any, any, any, any, any, any, any, any, any>;
+
+export type $$PropToName = {
+  [K in keyof $$PropToInfo]: $$PropToInfo[K]["PropName"][Extract<K, keyof $$PropToInfo[K]["PropName"]>];
+}
 
 export type $$PropToInputType = {
   [K in keyof $$PropToInfo]: $$PropToInfo[K]["InputTypes"][Extract<K, keyof $$PropToInfo[K]["InputTypes"]>];
@@ -97,6 +125,7 @@ export type $$PropToType = {
 }[$$ObjectType] extends (contravariant: infer T) => void ? T : void;
 
 export class $$ObjectTypeInfo<
+  ObjectType extends $$ObjectType,
   ShallowPropName extends Record<string, keyof ShallowNameProp>,
   ShallowNameProp extends Record<string, keyof ShallowPropName>,
   ShallowType extends Record<keyof ShallowPropName, $$ScalarType | $$EnumType>,
@@ -108,8 +137,11 @@ export class $$ObjectTypeInfo<
   InputTypes extends Record<keyof ShallowPropName | keyof DeepPropName, {}>,
   Directives extends Record<keyof ShallowPropName | keyof DeepPropName, Record<string, {}>>,
   SourceFiles extends Record<keyof ShallowPropName | keyof DeepPropName, string>,
+  Union extends $$ObjectType,
+  Implements extends $$ObjectType,
 > {
 
+  declare ObjectType: ObjectType;
   declare ShallowProp: keyof ShallowPropName;
   declare ShallowName: keyof ShallowNameProp;
   declare ShallowPropName: ShallowPropName;
@@ -125,30 +157,38 @@ export class $$ObjectTypeInfo<
   declare InputTypes: InputTypes;
   declare Directives: Directives;
   declare SourceFiles: SourceFiles;
+  declare Union: Union;
+  declare Implements: Implements;
 
-  declare ShallowFrag: this["ShallowProp"];
-  declare DeepFrag: Values<_$$DeepFrag<this>>;
+  declare DirectShallowFrag: this["ShallowProp"];
+  declare DirectDeepFrag: Values<_$$DeepFrag<this>>;
+  declare ShallowFrag: this["DirectShallowFrag"] | { [U in Union]: $$ObjectTypeInfoMap[U]["ShallowFrag"] }[Union];
+  declare DeepFrag: this["DirectDeepFrag"] | { [U in Union]: $$ObjectTypeInfoMap[U]["DeepFrag"] }[Union];
   declare PropName: ShallowPropName & DeepPropName;
   declare NameProp: ShallowNameProp & DeepNameProp;
   declare Wrap: ShallowWrap & DeepWrap;
   declare Type: DeepType & ShallowType;
   declare Prop: this["ShallowProp"] | this["DeepProp"];
   declare Name: this["ShallowName"] | this["DeepName"];
-  declare Frag: this["ShallowFrag"] | this["DeepFrag"];
+  declare DirectFrag: this["DirectShallowFrag"] | this["DirectDeepFrag"];
+  declare Frag: this["DirectFrag"] | { [U in Union]: $$ObjectTypeInfoMap[U]["Frag"] }[Union];
 
   constructor(
+    _0: ObjectType,
     public shallowPropToName: ShallowPropName,
     public shallowNameToProp: ShallowNameProp,
-    _0: ShallowType,
-    _1: ShallowWrap,
+    _1: ShallowType,
+    _2: ShallowWrap,
     public deepPropToName: DeepPropName,
     public deepNameToProp: DeepNameProp,
-    _2: DeepType,
-    _3: DeepWrap,
-    _4: InputTypes,
+    _3: DeepType,
+    _4: DeepWrap,
+    _5: InputTypes,
     public inputTypeStrings: Record<keyof ShallowPropName | keyof DeepPropName, any>,
     public directives: Directives,
     public sourceFiles: SourceFiles,
+    _6: Union,
+    _7: Implements,
   ){
 
   }
@@ -240,6 +280,8 @@ export const $$reconstruct = <I extends $$AnyProp>(id: I, input: $$Input<I>, pro
   }
 }
 
+/* --- End Boilerplate --- */
+
 export type Category = (
   | "Childrens"
   | "Dystopian"
@@ -300,11 +342,14 @@ export interface AuthorFilter {
 export type $$ObjectType = (
   | "Author"
   | "Book"
+  | "Person"
   | "Query"
+  | "User"
 )
 
 export const $$objectTypeInfoMap = {
   Author: new $$ObjectTypeInfo(
+    "Author",
     {
       Author$id: "id",
       Author$name: "name",
@@ -361,8 +406,13 @@ export const $$objectTypeInfoMap = {
       Author$id: "sample",
       Author$name: "sample",
     } as const,
+    null as any as never,
+    null as any as (
+      | "Person"
+    ),
   ),
   Book: new $$ObjectTypeInfo(
+    "Book",
     {
       Book$categories: "categories",
       Book$description: "description",
@@ -447,27 +497,90 @@ export const $$objectTypeInfoMap = {
       Book$title: "sample",
       Book$translation: "sample",
     } as const,
+    null as any as never,
+    null as any as never,
+  ),
+  Person: new $$ObjectTypeInfo(
+    "Person",
+    {
+      Person$id: "id",
+      Person$name: "name",
+    },
+    {
+      id: "Person$id",
+      name: "Person$name",
+    },
+    null as any as {
+      Person$id: "ID",
+      Person$name: "String",
+    },
+    null as any as {
+      Person$id: $$Identity,
+      Person$name: $$Optional<$$Identity>,
+    },
+    {
+      Person$favoriteBook: "favoriteBook",
+    },
+    {
+      favoriteBook: "Person$favoriteBook",
+    },
+    null as any as {
+      Person$favoriteBook: "Book",
+    },
+    null as any as {
+      Person$favoriteBook: $$Optional<$$Identity>,
+    },
+    null as any as {
+      Person$favoriteBook: {},
+      Person$id: {},
+      Person$name: {},
+    },
+    {
+      Person$favoriteBook: {},
+      Person$id: {},
+      Person$name: {},
+    },
+    {
+      Person$favoriteBook: {},
+      Person$id: {},
+      Person$name: {},
+    },
+    {
+      Person$favoriteBook: "sample",
+      Person$id: "sample",
+      Person$name: "sample",
+    } as const,
+    null as any as (
+      | "Author"
+      | "User"
+    ),
+    null as any as never,
   ),
   Query: new $$ObjectTypeInfo(
+    "Query",
     {}, {}, {}, {},
     {
       Query$getAuthor: "getAuthor",
       Query$getBook: "getBook",
+      Query$getPerson: "getPerson",
       Query$listBooks: "listBooks",
     },
     {
       getAuthor: "Query$getAuthor",
       getBook: "Query$getBook",
+      getPerson: "Query$getPerson",
       listBooks: "Query$listBooks",
     },
     null as any as {
       Query$getAuthor: "Author",
       Query$getBook: "Book",
+      Query$getPerson: "Person",
       Query$listBooks: "Book",
     },
     null as any as {
       Query$getAuthor: $$Identity,
       Query$getBook: $$Identity,
+      Query$getPerson: $$Identity,
       Query$listBooks: $$Array<$$Identity>,
     },
     null as any as {
@@ -475,6 +588,9 @@ export const $$objectTypeInfoMap = {
         id: $$Scalars["ID"],
       },
       Query$getBook: {
+        id: $$Scalars["ID"],
+      },
+      Query$getPerson: {
         id: $$Scalars["ID"],
       },
       Query$listBooks: {
@@ -489,6 +605,9 @@ export const $$objectTypeInfoMap = {
       Query$getBook: {
         id: "ID!",
       },
+      Query$getPerson: {
+        id: "ID!",
+      },
       Query$listBooks: {
         cursor: "Cursor",
         filter: "BookFilter",
@@ -497,19 +616,80 @@ export const $$objectTypeInfoMap = {
     {
       Query$getAuthor: {},
       Query$getBook: {},
+      Query$getPerson: {},
       Query$listBooks: {},
     },
     {
       Query$getAuthor: "sample",
       Query$getBook: "sample",
+      Query$getPerson: "sample",
       Query$listBooks: "sample",
     } as const,
+    null as any as never,
+    null as any as never,
+  ),
+  User: new $$ObjectTypeInfo(
+    "User",
+    {
+      User$id: "id",
+      User$name: "name",
+    },
+    {
+      id: "User$id",
+      name: "User$name",
+    },
+    null as any as {
+      User$id: "ID",
+      User$name: "String",
+    },
+    null as any as {
+      User$id: $$Identity,
+      User$name: $$Optional<$$Identity>,
+    },
+    {
+      User$favoriteBook: "favoriteBook",
+    },
+    {
+      favoriteBook: "User$favoriteBook",
+    },
+    null as any as {
+      User$favoriteBook: "Book",
+    },
+    null as any as {
+      User$favoriteBook: $$Optional<$$Identity>,
+    },
+    null as any as {
+      User$favoriteBook: {},
+      User$id: {},
+      User$name: {},
+    },
+    {
+      User$favoriteBook: {},
+      User$id: {},
+      User$name: {},
+    },
+    {
+      User$favoriteBook: {},
+      User$id: {},
+      User$name: {},
+    },
+    {
+      User$favoriteBook: "sample",
+      User$id: "sample",
+      User$name: "sample",
+    } as const,
+    null as any as never,
+    null as any as (
+      | "Person"
+    ),
   ),
 }
 
 export type Author$ = $$ObjectTypeInfoMap["Author"]["Frag"];
 export type Book$ = $$ObjectTypeInfoMap["Book"]["Frag"];
+export type Person$ = $$ObjectTypeInfoMap["Person"]["Frag"];
 export type Query$ = $$ObjectTypeInfoMap["Query"]["Frag"];
+export type User$ = $$ObjectTypeInfoMap["User"]["Frag"];
 
 const Author$$ = <F extends $$DeepArray<Author$>>(...frag: F): F[number][] => frag;
 
@@ -552,30 +732,69 @@ export const Book: typeof _Book & {
 
 type typeof$Book = typeof Book
 
+const Person$$ = <F extends $$DeepArray<Person$>>(...frag: F): F[number][] => frag;
+
+const _Person = {
+  $: Person$$,
+  id: "Person$id",
+  name: "Person$name",
+} as const;
+
+export const Person: typeof _Person & {
+  favoriteBook: $$MapWrap<typeof$Book, "Person$favoriteBook">,
+} = {
+  ..._Person,
+  favoriteBook: $$mapWrap(() => Book, "Person$favoriteBook"),
+};
+
+type typeof$Person = typeof Person
+
 const Query$$ = <F extends $$DeepArray<Query$>>(...frag: F): F[number][] => frag;
 
 export const Query: {
   $: typeof Query$$,
   getAuthor: $$MapWrap<typeof$Author, "Query$getAuthor">,
   getBook: $$MapWrap<typeof$Book, "Query$getBook">,
+  getPerson: $$MapWrap<typeof$Person, "Query$getPerson">,
   listBooks: $$MapWrap<typeof$Book, "Query$listBooks">,
 } = {
   $: Query$$,
   getAuthor: $$mapWrap(() => Author, "Query$getAuthor"),
   getBook: $$mapWrap(() => Book, "Query$getBook"),
+  getPerson: $$mapWrap(() => Person, "Query$getPerson"),
   listBooks: $$mapWrap(() => Book, "Query$listBooks"),
 };
 
 type typeof$Query = typeof Query
 
+const User$$ = <F extends $$DeepArray<User$>>(...frag: F): F[number][] => frag;
+
+const _User = {
+  $: User$$,
+  id: "User$id",
+  name: "User$name",
+} as const;
+
+export const User: typeof _User & {
+  favoriteBook: $$MapWrap<typeof$Book, "User$favoriteBook">,
+} = {
+  ..._User,
+  favoriteBook: $$mapWrap(() => Book, "User$favoriteBook"),
+};
+
+type typeof$User = typeof User
+
 export type $Author<F extends $$DeepArray<Author$>> = $$Result<"Author", $$UnwrapDeepArray<F>>
 export type $Book<F extends $$DeepArray<Book$>> = $$Result<"Book", $$UnwrapDeepArray<F>>
+export type $Person<F extends $$DeepArray<Person$>> = $$Result<"Person", $$UnwrapDeepArray<F>>
 export type $Query<F extends $$DeepArray<Query$>> = $$Result<"Query", $$UnwrapDeepArray<F>>
+export type $User<F extends $$DeepArray<User$>> = $$Result<"User", $$UnwrapDeepArray<F>>
 
 export const $$generateObject = <R extends $$GqxReturn>(f: $$GqxImpl<R>) => ({
   query: {
     getAuthor: f("Query$getAuthor"),
     getBook: f("Query$getBook"),
+    getPerson: f("Query$getPerson"),
     listBooks: f("Query$listBooks"),
   },
 })
@@ -587,6 +806,8 @@ export const $$typeDirectives = {
   Author: {
     testOnAuthor: {},
   },
+  User: {},
+  Person: {},
   Category: {},
   Language: {},
 }
