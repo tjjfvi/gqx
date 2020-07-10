@@ -7,6 +7,8 @@ exports[` 1`] = `
   | \\"Query\\"
   | \\"Recursive\\"
   | \\"ShallowOnly\\"
+  | \\"Tree\\"
+  | \\"TrinaryTree\\"
   | \\"WithId\\"
 )
 
@@ -139,7 +141,7 @@ export const $$objectTypeInfoMap = {
       noDirectives: \\"Query$noDirectives\\",
     },
     null as any as {
-      Query$multDirectivesArgs: \\"BinaryTree\\",
+      Query$multDirectivesArgs: \\"Tree\\",
       Query$multDirectivesNoArgs: \\"ShallowOnly\\",
       Query$multDirectivesNullArgs: \\"DeepOnly\\",
       Query$noDirectives: \\"Recursive\\",
@@ -333,6 +335,91 @@ export const $$objectTypeInfoMap = {
     null as any as never,
     null as any as never,
   ),
+  Tree: new $$ObjectTypeInfo(
+    \\"Tree\\",
+    {}, {}, {}, {},
+    {}, {}, {}, {},
+    null as any as {},
+    {},
+    {},
+    {} as const,
+    null as any as (
+      | \\"BinaryTree\\"
+      | \\"TrinaryTree\\"
+    ),
+    null as any as never,
+  ),
+  TrinaryTree: new $$ObjectTypeInfo(
+    \\"TrinaryTree\\",
+    {
+      TrinaryTree$id: \\"id\\",
+      TrinaryTree$node: \\"node\\",
+    },
+    {
+      id: \\"TrinaryTree$id\\",
+      node: \\"TrinaryTree$node\\",
+    },
+    null as any as {
+      TrinaryTree$id: \\"ID\\",
+      TrinaryTree$node: \\"String\\",
+    },
+    null as any as {
+      TrinaryTree$id: $$Identity,
+      TrinaryTree$node: $$Identity,
+    },
+    {
+      TrinaryTree$center: \\"center\\",
+      TrinaryTree$left: \\"left\\",
+      TrinaryTree$right: \\"right\\",
+    },
+    {
+      center: \\"TrinaryTree$center\\",
+      left: \\"TrinaryTree$left\\",
+      right: \\"TrinaryTree$right\\",
+    },
+    null as any as {
+      TrinaryTree$center: \\"TrinaryTree\\",
+      TrinaryTree$left: \\"TrinaryTree\\",
+      TrinaryTree$right: \\"TrinaryTree\\",
+    },
+    null as any as {
+      TrinaryTree$center: $$Optional<$$Identity>,
+      TrinaryTree$left: $$Optional<$$Identity>,
+      TrinaryTree$right: $$Optional<$$Identity>,
+    },
+    null as any as {
+      TrinaryTree$center: {},
+      TrinaryTree$id: {},
+      TrinaryTree$left: {},
+      TrinaryTree$node: {},
+      TrinaryTree$right: {},
+    },
+    {
+      TrinaryTree$center: {},
+      TrinaryTree$id: {},
+      TrinaryTree$left: {},
+      TrinaryTree$node: {},
+      TrinaryTree$right: {},
+    },
+    {
+      TrinaryTree$center: {},
+      TrinaryTree$id: {},
+      TrinaryTree$left: {},
+      TrinaryTree$node: {},
+      TrinaryTree$right: {},
+    },
+    {
+      TrinaryTree$center: \\"GraphQL request\\",
+      TrinaryTree$id: \\"GraphQL request\\",
+      TrinaryTree$left: \\"GraphQL request\\",
+      TrinaryTree$node: \\"GraphQL request\\",
+      TrinaryTree$right: \\"GraphQL request\\",
+    } as const,
+    null as any as never,
+    null as any as (
+      | \\"WithId\\"
+    ),
+  ),
   WithId: new $$ObjectTypeInfo(
     \\"WithId\\",
     {
@@ -363,6 +450,7 @@ export const $$objectTypeInfoMap = {
     null as any as (
       | \\"BinaryTree\\"
       | \\"Recursive\\"
+      | \\"TrinaryTree\\"
     ),
     null as any as never,
   ),

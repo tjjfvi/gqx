@@ -8,7 +8,7 @@ schema {
 
 type Query {
   getAuthor(id: ID!): Author!
-  getBook(id: ID!): Book!
+  getBook(id: ID!): GetBookResult!
   listBooks(cursor: Cursor, filter: BookFilter): [Book!]!
 }
 
@@ -19,6 +19,14 @@ type Mutation {
 input Cursor {
   start: Int!
   limit: Int!
+}
+
+union GetBookResult =
+  | BookIsSecretError
+  | Book
+
+type BookIsSecretError {
+  reason: String!
 }
 
 type Book @auth(test: {title:"stuffs"},test2:["bye1","bye2"]) {

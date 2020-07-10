@@ -8,7 +8,7 @@ directive @inputArrArg(a: [InputType]) on FIELD_DEFINITION
 type Query {
   noDirectives: [Recursive!]!
   oneDirective: String @scalarArg(x: "string")
-  multDirectivesArgs: BinaryTree!
+  multDirectivesArgs: Tree!
   @scalarArg(a: "test", b: 12345)
   @inputArg(a: { x: 5, y: [1,2,3], z: { x: 5 } })
   @scalarArrArg(a: ["a","b","c",null])
@@ -57,3 +57,15 @@ type BinaryTree implements WithId {
   left: BinaryTree
   right: BinaryTree
 }
+
+type TrinaryTree implements WithId {
+  id: ID!
+  node: String!
+  left: TrinaryTree
+  right: TrinaryTree
+  center: TrinaryTree
+}
+
+union Tree =
+  | BinaryTree
+  | TrinaryTree

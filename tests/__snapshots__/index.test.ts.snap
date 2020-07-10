@@ -338,6 +338,8 @@ export interface ReviewInput {
 export type $$ObjectType = (
   | \\"Author\\"
   | \\"Book\\"
+  | \\"BookIsSecretError\\"
+  | \\"GetBookResult\\"
   | \\"Mutation\\"
   | \\"Person\\"
   | \\"Query\\"
@@ -502,6 +504,50 @@ export const $$objectTypeInfoMap = {
     null as any as never,
     null as any as never,
   ),
+  BookIsSecretError: new $$ObjectTypeInfo(
+    \\"BookIsSecretError\\",
+    {
+      BookIsSecretError$reason: \\"reason\\",
+    },
+    {
+      reason: \\"BookIsSecretError$reason\\",
+    },
+    null as any as {
+      BookIsSecretError$reason: \\"String\\",
+    },
+    null as any as {
+      BookIsSecretError$reason: $$Identity,
+    },
+    {}, {}, {}, {},
+    null as any as {
+      BookIsSecretError$reason: {},
+    },
+    {
+      BookIsSecretError$reason: {},
+    },
+    {
+      BookIsSecretError$reason: {},
+    },
+    {
+      BookIsSecretError$reason: \\"extensive\\",
+    } as const,
+    null as any as never,
+    null as any as never,
+  ),
+  GetBookResult: new $$ObjectTypeInfo(
+    \\"GetBookResult\\",
+    {}, {}, {}, {},
+    {}, {}, {}, {},
+    null as any as {},
+    {},
+    {},
+    {} as const,
+    null as any as (
+      | \\"Book\\"
+      | \\"BookIsSecretError\\"
+    ),
+    null as any as never,
+  ),
   Mutation: new $$ObjectTypeInfo(
     \\"Mutation\\",
     {}, {}, {}, {},
@@ -617,7 +663,7 @@ export const $$objectTypeInfoMap = {
     },
     null as any as {
       Query$getAuthor: \\"Author\\",
-      Query$getBook: \\"Book\\",
+      Query$getBook: \\"GetBookResult\\",
       Query$listBooks: \\"Book\\",
     },
     null as any as {
@@ -806,6 +852,8 @@ export const $$objectTypeInfoMap = {
 
 export type Author$ = $$ObjectTypeInfoMap[\\"Author\\"][\\"Frag\\"];
 export type Book$ = $$ObjectTypeInfoMap[\\"Book\\"][\\"Frag\\"];
+export type BookIsSecretError$ = $$ObjectTypeInfoMap[\\"BookIsSecretError\\"][\\"Frag\\"];
+export type GetBookResult$ = $$ObjectTypeInfoMap[\\"GetBookResult\\"][\\"Frag\\"];
 export type Mutation$ = $$ObjectTypeInfoMap[\\"Mutation\\"][\\"Frag\\"];
 export type Person$ = $$ObjectTypeInfoMap[\\"Person\\"][\\"Frag\\"];
 export type Query$ = $$ObjectTypeInfoMap[\\"Query\\"][\\"Frag\\"];
@@ -854,6 +902,21 @@ export const Book: typeof _Book & {
 
 type typeof$Book = typeof Book
 
+const BookIsSecretError$$ = <F extends $$DeepArray<BookIsSecretError$>>(...frag: F): F[number][] => frag;
+
+export const BookIsSecretError = {
+  $: BookIsSecretError$$,
+  reason: \\"BookIsSecretError$reason\\",
+} as const;
+
+type typeof$BookIsSecretError = typeof BookIsSecretError
+
+const GetBookResult$$ = <F extends $$DeepArray<GetBookResult$>>(...frag: F): F[number][] => frag;
+
+export const GetBookResult = {} as const;
+
+type typeof$GetBookResult = typeof GetBookResult
+
 const Mutation$$ = <F extends $$DeepArray<Mutation$>>(...frag: F): F[number][] => frag;
 
 export const Mutation: {
@@ -888,12 +951,12 @@ const Query$$ = <F extends $$DeepArray<Query$>>(...frag: F): F[number][] => frag
 export const Query: {
   $: typeof Query$$,
   getAuthor: $$MapWrap<typeof$Author, \\"Query$getAuthor\\">,
-  getBook: $$MapWrap<typeof$Book, \\"Query$getBook\\">,
+  getBook: $$MapWrap<typeof$GetBookResult, \\"Query$getBook\\">,
   listBooks: $$MapWrap<typeof$Book, \\"Query$listBooks\\">,
 } = {
   $: Query$$,
   getAuthor: $$mapWrap(() => Author, \\"Query$getAuthor\\"),
-  getBook: $$mapWrap(() => Book, \\"Query$getBook\\"),
+  getBook: $$mapWrap(() => GetBookResult, \\"Query$getBook\\"),
   listBooks: $$mapWrap(() => Book, \\"Query$listBooks\\"),
 };
 
@@ -941,6 +1004,8 @@ type typeof$User = typeof User
 
 export type $Author<F extends $$DeepArray<Author$>> = $$Result<\\"Author\\", $$UnwrapDeepArray<F>>
 export type $Book<F extends $$DeepArray<Book$>> = $$Result<\\"Book\\", $$UnwrapDeepArray<F>>
+export type $BookIsSecretError<F extends $$DeepArray<BookIsSecretError$>> = $$Result<\\"BookIsSecretError\\", $$UnwrapDeepArray<F>>
+export type $GetBookResult<F extends $$DeepArray<GetBookResult$>> = $$Result<\\"GetBookResult\\", $$UnwrapDeepArray<F>>
 export type $Mutation<F extends $$DeepArray<Mutation$>> = $$Result<\\"Mutation\\", $$UnwrapDeepArray<F>>
 export type $Person<F extends $$DeepArray<Person$>> = $$Result<\\"Person\\", $$UnwrapDeepArray<F>>
 export type $Query<F extends $$DeepArray<Query$>> = $$Result<\\"Query\\", $$UnwrapDeepArray<F>>
@@ -962,6 +1027,8 @@ export type $$TypeDirectives = typeof $$typeDirectives;
 export const $$typeDirectives = {
   Query: {},
   Mutation: {},
+  GetBookResult: {},
+  BookIsSecretError: {},
   Book: {
     auth: {
       test: {

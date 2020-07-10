@@ -10,4 +10,8 @@ exports[`stringifyObjectTypes.gql Recursive 1`] = `"export type $Recursive<F ext
 
 exports[`stringifyObjectTypes.gql ShallowOnly 1`] = `"export type $ShallowOnly<F extends $$DeepArray<ShallowOnly$>> = $$Result<\\"ShallowOnly\\", $$UnwrapDeepArray<F>>"`;
 
+exports[`stringifyObjectTypes.gql Tree 1`] = `"export type $Tree<F extends $$DeepArray<Tree$>> = $$Result<\\"Tree\\", $$UnwrapDeepArray<F>>"`;
+
+exports[`stringifyObjectTypes.gql TrinaryTree 1`] = `"export type $TrinaryTree<F extends $$DeepArray<TrinaryTree$>> = $$Result<\\"TrinaryTree\\", $$UnwrapDeepArray<F>>"`;
+
 exports[`stringifyObjectTypes.gql WithId 1`] = `"export type $WithId<F extends $$DeepArray<WithId$>> = $$Result<\\"WithId\\", $$UnwrapDeepArray<F>>"`;

@@ -10,21 +10,25 @@ export default (ctx: Context, definitions: readonly DefinitionNode[]) => {
   ctx.operations = operations;
   ctx.baseTypes = operations.map(o => o[1]);
   definitions.map(def => {
+    const createObjType = () => ({
+      fields: [],
+      unions: [],
+      implements: [],
+    });
+
     if(def.kind === "InputObjectTypeDefinition" || def.kind === "InputObjectTypeExtension")
       return ctx.inputTypes[def.name.value] = (ctx.inputTypes[def.name.value] || []).concat(def.fields ?? []);
     else if(def.kind === "EnumTypeDefinition" || def.kind === "EnumTypeExtension")
       ctx.enumTypes[def.name.value] = (ctx.enumTypes[def.name.value] || []).concat(def.values ?? []);
+    else if(def.kind === "UnionTypeDefinition" || def.kind === "UnionTypeExtension")
+      (ctx.objectTypes[def.name.value] = ctx.objectTypes[def.name.value] || createObjType())
+        .unions.push(...def.types?.map(x => x.name.value) ?? []);
     else if(
       def.kind === "ObjectTypeDefinition" ||
       def.kind === "ObjectTypeExtension" ||
       def.kind === "InterfaceTypeDefinition" ||
       def.kind === "InterfaceTypeExtension" ||
     false) {
-      const createObjType = () => ({
-        fields: [],
-        unions: [],
-        implements: [],
-      });
       const objType = ctx.objectTypes[def.name.value] = ctx.objectTypes[def.name.value] ?? createObjType();
       objType.fields.push(...def.fields ?? []);
       objType.implements.push(...def.interfaces?.map(i => i.name.value) ?? []);

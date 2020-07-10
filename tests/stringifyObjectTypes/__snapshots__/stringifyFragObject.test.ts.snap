@@ -46,13 +46,13 @@ const _Query = {
 } as const;
 
 export const Query: typeof _Query & {
-  multDirectivesArgs: $$MapWrap<typeof$BinaryTree, \\"Query$multDirectivesArgs\\">,
+  multDirectivesArgs: $$MapWrap<typeof$Tree, \\"Query$multDirectivesArgs\\">,
   multDirectivesNoArgs: $$MapWrap<typeof$ShallowOnly, \\"Query$multDirectivesNoArgs\\">,
   multDirectivesNullArgs: $$MapWrap<typeof$DeepOnly, \\"Query$multDirectivesNullArgs\\">,
   noDirectives: $$MapWrap<typeof$Recursive, \\"Query$noDirectives\\">,
 } = {
   ..._Query,
-  multDirectivesArgs: $$mapWrap(() => BinaryTree, \\"Query$multDirectivesArgs\\"),
+  multDirectivesArgs: $$mapWrap(() => Tree, \\"Query$multDirectivesArgs\\"),
   multDirectivesNoArgs: $$mapWrap(() => ShallowOnly, \\"Query$multDirectivesNoArgs\\"),
   multDirectivesNullArgs: $$mapWrap(() => DeepOnly, \\"Query$multDirectivesNullArgs\\"),
   noDirectives: $$mapWrap(() => Recursive, \\"Query$noDirectives\\"),
@@ -89,6 +89,37 @@ export const ShallowOnly = {
 } as const;
 
 type typeof$ShallowOnly = typeof ShallowOnly"
+`;
+
+exports[`stringifyObjectTypes.gql Tree 1`] = `
+"const Tree$$ = <F extends $$DeepArray<Tree$>>(...frag: F): F[number][] => frag;
+
+export const Tree = {} as const;
+
+type typeof$Tree = typeof Tree"
+`;
+
+exports[`stringifyObjectTypes.gql TrinaryTree 1`] = `
+"const TrinaryTree$$ = <F extends $$DeepArray<TrinaryTree$>>(...frag: F): F[number][] => frag;
+
+const _TrinaryTree = {
+  $: TrinaryTree$$,
+  id: \\"TrinaryTree$id\\",
+  node: \\"TrinaryTree$node\\",
+} as const;
+
+export const TrinaryTree: typeof _TrinaryTree & {
+  center: $$MapWrap<typeof$TrinaryTree, \\"TrinaryTree$center\\">,
+  left: $$MapWrap<typeof$TrinaryTree, \\"TrinaryTree$left\\">,
+  right: $$MapWrap<typeof$TrinaryTree, \\"TrinaryTree$right\\">,
+} = {
+  ..._TrinaryTree,
+  center: $$mapWrap(() => TrinaryTree, \\"TrinaryTree$center\\"),
+  left: $$mapWrap(() => TrinaryTree, \\"TrinaryTree$left\\"),
+  right: $$mapWrap(() => TrinaryTree, \\"TrinaryTree$right\\"),
+};
+
+type typeof$TrinaryTree = typeof TrinaryTree"
 `;
 
 exports[`stringifyObjectTypes.gql WithId 1`] = `
