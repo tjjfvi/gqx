@@ -268,15 +268,21 @@ export const $$reconstruct = <I extends $$AnyProp>(id: I, input: $$Input<I>, pro
 
   function populateSubs(prop: $$AnyFrag | $$DeepArray<$$AnyFrag>, subs: Subs | true): void{
     if(prop instanceof Array)
-      prop.map(p => populateSubs(p, subs));
-    else if(subs === true)
+      return void (prop.map(p => populateSubs(p, subs)));
+
+    if(subs === true)
       return;
-    else if(typeof prop === "string")
-      subs[prop.split("$")[1]] = true;
-    else {
-      const name = prop.f.split("$")[1];
-      populateSubs(prop.l, subs[name] = (subs[name] || {}));
-    }
+
+    const [type, name] = (typeof prop === "string" ? prop : prop.f).split("$");
+
+    const inlineFrag = "... on " + type;
+    subs = subs[inlineFrag] = subs[inlineFrag] ?? {};
+
+    if(typeof prop === "string")
+      return void (subs[name] = true);
+
+    subs[name] = subs[name] ?? {}
+    populateSubs(prop.l, subs[name]);
   }
 }
 

@@ -1,6 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { Author, $$GqxReturn, $$AnyProp, $$Frag, $$Input, $$Output, $$generateObject, Person } from "./output";
+import { Author, $$GqxReturn, $$AnyProp, $$Frag, $$Input, $$Output, $$generateObject, Person, $$reconstruct } from "./output";
+
+const frag = Person.$(
+  Person.id,
+  Person.favoriteBook.id,
+  Author.name,
+  Author.books.id,
+);
+
+console.log($$reconstruct("Query$getPerson", { id: "id" }, frag));
 
 type GqxOut_<I extends $$AnyProp> = <T extends $$Frag<I>>(input: $$Input<I>, frag: T) => $$Output<I, T>;
 
@@ -10,12 +19,6 @@ interface GqxOut extends $$GqxReturn {
 
 const gqx = $$generateObject<GqxOut>(() => null as any);
 
-const frag = Person.$(
-  Person.id,
-  Person.favoriteBook.id,
-  Author.name,
-  Author.books.id,
-);
 const result = gqx.query.getPerson({ id: "id" }, frag);
 
 result.id
