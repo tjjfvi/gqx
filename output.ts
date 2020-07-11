@@ -16,7 +16,6 @@ interface DeepFragRecurseGuard<F, Lo> extends $<F, Values<Lo>> { readonly l: Val
 
 export type $$Type = $$EnumType | $$ScalarType | $$ObjectType;
 export type $$EnumType = keyof $$EnumTypes;
-export type $$ScalarType = keyof $$Scalars;
 
 export type $$AnyFrag = $$ObjectTypeInfoMap[$$ObjectType]["Frag"];
 export type $$AnyProp = $$ObjectTypeInfoMap[$$ObjectType]["Prop"];
@@ -826,4 +825,12 @@ export type Float = $$Scalars["Float"]
 export type ID = $$Scalars["ID"]
 export type String = $$Scalars["String"]
 export type Boolean = $$Scalars["Boolean"]
+
+export type $$ScalarType = (
+  | "Boolean"
+  | "Float"
+  | "ID"
+  | "Int"
+  | "String"
+)
 

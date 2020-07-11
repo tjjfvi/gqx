@@ -23,7 +23,6 @@ interface DeepFragRecurseGuard<F, Lo> extends $<F, Values<Lo>> { readonly l: Val
 
 export type $$Type = $$EnumType | $$ScalarType | $$ObjectType;
 export type $$EnumType = keyof $$EnumTypes;
-export type $$ScalarType = keyof $$Scalars;
 
 export type $$AnyFrag = $$ObjectTypeInfoMap[$$ObjectType]["Frag"];
 export type $$AnyProp = $$ObjectTypeInfoMap[$$ObjectType]["Prop"];
