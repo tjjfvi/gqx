@@ -13,6 +13,7 @@ import stringifyBoilerplate from "./stringifyBoilerplate";
 import groupDefinitions from "./groupDefinitions";
 import { stringifyTypeDirectives } from "./stringifyTypeDirectives";
 import { parseSchema } from "./parseSchema";
+import { stringifyScalarTypes } from "./stringifyScalarTypes";
 
 interface Context {
   typeDirectives: Record<string, DirectiveNode[]>;
@@ -21,6 +22,7 @@ interface Context {
   objectTypes: { [k: string]: { fields: FieldDefinitionNode[]; unions: string[]; implements: string[] } };
   operations: [string, string][];
   baseTypes: string[];
+  scalarTypes: string[];
 }
 
 export default ({ schemaPath }: { schemaPath: string }) => {
@@ -28,6 +30,7 @@ export default ({ schemaPath }: { schemaPath: string }) => {
   const ctx: Context = {
     operations: [],
     baseTypes: [],
+    scalarTypes: [],
     enumTypes: {},
     inputTypes: {},
     objectTypes: {},
@@ -46,6 +49,7 @@ export default ({ schemaPath }: { schemaPath: string }) => {
     stringifyObjectTypes(ctx),
     stringifyOperations(ctx),
     stringifyTypeDirectives(ctx),
+    stringifyScalarTypes(ctx),
     "",
   ].join("\n\n").replace(/\n\n\n+/g, "\n\n");
 

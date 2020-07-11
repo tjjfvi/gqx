@@ -2,6 +2,14 @@ import { Context } from ".";
 import { DefinitionNode, SchemaDefinitionNode } from "graphql";
 
 export default (ctx: Context, definitions: readonly DefinitionNode[]) => {
+  ctx.scalarTypes.push(
+    "Int",
+    "Float",
+    "ID",
+    "String",
+    "Boolean",
+  );
+
   const schemaDef: undefined | SchemaDefinitionNode =
     definitions.find((d): d is SchemaDefinitionNode => d.kind === "SchemaDefinition");
   const operations: [string, string][] = schemaDef ?
@@ -35,7 +43,9 @@ export default (ctx: Context, definitions: readonly DefinitionNode[]) => {
       for(const { name } of def.interfaces ?? [])
         ((ctx.objectTypes[name.value] = ctx.objectTypes[name.value] ?? createObjType()))
           .unions.push(def.name.value);
-    } else if(def.kind !== "ScalarTypeDefinition" && def.kind !== "ScalarTypeExtension")
+    } else if(def.kind === "ScalarTypeDefinition" || def.kind === "ScalarTypeExtension")
+      ctx.scalarTypes.push(def.name.value);
+    else
       return;
     ctx.typeDirectives[def.name.value] = (ctx.typeDirectives[def.name.value] ?? []).concat(def.directives ?? []);
   });

@@ -821,3 +821,9 @@ export const $$typeDirectives = {
   Language: {},
 }
 
+export type Int = $$Scalars["Int"]
+export type Float = $$Scalars["Float"]
+export type ID = $$Scalars["ID"]
+export type String = $$Scalars["String"]
+export type Boolean = $$Scalars["Boolean"]
+

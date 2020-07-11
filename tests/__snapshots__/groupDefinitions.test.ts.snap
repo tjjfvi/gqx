@@ -1194,6 +1194,13 @@ Object {
     },
   },
   "operations": Array [],
+  "scalarTypes": Array [
+    "Int",
+    "Float",
+    "ID",
+    "String",
+    "Boolean",
+  ],
   "typeDirectives": Object {
     "ExtendedEnum": Array [],
     "ExtendedObject": Array [],

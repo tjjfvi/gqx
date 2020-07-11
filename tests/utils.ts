@@ -15,6 +15,7 @@ const parseGql = (...names: string[]) => parse(readGql(...names));
 const emptyCtx = (): Context => ({
   baseTypes: [],
   operations: [],
+  scalarTypes: [],
   enumTypes: {},
   inputTypes: {},
   objectTypes: {},
