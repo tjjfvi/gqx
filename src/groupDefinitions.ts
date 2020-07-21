@@ -1,7 +1,7 @@
 import { Context } from ".";
 import { DefinitionNode, SchemaDefinitionNode } from "graphql";
 
-export default (ctx: Context, definitions: readonly DefinitionNode[]) => {
+export const groupDefinitions = (ctx: Context, definitions: readonly DefinitionNode[]) => {
   ctx.scalarTypes.push(
     "Int",
     "Float",

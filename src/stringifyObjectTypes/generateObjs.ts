@@ -1,8 +1,8 @@
 
 import { Context, Obj, Id, Prop } from ".";
-import unwrapType from "../unwrapType";
+import { unwrapType } from "../unwrapType";
 
-export default (ctx: Context): [Obj[], Id[], Context] => {
+export const generateObjs = (ctx: Context): [Obj[], Id[], Context] => {
   const ids: Id[] = [];
   const objs: Obj[] =
     Object.keys(ctx.objectTypes)

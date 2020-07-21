@@ -1,6 +1,6 @@
 
-import generateObjs from "../../src/stringifyObjectTypes/generateObjs"
-import stringifyFragEnums from "../../src/stringifyObjectTypes/stringifyFragEnums";
+import { generateObjs } from "../../src/stringifyObjectTypes/generateObjs"
+import { stringifyFragEnums } from "../../src/stringifyObjectTypes/stringifyFragEnums";
 
 test("", () => {
   const [objs] = generateObjs(utils.getOperations(["stringifyObjectTypes"]));

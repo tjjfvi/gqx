@@ -1,8 +1,8 @@
 
 import { Context } from "..";
 import { InputValueDefinitionNode } from "graphql";
-import stringifyObjectGen from "./stringifyObjectGen";
-import generateObjs from "./generateObjs";
+import { stringifyObjectGen } from "./stringifyObjectGen";
+import { generateObjs } from "./generateObjs";
 
 
 interface Id {

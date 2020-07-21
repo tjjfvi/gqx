@@ -1,10 +1,10 @@
 
 import { Obj } from ".";
-import stringifyId from "./stringifyId";
+import { stringifyId } from "./stringifyId";
 import { stringifyObject } from "../stringifyObject";
-import indent from "../indent";
+import { indent } from "../indent";
 import { stringifyEnum } from "../stringifyEnum";
-import stringifyInputType from "../stringifyInputType";
+import { stringifyInputType } from "../stringifyInputType";
 import { Context } from "../stringifyOperations";
 import { stringifyValue } from "../stringifyValue";
 

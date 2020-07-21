@@ -1,4 +1,4 @@
-import generateObjs from "../../src/stringifyObjectTypes/generateObjs";
+import { generateObjs } from "../../src/stringifyObjectTypes/generateObjs";
 import { stringifyObjectTypeInfo } from "../../src/stringifyObjectTypes/stringifyObjectTypeInfo";
 
 test("", () => {

@@ -1,8 +1,8 @@
 
 import { Context, Obj, Id, Prop } from ".";
-import unwrapType from "../unwrapType";
+import { unwrapType } from "../unwrapType";
 
-export default (ctx: Context): [Obj[], Context] => {
+export const generateObjs = (ctx: Context): [Obj[], Context] => {
   const objs: Obj[] =
     ctx.operations
       .map(([prop, name]) => {

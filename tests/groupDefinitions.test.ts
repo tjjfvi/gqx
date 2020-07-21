@@ -1,5 +1,5 @@
 
-import groupDefinitions from "../src/groupDefinitions";
+import { groupDefinitions } from "../src/groupDefinitions";
 
 test("", () => {
   const schema = utils.parseGql("groupDefinitions");

@@ -1,10 +1,10 @@
 
-import unwrapType from "./unwrapType";
+import { unwrapType } from "./unwrapType";
 import { InputValueDefinitionNode } from "graphql";
 import { Context } from "./stringifyOperations";
 import { stringifyObject } from "./stringifyObject";
 
-export default (ctx: Context, fields: InputValueDefinitionNode[]) =>
+export const stringifyInputType = (ctx: Context, fields: InputValueDefinitionNode[]) =>
   stringifyObject(
     fields.map(field => {
       const [{ name: { value: typeName } }, wrap, maybe] = unwrapType(field.type, true);

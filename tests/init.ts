@@ -3,7 +3,7 @@
 import "jest-chain";
 
 import ts from "typescript";
-import utils from "./utils";
+import { utils } from "./utils";
 type Utils = typeof utils;
 
 expect.extend({

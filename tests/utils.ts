@@ -2,7 +2,7 @@
 import { readFileSync } from "fs";
 import { parse } from "graphql";
 import { Context } from "../src";
-import groupDefinitions from "../src/groupDefinitions";
+import { groupDefinitions } from "../src/groupDefinitions";
 
 const gqlPath = (name: string) => __dirname + "/gql/" + name + ".gql";
 
@@ -27,6 +27,4 @@ const getOperations = (names: string[], ctx = emptyCtx()) => {
   return ctx;
 }
 
-const utils = { gqlPath, readGql, parseGql, emptyCtx, getOperations };
-
-export default utils;
+export const utils = { gqlPath, readGql, parseGql, emptyCtx, getOperations };

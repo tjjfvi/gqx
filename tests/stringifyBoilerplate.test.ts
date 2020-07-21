@@ -1,5 +1,5 @@
 
-import stringifyBoilerplate from "../src/stringifyBoilerplate";
+import { stringifyBoilerplate } from "../src/stringifyBoilerplate";
 
 test("", () => {
   const code = stringifyBoilerplate();

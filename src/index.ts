@@ -5,12 +5,12 @@ import {
   EnumValueDefinitionNode,
   DirectiveNode,
 } from "graphql";
-import stringifyEnumTypes from "./stringifyEnumTypes";
-import stringifyInputTypes from "./stringifyInputTypes";
+import { stringifyEnumTypes } from "./stringifyEnumTypes";
+import { stringifyInputTypes } from "./stringifyInputTypes";
 import stringifyObjectTypes from "./stringifyObjectTypes";
 import stringifyOperations from "./stringifyOperations";
-import stringifyBoilerplate from "./stringifyBoilerplate";
-import groupDefinitions from "./groupDefinitions";
+import { stringifyBoilerplate } from "./stringifyBoilerplate";
+import { groupDefinitions } from "./groupDefinitions";
 import { stringifyTypeDirectives } from "./stringifyTypeDirectives";
 import { parseSchema } from "./parseSchema";
 import { stringifyScalarTypes } from "./stringifyScalarTypes";

@@ -1,5 +1,5 @@
 
-import indent from "./indent";
+import { indent } from "./indent";
 
 export const stringifyEnum = (options: string[], maxLineLength = 80) => {
   if(!options.length)

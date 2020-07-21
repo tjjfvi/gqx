@@ -1,4 +1,4 @@
-import indent from "./indent";
+import { indent } from "./indent";
 
 export type ObjectEntry = [string, string] | [string, boolean, string]
 export const stringifyObject = (entries: ObjectEntry[], multiline = true) => {

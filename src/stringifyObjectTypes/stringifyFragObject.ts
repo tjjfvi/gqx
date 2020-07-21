@@ -1,9 +1,9 @@
 
 import { Obj, Prop } from ".";
-import stringifyId from "./stringifyId";
-import indent from "../indent";
+import { stringifyId } from "./stringifyId";
+import { indent } from "../indent";
 
-export default (obj: Obj) => {
+export const stringifyFragObject = (obj: Obj) => {
   const typeofType = `\n\ntype typeof$${obj.type} = typeof ${obj.type}`
 
   const fragCast = `const ${obj.type}$$ = <F extends $$DeepArray<${obj.type}$>>(...frag: F): F[number][] => frag;\n\n`

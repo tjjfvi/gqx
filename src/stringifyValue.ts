@@ -1,6 +1,6 @@
 import { ValueNode } from "graphql";
 import { inspect } from "util";
-import indent from "./indent";
+import { indent } from "./indent";
 
 
 export const stringifyValue = (val: ValueNode): string =>

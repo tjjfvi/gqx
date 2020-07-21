@@ -1,4 +1,4 @@
-import generateObjs from "../../src/stringifyOperations/generateObjs";
+import { generateObjs } from "../../src/stringifyOperations/generateObjs";
 
 test("", () => {
   const [objs] = generateObjs(utils.getOperations(["stringifyOperations"]));

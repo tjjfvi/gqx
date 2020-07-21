@@ -1,5 +1,5 @@
 
-import stringifyEnumTypes from "../src/stringifyEnumTypes";
+import { stringifyEnumTypes } from "../src/stringifyEnumTypes";
 
 test("", () => {
   const result = stringifyEnumTypes(utils.getOperations(["stringifyEnumTypes"]));

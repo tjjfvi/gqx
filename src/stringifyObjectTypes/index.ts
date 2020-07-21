@@ -1,10 +1,10 @@
 
 import { Context } from "..";
-import stringifyFragEnums from "./stringifyFragEnums";
-import stringifyFragResult from "./stringifyFragResult";
+import { stringifyFragEnums } from "./stringifyFragEnums";
+import { stringifyFragResult } from "./stringifyFragResult";
 import { stringifyObjectTypeInfo } from "./stringifyObjectTypeInfo";
-import stringifyFragObject from "./stringifyFragObject";
-import generateObjs from "./generateObjs";
+import { stringifyFragObject } from "./stringifyFragObject";
+import { generateObjs } from "./generateObjs";
 import { InputValueDefinitionNode, DirectiveNode, Location } from "graphql";
 
 interface Id {

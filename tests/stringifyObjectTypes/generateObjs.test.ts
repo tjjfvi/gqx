@@ -1,5 +1,5 @@
 
-import generateObjs from "../../src/stringifyObjectTypes/generateObjs";
+import { generateObjs } from "../../src/stringifyObjectTypes/generateObjs";
 
 test("", () => {
   const ctx = utils.getOperations(["stringifyObjectTypes"]);

@@ -1,7 +1,7 @@
 
 import { TypeNode, NamedTypeNode } from "graphql";
 
-const unwrapType = (type: TypeNode, allowUndefined = false, skipMaybe = false):
+export const unwrapType = (type: TypeNode, allowUndefined = false, skipMaybe = false):
 [NamedTypeNode, (x: string) => string, boolean, string] => {
   if(type.kind !== "NonNullType" && !skipMaybe) {
     let _type = unwrapType(type, allowUndefined, true);
@@ -20,5 +20,3 @@ const unwrapType = (type: TypeNode, allowUndefined = false, skipMaybe = false):
   }
   return [type, x => x, false, "$$Identity"];
 }
-
-export default unwrapType;

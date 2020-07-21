@@ -1,4 +1,5 @@
 
 import { Id } from ".";
 
-export default (id: Id) => `"${id.type}$${id.prop}"`
+export const stringifyId = (id: Id) =>
+  `"${id.type}$${id.prop}"`

@@ -4,7 +4,7 @@ import { stringifyObject } from "./stringifyObject";
 import { stringifyEnum } from "./stringifyEnum";
 import { stringifyValue } from "./stringifyValue";
 
-export default (ctx: Context) =>
+export const stringifyEnumTypes = (ctx: Context) =>
   Object.entries(ctx.enumTypes).map(([name, values]) =>
     `export type ${name} = ${stringifyEnum(values.map(v => JSON.stringify(v.name.value)))}`
   ).join("\n\n") + "\n\n" +

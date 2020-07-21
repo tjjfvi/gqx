@@ -1,6 +1,6 @@
 
-import generateObjs from "../../src/stringifyObjectTypes/generateObjs"
-import stringifyFragResult from "../../src/stringifyObjectTypes/stringifyFragResult";
+import { generateObjs } from "../../src/stringifyObjectTypes/generateObjs"
+import { stringifyFragResult } from "../../src/stringifyObjectTypes/stringifyFragResult";
 import { Obj } from "../../src/stringifyObjectTypes";
 
 describe("stringifyObjectTypes.gql", () => {

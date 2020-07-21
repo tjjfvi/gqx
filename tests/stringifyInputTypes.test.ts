@@ -1,6 +1,6 @@
 
-import stringifyInputType from "../src/stringifyInputType";
-import stringifyInputTypes from "../src/stringifyInputTypes";
+import { stringifyInputType } from "../src/stringifyInputType";
+import { stringifyInputTypes } from "../src/stringifyInputTypes";
 
 describe("stringifyInputTypes.gql", () => {
   const ctx = utils.getOperations(["stringifyInputTypes"]);
