@@ -294,6 +294,7 @@ export const $$reconstruct = <I extends $$AnyProp>(id: I, input: $$Input<I>, pro
 /* --- End Boilerplate --- */
 
 export type Category = (
+  | \\"Adult\\"
   | \\"BestSeller\\"
   | \\"Childrens\\"
   | \\"Dystopian\\"
@@ -308,6 +309,14 @@ export type Category = (
   | \\"SciFi\\"
   | \\"Utopian\\"
 )
+
+export type $$EnumDirectives = {
+  Category: {
+    Adult: {
+      auth: {},
+    },
+  },
+}
 
 export interface $$EnumTypes {
   Category: Category,

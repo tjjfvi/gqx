@@ -1,7 +1,9 @@
 
-enum ABC { A B C }
+directive @vowel(isY: Boolean) on ENUM_VALUE
+
+enum ABC { A @vowel B C }
 enum OnlyOneOption { JustThis }
-enum Letter { A B C D E F G H I J K L M N O P Q R S T U V W X Y Z }
+enum Letter { A @vowel B C D E @vowel F G H I @vowel J K L M N O @vowel P Q R S T U @vowel V W X Y @vowel(isY: true) Z }
 enum AlphaNum { C1 P2 P3 C4 P5 C6 P7 C8 C9 C10 }
 enum Underscores { _ __ ___ ____ _____ }
 

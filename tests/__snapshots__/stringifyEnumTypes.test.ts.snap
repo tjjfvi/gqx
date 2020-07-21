@@ -36,6 +36,39 @@ export type Underscores = (
   | \\"_____\\"
 )
 
+export type $$EnumDirectives = {
+  ABC: {
+    A: {
+      vowel: {},
+    },
+  },
+  OnlyOneOption: {},
+  Letter: {
+    A: {
+      vowel: {},
+    },
+    E: {
+      vowel: {},
+    },
+    I: {
+      vowel: {},
+    },
+    O: {
+      vowel: {},
+    },
+    U: {
+      vowel: {},
+    },
+    Y: {
+      vowel: {
+        isY: true,
+      },
+    },
+  },
+  AlphaNum: {},
+  Underscores: {},
+}
+
 export interface $$EnumTypes {
   ABC: ABC,
   OnlyOneOption: OnlyOneOption,

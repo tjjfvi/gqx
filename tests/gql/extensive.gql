@@ -1,5 +1,5 @@
 
-directive @auth(test: BookFilter, test2: [String!]) on FIELD_DEFINITION | OBJECT
+directive @auth(test: BookFilter, test2: [String!]) on FIELD_DEFINITION | OBJECT | ENUM_VALUE
 
 schema {
   query: Query
@@ -81,6 +81,7 @@ enum Category @auth {
   Dystopian
   Utopian
   Religous
+  Adult @auth
 }
 
 type Review {
