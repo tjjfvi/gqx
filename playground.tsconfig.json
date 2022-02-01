@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "jsx": "react",
+    "outDir": "playground/dist"
+  },
+  "include": [
+    "src/**/*",
+    "src/*",
+    "bin/*",
+    "playground/**/*"
+  ],
+  "exclude": [
+    "src/boilerplate.ts",
+    "playground/dist/**/*"
+  ]
+}

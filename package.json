@@ -6,6 +6,7 @@
   "dependencies": {
     "@types/js-yaml": "^3.12.2",
     "commander": "^4.1.1",
+    "eslint-plugin-react": "^7.28.0",
     "graphql": "^15.3.0",
     "js-yaml": "^3.13.1",
     "tslib": "^1.11.1"
@@ -14,6 +15,11 @@
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.10.3",
     "@babel/preset-typescript": "^7.8.3",
+    "@rollup/plugin-alias": "^3.1.2",
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-replace": "^2.4.2",
+    "@rollup/plugin-typescript": "^8.2.1",
     "@types/jest": "^25.1.3",
     "@types/node": "^13.7.7",
     "@typescript-eslint/eslint-plugin": "^2.22.0",
@@ -23,6 +29,14 @@
     "eslint-plugin-jest": "^23.8.1",
     "jest": "^25.1.0",
     "jest-chain": "^1.1.5",
+    "rollup": "^2.53.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-string": "^3.0.0",
+    "rollup-plugin-styles": "^3.14.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "stylus": "^0.54.8",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.3"
   },
@@ -33,7 +47,9 @@
     "postpack": "npm run clean",
     "index": "create-index -u src/ -x ts -X ts -S",
     "sample": "ts-node ./bin/gqx.ts -s sample.gql -o output.ts",
-    "test": "jest --coverage -u"
+    "test": "jest --coverage -u",
+    "playground": "cp src/boilerplate.ts playground/boilerplate.txt; NODE_ENV=\"development\" rollup -cw",
+    "build-playground": "cp src/boilerplate.ts playground/boilerplate.txt; NODE_ENV=\"production\" rollup -c"
   },
   "bin": {
     "gqx": "./dist/bin/gqx.js"
