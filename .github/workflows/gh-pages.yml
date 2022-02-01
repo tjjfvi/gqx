@@ -1,0 +1,36 @@
+name: Publish GitHub Pages
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json', 'playground/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - run: npm i; cd playground; npm i
+
+      - run: npm run build-playground
+
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: playground
+          force_orphan: true
+          exclude_assets: "node_modules,*.ts,*.tsx,*.styl,*.json,dist/*/**/*,dist/*.tsbuildinfo"
+          cname: gqx.t6.fyi
