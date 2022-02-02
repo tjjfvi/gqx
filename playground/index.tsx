@@ -111,6 +111,9 @@ loader.init().then(monaco => {
     module: monaco.languages.typescript.ModuleKind.ESNext,
     target: monaco.languages.typescript.ScriptTarget.ESNext
   })
+  monaco.languages.typescript.typescriptDefaults.setDiagnosticsOptions({
+    diagnosticCodesToIgnore: [ 6133 ],
+  })
 })
 
 import defaultGqlText from "./example/schema.gql.txt"
