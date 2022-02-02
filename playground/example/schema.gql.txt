@@ -10,10 +10,8 @@ schema {
 }
 
 type Query {
-  getPeople(filter: String!): [Person!]!
-  getAuthor(id: ID!): Author!
   getBook(id: ID!): Book!
-  listBooks(cursor: Cursor, filter: BookFilter): [Book!]!
+  getPeople(filter: String!): [Person!]!
 }
 
 input Cursor {
@@ -29,12 +27,6 @@ type Book {
   description: String!
   categories: [Category!]!
   translation(language: Language!): Book
-}
-
-input BookFilter {
-  title: String
-  author: AuthorFilter
-  categories: [Category!]
 }
 
 # implemented by Author & User
@@ -54,10 +46,6 @@ type User implements Person {
   name: String
   username: String!
 } 
-
-input AuthorFilter {
-  name: String
-}
 
 enum Category {
   Horror
