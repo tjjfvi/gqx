@@ -1,12 +1,16 @@
+# Example GraphQL Schema
 
-# gql schema file
+# This file is an example of a user-created schema.
+
+# You can edit this schema file.
+
 
 schema {
   query: Query
 }
 
 type Query {
-  getPerson(id: ID!): Person!
+  getPeople(id: ID!): [Person!]!
   getAuthor(id: ID!): Author!
   getBook(id: ID!): Book!
   listBooks(cursor: Cursor, filter: BookFilter): [Book!]!
@@ -33,24 +37,22 @@ input BookFilter {
   categories: [Category!]
 }
 
+interface Person {
+  id: ID!
+  name: String
+}
+
 type Author implements Person {
   id: ID!
   name: String!
   books: [Book!]!
-  favoriteBook: Book!
 }
 
 type User implements Person {
   id: ID!
   name: String
-  favoriteBook: Book
-}
-
-interface Person {
-  id: ID!
-  name: String
-  favoriteBook: Book
-}
+  username: String!
+} 
 
 input AuthorFilter {
   name: String
