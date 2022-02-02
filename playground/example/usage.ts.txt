@@ -7,11 +7,10 @@
 
 // You can edit this TypeScript file.
 
-
 import { gqx, Book, Person, Author, User } from "./gqx";
 
 // #####
-// Example of fully typed ffragments, queries, and results
+// Example of fully typed fragments, queries, and results
 
 const bookFrag = Book.$(
   Book.id,
@@ -51,8 +50,7 @@ for(const person of peopleResult) {
 }
 
 // #####
-// Example of multiple methods of specifying fragments
-// Each of the following fragment declarations result in equivalent types
+// The following frament definitions result in equaivalent fragments
 
 const bookFragment1 = Book.$(
   Book.id,
@@ -63,7 +61,7 @@ const bookFragment1 = Book.$(
 
 const bookFragment2 = Book.$(
   Book.id,
-  Book.author.name,
+  Book.title,
   Book.author.$(
     Author.name,
     Author.books.title,
@@ -84,7 +82,7 @@ const bookFragment3 = Book.$(
   )
 );
 
-// Hover over the results to see that the result types are equivalent.
+// The equivalent fragments result in equivalent result types
 const result1 = await gqx.query.getBook({ id: "abc" }, bookFragment1)
 const result2 = await gqx.query.getBook({ id: "abc" }, bookFragment2)
 const result3 = await gqx.query.getBook({ id: "abc" }, bookFragment3)
