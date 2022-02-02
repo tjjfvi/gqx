@@ -10,7 +10,7 @@ schema {
 }
 
 type Query {
-  getPeople(id: ID!): [Person!]!
+  getPeople(filter: String!): [Person!]!
   getAuthor(id: ID!): Author!
   getBook(id: ID!): Book!
   listBooks(cursor: Cursor, filter: BookFilter): [Book!]!
@@ -37,6 +37,7 @@ input BookFilter {
   categories: [Category!]
 }
 
+# implemented by Author & User
 interface Person {
   id: ID!
   name: String

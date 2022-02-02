@@ -15,7 +15,7 @@ const authorFrag = Author.$(
   Author.name,
 );
 
-const bookBasicFrag = Book.$(
+const bookFrag = Book.$(
   Book.id,
   Book.title,
   Book.author.name,
@@ -27,53 +27,33 @@ const bookAuthorFrag = Book.$(
 );
 
 const bookQueryFrag = Book.$(
-  bookBasicFrag,
+  bookFrag,
   bookAuthorFrag,
 );
 
-// Hover over bookResult to see the type from getBook and bookFrag
+// Hover over the result to see the type
 const bookResult = await gqx.query.getBook({ id: "abc" }, bookQueryFrag)
-/* {
-  __typename: "Book";
-  id: string;
-  title: string;
-  author: {
-    __typename: "Author";
-    id: string;
-    name: string;
-  };
-} */
+
 bookResult.author.name // string
 
 
-// Since Author implements Person
+// Person is implemented by Author & User
 const peopleQueryFrag  = Person.$(
   Person.name,
-  Author.books.id,
+  Author.books.id, // Author implements
   User.username,
 )
 
-// Hover over personResult to see the type from getPeople and peopleFrag
-const peopleResult = await gqx.query.getPeople({ id: "foo" }, peopleQueryFrag)
-/* Array< {
-      __typename: "Author";
-      name: string;
-      books: {
-          __typename: "Book";
-          id: string;
-      }[];
-  } | {
-      __typename: "User";
-      name: string;
-  } > */
+// Hover over the result to see the type
+const peopleResult = await gqx.query.getPeople({ filter: "A" }, peopleQueryFrag)
 
 for(const person of peopleResult) {
   switch(person.__typename) {
     case "Author":
-      person.books[0].id // string
+      person.books.length
       continue;
     case "User":
-      person.username // string
+      person.username.toLowerCase()
       continue;
   }
 }
