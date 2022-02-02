@@ -98,14 +98,20 @@ function genOutput(gql: string){
   return code;
 }
 
-loader.init().then(monaco => monaco.editor.defineTheme("eglint", {
-  base: "vs-dark",
-  inherit: true,
-  rules: [],
-  colors: {
-    "editor.background": "#151820",
-  },
-}))
+loader.init().then(monaco => {
+  monaco.editor.defineTheme("eglint", {
+    base: "vs-dark",
+    inherit: true,
+    rules: [],
+    colors: {
+      "editor.background": "#151820",
+    },
+  })
+  monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
+    module: monaco.languages.typescript.ModuleKind.ESNext,
+    target: monaco.languages.typescript.ScriptTarget.ESNext
+  })
+})
 
 import defaultGqlText from "./example/schema.gql.txt"
 
