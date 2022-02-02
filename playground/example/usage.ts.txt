@@ -14,28 +14,17 @@ const bookFrag = Book.$(
   Book.id,
   Book.title,
   Book.author.name,
-);
-
-const authorFrag = Author.$(
-  Author.id,
-  Author.name,
-);
-
-const bookAuthorFrag = Book.$(
-  Book.id,
-  Book.author.$(authorFrag)
-);
-
-const bookQueryFrag = Book.$(
-  bookFrag,
-  bookAuthorFrag,
+  Book.author.books.title,
 );
 
 // Hover over the result to see the type
-const bookResult = await gqx.query.getBook({ id: "abc" }, bookQueryFrag)
+const bookResult = await gqx.query.getBook({ id: "abc" }, bookFrag)
 
+bookResult.title // string
 bookResult.author.name // string
+bookResult.author.books // Array<{ __typename: string, title: string }>
 
+// Example of handling fragments with interfaces and unions
 
 // Person is implemented by Author & User
 const peopleQueryFrag  = Person.$(
@@ -57,3 +46,39 @@ for(const person of peopleResult) {
       continue;
   }
 }
+
+// Each of the following fragment declarations result in equivalent types
+const bookFragment1 = Book.$(
+  Book.id,
+  Book.title,
+  Book.author.name,
+  Book.author.books.title,
+);
+
+const bookFragment2 = Book.$(
+  Book.id,
+  Book.author.name,
+  Book.author.$(
+    Author.name,
+    Author.books.title,
+  ),
+);
+
+const authorFragment = Author.$(
+  Author.name,
+  Author.books.$(
+    Book.title,
+  ),
+)
+const bookFragment3 = Book.$(
+  Book.id,
+  Book.title,
+  Book.author.$(
+    authorFragment
+  )
+);
+
+// Hover over the results to see that the result types are equivalent.
+const result1 = await gqx.query.getBook({ id: "abc" }, bookFragment1)
+const result2 = await gqx.query.getBook({ id: "abc" }, bookFragment2)
+const result3 = await gqx.query.getBook({ id: "abc" }, bookFragment3)
