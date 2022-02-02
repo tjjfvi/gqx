@@ -49,10 +49,10 @@ const peopleResult = await gqx.query.getPeople({ filter: "A" }, peopleQueryFrag)
 
 for(const person of peopleResult) {
   switch(person.__typename) {
-    case "Author":
+    case "Author": // has books
       person.books.length
       continue;
-    case "User":
+    case "User": // has username
       person.username.toLowerCase()
       continue;
   }
