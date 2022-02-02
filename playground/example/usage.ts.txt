@@ -10,15 +10,15 @@
 
 import { gqx, Book, Person, Author, User } from "./gqx";
 
-const authorFrag = Author.$(
-  Author.id,
-  Author.name,
-);
-
 const bookFrag = Book.$(
   Book.id,
   Book.title,
   Book.author.name,
+);
+
+const authorFrag = Author.$(
+  Author.id,
+  Author.name,
 );
 
 const bookAuthorFrag = Book.$(
