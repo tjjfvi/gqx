@@ -10,6 +10,9 @@
 
 import { gqx, Book, Person, Author, User } from "./gqx";
 
+// #####
+// Example of fully typed ffragments, queries, and results
+
 const bookFrag = Book.$(
   Book.id,
   Book.title,
@@ -24,16 +27,16 @@ bookResult.title // string
 bookResult.author.name // string
 bookResult.author.books // Array<{ __typename: string, title: string }>
 
+// #####
 // Example of handling fragments with interfaces and unions
 
-// Person is implemented by Author & User
 const peopleQueryFrag  = Person.$(
   Person.name,
-  Author.books.id, // Author implements
-  User.username,
+  Author.books.id, // Author implements Person
+  User.username, // User implements Person
 )
 
-// Hover over the result to see the type
+// Hover over the result to see the union type
 const peopleResult = await gqx.query.getPeople({ filter: "A" }, peopleQueryFrag)
 
 for(const person of peopleResult) {
@@ -47,7 +50,10 @@ for(const person of peopleResult) {
   }
 }
 
+// #####
+// Example of multiple methods of specifying fragments
 // Each of the following fragment declarations result in equivalent types
+
 const bookFragment1 = Book.$(
   Book.id,
   Book.title,
