@@ -117,7 +117,8 @@ loader.init().then(monaco => {
 })
 
 import defaultGqlText from "./example/schema.gql.txt"
+import _defaultTsText from "./example/usage.ts.txt"
 
-import defaultTsText from "./example/usage.ts.txt"
+const defaultTsText = _defaultTsText.split(/\/\/ -----\n\n/)[1]
 
 ReactDOM.render(<App/>, document.getElementById("root"))
