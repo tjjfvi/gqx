@@ -38,4 +38,4 @@ type User implements Person {
   id: ID!
   name: String
   username: String!
-} 
+}
