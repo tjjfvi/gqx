@@ -1,0 +1,68 @@
+// ts file
+
+import { gqx, Author, Book, Person } from "./gqx";
+
+const authorFrag = Author.$(
+  Author.id,
+  Author.name,
+);
+
+const bookFrag1 = Book.$(
+  Book.id,
+  Book.title,
+  Book.author.name,
+);
+
+const bookFrag2 = Book.$(
+  Book.id,
+  Book.author.$(authorFrag)
+);
+
+const bookFragCombined = Book.$(
+  bookFrag1,
+  bookFrag2,
+);
+
+gqx.query.getBook({ id: "abc" }, bookFragCombined).then(book => {
+  book; // Hover
+  /*
+    (parameter) book: {
+      __typename: "Book";
+      id: string;
+      title: string;
+      author: {
+        __typename: "Author";
+        id: string;
+        name: string;
+      };
+    }
+  */
+})
+
+const personFrag = Person.$(
+  Person.name,
+  // Author implements the interface Person
+  Author.books.id,
+)
+
+gqx.query.getPerson({ id: "foo" }, personFrag).then(person => {
+  person; // Hover
+  /*
+    (parameter) person: {
+        __typename: "Author";
+        name: string;
+        books: {
+            __typename: "Book";
+            id: string;
+        }[];
+    } | {
+        __typename: "User";
+        name: string;
+    }
+  */
+  // @ts-expect-error may not exist
+  person.books
+  if(person.__typename === "Author"){
+    person.books[0].id // string
+  }
+})

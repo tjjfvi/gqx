@@ -1,0 +1,24 @@
+export * from "./output";
+
+import { $$GqxReturn, $$AnyProp, $$Frag, $$Input, $$Output, $$generateObject } from "./output";
+
+// Type of e.g. gqx.query.getBook
+type GqxOut_<I extends $$AnyProp> =
+  <T extends $$Frag<I>>(input: $$Input<I>, frag: T)
+    => Promise<$$Output<I, T>>
+
+// HKT encoding to pass to $$generateObject
+interface GqxOut extends $$GqxReturn {
+  return: GqxOut_<this["input"]>;
+}
+
+// Imported by codegen output
+export interface $$Scalars {
+  String: string;
+  Boolean: boolean;
+  Float: number;
+  Int: number;
+  ID: string;
+}
+
+export const gqx = $$generateObject<GqxOut>(() => null!)
