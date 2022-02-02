@@ -1,8 +1,10 @@
+# #####
 # Example GraphQL Schema
+# #####
 
 # This file is an example of a user-created schema.
 
-# You can edit this schema file.
+# * You can edit this GraphQL schema file. *
 
 schema {
   query: Query
