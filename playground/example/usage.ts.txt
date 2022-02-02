@@ -5,7 +5,8 @@
 // Example Typescript Usage
 // #####
 
-// This file is an example of code that uses the gqx generated types and objects.
+// This file is an example of user-created code that uses gqx.
+// It uses the types and objects that were generated from the GraphQL schema.
 
 // * You can edit this TypeScript file. *
 
