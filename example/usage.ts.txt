@@ -1,0 +1,99 @@
+// @ts-nocheck
+// -----
+
+// #####
+// Example Typescript Usage
+// #####
+
+// This file is an example of user-created code that uses gqx.
+// It uses the types and objects that were generated from the GraphQL schema.
+
+// * You can edit this TypeScript file. *
+
+import { gqx, Book, Person, Author, User } from "./gqx";
+
+// ###
+// Example of fully-typed fragment, query, input, and result
+// ###
+
+const bookFrag = Book.$(
+  Book.id,
+  Book.title,
+  Book.author.name,
+  Book.author.books.title,
+);
+
+// * hover over the result to see the type
+const bookResult = await gqx.query.getBook({ id: "abc" }, bookFrag)
+
+bookResult.title // string
+bookResult.author.name // string
+bookResult.author.books // Array<{ __typename: string, title: string }>
+
+
+// ###
+// Example of handling fragments with interfaces and unions
+// ###
+
+const peopleQueryFrag  = Person.$(
+  Person.name,
+  Author.books.id, // Author implements Person
+  User.username, // User implements Person
+)
+
+// * hover over the result to see the union type
+const peopleResult = await gqx.query.getPeople({ filter: "A" }, peopleQueryFrag)
+
+for(const person of peopleResult) {
+  switch(person.__typename) {
+    case "Author": // has books
+      person.books.length
+      continue;
+    case "User": // has username
+      person.username.toLowerCase()
+      continue;
+  }
+}
+
+// ###
+// Example the flexible fully-typed formats for defining and composing fragments
+// ###
+
+// The following fragment definitions result in equaivalent fragments
+
+const bookFragment1 = Book.$(
+  Book.id,
+  Book.title,
+  Book.author.name,
+  Book.author.books.title,
+);
+
+const bookFragment2 = Book.$(
+  Book.id,
+  Book.title,
+  Book.author.$(
+    Author.name,
+    Author.books.title,
+  ),
+);
+
+const authorFragment = Author.$(
+  Author.name,
+  Author.books.$(
+    Book.title,
+  ),
+)
+const bookFragment3 = Book.$(
+  Book.id,
+  Book.title,
+  Book.author.$(
+    authorFragment
+  )
+);
+
+// The equivalent fragments result in equivalent result types
+
+// * hover each result to see that each has the same type
+const result1 = await gqx.query.getBook({ id: "abc" }, bookFragment1)
+const result2 = await gqx.query.getBook({ id: "abc" }, bookFragment2)
+const result3 = await gqx.query.getBook({ id: "abc" }, bookFragment3)
