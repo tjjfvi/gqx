@@ -1,11 +1,11 @@
 
 import { Context } from "..";
-import { stringifyFragEnums } from "./stringifyFragEnums";
-import { stringifyFragResult } from "./stringifyFragResult";
-import { stringifyObjectTypeInfo } from "./stringifyObjectTypeInfo";
-import { stringifyFragObject } from "./stringifyFragObject";
+// import { stringifyObjectTypeInfo } from "./stringifyObjectTypeInfo";
+import { stringifyFrag } from "./stringifyFrag";
 import { generateObjs } from "./generateObjs";
 import { InputValueDefinitionNode, DirectiveNode, Location } from "graphql";
+import { stringifyId } from "./stringifyId";
+import { indent } from "../indent";
 
 interface Id {
   type: string;
@@ -17,7 +17,6 @@ interface Prop {
   type: string;
   shallow: boolean;
   wrap: (x: string) => string;
-  wrapHKT: string;
   args: InputValueDefinitionNode[];
   directives: DirectiveNode[];
   loc?: Location;
@@ -28,8 +27,8 @@ interface Obj {
   shallowProps: Prop[];
   deepProps: Prop[];
   props: Prop[];
-  implements: string[];
-  unions: string[];
+  subtypes: string[];
+  supertypes: string[];
   isBase: boolean;
 }
 
@@ -39,10 +38,30 @@ export default (ctx: Context) => {
   const [objs] = generateObjs(ctx);
 
   return [
-    stringifyObjectTypeInfo(ctx, objs),
-    stringifyFragEnums(objs),
-    ...objs.map(o => stringifyFragObject(o)),
-    objs.map(o => stringifyFragResult(o)).join("\n")
+    // stringifyObjectTypeInfo(ctx, objs),
+    ...objs.map(o => stringifyFrag(o, objs)),
+    `
+export interface $Wrap<T> {
+${
+  objs.flatMap(obj => obj.props.map(prop =>
+    indent`${stringifyId(prop.id)}: ${
+      obj.subtypes.length ?
+        obj.subtypes.map(type => `this["${type}$${prop.id.prop}"]`).join(" | ") :
+        `{ __typename: "${obj.type}", ${prop.id.prop}: ${prop.wrap("T")} }`
+    }`
+  )).join("\n")
+}
+}
+    `,
+    `
+export interface $ShallowPropTypes {
+${
+  objs.flatMap(obj => obj.shallowProps.map(prop =>
+    indent`${stringifyId(prop.id)}: ${prop.type}`
+  )).join("\n")
+}
+}
+`
   ].join("\n\n");
 }
 

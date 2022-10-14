@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import { Obj } from ".";
 import { stringifyId } from "./stringifyId";

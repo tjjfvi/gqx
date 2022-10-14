@@ -8,21 +8,20 @@ export const generateObjs = (ctx: Context): [Obj[], Id[], Context] => {
     Object.keys(ctx.objectTypes)
       .sort()
       .map(name => {
-        const { fields, unions, implements: impls } = ctx.objectTypes[name];
+        const { fields, subtypes, supertypes } = ctx.objectTypes[name];
         const props = fields.map(field => {
           const id: Id = {
             type: name,
             prop: field.name.value,
           };
           ids.push(id);
-          const [{ name: { value: typeName } }, wrap,, wrapHKT] = unwrapType(field.type);
+          const [{ name: { value: typeName } }, wrap,, ] = unwrapType(field.type);
           const shallow = !(typeName in ctx.objectTypes);
           let prop: Prop = {
             id,
             type: typeName,
             shallow,
             wrap,
-            wrapHKT,
             args: field.arguments?.slice() ?? [],
             directives: field.directives?.slice() ?? [],
             loc: field.loc,
@@ -36,8 +35,8 @@ export const generateObjs = (ctx: Context): [Obj[], Id[], Context] => {
           shallowProps,
           deepProps,
           props,
-          unions,
-          implements: impls,
+          subtypes,
+          supertypes,
           isBase: ctx.baseTypes.includes(name),
         };
         return obj;

@@ -1,0 +1,33 @@
+schema {
+  query: Query
+}
+
+type Query {
+  getBook(id: ID!): Book!
+  getPeople(filter: String!): [Person!]!
+}
+
+type Book {
+  id: ID!
+  author: Author!
+  title: String!
+  description: String!
+}
+
+# implemented by Author & User
+interface Person {
+  id: ID!
+  name: String
+}
+
+type Author implements Person {
+  id: ID!
+  name: String!
+  books: [Book!]!
+}
+
+type User implements Person {
+  id: ID!
+  name: String
+  username: String!
+}

@@ -1,9 +1,8 @@
-
 import {
-  InputValueDefinitionNode,
-  FieldDefinitionNode,
-  EnumValueDefinitionNode,
   DirectiveNode,
+  EnumValueDefinitionNode,
+  FieldDefinitionNode,
+  InputValueDefinitionNode,
 } from "graphql";
 import { stringifyEnumTypes } from "./stringifyEnumTypes";
 import { stringifyInputTypes } from "./stringifyInputTypes";
@@ -19,14 +18,19 @@ interface Context {
   typeDirectives: Record<string, DirectiveNode[]>;
   inputTypes: { [k: string]: InputValueDefinitionNode[] };
   enumTypes: { [k: string]: EnumValueDefinitionNode[] };
-  objectTypes: { [k: string]: { fields: FieldDefinitionNode[]; unions: string[]; implements: string[] } };
+  objectTypes: {
+    [k: string]: {
+      fields: FieldDefinitionNode[];
+      subtypes: string[];
+      supertypes: string[];
+    };
+  };
   operations: [string, string][];
   baseTypes: string[];
   scalarTypes: string[];
 }
 
 export default ({ schemaPath }: { schemaPath: string }) => {
-
   const ctx: Context = {
     operations: [],
     baseTypes: [],
@@ -54,7 +58,6 @@ export default ({ schemaPath }: { schemaPath: string }) => {
   ].join("\n\n").replace(/\n\n\n+/g, "\n\n");
 
   return code;
-
-}
+};
 
 export { Context };
