@@ -6,6 +6,7 @@ import { generateObjs } from "./generateObjs";
 import { InputValueDefinitionNode, DirectiveNode, Location } from "graphql";
 import { stringifyId } from "./stringifyId";
 import { indent } from "../indent";
+import { stringifyInputType } from "../stringifyInputType";
 
 interface Id {
   type: string;
@@ -52,8 +53,39 @@ ${
   )).join("\n")
 }
 }
-    `,
-    `
+
+export interface $Frag<T = unknown> {
+${
+  objs.map(obj =>
+    indent`${obj.type}: ${obj.type}.$<T>`
+  ).join("\n")
+}
+}
+
+export interface $Output<T extends $Fragment | $Fragment[]> {
+${
+  objs.map(obj =>
+    indent`// @ts-ignore\n${obj.type}: ${obj.type}<T>`
+  ).join("\n")
+}
+}
+
+export interface $Input {
+${
+  objs.flatMap(obj => obj.props.map(prop =>
+    indent`${stringifyId(prop.id)}: ${stringifyInputType(ctx, prop.args)}`
+  )).join("\n")
+}
+}
+
+export interface $DeepPropTypes {
+${
+  objs.flatMap(obj => obj.deepProps.map(prop =>
+    indent`${stringifyId(prop.id)}: ${JSON.stringify(prop.type)}`
+  )).join("\n")
+}
+}
+
 export interface $ShallowPropTypes {
 ${
   objs.flatMap(obj => obj.shallowProps.map(prop =>

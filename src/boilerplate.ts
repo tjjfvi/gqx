@@ -71,4 +71,9 @@ interface $WrapHkt<K extends keyof $Wrap<any>> extends $Hkt {
   return: $Wrap<this["input"]>[K]
 }
 
+export type $Props = keyof $Wrap<any> & string
+export type $DeepProps = keyof $DeepPropTypes & string
+export type $ShallowProps = keyof $ShallowPropTypes & string
+export type $OperationProps = Extract<$Props, `${$OperationTypes}$${string}`>
+
 /* --- End Boilerplate --- */

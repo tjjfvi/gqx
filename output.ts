@@ -64,6 +64,11 @@ interface $WrapHkt<K extends keyof $Wrap<any>> extends $Hkt {
   return: $Wrap<this["input"]>[K]
 }
 
+export type $Props = keyof $Wrap<any> & string
+export type $DeepProps = keyof $DeepPropTypes & string
+export type $ShallowProps = keyof $ShallowPropTypes & string
+export type $OperationProps = Extract<$Props, `${$OperationTypes}$${string}`>
+
 /* --- End Boilerplate --- */
 
 export type $$EnumDirectives = {}
@@ -249,7 +254,55 @@ export interface $Wrap<T> {
   "User$name": { __typename: "User", name: (T | null) }
   "User$username": { __typename: "User", username: T }
 }
-    
+
+export interface $Frag<T = unknown> {
+  Author: Author.$<T>
+  Book: Book.$<T>
+  Person: Person.$<T>
+  Query: Query.$<T>
+  User: User.$<T>
+}
+
+export interface $Output<T extends $Fragment | $Fragment[]> {
+  // @ts-ignore
+  Author: Author<T>
+  // @ts-ignore
+  Book: Book<T>
+  // @ts-ignore
+  Person: Person<T>
+  // @ts-ignore
+  Query: Query<T>
+  // @ts-ignore
+  User: User<T>
+}
+
+export interface $Input {
+  "Author$books": {}
+  "Author$id": {}
+  "Author$name": {}
+  "Book$author": {}
+  "Book$description": {}
+  "Book$id": {}
+  "Book$title": {}
+  "Person$id": {}
+  "Person$name": {}
+  "Query$getBook": {
+    id: $$Scalars["ID"],
+  }
+  "Query$getPeople": {
+    filter: $$Scalars["String"],
+  }
+  "User$id": {}
+  "User$name": {}
+  "User$username": {}
+}
+
+export interface $DeepPropTypes {
+  "Author$books": "Book"
+  "Book$author": "Author"
+  "Query$getBook": "Book"
+  "Query$getPeople": "Person"
+}
 
 export interface $ShallowPropTypes {
   "Author$id": ID
@@ -263,6 +316,14 @@ export interface $ShallowPropTypes {
   "User$name": String
   "User$username": String
 }
+
+export type $OperationTypes = "Query"
+export const $gqx = <F extends $Hkt<$OperationProps>>(f: <P extends $OperationProps>(p: P) => $CallHkt<F, P>) => ({
+  query: {
+    getBook: f("Query$getBook"),
+    getPeople: f("Query$getPeople"),
+  },
+})
 
 export type $$TypeDirectives = typeof $$typeDirectives;
 export const $$typeDirectives = {
