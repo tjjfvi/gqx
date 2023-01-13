@@ -1,21 +1,24 @@
+import { NamedTypeNode, TypeNode } from "graphql"
 
-import { TypeNode, NamedTypeNode } from "graphql";
-
-export const unwrapType = (type: TypeNode, allowUndefined = false, skipMaybe = false):
-[NamedTypeNode, (x: string) => string, boolean] => {
-  if(type.kind !== "NonNullType" && !skipMaybe) {
-    let _type = unwrapType(type, allowUndefined, true);
+export const unwrapType = (
+  type: TypeNode,
+  allowUndefined = false,
+  skipMaybe = false,
+): [NamedTypeNode, (x: string) => string, boolean] => {
+  if (type.kind !== "NonNullType" && !skipMaybe) {
+    let _type = unwrapType(type, allowUndefined, true)
     return [
       _type[0],
       x => `(${_type[1](x)} | null${allowUndefined ? " | undefined" : ""})`,
       true,
-    ];
+    ]
   }
-  if(type.kind === "NonNullType")
-    return unwrapType(type.type, allowUndefined, true);
-  if(type.kind === "ListType") {
-    let _type = unwrapType(type.type, allowUndefined);
-    return [_type[0], t => _type[1](t) + "[]", false];
+  if (type.kind === "NonNullType") {
+    return unwrapType(type.type, allowUndefined, true)
   }
-  return [type, x => x, false];
+  if (type.kind === "ListType") {
+    let _type = unwrapType(type.type, allowUndefined)
+    return [_type[0], t => _type[1](t) + "[]", false]
+  }
+  return [type, x => x, false]
 }

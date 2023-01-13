@@ -1,10 +1,12 @@
-import { Book, Author } from "./output";
+import { Author, Book } from "./output"
 
-console.log(Book.$(
-  Book.id,
-  Book.author.id,
-  Book.author.$(
-    Author.name,
-    Author.books.id,
-  ),
-).toString())
+console.log(
+  Book.$(
+    Book.id,
+    Book.author.id,
+    Book.author.$(
+      Author.name,
+      Author.books.id,
+    ),
+  ).toString(),
+)

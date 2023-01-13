@@ -1,6 +1,5 @@
-
-import gqx from "../src";
+import gqx from "../src"
 
 test("", () => {
-  expect(gqx({ schemaPath: utils.gqlPath("extensive") })).toParse().toMatchSnapshot();
+  expect(gqx({ schemaPath: utils.gqlPath("extensive") })).toParse().toMatchSnapshot()
 })

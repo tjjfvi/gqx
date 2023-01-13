@@ -1,7 +1,7 @@
-import stringifyOperations from "../../src/stringifyOperations";
+import stringifyOperations from "../../src/stringifyOperations"
 
 test("", () => {
-  const ctx = utils.getOperations(["stringifyOperations"]);
-  const code = stringifyOperations(ctx);
-  expect(code).toParse().toMatchSnapshot();
+  const ctx = utils.getOperations(["stringifyOperations"])
+  const code = stringifyOperations(ctx)
+  expect(code).toParse().toMatchSnapshot()
 })

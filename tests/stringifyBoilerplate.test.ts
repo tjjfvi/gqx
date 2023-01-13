@@ -1,7 +1,6 @@
-
-import { stringifyBoilerplate } from "../src/stringifyBoilerplate";
+import { stringifyBoilerplate } from "../src/stringifyBoilerplate"
 
 test("", () => {
-  const code = stringifyBoilerplate();
-  expect(code).toParse();
+  const code = stringifyBoilerplate()
+  expect(code).toParse()
 })

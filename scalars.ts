@@ -1,7 +1,7 @@
 export interface $$Scalars {
-  String: string;
-  Boolean: boolean;
-  Float: number;
-  Int: number;
-  ID: string;
+  String: string
+  Boolean: boolean
+  Float: number
+  Int: number
+  ID: string
 }

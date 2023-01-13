@@ -1,6 +1,5 @@
-
-import { stringifyInputType } from "./stringifyInputType";
-import { Context } from ".";
+import { Context } from "."
+import { stringifyInputType } from "./stringifyInputType"
 
 export const stringifyInputTypes = (ctx: Context) =>
   Object.entries(ctx.inputTypes).map(([name, fields]) =>

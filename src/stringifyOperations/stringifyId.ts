@@ -1,5 +1,3 @@
+import { Id } from "."
 
-import { Id } from ".";
-
-export const stringifyId = (id: Id) =>
-  `"${id.type}$${id.prop}"`
+export const stringifyId = (id: Id) => `"${id.type}$${id.prop}"`

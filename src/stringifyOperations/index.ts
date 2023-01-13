@@ -1,35 +1,32 @@
-
-import { Context } from "..";
-import { InputValueDefinitionNode } from "graphql";
-import { stringifyObjectGen } from "./stringifyObjectGen";
-import { generateObjs } from "./generateObjs";
-
+import { InputValueDefinitionNode } from "graphql"
+import { Context } from ".."
+import { generateObjs } from "./generateObjs"
+import { stringifyObjectGen } from "./stringifyObjectGen"
 
 interface Id {
-  type: string;
-  prop: string;
+  type: string
+  prop: string
 }
 
 interface Prop {
-  id: Id;
-  type: string;
-  wrap: (x: string) => string;
-  args: InputValueDefinitionNode[];
+  id: Id
+  type: string
+  wrap: (x: string) => string
+  args: InputValueDefinitionNode[]
 }
 
 interface Obj {
-  type: string;
-  prop: string;
-  props: Prop[];
+  type: string
+  prop: string
+  props: Prop[]
 }
 
-export { Id, Prop, Obj, Context };
+export { Context, Id, Obj, Prop }
 
 export default (ctx: Context) => {
-  const [objs] = generateObjs(ctx);
+  const [objs] = generateObjs(ctx)
 
   return [
     stringifyObjectGen(objs),
-  ].join("\n\n");
+  ].join("\n\n")
 }
-

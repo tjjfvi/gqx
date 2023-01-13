@@ -7,11 +7,14 @@ test.each([
     "second",
     "third",
     "fourth",
-    "fifth"
+    "fifth",
   ]],
-  ["sameLength", "abcdefghijklmnopqrstuvwxyz".split("").map((l, i, a) =>
-    a.slice(i).map(m => l + m)
-  ).flatMap(x => x)]
+  [
+    "sameLength",
+    "abcdefghijklmnopqrstuvwxyz".split("").map((l, i, a) => a.slice(i).map(m => l + m)).flatMap(x =>
+      x
+    ),
+  ],
 ])("%s", (_, options) => {
-  expect("type $ = " + stringifyEnum(options)).toParse().toMatchSnapshot();
+  expect("type $ = " + stringifyEnum(options)).toParse().toMatchSnapshot()
 })

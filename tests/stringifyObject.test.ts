@@ -1,4 +1,4 @@
-import { stringifyObject, ObjectEntry } from "../src/stringifyObject"
+import { ObjectEntry, stringifyObject } from "../src/stringifyObject"
 
 test.each<[string, ObjectEntry[], boolean?]>([
   ["noProps", []],
@@ -6,15 +6,15 @@ test.each<[string, ObjectEntry[], boolean?]>([
     ["singular", "line"],
   ], false],
   ["keyEdgeCases", [
-    ['"this"', "doesntNeedQuotes"],
+    ["\"this\"", "doesntNeedQuotes"],
     ["this definitely", "does"],
-    ['"as does"', "this"],
+    ["\"as does\"", "this"],
   ]],
   ["optional", [
     ["this", true, "isOptional"],
     ["however", "thisIsnt"],
-    ["and", false, "thisDefinitelyIsnt"]
-  ]]
+    ["and", false, "thisDefinitelyIsnt"],
+  ]],
 ])("%s", (_, ...args) => {
-  expect(stringifyObject(...args)).toParse().toMatchSnapshot();
+  expect(stringifyObject(...args)).toParse().toMatchSnapshot()
 })
