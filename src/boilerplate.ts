@@ -1,9 +1,5 @@
 // @ts-nocheck
 if (!0) throw new Error("boilerplate.ts should not be imported")
-/* eslint-disable @typescript-eslint/no-empty-function */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-unused-vars */
 
 /* --- */
 
@@ -55,15 +51,24 @@ export class $Fragment {
   }
 }
 
-export interface $Hkt<I = unknown> {
-  input: I
-  return: unknown
+export interface $Hkt<in I = unknown, out O = unknown> {
+  type: (value: $Hkt.Input<this, I>) => O
 }
 
-export type $CallHkt<F extends $Hkt, I extends F["input"]> = (F & { input: I })["return"]
-
-export interface $Compose<A extends $Hkt, B extends $Hkt> extends $Hkt {
-  return: $CallHkt<A, $CallHkt<B, this["input"]>>
+export namespace $Hkt {
+  export type Input<T extends $Hkt<I>, I = unknown> = "input" extends keyof T
+    ? Extract<T["input"], I>
+    : I
+  export type Call<T extends $Hkt<I>, I> = ReturnType<(T & { input: I })["type"]>
+  export interface Compose<
+    A extends $Hkt<J, O>,
+    B extends $Hkt<I, J>,
+    I = unknown,
+    J = unknown,
+    O = unknown,
+  > extends $Hkt<I, O> {
+    type: <T extends Input<this, I>>(v: T) => $Hkt.Call<A, $Hkt.Call<B, T>>
+  }
 }
 
 type $_ExpandDeep<T> = T extends unknown[]
@@ -72,7 +77,7 @@ type $_ExpandDeep<T> = T extends unknown[]
 type $ExpandDeep<T> = $_ExpandDeep<T> extends infer X extends T ? X : never
 
 interface $WrapHkt<K extends keyof $Wrap<any>> extends $Hkt {
-  return: $Wrap<this["input"]>[K]
+  type: (_: $Hkt.Input<this>) => $Wrap<typeof _>[K]
 }
 
 export type $Prop = keyof $Wrap<any> & string

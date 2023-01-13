@@ -3,6 +3,7 @@ schema {
 }
 
 type Query {
+  version(x: String): String
   getBook(id: ID!): Book!
   getPeople(filter: String!): [Person!]!
 }

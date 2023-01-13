@@ -7,20 +7,20 @@ import { stringifyId } from "./stringifyId"
 export const stringifyFrag = (obj: Obj, objs: Obj[]) =>
   `
 interface _$${obj.type}$ extends $Hkt {
-  return: ${obj.type}.$<this["input"]>
+  type: (_: $Hkt.Input<this>) => ${obj.type}.$<typeof _>
 }
 
 interface _$${obj.type}<T extends $Hkt> {
-  $<F extends ${obj.type}.$>(frag: F): $CallHkt<T, ${obj.type}<F>>
-  $<F extends ${obj.type}.$[]>(...frag: F): $CallHkt<T, ${obj.type}<F>>
+  $<F extends ${obj.type}.$>(frag: F): $Hkt.Call<T, ${obj.type}<F>>
+  $<F extends ${obj.type}.$[]>(...frag: F): $Hkt.Call<T, ${obj.type}<F>>
 ${
     obj.props.map(prop =>
       indent`${prop.id.prop}: ${
         prop.shallow
-          ? `$CallHkt<T, $Wrap<$ShallowPropTypes[${stringifyId(prop.id)}]>[${
+          ? `$Hkt.Call<T, $Wrap<$ShallowPropTypes[${stringifyId(prop.id)}]>[${
             stringifyId(prop.id)
           }]>`
-          : `_$${prop.type}<$Compose<T, $WrapHkt<${stringifyId(prop.id)}>>>`
+          : `_$${prop.type}<$Hkt.Compose<T, $WrapHkt<${stringifyId(prop.id)}>>>`
       }`
     ).join("\n")
   }
@@ -33,7 +33,7 @@ ${
       indent`get ${prop.id.prop}(){ return ${
         prop.shallow
           ? `f($Fragment._create(${stringifyId(prop.id)}, null))`
-          : `_$${prop.type}<$Compose<T, $WrapHkt<${
+          : `_$${prop.type}<$Hkt.Compose<T, $WrapHkt<${
             stringifyId(prop.id)
           }>>>(x => $Fragment._create(${stringifyId(prop.id)}, f(x)))`
       } },`
@@ -43,24 +43,30 @@ ${
 
 export const ${obj.type} = _$${obj.type}<_$${obj.type}$>(x => x)
 
-// @ts-ignore${/* eslint-disable-next-line max-len */ ""}
-export type ${obj.type}<F extends ${obj.type}.$ | ${obj.type}.$[]> = F extends ${obj.type}.$<infer X> ? X : $ExpandDeep<{ [K in keyof F]: (x: ${obj.type}<F[K]>) => void }[number] extends (x: infer X) => void ? X : never>
+export type ${obj.type}<F extends ${obj.type}.$ | ${obj.type}.$[]> =
+  F extends ${obj.type}.$<infer X> ? X :
+  // @ts-ignore
+  $ExpandDeep<{ [K in keyof F]: (x: ${obj.type}<F[K]>) => void }[number] extends (x: infer X) => void ? X : never>
 
 export declare namespace ${obj.type} {
   export interface $<out T = unknown> extends $Fragment {
     [$fragTypes]: {
-      _${obj.type}: T
 ${
-    obj.supertypes.map(type =>
-      indent(indent(indent`_${type}: T${
-        objs
-          .find(x => x.type === type)!
-          .subtypes
-          .filter(x => x !== obj.type)
-          .map(x => ` | { __typename: ${JSON.stringify(x)} }`)
-          .join("")
-      }`))
-    )
+    indent(indent(indent(
+      [
+        `_${obj.type}: T`,
+        ...obj.supertypes.map(type =>
+          `_${type}: T${
+            objs
+              .find(x => x.type === type)!
+              .subtypes
+              .filter(x => x !== obj.type)
+              .map(x => ` | { __typename: ${JSON.stringify(x)} }`)
+              .join("")
+          }`
+        ),
+      ].join("\n"),
+    )))
   }
     }
   }

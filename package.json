@@ -43,7 +43,7 @@
     "prepack": "npm run build",
     "postpack": "npm run clean",
     "index": "create-index -u src/ -x ts -X ts -S",
-    "sample": "ts-node ./bin/gqx.ts -s sample.gql -o output.ts",
+    "sample": "ts-node ./bin/gqx.ts -s schema.gql -o output.ts",
     "test": "jest --coverage -u",
     "playground": "cp src/boilerplate.ts playground/boilerplate.txt; NODE_ENV=\"development\" rollup -cw",
     "build-playground": "cp src/boilerplate.ts playground/boilerplate.txt; NODE_ENV=\"production\" rollup -c"
