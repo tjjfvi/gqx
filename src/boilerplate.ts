@@ -11,7 +11,7 @@ import { $$Scalars } from "./scalars";
 
 declare const $fragTypes: unique symbol;
 
-class $Fragment {
+export class $Fragment {
   declare private _gqxFragment;
   private _props = new Map<string, $Fragment | null>()
   private constructor(){}
@@ -71,9 +71,9 @@ interface $WrapHkt<K extends keyof $Wrap<any>> extends $Hkt {
   return: $Wrap<this["input"]>[K]
 }
 
-export type $Props = keyof $Wrap<any> & string
-export type $DeepProps = keyof $DeepPropTypes & string
-export type $ShallowProps = keyof $ShallowPropTypes & string
-export type $OperationProps = Extract<$Props, `${$OperationTypes}$${string}`>
+export type $Prop = keyof $Wrap<any> & string
+export type $DeepProp = keyof $DeepPropTypes & string
+export type $ShallowProp = keyof $ShallowPropTypes & string
+export type $OperationProp = Extract<$Prop, `${$OperationTypes}$${string}`>
 
 /* --- End Boilerplate --- */

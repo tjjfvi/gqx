@@ -54,6 +54,30 @@ ${
 }
 }
 
+export interface $PropFrag<T = unknown> {
+${
+  objs.flatMap(obj => obj.props.map(prop =>
+    indent`${stringifyId(prop.id)}: ${ prop.shallow ? "never" :  `${prop.type}.$<T>` }`
+  )).join("\n")
+}
+}
+
+export interface $PropOutput<F extends $Fragment[]> {
+${
+  objs.flatMap(obj => obj.props.map(prop =>
+    indent`// @ts-ignore\n${stringifyId(prop.id)}: ${prop.wrap(prop.shallow ? prop.type : `${prop.type}<F>`)}`
+  )).join("\n")
+}
+}
+
+export interface $PropType<F extends $Fragment[]> {
+${
+  objs.flatMap(obj => obj.props.map(prop =>
+    indent`// @ts-ignore\n${stringifyId(prop.id)}: ${ prop.shallow ? prop.type : `${prop.type}<F>` }`
+  )).join("\n")
+}
+}
+
 export interface $Frag<T = unknown> {
 ${
   objs.map(obj =>
@@ -62,7 +86,7 @@ ${
 }
 }
 
-export interface $Output<T extends $Fragment | $Fragment[]> {
+export interface $Unfrag<T extends $Fragment | $Fragment[]> {
 ${
   objs.map(obj =>
     indent`// @ts-ignore\n${obj.type}: ${obj.type}<T>`
@@ -70,7 +94,7 @@ ${
 }
 }
 
-export interface $Input {
+export interface $PropInput {
 ${
   objs.flatMap(obj => obj.props.map(prop =>
     indent`${stringifyId(prop.id)}: ${stringifyInputType(ctx, prop.args)}`
