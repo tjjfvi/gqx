@@ -3,7 +3,7 @@ if (!0) throw new Error("boilerplate.ts should not be imported")
 
 /* --- */
 
-import { $$Scalars } from "./scalars"
+import { $Scalars } from "./scalars"
 
 declare const $fragTypes: unique symbol
 
@@ -52,14 +52,13 @@ export class $Fragment {
 }
 
 export interface $Hkt<in I = unknown, out O = unknown> {
-  type: (value: $Hkt.Input<this, I>) => O
+  _input: (x: I) => void
+  type: (value: $Hkt.Input<this>) => O
 }
 
 export namespace $Hkt {
-  export type Input<T extends $Hkt<I>, I = unknown> = "input" extends keyof T
-    ? Extract<T["input"], I>
-    : I
-  export type Call<T extends $Hkt<I>, I> = ReturnType<(T & { input: I })["type"]>
+  export type Input<T extends $Hkt<never>> = Parameters<T["_input"]>[0]
+  export type Call<T extends $Hkt<I>, I> = ReturnType<(T & { _input: (x: I) => void })["type"]>
   export interface Compose<
     A extends $Hkt<J, O>,
     B extends $Hkt<I, J>,
@@ -67,7 +66,7 @@ export namespace $Hkt {
     J = unknown,
     O = unknown,
   > extends $Hkt<I, O> {
-    type: <T extends Input<this, I>>(v: T) => $Hkt.Call<A, $Hkt.Call<B, T>>
+    type: (_: Input<this>) => $Hkt.Call<A, $Hkt.Call<B, typeof _>>
   }
 }
 
@@ -76,13 +75,11 @@ type $_ExpandDeep<T> = T extends unknown[]
   : { [K in keyof T]: $ExpandDeep<T[K]> }
 type $ExpandDeep<T> = $_ExpandDeep<T> extends infer X extends T ? X : never
 
-interface $WrapHkt<K extends keyof $Wrap<any>> extends $Hkt {
-  type: (_: $Hkt.Input<this>) => $Wrap<typeof _>[K]
+interface $FieldWrapHkt<K extends keyof $FieldWrap<any>> extends $Hkt {
+  type: (_: $Hkt.Input<this>) => $FieldWrap<typeof _>[K]
 }
 
-export type $Prop = keyof $Wrap<any> & string
-export type $DeepProp = keyof $DeepPropTypes & string
-export type $ShallowProp = keyof $ShallowPropTypes & string
-export type $OperationProp = Extract<$Prop, `${$OperationTypes}$${string}`>
+export type $Field = keyof $FieldWrap<any> & string
+export type $OperationField = Extract<$Field, `${$OperationTypes}$${string}`>
 
 /* --- End Boilerplate --- */

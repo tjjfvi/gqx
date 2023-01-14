@@ -1,6 +1,6 @@
 import * as fs from "fs"
 
-export const stringifyBoilerplate = (
+export const printBoilerplate = (
   boilerplateSource = fs.readFileSync(
     require.resolve("./boilerplate.ts"),
     "utf8",

@@ -1,4 +1,4 @@
-export interface $$Scalars {
+export interface $Scalars {
   String: string
   Boolean: boolean
   Float: number

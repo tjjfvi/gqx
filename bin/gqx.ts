@@ -2,7 +2,7 @@
 
 import program from "commander"
 import * as fs from "fs"
-import gqx from "../src/index"
+import gqx from "../src"
 
 program
   .option("-s, --schema <path>", "Input GraphQL Schema")
