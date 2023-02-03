@@ -37,9 +37,7 @@ export function extractTypes(documents: DocumentNode[]) {
 
     if (typeDef.kind === "ScalarTypeDefinition" || typeDef.kind === "ScalarTypeExtension") {
       setKind(type, "scalar", {})
-    }
-
-    if (
+    } else if (
       typeDef.kind === "InputObjectTypeDefinition"
       || typeDef.kind === "InputObjectTypeExtension"
     ) {
@@ -53,9 +51,7 @@ export function extractTypes(documents: DocumentNode[]) {
           directives: fieldDef.directives?.slice() ?? [],
         })
       }
-    }
-
-    if (
+    } else if (
       typeDef.kind === "ObjectTypeDefinition"
       || typeDef.kind === "ObjectTypeExtension"
       || typeDef.kind === "InterfaceTypeDefinition"
@@ -90,9 +86,7 @@ export function extractTypes(documents: DocumentNode[]) {
           supertype.subtypes.push(type)
         }
       }
-    }
-
-    if (typeDef.kind === "UnionTypeDefinition" || typeDef.kind === "UnionTypeExtension") {
+    } else if (typeDef.kind === "UnionTypeDefinition" || typeDef.kind === "UnionTypeExtension") {
       setKind(type, "object", { fields: [], subtypes: [], supertypes: [] })
       for (const subtypeDef of typeDef.types ?? []) {
         const subtype = getNamedType(subtypeDef.name.value)
@@ -100,9 +94,7 @@ export function extractTypes(documents: DocumentNode[]) {
         type.subtypes.push(subtype)
         subtype.supertypes.push(type)
       }
-    }
-
-    if (typeDef.kind === "EnumTypeDefinition" || typeDef.kind === "EnumTypeExtension") {
+    } else if (typeDef.kind === "EnumTypeDefinition" || typeDef.kind === "EnumTypeExtension") {
       setKind(type, "enum", { values: [] })
       for (const value of typeDef.values ?? []) {
         type.values.push({
@@ -110,6 +102,8 @@ export function extractTypes(documents: DocumentNode[]) {
           directives: value.directives?.slice() ?? [],
         })
       }
+    } else {
+      types.delete(name)
     }
   }
 

@@ -15,5 +15,6 @@ export function printTypeDef(type: NamedType) {
   if (type.kind === "input") {
     return `export interface ${type.name} ${printInputType(type.fields)}`
   }
+  console.log(type)
   return printObjectTypeDef(type)
 }
